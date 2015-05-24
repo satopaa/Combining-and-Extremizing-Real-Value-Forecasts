@@ -181,15 +181,25 @@ well-established goal is to maximize resolution subject to
 reliability.
 
 
-Strikingly, \cite{Ranjan08} prove that any nontrivial weighted average of two or more distinct and reliable probability forecasts is unreliable and lacks resolution. In particular, they explain that such a weighted average is under-confident in a sense that it is overly close to the marginal event frequency.  This result is an important contribution to the probability forecasting research in particular because it points out a dramatic shortcoming of methodology that is used widely in practice. However, the authors do not provide an explanation of their result beyond the actual mathematical proof. As a result, the sub-optimality of the weighted averages is taken as a fact and a clear direction for future improvement remains to be established. 
-
+Strikingly, \cite{Ranjan08} prove that any nontrivial weighted average
+of two or more distinct and reliable probability forecasts is
+unreliable and lacks resolution. In particular, they explain that such
+a weighted average is under-confident in a sense that it is overly
+close to the marginal event frequency.  This result is an important
+contribution to the probability forecasting research in particular
+because it points out a dramatic shortcoming of methodology that is
+used widely in practice. However, the authors do not provide an
+principled way of addressing this shortcoming. The partial information 
+framework \citep{satopaamodeling2, satopaamodeling} provides models that can be
+optimally combine forecasts, based on estimates of the covariance between forecasters..
 
 The main contribution of this paper generalizes the result
 in \cite{Ranjan08} to the weighted average of any type of univariate
-forecasts, included real-valued forecasts. Our result shows, for instance, that any non-trivial
+forecasts, included real-valued forecasts, and provides an algorithm that optimally (under a reasonable model) 
+combines real-valued forecasts. Our result shows, for instance, that any non-trivial
 weighted average of predictions about the next quarter's GDP
 is sub-optimal. Our analysis relies heavily on the general partial
-information framework \citep{satopaamodeling2, satopaamodeling}  and
+information framework and
 provides general, yet intuitive, descriptions of well-known properties
 such as reliability and resolution.  It also reveals a new property
 that is satisfied by all optimal aggregators, namely, that the variance of
@@ -203,15 +213,15 @@ under-confidence is not unique to the class of weighted averages but
 extends to many other measures of central tendency, such as the
 median and extends, in a different form, to real-valued estimates.
 
-\textit{Extremizing}, transforming the weighted average forecast away from the marginal mean,
+\textit{Extremizing}, transforming the weighted average forecast away from an uniformed prior probability of 0.5
 in being increasingly used in the probability forecasting literature as a means of
-alleviating systematic under-confidence{\cite{Ranjan08,satopaa,baron2014two}.
-%For instance, \cite{Ranjan08} propose a beta transformation that extremizes the weighted average of
-%the probability forecasts; \cite{satopaa} use a logistic regression
-%model to extremize the average log-odds of the
-%forecasts; \cite{baron2014two} propose another extremizing
-%transformation and give a psychological reason why human forecasters' probability estimates tend to be under-confident. 
-In this paper we suggest that real-valued forecasts should also be extremized -- pushed away from {\bf what does extremizing mean in the real-valued setting?}:
+alleviating systematic under-confidence{\cite{Ranjan08,satopaa,baron2014two}.\footnote{Unfortunately, many different
+  ad hoc transformations have been used. 
+  For instance, \cite{Ranjan08} propose a beta transformation that extremizes the weighted average of
+  the probability forecasts; \cite{satopaa} use a logistic regression model to extremize the average log-odds of the
+  forecasts; \cite{baron2014two} propose yet another extremizing  transformation.}
+In this paper we suggest that real-valued forecasts should also be extremized--
+the weighted average forecast should be transformed away from the marginal mean {\bf what does extremizing mean in the real-valued setting?}:
 extremizing can improve both
 resolution and reliability even when the forecasts are not
 probabilities of binary outcomes. Our second contribution illustrates
