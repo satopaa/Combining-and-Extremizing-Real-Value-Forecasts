@@ -1,0 +1,10 @@
+*.aux
+*.gz
+*.bbl
+*.blg
+*.log
+*.svg
+*.pdf
+*~
+.Rapp.history
+.DS_Store
