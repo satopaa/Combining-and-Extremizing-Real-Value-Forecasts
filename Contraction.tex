@@ -178,12 +178,12 @@ Strikingly, \cite{Ranjan08} prove that any nontrivial weighted average of two or
 The main contribution of this paper generalizes the result
 in \cite{Ranjan08} to the weighted average of any type of univariate
 forecasts, included real-valued forecasts. Our result shows, for instance, that any non-trivial
-weighted average of several predictions about the next quarter's GDP
+weighted average of predictions about the next quarter's GDP
 is sub-optimal. Our analysis relies heavily on the general partial
-information framework \citep{satopaamodeling2, satopaamodeling}. This
-provides general yet intuitive descriptions of well-known properties,
-such as reliability and resolution, and also reveals a new property
-that is satisfied by all optimal aggregators. Namely, the variance of
+information framework \citep{satopaamodeling2, satopaamodeling}  and
+provides general, yet intuitive, descriptions of well-known properties
+such as reliability and resolution.  It also reveals a new property
+that is satisfied by all optimal aggregators, namely, that the variance of
 an aggregator that optimally uses all the forecasters' information is
 never less than the maximum variance among the individual
 forecasts. Showing that a non-trivial weighted average never satisfies
@@ -192,19 +192,17 @@ easy-to-understand explanation of why weighted averages of probabilities are
 under-confident.  Furthermore, this reasoning suggests that
 under-confidence is not unique to the class of weighted averages but
 extends to many other measures of central tendency, such as the
-median.
+median and extends, in a different form, to real-valued estimated.
 
-Of course, any systematic under-confidence can be alleviated by
-transforming the weighted average away from the marginal mean. This
-technique, known as \textit{extremizing}, has been widely studied in
-the probability forecasting literature. For instance, \cite{Ranjan08}
-propose a beta transformation that extremizes the weighted average of
-the probability forecasts; \cite{satopaa} use a logistic regression
-model to extremize the average log-odds of the
-forecasts; \cite{baron2014two} propose another extremizing
-transformation and give a psychological reason why human forecasters'
-probability estimates tend to be under-confident. The general result
-of this paper, however, suggests that extremizing can improve both
+\textit{Extremizing}e, transforming the weighted average forecast away from the marginal mean,
+has been widely used in the probability forecasting literature as a means of
+alleviating systematic under-confidence{\cite{Ranjan08,satopaa,baron2014two}.
+%For instance, \cite{Ranjan08} propose a beta transformation that extremizes the weighted average of
+%the probability forecasts; \cite{satopaa} use a logistic regression
+%model to extremize the average log-odds of the
+%forecasts; \cite{baron2014two} propose another extremizing
+%transformation and give a psychological reason why human forecasters' probability estimates tend to be under-confident. 
+The general result of this paper, however, suggests that extremizing can improve both
 resolution and reliability even when the forecasts are not
 probabilities of binary outcomes. Our second contribution illustrates
 this with simple examples involving both synthetic and real-world data
@@ -227,16 +225,41 @@ concludes and discusses future research directions.
 \subsection{Optimal Aggregation}
 
 
-Consider $N$ forecasters and suppose forecaster $j$ predicts $X_j$ for some (integrable) quantity of interest $Y$.  The partial information framework assumes that $Y$ and $X_j$, for $j = 1, \dots, N$, are measurable  random variables under some common probability space $(\Omega, \F , \P)$. Overall, this is similar to the setting considered, for instance, in \cite{degroot1981assessing}, \cite{murphy1987general}, and more recently in \cite{Ranjan08}. Akin to  \cite{Ranjan08}, the forecasters are assumed to be \textit{reliable}, that is, conditionally unbiased such that $\E(Y | X_j) = X_j$ for all $j = 1, \dots, N$.  To interpret this assumption, observe that the principal $\sigma$-field $\F$ holds all possible information that can be known about $Y$. For each reliable forecast $X_j$ there exists a $\sigma$-field, namely $\sigma(X_j) = \F_j \subseteq \F$ such that $X_j = \E(Y|\F_j)$. Conversely, suppose that $X_j = \E(Y|\F_j)$ for some $\F_j \subseteq \F$, then
+Consider $N$ forecasters and suppose forecaster $j$ predicts $X_j$ for
+some (integrable) quantity of interest $Y$.  The partial information
+framework assumes that $Y$ and $X_j$, for $j = 1, \dots, N$, are
+measurable random variables under some common probability space
+$(\Omega, \F , \P)$ ~\cite{satopaamodeling}. Overall, this is similar to the setting
+considered, for instance,
+in \cite{degroot1981assessing}, \cite{murphy1987general}, and more
+recently in \cite{Ranjan08}. Akin to \cite{Ranjan08}, the forecasters
+are assumed to be \textit{reliable}, that is, conditionally unbiased
+such that $\E(Y | X_j) = X_j$ for all $j = 1, \dots, N$.  To interpret
+this assumption, observe that the principal $\sigma$-field $\F$ holds
+all possible information that can be known about $Y$. For each
+reliable forecast $X_j$ there exists a $\sigma$-field, namely
+$\sigma(X_j) = \F_j \subseteq \F$ such that $X_j
+= \E(Y|\F_j)$. Conversely, suppose that $X_j = \E(Y|\F_j)$ for some
+$\F_j \subseteq \F$, then
 \begin{align*}
 \E(Y | X_j) &= \E[\E(Y|X_j,\F_j)|X_j] = \E[\E(Y|\F_j)|X_j] = \E(X_j|X_j) = X_j.
 \end{align*}
 Therefore a forecast is reliable if and only if it is consistent with some set of information about $Y$.
-In this paper an aggregator is defined to be any forecast that is measurable with respect to $\F'' := \sigma(X_1, \dots, X_N)$, that is, the $\sigma$-field generated by the individual forecasts. To separate the notation of the individual forecasts from the aggregators, aggregators are represented by different versions of the script symbol $\mathcal{X}$. 
+We define an aggregator  to be any forecast that is measurable with respect to $\F'' := \sigma(X_1, \dots, X_N)$, that is, the $\sigma$-field generated by the individual forecasts. To separate the notation of the individual forecasts from the aggregators, aggregators are represented by different versions of the script symbol $\mathcal{X}$. 
 
 
 
-If $\E\left(Y^2\right) < \infty$, the conditional expectation $\mathcal{X}'' := \E(Y | \F'')$ minimizes the expected quadratic loss among all aggregators. This forecast is called the \textit{revealed aggregator} because it optimally utilizes all the information that the forecasters' reveal through their forecasts. Even though $\mathcal{X}'' $ is typically too abstract to be applied in practice, it provides an optimal baseline for aggregation efficiency. Furthermore, studying its properties gives guidance for improving aggregators currently used in practice. Some of these properties are summarized in the following theorem. The proof of this and any other theorems are deferred to the Appendix. 
+If $\E\left(Y^2\right) < \infty$, the conditional expectation
+$\mathcal{X}'' := \E(Y | \F'')$ minimizes the expected quadratic loss
+among all aggregators. This forecast is called the \textit{revealed
+aggregator} because it optimally utilizes all the information that the
+forecasters' reveal through their forecasts. Even though
+$\mathcal{X}'' $ is typically too abstract to be applied in practice,
+it provides an optimal baseline for aggregation
+efficiency. Furthermore, studying its properties gives guidance for
+improving aggregators currently used in practice. Some of these
+properties are summarized in the following theorem. The proof of this
+and any other theorems are deferred to the Appendix.
 
 
 
