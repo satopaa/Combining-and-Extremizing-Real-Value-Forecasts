@@ -142,21 +142,86 @@ Ville A. Satop\"a\"a and Lyle H. Ungar}
 
 
 \section{Introduction} \label{introduction}
-Policy-makers often consult human or/and machine agents for forecasts of some future outcome. For instance, several economics experts may provide quarterly predictions of gross domestic product (GDP). These forecasts are then combined into a single consensus forecast both for the sake of decision-making and accuracy \citep{armstrong2}. Unfortunately, the aggregation can be performed  in many different ways, and the final combination rule can largely determine the predictive quality of the consensus forecast. This is the principal motivation for the problem of forecast aggregation that aims to combine information from multiple forecasts into a single forecast with optimal properties.
 
-Linear opinion pooling, a.k.a., weighted averaging is by far the most popular method for combining forecasts. \cite{Ranjan08} analyze this choice for probability forecasts of binary events, such as rain or no rain tomorrow. They explain how the quality of a probability forecast (individual or aggregate) is typically measured in terms of reliability and resolution (sometimes also known as calibration and sharpness, respectively). Reliability describes how closely the conditional event frequencies align with the forecast probabilities. Resolution, on the other hand, measures how far the forecasts are from the naive baseline forecast, that is, the marginal event frequency. A forecast that is reliable and highly resolute is very useful to the policy-maker because it is both accurate and close to the most confident values of zero and one. Therefore a well-established goal is to maximize resolution subject to reliability. 
+Policy-makers often consult human or/and machine agents for forecasts
+of some future outcome. For instance, multiple economics experts may
+provide quarterly predictions of gross domestic product (GDP). These
+forecasts are then combined into a single consensus forecast both for
+the sake of decision-making and
+accuracy \citep{armstrong2}. The aggregation can be
+performed in many different ways, and the final combination rule can
+significantly affect the predictive accuracy of the consensus
+forecast. The paper presents method of forecast
+aggregation that aims to combine information from multiple forecasts
+into a single forecast with optimal properties.
+
+Weighted averaging, a.k.a. linear opinion pooling, is by far the most
+popular method for combining forecasts. \cite{Ranjan08} analyze this
+choice for probability forecasts of binary events, such as rain or no
+rain tomorrow. They explain how the quality of a probability forecast
+(individual or aggregate) is typically measured in terms of
+reliability and resolution (sometimes also known as calibration and
+sharpness, respectively). Reliability describes how closely the
+conditional event frequencies align with the forecast
+probabilities. Resolution, on the other hand, measures how far the
+forecasts are from the naive baseline forecast, that is, the marginal
+event frequency. A forecast that is reliable and highly resolute is
+very useful to the policy-maker because it is both accurate and close
+to the most confident values of zero and one. Therefore a
+well-established goal is to maximize resolution subject to
+reliability.
 
 
 Strikingly, \cite{Ranjan08} prove that any nontrivial weighted average of two or more distinct and reliable probability forecasts is unreliable and lacks resolution. In particular, they explain that such a weighted average is under-confident in a sense that it is overly close to the marginal event frequency.  This result is an important contribution to the probability forecasting research in particular because it points out a dramatic shortcoming of methodology that is used widely in practice. However, the authors do not provide an explanation of their result beyond the actual mathematical proof. As a result, the sub-optimality of the weighted averages is taken as a fact and a clear direction for future improvement remains to be established. 
 
 
-The main contribution of this paper generalizes the result in \cite{Ranjan08} to the weighted average of any type of univariate forecasts. The result shows, for instance, that any non-trivial weighted average of several predictions about the next quarter's GDP is sub-optimal. The analysis relies heavily on the general partial information framework \citep{satopaamodeling2, satopaamodeling}. This provides general yet intuitive descriptions of well-known properties, such as reliability and resolution, and also reveals a new property that is satisfied by all optimal aggregators. That is, the variance of an aggregator that optimally uses all the forecasters' information is never less than the maximum variance among the individual forecasts. Showing that a non-trivial weighted average never satisfies this condition leads to a mathematically precise yet easy-to-understand explanation of why weighted averages are under-confident. 
-Furthermore, this reasoning suggests that under-confidence is not unique to the class of weighted averages but extends to many other measures of central tendency, such as the median. 
+The main contribution of this paper generalizes the result
+in \cite{Ranjan08} to the weighted average of any type of univariate
+forecasts, included real-valued forecasts. Our result shows, for instance, that any non-trivial
+weighted average of several predictions about the next quarter's GDP
+is sub-optimal. Our analysis relies heavily on the general partial
+information framework \citep{satopaamodeling2, satopaamodeling}. This
+provides general yet intuitive descriptions of well-known properties,
+such as reliability and resolution, and also reveals a new property
+that is satisfied by all optimal aggregators. Namely, the variance of
+an aggregator that optimally uses all the forecasters' information is
+never less than the maximum variance among the individual
+forecasts. Showing that a non-trivial weighted average never satisfies
+this condition leads to a mathematically precise yet
+easy-to-understand explanation of why weighted averages of probabilities are
+under-confident.  Furthermore, this reasoning suggests that
+under-confidence is not unique to the class of weighted averages but
+extends to many other measures of central tendency, such as the
+median.
 
-Of course, any systematic under-confidence can be alleviated by transforming the weighted average away from the marginal mean. This technique, known as \textit{extremizing}, has been widely studied in the probability forecasting literature. For instance,  \cite{Ranjan08} propose a beta transformation that extremizes the weighted average of the probability forecasts; \cite{satopaa} use a logistic regression model to extremize the average log-odds of the forecasts; \cite{baron2014two} propose another extremizing transformation and give a psychological reason why human forecasters' probability estimates tend to be under-confident. The general result of this paper, however, suggests that extremizing can improve both resolution and reliability even when the forecasts are not probabilities of binary outcomes. Our second contribution illustrates this with simple examples involving both synthetic and real-world data with outcomes defined on the entire real line. 
+Of course, any systematic under-confidence can be alleviated by
+transforming the weighted average away from the marginal mean. This
+technique, known as \textit{extremizing}, has been widely studied in
+the probability forecasting literature. For instance, \cite{Ranjan08}
+propose a beta transformation that extremizes the weighted average of
+the probability forecasts; \cite{satopaa} use a logistic regression
+model to extremize the average log-odds of the
+forecasts; \cite{baron2014two} propose another extremizing
+transformation and give a psychological reason why human forecasters'
+probability estimates tend to be under-confident. The general result
+of this paper, however, suggests that extremizing can improve both
+resolution and reliability even when the forecasts are not
+probabilities of binary outcomes. Our second contribution illustrates
+this with simple examples involving both synthetic and real-world data
+with outcomes defined on the entire real line.
 
 
-The paper is structured as follows. Section \ref{propertiesS} briefly introduces the theoretical framework and discusses some properties of the optimal aggregator within that framework. The class of weighted averages is then analyzed in the light of these optimal properties. Section \ref{extremization} describes a simple extremizing technique that can be used to improve the weighted average of continuous forecasts. Section \ref{simulation} illustrates this technique and the theoretical results over simulated data. Section \ref{application} continues with the illustration by repeating the analysis over real-world data. The final section concludes and discusses future research directions.
+The paper is structured as follows. Section \ref{propertiesS} briefly
+introduces our theoretical framework and discusses some properties of
+the optimal aggregator within that framework. The class of weighted
+averages is then analyzed in the light of these optimal
+properties. Section \ref{extremization} describes a simple extremizing
+technique that can be used to improve the weighted average of
+continuous forecasts. Section \ref{simulation} illustrates this
+technique and the theoretical results over simulated
+data. Section \ref{application} continues with the illustration by
+repeating the analysis over real-world data. The final section
+concludes and discusses future research directions.
 
 \section{Forecast and Aggregation Properties} \label{propertiesS}
 \subsection{Optimal Aggregation}
