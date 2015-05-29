@@ -145,24 +145,25 @@ Ville A. Satop\"a\"a and Lyle H. Ungar}
 
 Policy-makers often consult human or/and machine agents for forecasts
 of some future outcome. For instance, multiple economics experts may
-provide quarterly predictions of gross domestic product (GDP). These
-forecasts are then combined into a single consensus forecast both for
-the sake of decision-making and
-accuracy \citep{armstrong2}. The aggregation can be
-performed in many different ways, and the final combination rule can
+provide quarterly predictions of gross domestic product (GDP). In general the policy-makers do not know ex-ante which expert will be the most accurate. Even if they could pick out the most accurate expert, heeding this expert's advice alone would ignore a potentially large amount of relevant information that is being contributed by the rest of the experts. Therefore a natural approach is to bring together the strengths of the different forecasters by combining their
+forecasts into a single consensus forecast. This consensus can then be considered as a representative summary of all the experts' advice. 
+% is done both for
+%the sake of decision-making and
+%accuracy \citep{armstrong2}. 
+The decision-makers, however, can choose to aggregate the forecasts in many different ways. Their final choice of the combination rule is crucial because it can
 significantly affect the predictive accuracy of the consensus
-forecast. The paper presents a method of forecast
+forecast. This paper presents a method of forecast
 aggregation that aims to combine information from multiple forecasts
 into a single forecast with optimal properties.
 
-Weighted averaging, a.k.a. linear opinion pooling, is by far the most
-popular method for combining forecasts. 
-Averaging forecasts has a long tradition (Bates and
-Granger,1969; Clemen, 1989; Armstrong, 2001), and 
-although averages do not always beat the best single forecaster (Hibon and Evgeniou) -- one does
-not in general know ex ante which expert will be the most accurate, so ,
-forecast averaging is still considered state-of-the-art ( Graham Elliott and Allan Timmerman).
-
+Possibly because of its simplicity and intuitive appeal, by far the most
+popular approach to combining forecasts is the weighted average, sometimes also known as the linear opinion pool. 
+This technique has a long tradition, with many empirical studies attesting to its benefits (see, e.g., \citealt{bates1969combination, clemen1989combining, armstrong2}). 
+%For instance, 
+%and has benefited a diverse range of fields such as meteorology \citep{sanders1963subjective, baars2005performance}, economics \citep{}
+Even though average forecasts do not always perform better than the best single forecaster \citep{hibon2005combine},
+forecast averaging is still considered state-of-the-art \citep{elliott2013handbook}.
+In particular, it is well-established in many organizations, including central banks, government institutions, and other businesses. 
 
 
 \cite{Ranjan08} analyze this
@@ -178,7 +179,7 @@ event frequency. A forecast that is reliable and highly resolute is
 very useful to the policy-maker because it is both accurate and close
 to the most confident values of zero and one. Therefore a
 well-established goal is to maximize resolution subject to
-reliability.
+reliability \citep{murphy1987general, gneiting2007probabilistic}.
 
 
 Strikingly, \cite{Ranjan08} prove that any nontrivial weighted average
