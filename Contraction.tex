@@ -145,29 +145,28 @@ Ville A. Satop\"a\"a and Lyle H. Ungar}
 
 Policy-makers often consult human or/and machine agents for forecasts
 of some future outcome. For instance, multiple economics experts may
-provide quarterly predictions of gross domestic product (GDP). In general the policy-makers do not know ex-ante which expert will be the most accurate. Even if they could pick out the most accurate expert, heeding this expert's advice alone would ignore a potentially large amount of relevant information that is being contributed by the rest of the experts. Therefore a natural approach is to bring together the strengths of the different forecasters by combining their
-forecasts into a single consensus forecast. This consensus can then be considered as a representative summary of all the experts' advice. 
+provide quarterly predictions of gross domestic product (GDP). In general the policy-makers do not know ex-ante which expert will be the most accurate. Even if they could pick out the most accurate expert, heeding this expert's advice alone would ignore a potentially large amount of relevant information that is being contributed by the rest of the experts. Therefore a better alternative is to combine the
+forecasts into a single consensus forecast. This consensus can be then considered to represent all the experts' advice. 
 % is done both for
 %the sake of decision-making and
 %accuracy \citep{armstrong2}. 
-The decision-makers, however, can choose to aggregate the forecasts in many different ways. Their final choice of the combination rule is crucial because it can
+The decision-makers, however, can choose to aggregate the forecasts in many different ways. The final choice of the combination rule is crucial because it can
 significantly affect the predictive accuracy of the consensus
 forecast. This paper presents a method of forecast
 aggregation that aims to combine information from multiple forecasts
 into a single forecast with optimal properties.
 
-Possibly because of its simplicity and intuitive appeal, by far the most
+Possibly because of its simplicity and intuitive appeal, the most
 popular approach to combining forecasts is the weighted average, sometimes also known as the linear opinion pool. 
 This technique has a long tradition, with many empirical studies attesting to its benefits (see, e.g., \citealt{bates1969combination, clemen1989combining, armstrong2}). 
 %For instance, 
 %and has benefited a diverse range of fields such as meteorology \citep{sanders1963subjective, baars2005performance}, economics \citep{}
-Even though average forecasts do not always perform better than the best single forecaster \citep{hibon2005combine},
+Even though the average forecast does not always perform better than the best single forecaster \citep{hibon2005combine},
 forecast averaging is still considered state-of-the-art \citep{elliott2013handbook}.
-In particular, it is well-established in many organizations, including central banks, government institutions, and other businesses. 
+In particular, by today it has become  a well-established practice in many organizations, including central banks, government institutions, and other businesses. 
 
 
-\cite{Ranjan08} analyze this
-choice for probability forecasts of binary events, such as rain or no
+\cite{Ranjan08} analyze weighted averaging for probability forecasts of binary events, such as rain or no
 rain tomorrow. They explain how the quality of a probability forecast
 (individual or aggregate) is typically measured in terms of
 reliability and resolution (sometimes also known as calibration and
@@ -178,7 +177,7 @@ forecasts are from the naive baseline forecast, that is, the marginal
 event frequency. A forecast that is reliable and highly resolute is
 very useful to the policy-maker because it is both accurate and close
 to the most confident values of zero and one. Therefore a
-well-established goal is to maximize resolution subject to
+well-established goal in probability forecasting is to maximize resolution subject to
 reliability \citep{murphy1987general, gneiting2007probabilistic}.
 
 
@@ -187,7 +186,7 @@ of two or more distinct and reliable probability forecasts is
 unreliable and lacks resolution. In particular, they explain that such
 a weighted average is under-confident in a sense that it is overly
 close to the marginal event frequency.  This result is an important
-contribution to the probability forecasting research in particular
+contribution to the probability forecasting research in part
 because it points out a dramatic shortcoming of methodology that is
 used widely in practice. However, the authors do not provide an
 principled way of addressing this shortcoming. The partial information 
