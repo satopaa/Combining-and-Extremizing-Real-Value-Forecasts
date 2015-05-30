@@ -181,7 +181,7 @@ well-established goal in probability forecasting is to maximize resolution subje
 reliability \citep{murphy1987general, gneiting2007probabilistic}.
 
 
-Strikingly, \cite{Ranjan08} prove that any nontrivial weighted average
+Strikingly, \cite{Ranjan08} prove that any non-trivial weighted average
 of two or more distinct and reliable probability forecasts is
 unreliable and lacks resolution. In particular, they explain that such
 a weighted average is under-confident in a sense that it is overly
@@ -189,9 +189,9 @@ close to the marginal event frequency.  This result is an important
 contribution to the probability forecasting research in part
 because it points out a dramatic shortcoming of methodology that is
 used widely in practice. However, the authors neither provide a
-principled way of addressing this shortcoming nor interpret potential causes of the under-confidence. In general, principled aggregation is discussed in \cite{satopaamodeling2, satopaamodeling}. They introduce the partial information 
+principled way of addressing this shortcoming nor interpret potential causes of the under-confidence. In general, principled aggregation has been discussed by \cite{satopaamodeling2, satopaamodeling}. They introduce the partial information 
 framework that operates under the same assumptions as \cite{Ranjan08} but provides concrete models for
-optimally combining forecasts. For instance, the authors discuss a particular specification, called the Gaussian partial information model under which optimal aggregation is based on the estimated covariance matrix of the individual forecasts. 
+optimally combining forecasts. For instance, the authors discuss a particular specification, called the Gaussian partial information model, under which optimal aggregation is based on the estimated covariance matrix of the individual forecasts. 
 %
 % These issues can be handled by the partial information 
 %framework \citep{satopaamodeling2, satopaamodeling} that 
@@ -208,7 +208,7 @@ information framework and
 provides general, yet intuitive, descriptions of well-known properties
 such as reliability and resolution. The discussion introduces a new property
 that is satisfied by all optimal aggregators, namely, that the variance of
-an aggregator is
+the aggregator is
 never less than the maximum variance among the individual
 forecasts. Showing that a non-trivial weighted average cannot satisfy
 this condition leads to a mathematically precise yet
@@ -229,11 +229,14 @@ alleviating the systematic under-confidence. For instance, \cite{Ranjan08} propo
 %  For instance, \cite{Ranjan08} propose a beta transformation that extremizes the weighted average of
 %  the probability forecasts; \cite{satopaa} use a logistic regression model to extremize the average log-odds of the
 %  forecasts; \cite{baron2014two} propose yet another extremizing  transformation.}
-In this paper we suggest that real-valued forecasts should also be extremized--
-the weighted average forecast should be transformed away from the marginal mean {\bf what does extremizing mean in the real-valued setting?}:
-extremizing can improve both
-resolution and reliability even when the forecasts are not
-probabilities of binary outcomes. Our second contribution illustrates
+In this paper we suggest that real-valued forecasts should also be extremized. In particular, transforming the weighted average of real-valued forecasts further away from the  naive baseline forecast, namely the marginal mean of the outcome
+%{\bf what does extremizing mean in the real-valued setting?}:
+%This 
+can improve both its
+resolution and reliability.
+% even when the forecasts are not
+%probabilities of binary outcomes. 
+Our second contribution illustrates
 this with simple examples involving both synthetic and real-world data
 with outcomes defined on the entire real line.
 
