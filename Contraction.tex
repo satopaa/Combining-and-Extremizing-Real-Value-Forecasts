@@ -446,7 +446,7 @@ The simulation study considers $N = 5$ forecasters under two different informati
 \end{enumerate}
 
 
-The competing aggregators are the equally weighted average $\bar{\mathcal{X}}$, the optimally weighted average $\mathcal{X}_w$, and the extremized version of the optimally weighted average $\mathcal{X}^*$. First, the parameters in $\mathcal{X}^*$ and  $\mathcal{X}_w$ are estimated by minimizing the average quadratic loss over a training set of $10,000$ draws from (\ref{NExperts}).  Second, all the competing aggregators are evaluated on an independent test set of $10,000$ draws from (\ref{NExperts}). Finally,  the aggregators' performance is measured solely based on out-of-sample accuracy.
+The competing aggregators are the equally weighted average $\bar{\mathcal{X}}$, the optimally weighted average $\mathcal{X}_w$, and the extremized version of the optimally weighted average $\mathcal{X}^*$. First, the parameters in $\mathcal{X}^*$ and  $\mathcal{X}_w$ are estimated by minimizing the average quadratic loss over a training set of $10,000$ draws from (\ref{NExperts}).  Second, all the competing aggregators are evaluated on an independent test set of $10,000$ draws from (\ref{NExperts}). Finally,  the aggregators' performance is evaluated solely based on out-of-sample accuracy.
 
 % all the following results, apart from the parameter estimates, represent out-of-sample performance. 
 
@@ -541,11 +541,14 @@ In addition to performing visual assessment, the aggregators can be compared bas
 \begin{align*}
 L\left(\Y, \boldsymbol{\mathcal{X}}\right) &= \frac{1}{K} \sum_{k=1}^K \left(Y_k - \mathcal{X}_k\right)^2.
 \end{align*}
-If the forecasts are probabilities of binary outcomes, the above loss is typically called the Brier score. In this case the loss is known to have a decomposition that permits a closer analysis of  reliability and resolution. The decomposition, however, is not limited to probability forecasts. To see this, suppose that the aggregate $\mathcal{X}_k \in \{f_1, \dots, f_I\}$ for some finite number $I$. Let $K_i$ be the number of times $f_i$ occurs, $\bar{Y}_i$ be the empirical average of $\{Y_k : \mathcal{X}_k = f_i\}$, and $\bar{Y} = \frac{1}{K} \sum_{k=1}^K Y_k$. Then,
+If the forecasts are probabilities of binary outcomes, the above loss is typically called the Brier score. In this case the loss is known to have a decomposition that permits a closer analysis of  reliability and resolution. The decomposition, however, is not limited to probability forecasts. To see this, suppose that the real-valued aggregate $\mathcal{X}_k \in \{f_1, \dots, f_I\}$ for some finite number $I$. Let $K_i$ be the number of times $f_i$ occurs, $\bar{Y}_i$ be the empirical average of $\{Y_k : \mathcal{X}_k = f_i\}$, and $\bar{Y} = \frac{1}{K} \sum_{k=1}^K Y_k$. Then,
 \begin{align}
 L\left(\Y, \boldsymbol{\mathcal{X}} \right)  &= \underbrace{\frac{1}{K} \sum_{i=1}^I K_i(f_i - \bar{Y}_i)^2}_\text{REL} - \underbrace{\frac{1}{K} \sum_{i=1}^I K_i(\bar{Y}_i-\bar{Y})^2}_\text{RES} + \underbrace{\frac{1}{K} \sum_{k=1}^K (Y_k - \bar{Y})^2}_\text{UNC}. \label{decomposition}
 \end{align}
-See the Appendix for the derivation of this decomposition. Low REL suggests high reliability. If the aggregate is reliable, then RES is approximately equal to the sample variance of the aggregate and measures resolution. In particular, large RES indicates high resolution. The final term, UNC does not depend on the forecasts. This is the sample variance of $Y$ and therefore gives an approximate upper bound on the variance of any reliable forecast. As has been mentioned before, the goal is to maximize resolution subject to reliability. This decomposition shows how the quadratic loss addresses reliability and resolution simultaneously and therefore provides a convenient loss function for learning aggregation parameters. 
+See the Appendix for the derivation of this decomposition. Low REL suggests high reliability. If the aggregate is reliable, then RES is approximately equal to the sample variance of the aggregate and 
+is positively associated with high resolution. 
+%measures resolution; in particular, large RES indicates high resolution. 
+The final term, UNC does not depend on the forecasts. This is the sample variance of $Y$ and therefore gives an approximate upper bound on the variance of any reliable forecast. As has been mentioned before, the goal is to maximize resolution subject to reliability. This decomposition shows how the quadratic loss addresses reliability and resolution simultaneously and therefore provides a convenient loss function for learning aggregation parameters. 
 
 
 % latex table generated in R 3.1.2 by xtable 1.7-4 package
