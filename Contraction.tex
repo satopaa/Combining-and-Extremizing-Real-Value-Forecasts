@@ -188,17 +188,21 @@ a weighted average is under-confident in a sense that it is overly
 close to the marginal event frequency.  This result is an important
 contribution to the probability forecasting research in part
 because it points out a dramatic shortcoming of methodology that is
-used widely in practice. However, the authors do not provide an
-principled way of addressing this shortcoming. The partial information 
-framework \citep{satopaamodeling2, satopaamodeling} provides models that can be
-optimally combine forecasts, based on estimates of the covariance between forecasters..
+used widely in practice. However, the authors neither provide a
+principled way of addressing this shortcoming nor interpret potential causes of the under-confidence. Principled aggregation was discussed by \cite{satopaamodeling2, satopaamodeling}. They introduce the partial information 
+framework that operates under the same assumptions as \cite{Ranjan08} but provides concrete models for
+optimally combining forecasts. For instance, the authors discuss a particular specification, called the Gaussian partial information model under which optimal aggregation is based on the estimated covariance matrix of the individual forecasts. 
+%
+% These issues can be handled by the partial information 
+%framework \citep{satopaamodeling2, satopaamodeling} that 
+% based on the covariance between the forecasters.
 
 The main contribution of this paper generalizes the result
 in \cite{Ranjan08} to the weighted average of any type of univariate
 forecasts, included real-valued forecasts, and provides an algorithm that optimally (under a reasonable model) 
 combines real-valued forecasts. Our result shows, for instance, that any non-trivial
 weighted average of predictions about the next quarter's GDP
-is sub-optimal. Our analysis relies heavily on the general partial
+is sub-optimal. The analysis relies heavily on the general partial
 information framework and
 provides general, yet intuitive, descriptions of well-known properties
 such as reliability and resolution.  It also reveals a new property
