@@ -394,7 +394,9 @@ Observe that the solution to (\ref{secondProblem}) is nothing more than the ordi
 
 \section{Simulation Study} \label{simulation}
 
-This section illustrates Theorem \ref{contraction} on simulated data generated from the Gaussian partial information model. This model was introduced and motivated in \cite{satopaamodeling2, satopaamodeling} as a particularly close specification of the general partial information framework. They applied the model to different real-world applications and showed that it leads to accurate aggregation of both real-valued and probability forecasts. This suggests that the model is, at least to some degree, a reasonable approximation of real-world forecasting. The simplest version of the Gaussian model occurs when the outcome $Y$ and the forecasts $X_j$ are real-valued with mean zero. The observables are then generated jointly from the following multivariate Gaussian distribution:
+This section illustrates Theorem \ref{contraction} on simulated data generated from the Gaussian partial information model. This model was introduced and motivated in \cite{satopaamodeling2, satopaamodeling} as a particularly close specification of the general partial information framework. They applied the model to different real-world applications and showed that it leads to accurate aggregation of both real-valued and probability forecasts. This suggests that the model is, at least to some degree, a reasonable approximation of real-world forecasting. 
+
+The simplest version of the Gaussian model occurs when the outcome $Y$ and the forecasts $X_j$ are real-valued with mean zero. The observables are then generated jointly from the following multivariate Gaussian distribution:
 \begin{align}
 \left(\begin{matrix} Y \\ X_{1}\\ \vdots \\ X_{N} \end{matrix}\right) &\sim \mathcal{N}_{N+1}\left( 
  \boldsymbol{0}, \left(\begin{matrix} 
@@ -444,7 +446,9 @@ The simulation study considers $N = 5$ forecasters under two different informati
 \end{enumerate}
 
 
-The competing aggregators are the equally weighted average, denoted simply with $\bar{\mathcal{X}}$, the optimally weighted average $\mathcal{X}_w$, and the extremized version of the optimally weighted average $\mathcal{X}^*$. The parameters in $\mathcal{X}^*$ and  $\mathcal{X}_w$ are estimated by minimizing the average quadratic loss over a training set of $10,000$ draws from (\ref{NExperts}).  The competing aggregators are then evaluated on an independent test set of $10,000$ draws. Therefore all the results, apart from the parameter estimates, are based on out-of-sample predictions. 
+The competing aggregators are the equally weighted average $\bar{\mathcal{X}}$, the optimally weighted average $\mathcal{X}_w$, and the extremized version of the optimally weighted average $\mathcal{X}^*$. First, the parameters in $\mathcal{X}^*$ and  $\mathcal{X}_w$ are estimated by minimizing the average quadratic loss over a training set of $10,000$ draws from (\ref{NExperts}).  Second, all the competing aggregators are evaluated on an independent test set of $10,000$ draws from (\ref{NExperts}). Finally,  the aggregators' performance is measured solely based on out-of-sample accuracy.
+
+% all the following results, apart from the parameter estimates, represent out-of-sample performance. 
 
 
 
