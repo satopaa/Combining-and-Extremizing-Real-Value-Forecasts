@@ -430,17 +430,17 @@ Similarly, the distribution of $Y_k$ given $\X_k$ is $Y_k | \X_k \sim \mathcal{N
                 \caption{High Information Overlap}
                 \label{DiagramsB}
         \end{subfigure}
-   \caption{Diagram illustration of the information distribution among the forecasters under the two scenarios considered in this simulation study.  The bars leveled horizontally with Forecaster $j$ represent the information used by the forecaster.}    
+   \caption{Diagram illustration of the information distribution among the forecasters. The top bar next to Full Information represents all possible information that can be known about $Y$. The bars leveled horizontally with Forecaster $j$, on the other hand, represent the information used by that forecaster.}    
         \label{Diagrams}
 \end{figure}
 
 
 The simulation study considers $N = 5$ forecasters under two different information scenarios: 
 \begin{enumerate}
-\item[] \textit{No Information Overlap.}  Fix $\delta_j = 0.1 + 0.02j$ for $j = 1, \dots, 5$ and let $\rho_{i,j} = 0$ for all $i,j$. Therefore the forecasters have independent information sources. This scenario is illustrated in Figure \ref{DiagramsA}. Summing up the individual variances shows that as a group the forecasters know $80\%$ of the total information. The revealed aggregator simplifies to $\mathcal{X}_k'' = \sum_{j=1}^5 X_{jk}$ and has variance $0.80$. Therefore, as expected, it uses all available information.
+\item[] \textit{No Information Overlap.}  Fix $\delta_j = 0.1 + 0.02j$ for $j = 1, \dots, 5$ and let $\rho_{i,j} = 0$ for all $i,j$. Therefore the forecasters have independent information sources. This scenario is illustrated in Figure \ref{DiagramsA}. Summing up the individual variances shows that as a group the forecasters know $80\%$ of the total information. The revealed aggregator simplifies to $\mathcal{X}_k'' = \sum_{j=1}^5 X_{jk}$, has variance $0.80$, and therefore uses all available information.
 
 
-\item[] \textit{High Information Overlap.} Fix $\delta_j = 0.1 + 0.02j$ for $j = 1, \dots, 5$ and let $\rho_{i,j} = 0.12$ for all $i,j$. Therefore the forecasters have significant information overlap and as a group know only $32\%$ of the total information. This scenario is illustrated in Figure \ref{DiagramsB}. The revealed aggregator simplifies to $ \mathcal{X}_k'' = \left( \sum_{j=2}^5 X_{jk} \right) - 3X_{1k}$ and has variance $0.32$. Therefore, similarly to the other scenario, it uses all available information.
+\item[] \textit{High Information Overlap.} Fix $\delta_j = 0.1 + 0.02j$ for $j = 1, \dots, 5$ and let $\rho_{i,j} = 0.12$ for all $i,j$. Therefore the forecasters have significant information overlap and as a group know only $32\%$ of the total information. This scenario is illustrated in Figure \ref{DiagramsB}. The revealed aggregator simplifies to $ \mathcal{X}_k'' = \left( \sum_{j=2}^5 X_{jk} \right) - 3X_{1k}$, has variance $0.32$, and again uses all available information.
 \end{enumerate}
 
 
