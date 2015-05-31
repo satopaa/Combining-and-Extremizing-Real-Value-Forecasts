@@ -738,11 +738,38 @@ Table \ref{NoTbl} provides a numerical comparison by presenting the average quad
 
 This paper discussed forecast aggregation under a general probability model, called the partial information framework. The forecasts and outcomes were assumed to have a joint distribution but no restrictions were placed on their dependence structure. This led to an enumeration (Theorem \ref{optimal}) of several properties of the optimal aggregator. Even though this aggregator is typically intractable in practice, its properties provide guidance for developing and understanding real-world aggregators. In this paper these properties shed light on the class of weighted averages of any type of univariate forecasts. Even though these averages are marginally consistent, they fail to satisfy two of the optimality properties, namely reliability and variance expansion (Theorem \ref{contraction}). As a results, they are under-confident in a sense that they are overly close to the marginal mean. This shortcoming can be handled to some degree by extremizing, that is, by shifting the weighted average further away from the marginal mean.  Section \ref{extremization} introduced a simple linear procedure that extremizes the weighted average of real-valued forecasts and maintains marginal consistency while increasing variance. This procedure and the theoretical results were illustrated on synthetic (Section \ref{simulation}) and real-world data (Section \ref{application}). In both cases the (optimally) weighted average turned out to be both unreliable and under-confident, especially if the forecasters used very different sets of information. Fortunately, extremization was shown to eliminate these drawbacks and provide transformed aggregates that were both reliable and highly resolute. 
 
-Therefore good aggregation can stem from very simple extremization techniques. However, learning the amount and the direction of extremization requires a training set with several known outcomes. Such a training set may not always be available. In the most extreme case  the decision-maker may have only a set of forecasts of a single unknown outcome. How should the forecasts be aggregated in such a low-data setting? The results in this paper suggest that any type of weighted average (or some other measure of central tendency) is a poor choice. In general, it is not clear what aggregator should be used. Developing an aggregator that could be applied to any single set of forecasts and that satisfies at least two of the optimality properties of Theorem \ref{optimal} is certainly an interesting future research direction. Intuitively, the easiest first step is to find an aggregator that is both marginally consistent and expanding. Finding an aggregator that maintains reliability seems more difficulty. 
+Forecast aggregation literature by and large agrees that the goal is to collect and combine  information from different forecasters (see, e.g., \citealt{forlines2012heuristics, armstrong2, dawid1995coherent}). At the same time aggregation continues to be performed via weighted averaging or perhaps some other measure of central tendency, such as the median \citep{armstrong2, levins1966strategy, lobo2010human}. Section \ref{contraction}, however, explained that these popular techniques do not behave like aggregators of information. Therefore some details of their workings have been generally misunderstood.
+% do not operate in the manner that they are believed to operate. 
+% some of the workings of these techniques have been misunderstood or the role of the techniques is . Therefore, 
 
-Forecast aggregation literature largerly agrees that the goal is to collect and combine  information from the different forecasters (see, e.g., \citealt{forlines2012heuristics, gneiting2011combining, dawid1995coherent}). At the same time, aggregation is typically performed via a weighted average and perhaps some other measures of central tendency, such as the median. Section \ref{contraction} explained that these popular techniques do no behave like aggregators of information. This points out an unfortunate mismatch between theory and how this is represented in practice. Consequently, top to up.
+This paper illustrated that information aggregation can arise from very simple extremization techniques. However, learning the amount and direction of extremization requires a training set with known outcomes. Such a training set may not always be available. In the most extreme case  the decision-maker may have only a set of forecasts of a single unknown outcome. How should the forecasts be aggregated in such a low-data setting? The results in this paper suggest that any type of weighted average (or some other measure of central tendency) is a poor choice. A better alternative was discussed by \cite{satopaamodeling}. They assume that the forecasters' covariance matrix is compound symmetric and then aggregate the forecasts with the optimal aggregator under the corresponding Gaussian partial information model. 
+%Intuitively, this aggregator assumes that the forecasters sample information sources from a common distribution. 
+%requires an assumption on the structure of the covariance matrix of the forecasts. 
+% In general, it is not clear what aggregator should be used.
+ Developing other aggregators that place less constraints on the joint dependence structure while satisfying at least two of the optimality properties of Theorem \ref{optimal} is certainly an interesting future research direction. The first step is to develop an aggregator that is both marginally consistent and expanding. Finding an aggregator that maintains forecasters' reliability seems more difficult. Meanwhile, the analysis of the general revealed aggregator should continue to explore other optimality properties.
 
-Meanwhile, new optimality properties should be explored by further analyzing the revealed aggregator. 
+%  with the hope of finding more optimality properties.
+%  should be explored by further analyzing the revealed aggregator. 
+
+
+%
+%
+%This paper makes the first step by pointing out the mismatch. The next step is to convince the practitioners by developing a set of aggregators to replace the measurement-error based aggregators. This in particular involves a continued exploration of the properties of the optimal revealed aggregator. 
+%
+%
+%This paper makes the first points out the mismatch between 
+%
+%
+%It is clear that this misunderstanding must be  corrected and the methodological gap closed by 
+%
+%The first step  it is clear that forecast aggregation must move away from the measurement-error based aggregators and 
+%
+%
+%
+%
+%Levins (1966), a biologist, suggested that rather than building one master
+%model, it is often better to build several simple models that, among them, use all the information available and then
+%average them. I
 
 \appendix
 \section{Appendix}
