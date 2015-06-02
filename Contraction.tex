@@ -145,12 +145,12 @@ Ville A. Satop\"a\"a and Lyle H. Ungar}
 
 Policy-makers often consult human or/and machine agents for forecasts
 of some future outcome. For instance, multiple economics experts may
-provide quarterly predictions of gross domestic product (GDP). In general it is not possible to determine ex-ante which expert will be the most accurate. Even if this could be done, heeding only the most accurate expert's advice would ignore a potentially large amount of relevant information that is being contributed by the rest of the experts. Therefore a better alternative is to combine the
+provide quarterly predictions of gross domestic product (GDP). Typically it is not possible to determine ex-ante which expert will be the most accurate. Even if this could be done, heeding only the most accurate expert's advice would ignore a potentially large amount of relevant information that is being contributed by the rest of the experts. Therefore a better alternative is to combine the
 forecasts into a single consensus forecast that represents all the experts' advice. 
 % is done both for
 %the sake of decision-making and
 %accuracy \citep{armstrong2}. 
-The decision-makers, however, can choose to aggregate the forecasts in many different ways. The final choice of the combination rule is crucial because it often
+The policy-makers, however, can choose to aggregate the forecasts in many different ways. The final choice of the combination rule is crucial because it often
 significantly affects the predictive accuracy of the consensus
 forecast. 
 
@@ -185,7 +185,7 @@ Strikingly, \cite{Ranjan08} prove that any non-trivial weighted average
 of two or more distinct and reliable probability forecasts is
 unreliable and lacks resolution. In particular, they explain that such
 a weighted average is overly
-close to the marginal event frequency and hence considered under-confident.  This result is an important
+close to the marginal event frequency and hence can be considered under-confident.  This result is an important
 contribution to the probability forecasting research in part
 because it points out a dramatic shortcoming of methodology that is
 used widely in practice. However, the authors neither provide a
@@ -198,10 +198,10 @@ principled way of addressing this shortcoming nor interpret potential causes of 
 %into a single forecast with optimal properties.
 
 The first step towards addressing these issues and improving the general practice of aggregation  is to understand what is meant by principled aggregation. This topic was discussed by \cite{satopaamodeling2, satopaamodeling} who propose the \textit{partial information 
-framework} as a general platform for combining forecasts. Their framework operates under the same assumptions as the work by \cite{Ranjan08} but provides concrete models with the optimal aggregators. 
+framework} as a general platform for combining forecasts. Their framework operates under the same assumptions as the work by \cite{Ranjan08} but provides concrete models with optimal aggregators. 
 %combining information from multiple forecasts into a single forecast with optimal properties.
 %optimally combining forecasts. 
-For instance, the authors describe the Gaussian partial information model under which optimal aggregation is based on the estimated covariance matrix of the individual forecasts. They apply this model to different types of synthetic and real-world data, and illustrate how it improves upon averaging and other types of measures of central tendency. 
+For instance, the authors describe the Gaussian partial information model under which optimal aggregation is based on the covariance matrix of the individual forecasts. They apply this model to different types of synthetic and real-world data, and illustrate how it improves upon averaging and other types of measures of central tendency. 
 %
 % These issues can be handled by the partial information 
 %framework \citep{satopaamodeling2, satopaamodeling} that 
@@ -213,22 +213,22 @@ forecasts, including real-valued forecasts.
 %, and provides an algorithm that optimally (under a reasonable model) combines real-valued forecasts. 
 Our result shows, for instance, that any non-trivial
 weighted average of predictions about the next quarter's GDP
-is both unreliable and under-confident. The analysis
+is both unreliable and under-confident. The discussion
 provides general, yet intuitive, descriptions of well-known properties
-such as reliability and resolution. The discussion also introduces a new property
+such as reliability and resolution. Furthermore, the analysis reveals a new property
 that is satisfied by all optimal aggregators, namely, that the variance of
 the aggregator is
 never less than the maximum variance among the individual
 forecasts. Showing that a non-trivial weighted average cannot satisfy
 this condition leads to a mathematically precise yet
-easy-to-understand explanation of why weighted averages of probabilities are
+easy-to-understand explanation of why weighted averages are
 under-confident.  Furthermore, this reasoning suggests that
 under-confidence is not unique to the class of weighted averages but
 extends to many other measures of central tendency, such as the
 median.
 % and extends, in a different form, to real-valued estimates.
 
-\textit{Extremizing} is the act of transforming a forecast away from the non-informative prior probability of $0.5$. This technique is increasingly used in the probability forecasting literature as a means of
+\textit{Extremizing} is the act of transforming a forecast away from the non-informative prior probability of $1/2$. This technique is increasingly used in the probability forecasting literature as a means of
 alleviating the systematic under-confidence of the average forecast. For instance, \cite{Ranjan08} propose a beta transformation that extremizes the weighted average of
   the probability forecasts; \cite{satopaa} use a logistic regression model to extremize the average log-odds of the
   forecasts; \cite{baron2014two} propose yet another extremizing  transformation.
@@ -252,13 +252,13 @@ resolution and reliability.
 
 
 The paper is structured as follows. Section \ref{propertiesS} briefly
-introduces our theoretical framework and discusses some properties of
+introduces the general partial information framework and discusses some properties of
 the optimal aggregator within that framework. The class of weighted
 averages is then analyzed in the light of these optimal
 properties. Section \ref{extremization} describes a simple extremizing
 technique that can be used to improve the weighted average of
-continuous forecasts. Section \ref{simulation} illustrates this
-technique and the theoretical results over simulated
+real-valued forecasts. Section \ref{simulation} illustrates this
+technique and the theoretical results of the paper over simulated
 data. Section \ref{application} continues with the illustration by
 repeating the analysis over real-world data. The final section
 concludes and discusses future research directions.
