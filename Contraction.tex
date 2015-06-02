@@ -152,9 +152,9 @@ forecasts into a single consensus forecast that represents all the experts' advi
 %accuracy \citep{armstrong2}. 
 The decision-makers, however, can choose to aggregate the forecasts in many different ways. The final choice of the combination rule is crucial because it often
 significantly affects the predictive accuracy of the consensus
-forecast. This paper presents a method of forecast
-aggregation that aims to combine information from multiple forecasts
-into a single forecast with optimal properties.
+forecast. 
+
+
 
 Possibly because of its simplicity and intuitive appeal, the most
 popular approach to combining forecasts is the weighted average, sometimes also known as the linear opinion pool. 
@@ -184,14 +184,24 @@ reliability \citep{murphy1987general, gneiting2007probabilistic}.
 Strikingly, \cite{Ranjan08} prove that any non-trivial weighted average
 of two or more distinct and reliable probability forecasts is
 unreliable and lacks resolution. In particular, they explain that such
-a weighted average is under-confident in a sense that it is overly
-close to the marginal event frequency.  This result is an important
+a weighted average is overly
+close to the marginal event frequency and hence considered to be under-confident.  This result is an important
 contribution to the probability forecasting research in part
 because it points out a dramatic shortcoming of methodology that is
 used widely in practice. However, the authors neither provide a
-principled way of addressing this shortcoming nor interpret potential causes of the under-confidence. In general, principled aggregation has been discussed by \cite{satopaamodeling2, satopaamodeling}. They introduce the partial information 
-framework that operates under the same assumptions as \cite{Ranjan08} but provides concrete models for
-optimally combining forecasts. For instance, the authors discuss a particular specification, called the Gaussian partial information model, under which optimal aggregation is based on the estimated covariance matrix of the individual forecasts. 
+principled way of addressing this shortcoming nor interpret potential causes of the under-confidence. 
+
+
+
+%This paper presents a method of forecast
+%aggregation that aims to combine information from multiple forecasts
+%into a single forecast with optimal properties.
+
+The first step towards improved practice is to understand what is meant by principled aggregation. This topic was largely discussed by \cite{satopaamodeling2, satopaamodeling} who propose the partial information 
+framework as a general platform for aggregation. Their framework operates under the same assumptions as the work by \cite{Ranjan08} but provides concrete models for 
+%combining information from multiple forecasts into a single forecast with optimal properties.
+optimally combining forecasts. 
+For instance, the authors discuss a particular specification, called the Gaussian partial information model, under which optimal aggregation is based on the estimated covariance matrix of the individual forecasts. They apply this model to different types of synthetic and real-world data, and illustrate how it improves upon averaging and other types of measures of central tendency. 
 %
 % These issues can be handled by the partial information 
 %framework \citep{satopaamodeling2, satopaamodeling} that 
@@ -219,9 +229,8 @@ extends to many other measures of central tendency, such as the
 median.
 % and extends, in a different form, to real-valued estimates.
 
-\textit{Extremizing}, that is, transforming the weighted average forecast away from the non-informative  prior probability of $0.5$,
-is increasingly used in the probability forecasting literature as a means of
-alleviating the systematic under-confidence. For instance, \cite{Ranjan08} propose a beta transformation that extremizes the weighted average of
+\textit{Extremizing} is the act of transforming a forecast away from the non-informative prior probability of $0.5$. This technique is increasingly used in the probability forecasting literature as a means of
+alleviating the systematic under-confidence of the average forecast. For instance, \cite{Ranjan08} propose a beta transformation that extremizes the weighted average of
   the probability forecasts; \cite{satopaa} use a logistic regression model to extremize the average log-odds of the
   forecasts; \cite{baron2014two} propose yet another extremizing  transformation.
 % {\cite{Ranjan08,satopaa,baron2014two}.\footnote{Unfortunately, many different
@@ -229,18 +238,18 @@ alleviating the systematic under-confidence. For instance, \cite{Ranjan08} propo
 %  For instance, \cite{Ranjan08} propose a beta transformation that extremizes the weighted average of
 %  the probability forecasts; \cite{satopaa} use a logistic regression model to extremize the average log-odds of the
 %  forecasts; \cite{baron2014two} propose yet another extremizing  transformation.}
-Conceptually, extremizing is a very simple idea that can be applied to any kind of forecasts -- not just probability forecasts. This paper in particular suggests that extremizing is beneficial also when the forecasts are real-valued. 
+Conceptually, extremizing is a very simple idea that can be applied to any kind of forecasts -- not just to probability forecasts. This paper in particular suggests that extremizing is beneficial also when the forecasts are real-valued. 
 %is not a technique restricted to probability forecasting but should be also practiced even when the forecasts are real-valued.
-Transforming the weighted average of real-valued forecasts further away from the  naive baseline forecast, namely the marginal mean of the outcome
+Our second contribution shows on synthetic and real-world data  that transforming the weighted average of real-valued forecasts further away from the  naive baseline forecast, namely the marginal mean of the outcome
 %{\bf what does extremizing mean in the real-valued setting?}:
 %This 
 can improve both its
 resolution and reliability.
 % even when the forecasts are not
 %probabilities of binary outcomes. 
-Our second contribution illustrates
-this with simple examples involving both synthetic and real-world data
-with outcomes defined on the entire real line.
+%Our second contribution illustrates
+%this with simple examples involving both synthetic and real-world data
+%with outcomes defined on the entire real line.
 
 
 The paper is structured as follows. Section \ref{propertiesS} briefly
