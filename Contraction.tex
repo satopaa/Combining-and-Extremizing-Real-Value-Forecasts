@@ -161,7 +161,7 @@ popular approach to combining forecasts is the weighted average, sometimes also 
 This technique has a long tradition, with many empirical studies attesting to its benefits (see, e.g., \citealt{bates1969combination, clemen1989combining, armstrong2}). 
 %For instance, 
 %and has benefited a diverse range of fields such as meteorology \citep{sanders1963subjective, baars2005performance}, economics \citep{}
-Even though the average forecast does not always perform better than the best single forecaster \citep{hibon2005combine},
+Even though the average forecast does not always outperform the best single forecaster \citep{hibon2005combine},
 forecast averaging is still considered state-of-the-art \citep{elliott2013handbook}.
 In particular, by now it has become  a well-established practice in many organizations, including central banks, government institutions, and many private companies.
 
@@ -185,7 +185,7 @@ Strikingly, \cite{Ranjan08} prove that any non-trivial weighted average
 of two or more distinct and reliable probability forecasts is
 unreliable and lacks resolution. In particular, they explain that such
 a weighted average is overly
-close to the marginal event frequency and hence considered to be under-confident.  This result is an important
+close to the marginal event frequency and hence considered under-confident.  This result is an important
 contribution to the probability forecasting research in part
 because it points out a dramatic shortcoming of methodology that is
 used widely in practice. However, the authors neither provide a
@@ -197,26 +197,25 @@ principled way of addressing this shortcoming nor interpret potential causes of 
 %aggregation that aims to combine information from multiple forecasts
 %into a single forecast with optimal properties.
 
-The first step towards improved practice is to understand what is meant by principled aggregation. This topic was largely discussed by \cite{satopaamodeling2, satopaamodeling} who propose the partial information 
-framework as a general platform for aggregation. Their framework operates under the same assumptions as the work by \cite{Ranjan08} but provides concrete models for 
+The first step towards addressing these issues and improving the general practice of aggregation  is to understand what is meant by principled aggregation. This topic was discussed by \cite{satopaamodeling2, satopaamodeling} who propose the \textit{partial information 
+framework} as a general platform for combining forecasts. Their framework operates under the same assumptions as the work by \cite{Ranjan08} but provides concrete models with the optimal aggregators. 
 %combining information from multiple forecasts into a single forecast with optimal properties.
-optimally combining forecasts. 
-For instance, the authors discuss a particular specification, called the Gaussian partial information model, under which optimal aggregation is based on the estimated covariance matrix of the individual forecasts. They apply this model to different types of synthetic and real-world data, and illustrate how it improves upon averaging and other types of measures of central tendency. 
+%optimally combining forecasts. 
+For instance, the authors describe a specification, called the Gaussian partial information model, under which optimal aggregation is based on the estimated covariance matrix of the individual forecasts. They apply this model to different types of synthetic and real-world data, and illustrate how it improves upon averaging and other types of measures of central tendency. 
 %
 % These issues can be handled by the partial information 
 %framework \citep{satopaamodeling2, satopaamodeling} that 
 % based on the covariance between the forecasters.
 
-The main contribution of this paper generalizes the result
+The main contribution of this paper uses the general partial information framework to extend the result
 in \cite{Ranjan08} to the weighted average of any type of univariate
 forecasts, including real-valued forecasts.
 %, and provides an algorithm that optimally (under a reasonable model) combines real-valued forecasts. 
 Our result shows, for instance, that any non-trivial
 weighted average of predictions about the next quarter's GDP
-is both unreliable and under-confident. The analysis relies heavily on the general partial
-information framework and
+is both unreliable and under-confident. The analysis
 provides general, yet intuitive, descriptions of well-known properties
-such as reliability and resolution. The discussion introduces a new property
+such as reliability and resolution. The discussion also introduces a new property
 that is satisfied by all optimal aggregators, namely, that the variance of
 the aggregator is
 never less than the maximum variance among the individual
@@ -240,7 +239,7 @@ alleviating the systematic under-confidence of the average forecast. For instanc
 %  forecasts; \cite{baron2014two} propose yet another extremizing  transformation.}
 Conceptually, extremizing is a very simple idea that can be applied to any kind of forecasts -- not just to probability forecasts. This paper in particular suggests that extremizing is beneficial also when the forecasts are real-valued. 
 %is not a technique restricted to probability forecasting but should be also practiced even when the forecasts are real-valued.
-Our second contribution shows on synthetic and real-world data  that transforming the weighted average of real-valued forecasts further away from the  naive baseline forecast, namely the marginal mean of the outcome
+More specifically, our second contribution shows on synthetic and real-world data  that transforming the weighted average of real-valued forecasts further away from the  naive baseline forecast, namely the marginal mean of the outcome
 %{\bf what does extremizing mean in the real-valued setting?}:
 %This 
 can improve both its
