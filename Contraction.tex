@@ -228,7 +228,9 @@ extends to many other measures of central tendency, such as the
 median.
 % and extends, in a different form, to real-valued estimates.
 
-Under-confidence can be often alleviated by systematically transforming the forecast away from the non-informative prior probability of $1/2$. This technique, known as \textit{extremizing}, is increasingly used in the probability forecasting literature as a means of
+Under-confidence can be often alleviated by systematically transforming the forecast away from the naive baseline forecast, namely the marginal mean of the outcome. 
+%non-informative prior probability of $1/2$
+This technique, known as \textit{extremizing}, is increasingly used in the probability forecasting literature as a means of
 improving the average forecast. For instance, \cite{Ranjan08} propose a beta transformation that extremizes the weighted average of
   the probability forecasts; \cite{satopaa} use a logistic regression model to extremize the average log-odds of the
   forecasts; \cite{baron2014two} propose yet another extremizing  transformation.
@@ -237,13 +239,18 @@ improving the average forecast. For instance, \cite{Ranjan08} propose a beta tra
 %  For instance, \cite{Ranjan08} propose a beta transformation that extremizes the weighted average of
 %  the probability forecasts; \cite{satopaa} use a logistic regression model to extremize the average log-odds of the
 %  forecasts; \cite{baron2014two} propose yet another extremizing  transformation.}
-Conceptually, extremizing is a very simple idea that can be applied to any kind of forecasts -- not just to probability forecasts. This paper in particular suggests that extremizing is beneficial also when the forecasts are real-valued. 
+Conceptually, extremizing is a very simple idea that can be applied to any kind of forecasts.
+% -- not just to probability forecasts. 
+ This paper in particular suggests that extremizing can improve resolution and reliability of an aggregate also when the forecasts are real-valued. 
 %is not a technique restricted to probability forecasting but should be also practiced even when the forecasts are real-valued.
-More specifically, our second contribution shows on synthetic and real-world data  that transforming the weighted average of real-valued forecasts further away from the  naive baseline forecast, namely the marginal mean of the outcome
+Our second contribution illustrates this with simple examples involving both synthetic and real-world data
+%Our second contribution illustrates this both on synthetic and real-world data.
+%, extremizes the weighted average of real-valued forecasts, and shows how this
+%that transforming the weighted average of real-valued forecasts further away from the  naive baseline forecast, namely the marginal mean of the outcome
 %{\bf what does extremizing mean in the real-valued setting?}:
 %This 
-can improve both its
-resolution and reliability.
+%can improve both its
+%resolution and reliability.
 % even when the forecasts are not
 %probabilities of binary outcomes. 
 %Our second contribution illustrates
