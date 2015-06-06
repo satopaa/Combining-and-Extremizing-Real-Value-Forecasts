@@ -370,7 +370,7 @@ Given that averaging aggregators are under-confident, a simple adjustment is to 
 
 \section{Extremizing Real-Valued Forecasts} \label{extremization}
 
-Estimating the weights and the amount of extremization requires the forecasters to address more than one related problems. For instance, they may participate in separate yet similar prediction problems or give repeated forecasts on a single recurring event. Across such problems the weights and the resulting under-confidence are likely to remain stable, allowing the aggregator parameters to be estimated based on multiple predictions per forecaster. Assume then  that the forecasters address $K \geq 2$ problems. Denote the outcome of the $k$th problem with $Y_k \in \mathbb{R}$ and let $X_{jk} \in \mathbb{R}$ represent the $j$th forecaster's prediction for this outcome. Suppose that these variables are centered around a common marginal mean $\mu_0$.  
+Estimating the weights and the amount of extremization requires the forecasters to address more than one related problems. For instance, they may participate in separate yet similar prediction problems or give repeated forecasts on a single recurring event. Across such problems the weights and the resulting under-confidence are likely to remain stable, allowing the aggregator parameters to be estimated based on multiple predictions per forecaster. For these reasons, suppose that the forecasters address $K \geq 2$ problems. Denote the outcome of the $k$th problem with $Y_k \in \mathbb{R}$ and let $X_{jk} \in \mathbb{R}$ represent the $j$th forecaster's prediction for this outcome. Assume that these variables are centered around a common marginal mean $\mu_0$.  
 
 
 
@@ -378,11 +378,11 @@ Extremization requires at least two parameters: the prior mean, which acts as th
 \begin{align*}
 \mathcal{X}_k^* = \alpha  \left(  \w'\X_{k} - \mu_0\right) + \mu_0,
 \end{align*}
- where $\X_k = (X_{1k}, \dots, X_{Nk})'$, $\w = (w_1, \dots, w_N)'$ is the weight vector, and $\alpha \in (1, \infty)$ (or $\alpha \in [0, 1)$) leads to extremization (or contraction, respectively). If $\alpha = 1$, then $\mathcal{X}^*$ is equal to the weighted average $\mathcal{X}_w$.  This linear form is particularly convenient because it is able to maintain the marginal consistency property of $\mathcal{X}_w$. That is, $\E(\mathcal{X}^*) = \mu_0$ for all values of $\alpha$.  However, $\Var(\mathcal{X}^*)$ increases in $\alpha$ such that $\Var(\mathcal{X}^*) = \alpha^2 \Var(\mathcal{X}_w) > \Var(\mathcal{X}_w)$ for all $\alpha > 1$. Therefore, for a large enough $\alpha$, $\mathcal{X}^*$ is both marginally consistent and expanding. These properties hold even if the weighted average is replaced by some other marginally consistent aggregator. However, given that the main purpose of this procedure is to illustrate Theorem \ref{contraction}, only the weighted average is considered for extremization.
+ where $\X_k = (X_{1k}, \dots, X_{Nk})'$, $\w = (w_1, \dots, w_N)'$ is the weight vector, and $\alpha \in (1, \infty)$ (or $\alpha \in [0, 1)$) leads to extremization (or contraction, respectively). If $\alpha = 1$, then $\mathcal{X}^*$ is equal to the weighted average $\mathcal{X}_w$.  This linear form is particularly convenient because it maintains the marginal consistency property of $\mathcal{X}_w$; that is, $\E(\mathcal{X}^*) = \mu_0$ for all values of $\alpha$.  However, $\Var(\mathcal{X}^*)$ increases in $\alpha$ such that $\Var(\mathcal{X}^*) = \alpha^2 \Var(\mathcal{X}_w) > \Var(\mathcal{X}_w)$ for all $\alpha > 1$. Therefore, for a large enough $\alpha$, $\mathcal{X}^*$ is both marginally consistent and expanding. These properties hold even if the weighted average is replaced by some other marginally consistent aggregator. However, given that the main purpose of this procedure is to illustrate Theorem \ref{contraction}, only the weighted average is considered for extremization.
 
 Recall that the forecasts are marginally consistent with the outcomes. Therefore an unbiased estimator of the prior mean $\mu_0$ is given by the sample average $\frac{1}{NK} \sum_{k=1}^K\sum_{j=1}^N X_{jk}$ or, alternatively, by $\frac{1}{K} \sum_{k=1}^K Y_k$. Estimating $\mu_0$ in this manner, however, leads to a two-step estimation procedure. A more direct approach is to estimate all the aggregator parameters, namely $\alpha$, $\mu_0$, and $\w$, jointly over some criterion. If $Y_k$ has an explicit likelihood in terms of $\mathcal{X}^*$, then the parameter values can be estimated by maximizing this likelihood. Assuming an explicit parametric form, however, can be avoided by recalling from Section \ref{contraction} that the revealed aggregator $\mathcal{X}''$ utilizes the forecasters' information optimally and minimizes the expected quadratic loss among all functions measurable with respect to $\F''$. Ideally, $\mathcal{X}^*$ would behave similarly to $\mathcal{X}''$. Therefore it makes sense to estimate its parameters by minimizing the average quadratic loss over the $K$ problems. Section \ref{simulation} shows that this is likely to improve both the resolution and reliability of the weighted average. 
 
-These considerations then sum up to the following estimation problem:
+These considerations leads to the following estimation problem:
 \begin{align}
  \label{firstProblem}
  \begin{split}
@@ -400,7 +400,7 @@ To express this problem in a form that is more amenable to estimation, denote an
 \text{subject to } & -\A\Beta \leq \boldsymbol{0}_N,
 \end{split}
 \end{align}
-where the inequality applies element-wise and $\Beta$ is a vector of $N+1$ optimization parameters. Given that $\X'\X$ is always positive semidefinite, problem (\ref{secondProblem}) is a convex quadratic program that can be solved efficiently with standard optimization techniques. 
+where the inequality is interpreted element-wise and $\Beta$ is a vector of $N+1$ optimization parameters. Given that $\X'\X$ is always positive semidefinite, problem (\ref{secondProblem}) is a convex quadratic program that can be solved efficiently with standard optimization techniques. 
 %For instance, our implementation uses a commercial optimization solver, called Gurobi \citep{gurobi}
  
  If $\Beta^* = (\beta_0^*, \dots, \beta_{N}^*)'$ represents the solution, the optimal values of the original parameters are recovered by
@@ -409,7 +409,7 @@ where the inequality applies element-wise and $\Beta$ is a vector of $N+1$ optim
 w_i^* &=  \beta_i^*/\alpha^* \text{ for } i = 1, \dots, N, \text{ and}\\
 \mu_0^* &= -\beta_0^*/(1-\alpha^*).
 \end{align*}
-Observe that the solution to (\ref{secondProblem}) is nothing more than the ordinary least squares estimates under non-negativity constraints on the slope coefficients. Therefore a possible relaxation is to ignore these constraints and simply fit a multiple linear regression model with $\Y$ as response and $\X$ as the predictor. For the sake of correctness, however, this paper does not consider this relaxation and performs extremization via (\ref{secondProblem}). 
+Observe that the solution to (\ref{secondProblem}) is nothing more than the ordinary least squares estimates under non-negativity constraints on the slope coefficients. Therefore a possible relaxation is to ignore these constraints and simply fit a multiple linear regression model with $\Y$ as response and $\X$ as the predictor. For the sake of correctness, however, this paper does not consider this relaxation but performs extremization via (\ref{secondProblem}). 
 
 \section{Simulation Study} \label{simulation}
 
