@@ -162,7 +162,9 @@ This technique has a long tradition, with many empirical studies attesting to it
 %For instance, 
 %and has benefited a diverse range of fields such as meteorology \citep{sanders1963subjective, baars2005performance}, economics \citep{}
 Even though the average forecast does not always outperform the best single forecaster \citep{hibon2005combine},
-forecast averaging is still considered state-of-the-art \citep{elliott2013handbook}. Theoretically,  approximating the optimal weighted average under different forecasting setups and loss functions have been studied by several authors (see, e.g., \citealt{juditsky2008learning, degroot1991optimal}). Empirically, weighted averaging has become a well-established practice in many organizations, including central banks, government institutions, and many private companies.
+forecast averaging is still considered state-of-the-art \citep{elliott2013handbook}. Theoretically,  approximating the optimal weighted average under different forecasting setups and loss functions has been well-studied (see, e.g., \citealt{juditsky2008learning, degroot1991optimal}). Empirically, weighted averaging has become a well-established practice in economics \citep{blix2001good},  weather forecasting \citep{raftery2005using}, political science \citep{graefea2014combining}, and many other disciplines.
+%
+% organizations, including central banks, government institutions, and private companies.
 
 
 \cite{Ranjan08} analyze weighted averaging for probability forecasts of binary events, such as rain or no
@@ -206,11 +208,11 @@ For instance, the authors describe a Gaussian partial information model under wh
 %framework \citep{satopaamodeling2, satopaamodeling} that 
 % based on the covariance between the forecasters.
 
-The main contribution of this paper uses the general partial information framework to extend the result
+The main contribution of this paper extends the result
 in \cite{Ranjan08} to the weighted average of any type of univariate
 forecasts, including real-valued forecasts.
 %, and provides an algorithm that optimally (under a reasonable model) combines real-valued forecasts. 
-Our result shows, for instance, that any non-trivial
+Our result relies on the the general partial information framework and shows, for instance, that any non-trivial
 weighted average of predictions about the next quarter's GDP
 is both unreliable and under-confident. The discussion
 provides general, yet intuitive, descriptions of well-known properties
