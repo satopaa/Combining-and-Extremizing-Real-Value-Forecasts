@@ -145,7 +145,7 @@ Ville A. Satop\"a\"a and Lyle H. Ungar}
 
 Policy-makers often consult human or/and machine agents for forecasts
 of some future outcome. For instance, multiple economics experts may
-provide quarterly predictions of gross domestic product (GDP). Typically it is not possible to determine ex-ante which expert will be the most accurate. Even if this could be done, heeding only the most accurate expert's advice would ignore a potentially large amount of relevant information that is being contributed by the rest of the experts. Therefore a better alternative is to combine the
+provide quarterly predictions of gross domestic product (GDP). Typically it is not possible to determine ex-ante which expert will be the most accurate, and even if this could be done, heeding only the most accurate expert's advice would ignore a potentially large amount of relevant information that is being contributed by the rest of the experts. Therefore a better alternative is to combine the
 forecasts into a single consensus forecast that represents all the experts' advice. 
 % is done both for
 %the sake of decision-making and
@@ -162,8 +162,7 @@ This technique has a long tradition, with many empirical studies attesting to it
 %For instance, 
 %and has benefited a diverse range of fields such as meteorology \citep{sanders1963subjective, baars2005performance}, economics \citep{}
 Even though the average forecast does not always outperform the best single forecaster \citep{hibon2005combine},
-forecast averaging is still considered state-of-the-art \citep{elliott2013handbook}.
-In particular, by now it has become  a well-established practice in many organizations, including central banks, government institutions, and many private companies.
+forecast averaging is still considered state-of-the-art \citep{elliott2013handbook}. Theoretically,  approximating the optimal weighted average under different forecasting setups and loss functions have been studied by several authors (see, e.g., \citealt{juditsky2008learning, degroot1991optimal}). Empirically, weighted averaging has become a well-established practice in many organizations, including central banks, government institutions, and many private companies.
 
 
 \cite{Ranjan08} analyze weighted averaging for probability forecasts of binary events, such as rain or no
@@ -186,7 +185,7 @@ of two or more distinct and reliable probability forecasts is
 unreliable and lacks resolution. In particular, they explain that such
 a weighted average is overly
 close to the marginal event frequency and hence can be considered under-confident.  This result is an important
-contribution to the probability forecasting research in part
+contribution to the probability forecasting literature in part
 because it points out a dramatic shortcoming of methodology that is
 used widely in practice. However, the authors neither provide a
 principled way of addressing this shortcoming nor interpret potential causes of the under-confidence. 
@@ -201,7 +200,7 @@ The first step towards addressing these issues and improving the general practic
 framework} as a general platform for combining forecasts. Their framework operates under the same assumptions as the work by \cite{Ranjan08} but provides concrete models with optimal aggregators. 
 %combining information from multiple forecasts into a single forecast with optimal properties.
 %optimally combining forecasts. 
-For instance, the authors describe the Gaussian partial information model under which optimal aggregation is based on the covariance matrix of the individual forecasts. They apply this model to different types of synthetic and real-world data, and illustrate how it improves upon averaging and other types of measures of central tendency. 
+For instance, the authors describe a Gaussian partial information model under which optimal aggregation is based on the covariance matrix of the individual forecasts. They apply this model to different types of synthetic and real-world data, and illustrate how it improves upon averaging and other types of measures of central tendency. 
 %
 % These issues can be handled by the partial information 
 %framework \citep{satopaamodeling2, satopaamodeling} that 
@@ -241,7 +240,7 @@ improving the average forecast. For instance, \cite{Ranjan08} propose a beta tra
 %  forecasts; \cite{baron2014two} propose yet another extremizing  transformation.}
 Conceptually, extremizing is a very simple idea that can be applied to any kind of forecasts.
 % -- not just to probability forecasts. 
- This paper in particular suggests that extremizing can improve resolution and reliability of an aggregate also when the forecasts are real-valued. 
+ This paper suggests that extremizing can improve resolution and reliability of an aggregate also when the forecasts are real-valued. 
 %is not a technique restricted to probability forecasting but should be also practiced even when the forecasts are real-valued.
 Our second contribution illustrates this with simple examples involving both synthetic and real-world data
 %Our second contribution illustrates this both on synthetic and real-world data.
