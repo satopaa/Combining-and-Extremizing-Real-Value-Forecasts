@@ -167,7 +167,7 @@ forecast averaging is still considered state-of-the-art \citep{elliott2013handbo
 % organizations, including central banks, government institutions, and private companies.
 
 
-\cite{Ranjan08} analyze weighted averaging for probability forecasts of binary events, such as rain or no
+\cite{Ranjan08} analyze the weighted average of probability forecasts of binary events, such as rain or no
 rain tomorrow. They explain how the quality of a probability forecast
 (individual or aggregate) is typically measured in terms of
 \textit{reliability} and \textit{resolution} (sometimes also known as calibration and
@@ -183,7 +183,7 @@ reliability \citep{murphy1987general, gneiting2007probabilistic}.
 
 
 Strikingly, \cite{Ranjan08} prove that any non-trivial weighted average
-of two or more distinct and reliable probability forecasts is
+of two or more distinct, reliable probability forecasts is
 unreliable and lacks resolution. In particular, they explain that such
 a weighted average is overly
 close to the marginal event frequency and hence can be considered under-confident.  This result is an important
@@ -199,16 +199,17 @@ principled way of addressing this shortcoming nor interpret potential causes of 
 %into a single forecast with optimal properties.
 
 The first step towards addressing these issues and improving the general practice of aggregation  is to understand what is meant by principled aggregation. This topic was discussed by \cite{satopaamodeling2, satopaamodeling} who propose the \textit{partial information 
-framework} as a general platform for combining forecasts. Their framework operates under the same assumptions as the work by \cite{Ranjan08} but provides concrete models with optimal aggregators. 
+framework} as a general platform for combining forecasts. They assume forecast heterogeneity to stem from information available to the forecasters and how they decide to use it. For instance, forecasters studying the same (or different) articles about the state of the economy may use distinct parts of the information and hence report different predictions of the next quarter's GDP. Overall, the framework makes the same assumptions as \cite{Ranjan08} while providing concrete models with optimal aggregators. 
 %combining information from multiple forecasts into a single forecast with optimal properties.
 %optimally combining forecasts. 
-For instance, the authors describe a Gaussian partial information model under which optimal aggregation is based on the covariance matrix of the individual forecasts. They apply this model to different types of synthetic and real-world data, and illustrate how it improves upon averaging and other types of measures of central tendency. 
+For instance, the authors describe a Gaussian partial information model under which optimal aggregation is based on the covariance matrix of the individual forecasts. They apply this model to different types of synthetic and real-world data, and illustrate how it improves upon averaging and other types of measures of central tendency. Therefore the partial information framework is both intuitively and empirically appealing.
+% but tends empirically explains real world forecasting reasonably well. 
 %
 % These issues can be handled by the partial information 
 %framework \citep{satopaamodeling2, satopaamodeling} that 
 % based on the covariance between the forecasters.
 
-This paper  analyzes weighted averaging under the general partial information framework. Our first contribution extends the result
+This paper analyzes weighted averaging under the general partial information framework. Our first contribution extends the result
 in \cite{Ranjan08} to the weighted average of any type of univariate
 forecasts, including real-valued forecasts.
 %, and provides an algorithm that optimally (under a reasonable model) combines real-valued forecasts. 
@@ -226,15 +227,16 @@ easy-to-understand explanation of why weighted averages are
 under-confident.  Furthermore, this reasoning suggests that
 under-confidence is not unique to the class of weighted averages but
 extends to many other measures of central tendency, such as the
-median. 
+median.
+% Therefore developing an alternate class of aggregators is almost certainly called for.
 % and extends, in a different form, to real-valued estimates.
 
-Under-confidence can be often alleviated by systematically transforming the forecast away from the naive baseline forecast, namely the marginal mean of the outcome. 
+Under-confidence of simple aggregators can be often alleviated by systematically transforming them away from the naive baseline forecast, namely the marginal mean of the outcome. 
 %non-informative prior probability of $1/2$
 This technique, known as \textit{extremizing}, is increasingly used in the probability forecasting literature as a means of
 improving the average forecast. For instance, \cite{Ranjan08} propose a beta transformation that extremizes the weighted average of
   the probability forecasts; \cite{satopaa} use a logistic regression model to extremize the average log-odds of the
-  forecasts; furthermore, \cite{baron2014two}, \cite{mellers2014psychological}, \cite{shlomi2010subjective}, and many others also discuss extremization. 
+  forecasts; many others, including \cite{baron2014two}, \cite{mellers2014psychological}, and \cite{shlomi2010subjective}, have also discussed extremization. 
 %   propose yet another extremizing  transformation.
 % {\cite{Ranjan08,satopaa,baron2014two}.\footnote{Unfortunately, many different
 %  ad hoc transformations have been used. 
@@ -243,9 +245,9 @@ improving the average forecast. For instance, \cite{Ranjan08} propose a beta tra
 %  forecasts; \cite{baron2014two} propose yet another extremizing  transformation.}
 Conceptually, extremizing is a very simple idea that can be applied to any kind of forecasts.
 % -- not just to probability forecasts. 
- This paper suggests that extremizing can improve resolution and reliability of an aggregate also when the forecasts are real-valued. 
+ This paper suggests that extremizing can improve an aggregator also when the forecasts are real-valued. 
 %is not a technique restricted to probability forecasting but should be also practiced even when the forecasts are real-valued.
-Our second contribution illustrates this with simple examples involving both synthetic and real-world data
+Our second contribution illustrates this with a quadratic programming technique that linearly extremizes the weighted average. The technique is applied to simple examples involving both synthetic and real-world data. In both examples extremizing leads to a significant improvement in the resolution and reliability of the weighted average. In particular, under synthetic data, the resulting aggregate approximates the known optimal aggregator very closely. 
 %Our second contribution illustrates this both on synthetic and real-world data.
 %, extremizes the weighted average of real-valued forecasts, and shows how this
 %that transforming the weighted average of real-valued forecasts further away from the  naive baseline forecast, namely the marginal mean of the outcome
@@ -260,7 +262,7 @@ Our second contribution illustrates this with simple examples involving both syn
 %with outcomes defined on the entire real line.
 
 
-The paper is structured as follows. Section \ref{propertiesS} briefly
+The rest of the paper is structured as follows. Section \ref{propertiesS} briefly
 introduces the general partial information framework and discusses some properties of
 the optimal aggregator within that framework. The class of weighted
 averages is then analyzed in the light of these optimal
