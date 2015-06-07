@@ -231,7 +231,7 @@ median.
 % Therefore developing an alternate class of aggregators is almost certainly called for.
 % and extends, in a different form, to real-valued estimates.
 
-Under-confidence of simple aggregators can be often alleviated by systematically transforming them away from the naive baseline forecast, namely the marginal mean of the outcome. 
+Under-confidence of a simple aggregators can be often alleviated by systematically transforming it away from the naive baseline forecast, namely the marginal mean of the outcome. 
 %non-informative prior probability of $1/2$
 This technique, known as \textit{extremizing}, is increasingly used in the probability forecasting literature as a means of
 improving the average forecast. For instance, \cite{Ranjan08} propose a beta transformation that extremizes the weighted average of
@@ -247,7 +247,8 @@ Conceptually, extremizing is a very simple idea that can be applied to any kind 
 % -- not just to probability forecasts. 
  This paper suggests that extremizing can improve an aggregator also when the forecasts are real-valued. 
 %is not a technique restricted to probability forecasting but should be also practiced even when the forecasts are real-valued.
-Our second contribution illustrates this with a quadratic programming technique that linearly extremizes the weighted average. The technique is applied to simple examples involving both synthetic and real-world data. In both examples extremizing leads to a significant improvement in the resolution and reliability of the weighted average. In particular, under synthetic data, the resulting aggregate approximates the known optimal aggregator very closely. 
+Our second contribution illustrates this with a quadratic programming technique that linearly extremizes the weighted average. The technique is applied to simple examples involving both synthetic and real-world data. In both examples extremizing leads to a significant improvement in the resolution and reliability of the weighted average. In particular, the resulting aggregate exhibits properties of optimal aggregation.
+
 %Our second contribution illustrates this both on synthetic and real-world data.
 %, extremizes the weighted average of real-valued forecasts, and shows how this
 %that transforming the weighted average of real-valued forecasts further away from the  naive baseline forecast, namely the marginal mean of the outcome
