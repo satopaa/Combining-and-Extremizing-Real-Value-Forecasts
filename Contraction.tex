@@ -501,9 +501,9 @@ In probability forecasting the quality of the predictions is typically assessed 
 % Wed May 20 21:31:51 2015
 \begin{table}[ht]
 \centering
-\caption{The estimated parameter values 
+\caption{Synthetic data. The estimated parameter values.}
 %optimally weighted average, $\mathcal{X}_w$ and the extremized version of the optimally weighted average, $\mathcal{X}^*$
- under simulated data. }
+% under simulated data. }
 \begin{tabular}{llrrrrrrr}
   \hline \hline
 Scenario & Forecast & $\mu_0$ & $\alpha$ & $w_1$ & $w_2$& $w_3$& $w_4$& $w_5$ \\ 
@@ -539,7 +539,8 @@ Scenario & Forecast & $\mu_0$ & $\alpha$ & $w_1$ & $w_2$& $w_3$& $w_4$& $w_5$ \\
                 \caption{$\mathcal{X}^*$ }
         \label{RelEOWANo}
         \end{subfigure}
-   \caption{\textit{No Overlap.} Reliability diagrams of the competing aggregators  under simulated data. }
+%   \caption{\textit{No Overlap.} Reliability diagrams of the competing aggregators  under simulated data. }
+          \caption{Synthetic data. Out-of-sample reliability under no information overlap. }
         \label{NOVerlap}
 \end{figure}
 
@@ -565,8 +566,9 @@ Scenario & Forecast & $\mu_0$ & $\alpha$ & $w_1$ & $w_2$& $w_3$& $w_4$& $w_5$ \\
                 \caption{$\mathcal{X}^*$ }
         \label{RelEOWAHigh}
         \end{subfigure}
-   \caption{\textit{High Overlap.} Reliability diagrams of the competing aggregators under simulated data. 
-    }        
+          \caption{Synthetic data. Out-of-sample reliability under high information overlap. }
+%   \caption{\textit{High Overlap.} Reliability diagrams of the competing aggregators under simulated data. 
+%    }        
    \label{HighOverlap}
 \end{figure}
 
@@ -600,10 +602,10 @@ The final term, UNC does not depend on the forecasts. This is the sample varianc
 % Thu May  7 14:19:19 2015
 \begin{table}[h!]
 \centering
-\caption{The average quadratic loss, $L(\Y,\boldsymbol{\mathcal{X}} )$ with its three additive components: reliability (REL), resolution (RES), and uncertainty (UNC). The final column, $s(\boldsymbol{\mathcal{X}} )$ gives the estimated variance of the forecast.} 
+\caption{Synthetic data. The average quadratic loss, $L(\Y,\boldsymbol{\mathcal{X}} )$ with its three additive components: reliability (REL), resolution (RES), and uncertainty (UNC). The final column, $s^2$ gives the estimated variance of the forecast.} 
 \begin{tabular}{llrrrrr}
   \hline \hline
-Scenario & Forecast & $L(\Y,\boldsymbol{\mathcal{X}} )$ & REL & RES & UNC & $s(\boldsymbol{\mathcal{X}} )$ \\ 
+Scenario & Forecast & $L(\Y,\boldsymbol{\mathcal{X}} )$ & REL & RES & UNC & $s^2$ \\ 
   \hline
  \multirow{6}{*}{No Overlap} & Best Individual & 0.8024 & 0.0050 & 0.2108 & 1.0081 & 0.200\\ 
   & Median & 0.7322 & 0.2928 & 0.5688 & 1.0081& 0.046\\ 
@@ -622,7 +624,7 @@ Scenario & Forecast & $L(\Y,\boldsymbol{\mathcal{X}} )$ & REL & RES & UNC & $s(\
 \label{scenA}
 \end{table}
 
-Table \ref{scenA} presents the quadratic loss, its additive components, and the estimated variance $s(\boldsymbol{\mathcal{X}} )$ for each of the different forecasts under both information scenarios. In addition to the aforementioned $\bar{\mathcal{X}}$, $\mathcal{X}_w$, and $\mathcal{X}^*$, the tables also present scores for the median forecast,  the individual forecaster with the lowest quadratic loss, and the revealed aggregator $\mathcal{X}''$. According to the results, the best individual forecaster is reliable but extremely non-resolute, leading to an overall poor average quadratic loss. Under no information overlap, the best individual is better than both the median and $\bar{\mathcal{X}}$ because these aggregators assign too much importance to the individual forecasters with very little information. The median has the overall worst performance.  As predicted by Theorem \ref{contraction},  the averaging aggregators $\bar{\mathcal{X}}$ and $\mathcal{X}_w$ are neither reliable nor expanding. The remaining two aggregators, namely $\mathcal{X}^*$ and $\mathcal{X}''$, on the other hand, are reliable, expanding, and resolute. Table \ref{NoParams} shows that $\mathcal{X}^*$ is in fact  almost equivalent to $\mathcal{X}''$ under no information overlap. Under high information overlap, however, $\mathcal{X}''$ gains slight advantage over $\mathcal{X}^*$. In this case $\mathcal{X}^*$ cannot take the same form as $\mathcal{X}''$. Consequently, it has a sample variance of $0.228$ which is well below the  amount of information known to the group, namely $0.320$. It fails to use information optimally because it cannot subtract off the shared information $X_1$ and hence avoid double-counting of information. However, despite it using information less efficiently, $\mathcal{X}^*$ is as reliable as $\mathcal{X}''$. 
+Table \ref{scenA} presents the quadratic loss, its additive components, and the estimated variance $s^2$ for each of the different forecasts under both information scenarios. In addition to the aforementioned $\bar{\mathcal{X}}$, $\mathcal{X}_w$, and $\mathcal{X}^*$, the tables also present scores for the median forecast,  the individual forecaster with the lowest quadratic loss, and the revealed aggregator $\mathcal{X}''$. According to the results, the best individual forecaster is reliable but extremely non-resolute, leading to an overall poor average quadratic loss. Under no information overlap, the best individual is better than both the median and $\bar{\mathcal{X}}$ because these aggregators assign too much importance to the individual forecasters with very little information. The median has the overall worst performance.  As predicted by Theorem \ref{contraction},  the averaging aggregators $\bar{\mathcal{X}}$ and $\mathcal{X}_w$ are neither reliable nor expanding. The remaining two aggregators, namely $\mathcal{X}^*$ and $\mathcal{X}''$, on the other hand, are reliable, expanding, and resolute. Table \ref{NoParams} shows that $\mathcal{X}^*$ is in fact  almost equivalent to $\mathcal{X}''$ under no information overlap. Under high information overlap, however, $\mathcal{X}''$ gains slight advantage over $\mathcal{X}^*$. In this case $\mathcal{X}^*$ cannot take the same form as $\mathcal{X}''$. Consequently, it has a sample variance of $0.228$ which is well below the  amount of information known to the group, namely $0.320$. It fails to use information optimally because it cannot subtract off the shared information $X_1$ and hence avoid double-counting of information. However, despite it using information less efficiently, $\mathcal{X}^*$ is as reliable as $\mathcal{X}''$. 
 
 Of course, under the Gaussian model it may be possible to compute $\mathcal{X}''$ directly. This, however, involves the non-trivial task of estimating the covariance matrix $\bSigma$ under a particular semidefinite constraint (see \citealt{satopaamodeling2} for more details). Solving the quadratic program (\ref{secondProblem}) is significantly easier. On the other hand, problem (\ref{secondProblem}) requires a training set with known outcomes whereas $\bSigma$ can be learned directly from the forecasts alone. Therefore the two aggregators can be seen to serve somewhat different purposes. 
 
@@ -634,22 +636,22 @@ Concrete is the most important material in civil engineering. One of its key pro
 \begin{equation}
 \begin{array}{ll r lr}
 &&Y: & \text{Compressive Strength}&\\
-\ldelim\{{8}{2.5em}[$\mathcal{M}_F$] &\ldelim\{{4}{2.5em}[$\mathcal{M}_1$] &V_1: &  \text{Cement (kg in a $m^3$ mixture)}&  \\
-&&V_2: & \text{Coarse Aggregate (kg in a $m^3$ mixture)}&\\
-  &&V_3: &  \text{Fly Ash (kg in a $m^3$ mixture)}&  \rdelim\}{4}{2em}[$\mathcal{M}_3$] \\
-&&V_4: & \text{Water (kg in a $m^3$ mixture)}&\\
-&\ldelim\{{4}{2.5em}[$\mathcal{M}_2$] &V_5: &  \text{Superplasticizer (kg in a $m^3$ mixture)}&  \\
-&&V_6: & \text{Fine Aggregate  (kg in a $m^3$ mixture)}&\\
-&&V_7: & \text{Blast Furnace Slag (kg in a $m^3$ mixture)}&\\
-&&V_8: & \text{Age (days)}&
+\ldelim\{{8}{2.5em}[$\mathcal{M}_F$] &\ldelim\{{4}{2.5em}[$\mathcal{M}_1$] &v_1: &  \text{Cement (kg in a $m^3$ mixture)}&  \\
+&&v_2: & \text{Coarse Aggregate (kg in a $m^3$ mixture)}&\\
+  &&v_3: &  \text{Fly Ash (kg in a $m^3$ mixture)}&  \rdelim\}{4}{2em}[$\mathcal{M}_3$] \\
+&&v_4: & \text{Water (kg in a $m^3$ mixture)}&\\
+&\ldelim\{{4}{2.5em}[$\mathcal{M}_2$] &v_5: &  \text{Superplasticizer (kg in a $m^3$ mixture)}&  \\
+&&v_6: & \text{Fine Aggregate  (kg in a $m^3$ mixture)}&\\
+&&v_7: & \text{Blast Furnace Slag (kg in a $m^3$ mixture)}&\\
+&&v_8: & \text{Age (days)}&
 \end{array}\label{realData}
 \end{equation}
 \noindent
 This particular dataset is appropriate for illustrating our results because it is simple yet large enough to allow the computation of reliability diagrams and the individual components of the average quadratic loss.
 
-The individual forecasters are emulated with three linear regression models, $\mathcal{M}_1$, $\mathcal{M}_2$, and $\mathcal{M}_3$, that predict $Y$ based on different sets of predictors. In particular, model $\mathcal{M}_1$ only uses predictors $V_1, V_2, V_3, V_4$, whereas model $\mathcal{M}_2$ uses the remaining predictors $V_5, V_6, V_7, V_8$. Therefore their predictor sets are non-overlapping. The third model $\mathcal{M}_3$, on the other hand, uses the middle four predictors, namely $V_3, V_4, V_5, V_6$, and hence has significant overlap with the other two models. The results are compared against a linear regression model $\mathcal{M}_F$ that has access to all eight predictors. This is not an aggregator and only represents the extent to which the predictors can explain the outcome $Y$. Therefore it provides interpretation and scale. The predictor sets corresponding to the different models are summarized by the curly braces in (\ref{realData}). Overall, this setup can be viewed as a real-valued equivalent of the case study in \cite{Ranjan08} who aggregate probability forecasts from three different logistic regression models. 
+The individual forecasters are emulated with three linear regression models, $\mathcal{M}_1$, $\mathcal{M}_2$, and $\mathcal{M}_3$, that predict $Y$ based on different sets of predictors. In particular, model $\mathcal{M}_1$ only uses predictors $v_1, v_2, v_3, v_4$, whereas model $\mathcal{M}_2$ uses the remaining predictors $v_5, v_6, v_7, v_8$. Therefore their predictor sets are non-overlapping. The third model $\mathcal{M}_3$, on the other hand, uses the middle four predictors, namely $v_3, v_4, v_5, v_6$, and hence has significant overlap with the other two models. The results are compared against a linear regression model $\mathcal{M}_F$ that has access to all eight predictors. This is not an aggregator and only represents the extent to which the predictors can explain the outcome $Y$. Therefore it provides interpretation and scale. The predictor sets corresponding to the different models are summarized by the curly braces in (\ref{realData}). Overall, this setup can be viewed as a real-valued equivalent of the case study in \cite{Ranjan08} who aggregate probability forecasts from three different logistic regression models. 
 
-The evaluation is based on a $10$-fold cross validation. The models $\mathcal{M}_1$, $\mathcal{M}_2$, and $\mathcal{M}_3$ are first trained on one half of the training set and then used to make  predictions for the second half and the entire testing set. Next, the aggregators are  trained on the models' predictions over the second half of the training set. Similarly to Section \ref{simulation}, aggregation is evaluated under two information scenarios: the \textit{No Information Overlap} scenario considers only predictions from models $\mathcal{M}_1$ and $\mathcal{M}_2$, whereas the \textit{High Information Overlap} scenario involves only predictions from models $\mathcal{M}_1$ and $\mathcal{M}_3$. 
+The evaluation is based on a $10$-fold cross validation. The models $\mathcal{M}_1$, $\mathcal{M}_2$, and $\mathcal{M}_3$ are first trained on one half of the training set and then used to make  predictions for the second half and the entire testing set. Next, the aggregators are  trained on the models' predictions over the second half of the training set. Finally, the trained aggregators are tested on the models' predictions over the testing set. Therefore, similarly to Section \ref{simulation}, all the following results, apart from the parameter estimates, represent out-of-sample performance. Aggregation is evaluated under two information scenarios: the \textit{No Information Overlap} scenario considers only predictions from models $\mathcal{M}_1$ and $\mathcal{M}_2$, whereas the \textit{High Information Overlap} scenario involves only predictions from models $\mathcal{M}_1$ and $\mathcal{M}_3$. 
 
 \begin{figure}
         \centering
@@ -675,8 +677,10 @@ The evaluation is based on a $10$-fold cross validation. The models $\mathcal{M}
                 \caption{$\mathcal{M}_F$}
                 \label{RelDiagramNoF}
         \end{subfigure}           
-        \caption{Reliability diagrams of the models applied to the concrete compressive strength data.}
-                
+%        \caption{Reliability diagrams of the models applied to the concrete compressive strength data.}
+%                          \caption{(Out-of-sample) reliability diagrams of the individual models.}
+          \caption{Real-world data. Out-of-sample reliability of the individual models.}
+%                          The results are based on out-of-sample predictions of concrete compressive strength.}
                 \label{RelDiagramMo}
 \end{figure}
 
@@ -702,8 +706,9 @@ The evaluation is based on a $10$-fold cross validation. The models $\mathcal{M}
                 \caption{$\mathcal{X}^*$}
                 \label{RelDiagramNoE}
              \end{subfigure}
-        \caption{\textit{No Overlap.} Reliability diagrams of the competing aggregators under the concrete compressive strength data.}
-                        \label{RelDiagramNo}
+          \caption{Real-world data. Out-of-sample reliability under no information overlap. }
+%          The results are based on out-of-sample predictions of concrete compressive strength.}                       
+           \label{RelDiagramNo}
 \end{figure}
 
 
@@ -724,20 +729,21 @@ The evaluation is based on a $10$-fold cross validation. The models $\mathcal{M}
                 \caption{$\mathcal{X}^*$}
                 \label{DepEOLPConrete}
         \end{subfigure}
-          \caption{\textit{High Overlap.}  Reliability diagrams of the competing aggregators under the concrete compressive strength data.}
+          \caption{Real-world data. Out-of-sample reliability under high information overlap. }
+%          The results are based on out-of-sample predictions of concrete compressive strength.}
                \label{RelDiagramHigh}
 \end{figure}
 
 
-Figures \ref{RelDiagramMo}, \ref{RelDiagramNo}, and \ref{RelDiagramHigh} presents the reliability diagrams of the individual models and the aggregators under both information scenarios. Unlike in Section \ref{simulation}, the marginal distribution of $Y$ is not known. Therefore the red curve over the inlined histogram represents the empirical distribution of $Y$. Similarly, the dashed vertical line represents the sample average of the outcomes instead of the marginal mean $\mu_0$. According to these plots, the individual forecasts are fairly reliable and do not present any systematic under- or over-confidence. Similarly to Section \ref{simulation}, the averaging aggregators $\bar{\mathcal{X}}$ and $\mathcal{X}_w$ are  unreliable and under-confident particularly in the no overlap scenario. Table \ref{NoParamsReal} shows the parameter estimates for $\mathcal{X}_w$ and $\mathcal{X}^*$. The weights employed by these two aggregators are very similar. However, in both information scenarios $\alpha > 1$, suggesting that $\mathcal{X}_w$ is under-confident and should be extremized as it is. Based on Figures \ref{RelDiagramNoE} and  \ref{DepEOLPConrete}, the resulting aggregator $\mathcal{X}^*$ is noticeably more reliable and appear to approximate the empirical distribution of $Y$ quite closely. Simply based on visual assessment $\mathcal{X}^*$ performs as well as $\mathcal{M}_F$ under low information overlap but  loses some resolution once  overlap is introduced. 
+Figures \ref{RelDiagramMo}, \ref{RelDiagramNo}, and \ref{RelDiagramHigh} present the reliability diagrams of the individual models and the aggregators under both information scenarios. Unlike in Section \ref{simulation}, the marginal distribution of $Y$ is not known. Therefore the red curve over the inlined histogram represents the empirical distribution of $Y$. Similarly, the dashed vertical line represents the sample average of the outcomes instead of the marginal mean $\mu_0$. According to these plots, the individual forecasts are fairly reliable and do not present any systematic under- or over-confidence. Similarly to Section \ref{simulation}, the averaging aggregators $\bar{\mathcal{X}}$ and $\mathcal{X}_w$ are  unreliable and under-confident particularly in the no overlap scenario. Table \ref{NoParamsReal} shows the parameter estimates for $\mathcal{X}_w$ and $\mathcal{X}^*$. The weights employed by these two aggregators are very similar. However, in both information scenarios $\alpha > 1$, suggesting that $\mathcal{X}_w$ is under-confident and should be extremized. Based on Figures \ref{RelDiagramNoE} and  \ref{DepEOLPConrete}, the resulting aggregator $\mathcal{X}^*$ is noticeably more reliable and appears to approximate the empirical distribution of $Y$ quite closely. Simply based on visual assessment $\mathcal{X}^*$ performs as well as $\mathcal{M}_F$ under low information overlap but  loses some resolution once  overlap is introduced. 
 
 % latex table generated in R 3.2.0 by xtable 1.7-4 package
 % Wed May 20 21:48:47 2015
 \begin{table}[ht]
 \centering
-\caption{The estimated parameter values 
+\caption{Real-world data. The estimated parameter values.} 
 %of optimally weighted average, $\mathcal{X}_w$ and the extremized version of the optimally weighted average, $\mathcal{X}^*$ 
-under the concrete compressive strength data. }
+%under the concrete compressive strength data. }
 \begin{tabular}{llrrrr}
    \hline \hline
 Scenario & Forecast & $\mu_0$ & $\alpha$ & $w_1$ & $w_2$\\
@@ -756,10 +762,10 @@ Scenario & Forecast & $\mu_0$ & $\alpha$ & $w_1$ & $w_2$\\
 % Fri May 15 16:06:28 2015
 \begin{table}[h!]
 \centering
-\caption{The average quadratic loss, $L(\Y,\boldsymbol{\mathcal{X}} )$ with its three additive components: reliability (REL), resolution (RES), and uncertainty (UNC).The final column, $s(\boldsymbol{\mathcal{X}} )$ gives the estimated variance of the forecast. } 
+\caption{Real-world data. The average quadratic loss, $L(\Y,\boldsymbol{\mathcal{X}} )$ with its three additive components: reliability (REL), resolution (RES), and uncertainty (UNC).The final column, $s^2$ gives the estimated variance of the forecast. } 
 \begin{tabular}{llrrrrr}
   \hline \hline
-Scenario &  Forecast & $L(\Y,\boldsymbol{\mathcal{X}} )$ & REL & RES & UNC & $s(\boldsymbol{\mathcal{X}} )$\\ 
+Scenario &  Forecast & $L(\Y,\boldsymbol{\mathcal{X}} )$ & REL & RES & UNC & $s^2$\\ 
   \hline
  &  $\mathcal{M}_1$ & 187.80 & 9.70 & 100.72 & 278.81 & 82.83 \\ 
 & $\mathcal{M}_2$  & 185.74 & 12.01 & 105.08 & 278.81 & 92.51 \\ 
@@ -778,7 +784,9 @@ Scenario &  Forecast & $L(\Y,\boldsymbol{\mathcal{X}} )$ & REL & RES & UNC & $s(
 
 
 
-Table \ref{NoTbl} provides a numerical comparison by presenting the average quadratic loss and its additive components under both information scenarios. Given that all aggregators perform better than the individual forecasters, aggregation is generally beneficial. However, there are large performance differences among the aggregators. In particular, the variances of $\bar{\mathcal{X}}$ and $\mathcal{X}_w$  do not exceed that of the individual forecasters', suggesting that neither of them is expanding. Furthermore, they are much less reliable than the individual forecasters. In contrast, $\mathcal{X}^*$ is able to maintain the forecasters' level of reliability. Even though it is expanding, it is less resolute and has a lower variance than $\mathcal{M}_F$. This can be expected because $\mathcal{X}^*$ has access only to a subset of the information that $\mathcal{M}_F$ uses. In the no overlap scenario, all the predictors are being used by the individual forecasters, but this does not mean that this information is actually revealed to $\mathcal{X}^*$ through the reported forecasts. 
+%Table \ref{scenA} presents the quadratic loss, its additive components, and the estimated variance $s^2$ for each of the different forecasts under both information scenarios.
+%
+Table \ref{NoTbl} provides a numerical comparison by presenting the average quadratic loss, its additive components, and the estimated variance $s^2$ for the forecasts under both information scenarios. Given that all aggregators perform better than the individual forecasters, aggregation is generally beneficial. However, there are large performance differences among the aggregators. In particular, the variances of $\bar{\mathcal{X}}$ and $\mathcal{X}_w$  do not exceed that of the individual forecasters', suggesting that neither of them is expanding. Furthermore, they are much less reliable than the individual forecasters. In contrast, $\mathcal{X}^*$ is able to maintain the forecasters' level of reliability. Even though it is expanding, it is less resolute and has a lower variance than $\mathcal{M}_F$. This can be expected because $\mathcal{X}^*$ has access only to a subset of the information that $\mathcal{M}_F$ uses. In the no overlap scenario, all the predictors are being used by the individual forecasters, but this does not mean that this information is actually revealed to $\mathcal{X}^*$ through the reported forecasts. 
 
 \section{Conclusion and Future Research} \label{conclusion}
 
