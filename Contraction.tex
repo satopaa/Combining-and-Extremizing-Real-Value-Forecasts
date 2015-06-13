@@ -839,9 +839,11 @@ This paper illustrated that good information aggregation can arise from very sim
 \E(\mathcal{X}'') &= \E[\E(Y|\mathcal{X}'')] =  \E(Y) = \mu_0.
 \end{align*}
 
-\item Recall that $ \mathcal{X}'' = \E(Y | \F'')$ and $\mathcal{X}'' \in \F''$. Then,
+\item Recall that $ \mathcal{X}'' = \E(Y | \F'')$, $\mathcal{X}'' \in \F''$, and $\F'' = \sigma(X_1, \dots, X_N)$. Then,
 \begin{align*}
-\E(Y | \mathcal{X}'') &= \E[\E(Y|\mathcal{X}'',\F'')|\mathcal{X}'']\\
+\E(Y | \mathcal{X}'') 
+%&= \E[\E(Y|\mathcal{X}'')|\mathcal{X}'']\\
+ &= \E[\E(Y|\mathcal{X}'',\F'')|\mathcal{X}''] & \text{ (as $\mathcal{X}'' \in \F''$)}\\
 &= \E[\E(Y|\F'')|\mathcal{X}'']\\
 &= \E(\mathcal{X}''|\mathcal{X}'') \\
 &= \mathcal{X}''.
@@ -849,12 +851,13 @@ This paper illustrated that good information aggregation can arise from very sim
 
 \item This relies on the observation that $\sigma(X_j) = \F_j \subseteq \F'' = \sigma(X_1, \dots, X_N)$. Then,
 \begin{align*}
-\delta_{max} &=\Var(\mathcal{X}'')\\
+\delta_{max} &=\Var(X_j)\\
  &= \E\left(X_j^2\right) - \mu_0^2\\
- &= \E[\E(Y|\F_j)X_j] - \mu_0^2\\
+ &= \E[\E(Y|\F_j)X_j] - \mu_0^2 & \text{(as $X_j = \E(Y|F_j)$)}\\
  &= \E\{\E[\E(Y|\F'')|\F_j]X_j\} - \mu_0^2 & \text{(the smallest $\sigma$-field wins)}\\
  &= \E[\E(\mathcal{X}''|\F_j)X_j] - \mu_0^2 \\
- &= \E(\mathcal{X}''X_j) - \mu_0^2 \\
+ &= \E[\E(\mathcal{X}''X_j|\F_j)] - \mu_0^2 \\
+ &= \E(\mathcal{X}''X_j) - \mu_0^2 & \text{(reverse iterated expectation)} \\
  &= \E[(\mathcal{X}''-\mu_0)(X_j-\mu_0)]  \\
  &\leq \sqrt{\Var(\mathcal{X}'')\delta_{max} } & \text{(by the Cauchy-Schwarz inequality)} 
 \end{align*}
@@ -954,7 +957,7 @@ Putting this all together gives that $\w'\X = \mathcal{X}''$ if and only if $\si
 \qed
 
 \subsection{Derivation of Equation \ref{decomposition}}
-Suppose that $\mathcal{X}_k \in \{f_1, \dots, f_I\}$ for some finite $I$. Then,
+Suppose that $\mathcal{X}_k \in \{f_1, \dots, f_I\}$ for some finite $I$. Let $K_i$ be the number of times $f_i$ occurs, $\bar{Y}_i$ be the empirical average of $\{Y_k : \mathcal{X}_k = f_i\}$, and $\bar{Y} = \frac{1}{K} \sum_{k=1}^K Y_k$. Then,
 \begin{align*}
 & \frac{1}{K} \sum_{k=1}^K (Y_k - \mathcal{X}_k)^2\\
  &= \frac{1}{K} \left( \sum_{k=1}^K \mathcal{X}_k^2 - 2\sum_{k=1}^KY_k\mathcal{X}_k + \sum_{k=1}^KY_k^2 \right)\\
