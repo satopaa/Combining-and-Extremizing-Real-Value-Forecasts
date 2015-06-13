@@ -958,7 +958,8 @@ Suppose that $\mathcal{X}_k \in \{f_1, \dots, f_I\}$ for some finite $I$. Then,
 \begin{align*}
 & \frac{1}{K} \sum_{k=1}^K (Y_k - \mathcal{X}_k)^2\\
  &= \frac{1}{K} \left( \sum_{k=1}^K \mathcal{X}_k^2 - 2\sum_{k=1}^KY_k\mathcal{X}_k + \sum_{k=1}^KY_k^2 \right)\\
- &= \frac{1}{K} \left[ \sum_{i=1}^I K_i f_i^2 - 2\sum_{i=1}^I K_i f_i \bar{Y}_i + \left( 2 \sum_{i=1}^IK_i\bar{Y}_i\bar{Y}- 2 \sum_{i=1}^IK_i\bar{Y}_i\bar{Y} \right) +  \left( \sum_{i=1}^IK_i\bar{Y}^2- \sum_{i=1}^IK_i\bar{Y}^2 \right) + \sum_{k=1}^KY_k^2 \right]\\
+ &= \frac{1}{K} \left[ \sum_{i=1}^I K_i f_i^2 - 2\sum_{i=1}^I K_i f_i \bar{Y}_i + \left( 2 \sum_{i=1}^IK_i\bar{Y}_i\bar{Y}- 2 \sum_{i=1}^IK_i\bar{Y}_i\bar{Y} \right) \right. \\
+ &\qquad \left. {} +  \left( \sum_{i=1}^IK_i\bar{Y}^2- \sum_{i=1}^IK_i\bar{Y}^2 \right) + \sum_{k=1}^KY_k^2 \right]\\
  &= \frac{1}{K} \left[ \sum_{i=1}^I K_i \left( f_i^2 - 2 f_i \bar{Y}_i + 2 \bar{Y}_i\bar{Y}-  \bar{Y}^2 \right) + \sum_{k=1}^K(Y_k^2 -2\bar{Y}_k\bar{Y}+ \bar{Y}^2) \right]\\
  &= \frac{1}{K} \left[ \sum_{i=1}^I K_i \left( f_i^2 - 2 f_i \bar{Y}_i + (\bar{Y}_i^2 - \bar{Y}_i^2) + 2 \bar{Y}_i\bar{Y}-  \bar{Y}^2 \right) + \sum_{k=1}^K(Y_k -\bar{Y})^2 \right]\\
  &= \frac{1}{K} \left[ \sum_{i=1}^I K_i \left( f_i^2 - 2 f_i \bar{Y}_i + \bar{Y}_i^2 \right)  - \sum_{i=1}^I K_i  \left(\bar{Y}_i^2 - 2 \bar{Y}_i\bar{Y} + \bar{Y}^2 \right) + \sum_{k=1}^K(Y_k -\bar{Y})^2 \right]\\
