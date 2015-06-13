@@ -841,7 +841,7 @@ This paper illustrated that good information aggregation can arise from very sim
 
 \item Recall that $ \mathcal{X}'' = \E(Y | \F'')$, $\mathcal{X}'' \in \F''$, and $\F'' = \sigma(X_1, \dots, X_N)$. Then,
 \begin{align*}
-\E(Y | \mathcal{X}'') 
+&\hspace{1.3em}  \E(Y | \mathcal{X}'') \\
 %&= \E[\E(Y|\mathcal{X}'')|\mathcal{X}'']\\
  &= \E[\E(Y|\mathcal{X}'',\F'')|\mathcal{X}''] & \text{ (as $\mathcal{X}'' \in \F''$)}\\
 &= \E[\E(Y|\F'')|\mathcal{X}'']\\
@@ -889,14 +889,16 @@ This follows from direct computation:
 %\end{align*}
 \item Consider some reliable aggregate $\mathcal{X}$ such that $\E(Y | \mathcal{X}) = \mathcal{X}$. Then,
 \begin{align*}
-\E[(Y-\mathcal{X})^2] &= \E\left\{\E\left[(Y-\mathcal{X})^2|\mathcal{X}\right]\right\}\\
+&\hspace{1.3em} \E[(Y-\mathcal{X})^2]\\
+ &= \E\left\{\E\left[(Y-\mathcal{X})^2|\mathcal{X}\right]\right\}\\
 &= \E\left[\E\left(Y^2-2Y\mathcal{X}+\mathcal{X}^2|\mathcal{X} \right)\right]\\
 &= \E\left[\E\left(Y^2|\mathcal{X}\right)-\mathcal{X}^2\right]\\
 &= \E(Y^2)-\E(\mathcal{X}^2)
 \end{align*}
 The rest of the proof shows that if $\mathcal{X} = \mathcal{X}_w = \w'\X$, then the above identity cannot hold. This gives a contradiction and hence proves the desired result. First, note that $\sum_{i=1}^N\sum_{j=1}^Nw_iw_j = 1$. Then,
 \begin{align*}
-\E\left[\left(Y-\mathcal{X}_w\right)^2\right] &= \E\left[\left(Y-\w'\X\right)^2\right] \\
+&\hspace{1.3em}  \E\left[\left(Y-\mathcal{X}_w\right)^2\right]\\
+ &= \E\left[\left(Y-\w'\X\right)^2\right] \\
  &= \E\left\{\left[\sum_{j=1}^Nw_j (Y-X_j)\right]^2\right\} \\
 % &= \E[Y^2-2Y\w'\X+\w'\X\X'\w] \\
 % &= \E[\sum_{i=1}^N\sum_{j=1}^N w_iw_j Y^2-2Y\w'\X+\sum_{i=1}^N\sum_{j=1}^N w_iw_j X_iX_j] \\
@@ -909,13 +911,14 @@ The rest of the proof shows that if $\mathcal{X} = \mathcal{X}_w = \w'\X$, then 
 &= \sum_{i=1}^N\sum_{j=1}^Nw_iw_j \E\left[\E\left(Y^2|X_i\right) -X_jX_i\right]-\sum_{i=1}^N\sum_{j=1}^Nw_iw_j\E\left[\left(X_i-X_j\right)^2\right] \\
 &=  \E\left(Y^2\right) - \sum_{i=1}^N\sum_{j=1}^Nw_iw_j \E\left(X_jX_i\right)-\sum_{i=1}^N\sum_{j=1}^Nw_iw_j\E\left[\left(X_i-X_j\right)^2\right] \\
 &=  \E\left(Y^2\right) -  \E\left(\w'\X \X'\w\right)-\sum_{i=1}^N\sum_{j=1}^Nw_iw_j\E\left[\left(X_i-X_j\right)^2\right] \\
-&= \left[\E\left(Y^2\right) -  \E\left(\mathcal{X}_w\right) \right]-\sum_{i=1}^N\sum_{j=1}^Nw_iw_j\E\left[\left(X_i-X_j\right)^2\right].
+&= \left[\E\left(Y^2\right) -  \E\left(\mathcal{X}_w^2\right) \right]-\sum_{i=1}^N\sum_{j=1}^Nw_iw_j\E\left[\left(X_i-X_j\right)^2\right].
 \end{align*}
-This leads to a contraction because the double sum on the final line is strictly positive as long as there exists a pair $i \neq j$ such that $\P(X_i \neq X_j) > 0$ and $w_i, w_j > 0$. 
+This leads to a contradiction because the double sum on the final line is strictly positive as long as there exists a forecast pair $i \neq j$ such that $\P(X_i \neq X_j) > 0$ and $w_i, w_j > 0$. 
 
-\item The fact that $\E(\mathcal{X}_w') = \mu_0$ follows from the same steps as shown in item i) of Theorem \ref{optimal}. Then,
+\item The fact that $\E(\mathcal{X}_w') = \mu_0$ follows similarly to the proof of item i) of Theorem \ref{optimal}. This item continues under the conditions of the previous item. Therefore it can be assumed that $\mathcal{X}_w$ is not calibrated, that is, $\P(\mathcal{X}_w' \neq \mathcal{X}_w) > 0$. Then,
 \begin{align*}
-\E \left[ \left( Y - \mathcal{X}_w\right)^2\right] &= \E \left( Y^2 - 2Y\mathcal{X}_w + \mathcal{X}_w^2\right)\\
+&\hspace{1.3em}   \E \left[ \left( Y - \mathcal{X}_w\right)^2\right]\\
+ &= \E \left( Y^2 - 2Y\mathcal{X}_w + \mathcal{X}_w^2\right)\\
 &= \E \left( Y^2 + 2\left(\mathcal{X}_w'^2-\mathcal{X}_w'^2\right)- 2Y\mathcal{X}_w + \mathcal{X}_w^2\right)\\
 &= \E \left( Y^2 -2Y\mathcal{X}_w'+2\mathcal{X}_w'^2- 2\mathcal{X}_w'\mathcal{X}_w + \mathcal{X}_w^2\right)\\
 &= \E\left[\left(Y-\mathcal{X}_w'\right)^2\right] + \E\left[\left(\mathcal{X}_w-\mathcal{X}_w'\right)^2\right] \\
