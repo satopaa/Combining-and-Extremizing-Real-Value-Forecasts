@@ -166,9 +166,9 @@ does not behave as if it collects information from the forecasters and
 hence needs to be \textit{extremized}, that is, 
 systematically transformed away from the marginal mean. This paper
 proposes a linear extremization technique for improving the weighted
-average of real-valued forecasts. The resulting, extremized
+average of real-valued forecasts. The resulting more extreme
 version of the weighted average exhibits many properties of optimal
-aggregation. This is illustrated with simple examples involving both
+aggregation. Both this and the sub-optimality of the weighted average are illustrated with simple examples involving 
 synthetic and real-world data. \\
 \\
 \textit{Keywords:} Information aggregation, Linear opinion pool, Model averaging, Partial information, Reliability, Resolution, Weighted average
@@ -539,24 +539,29 @@ Scenario & Forecast & $\mu_0$ & $\alpha$ & $w_1$ & $w_2$& $w_3$& $w_4$& $w_5$ \\
 
 \begin{figure}[t!]
         \centering
-        \begin{subfigure}[b]{0.323\textwidth}
+        \begin{subfigure}[b]{0.241\textwidth}
                 \includegraphics[width=\textwidth]{SimIndepELP}
                 \caption{$\bar{\mathcal{X}}$}
         \label{RelEWANo}
         \end{subfigure}%
         ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
           %(or a blank line to force the subfigure onto a new line)
-        \begin{subfigure}[b]{0.323\textwidth}
+        \begin{subfigure}[b]{0.241\textwidth}
                 \includegraphics[width=\textwidth]{SimIndepOLP}
                 \caption{$\mathcal{X}_w$}
         \label{RelOWANo}
         \end{subfigure}
         ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
           %(or a blank line to force the subfigure onto a new line)
-        \begin{subfigure}[b]{0.323\textwidth}
+        \begin{subfigure}[b]{0.241\textwidth}
                 \includegraphics[width=\textwidth]{SimIndepELOP}
                 \caption{$\mathcal{X}^*$ }
         \label{RelEOWANo}
+        \end{subfigure}
+                \begin{subfigure}[b]{0.241\textwidth}
+                \includegraphics[width=\textwidth]{SimIndepOPT}
+                \caption{$\mathcal{X}''$ }
+        \label{RelEOPTNo}
         \end{subfigure}
 %   \caption{\textit{No Overlap.} Reliability diagrams of the competing aggregators  under simulated data. }
           \caption{Synthetic data. Out-of-sample reliability under no information overlap. }
@@ -566,24 +571,29 @@ Scenario & Forecast & $\mu_0$ & $\alpha$ & $w_1$ & $w_2$& $w_3$& $w_4$& $w_5$ \\
 
 \begin{figure}[t!]
         \centering
-        \begin{subfigure}[b]{0.323\textwidth}
+        \begin{subfigure}[b]{0.241\textwidth}
                 \includegraphics[width=\textwidth]{SimDepELP}
                 \caption{$\bar{\mathcal{X}}$}
         \label{RelEWAHigh}
         \end{subfigure}%
         ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
           %(or a blank line to force the subfigure onto a new line)
-        \begin{subfigure}[b]{0.323\textwidth}
+        \begin{subfigure}[b]{0.241\textwidth}
                 \includegraphics[width=\textwidth]{SimDepOLP}
                 \caption{$\mathcal{X}_w$}
         \label{RelOWAHigh}
         \end{subfigure}
         ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
           %(or a blank line to force the subfigure onto a new line)
-        \begin{subfigure}[b]{0.323\textwidth}
+        \begin{subfigure}[b]{0.241\textwidth}
                 \includegraphics[width=\textwidth]{SimDepELOP}
                 \caption{$\mathcal{X}^*$ }
         \label{RelEOWAHigh}
+        \end{subfigure}
+           \begin{subfigure}[b]{0.241\textwidth}
+                \includegraphics[width=\textwidth]{SimDepOPT}
+                \caption{$\mathcal{X}''$ }
+        \label{RelOPTHigh}
         \end{subfigure}
           \caption{Synthetic data. Out-of-sample reliability under high information overlap. }
 %   \caption{\textit{High Overlap.} Reliability diagrams of the competing aggregators under simulated data. 
@@ -674,24 +684,24 @@ The evaluation is based on a $10$-fold cross validation. The models $\mathcal{M}
 
 \begin{figure}
         \centering
-        \begin{subfigure}[b]{0.24\textwidth}
+        \begin{subfigure}[b]{0.241\textwidth}
                 \includegraphics[width=\textwidth]{IndependentModel1}
                 \caption{$\mathcal{M}_1$}
                 \label{fig:gull}
         \end{subfigure}%
         ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
           %(or a blank line to force the subfigure onto a new line)
-        \begin{subfigure}[b]{0.24\textwidth}
+        \begin{subfigure}[b]{0.241\textwidth}
                 \includegraphics[width=\textwidth]{IndependentModel2}
                 \caption{$\mathcal{M}_2$}
                 \label{fig:tiger}
         \end{subfigure}
-        \begin{subfigure}[b]{0.24\textwidth}
+        \begin{subfigure}[b]{0.241\textwidth}
                 \includegraphics[width=\textwidth]{DependentModel2}
                 \caption{$\mathcal{M}_3$}
                 \label{fig:tiger}
         \end{subfigure}
-                \begin{subfigure}[b]{0.24\textwidth}
+                \begin{subfigure}[b]{0.241\textwidth}
                 \includegraphics[width=\textwidth]{IndependentModelF}
                 \caption{$\mathcal{M}_F$}
                 \label{RelDiagramNoF}
