@@ -510,7 +510,7 @@ The simulation study considers $N = 5$ forecasters under two different informati
 \end{enumerate}
 
 
-The competing aggregators are the equally weighted average $\bar{\mathcal{X}}$, the optimally weighted average $\mathcal{X}_w$, and the extremized version of the optimally weighted average $\mathcal{X}^*$. The parameters in $\mathcal{X}^*$ and  $\mathcal{X}_w$ are first estimated by minimizing the average quadratic loss over a training set of $10,000$ draws from (\ref{NExperts}).  After this, the competing aggregators are evaluated on an independent test set of $10,000$ draws from (\ref{NExperts}). 
+The competing aggregators are the equally weighted average $\bar{\mathcal{X}}$, the optimally weighted average $\mathcal{X}_w$, the extremized version of the optimally weighted average $\mathcal{X}^*$, and the revealed aggregator $\mathcal{X}''$. The parameters in $\mathcal{X}^*$ and  $\mathcal{X}_w$ are first estimated by minimizing the average quadratic loss over a training set of $10,000$ draws from (\ref{NExperts}).  After this, the competing aggregators are evaluated on an independent test set of $10,000$ draws from (\ref{NExperts}). 
 %Finally,  the aggregators' performance is evaluated solely based on out-of-sample accuracy.
 Therefore all the following results, apart from the parameter estimates, represent out-of-sample performance. 
 
@@ -558,12 +558,12 @@ Scenario & Forecast & $\mu_0$ & $\alpha$ & $w_1$ & $w_2$& $w_3$& $w_4$& $w_5$ \\
         \begin{subfigure}[b]{0.241\textwidth}
                 \includegraphics[width=\textwidth]{SimIndepELOP}
                 \caption{$\mathcal{X}^*$ }
-        \label{RelEOWANo}
+        \label{ELOPNoOverlap}
         \end{subfigure}
                 \begin{subfigure}[b]{0.241\textwidth}
                 \includegraphics[width=\textwidth]{SimIndepOPT}
                 \caption{$\mathcal{X}''$ }
-        \label{RelEOPTNo}
+        \label{RevNoOverlap}
         \end{subfigure}
 %   \caption{\textit{No Overlap.} Reliability diagrams of the competing aggregators  under simulated data. }
           \caption{Synthetic data. Out-of-sample reliability under no information overlap. }
@@ -590,12 +590,12 @@ Scenario & Forecast & $\mu_0$ & $\alpha$ & $w_1$ & $w_2$& $w_3$& $w_4$& $w_5$ \\
         \begin{subfigure}[b]{0.241\textwidth}
                 \includegraphics[width=\textwidth]{SimDepELOP}
                 \caption{$\mathcal{X}^*$ }
-        \label{RelEOWAHigh}
+        \label{ELOPHighOverlap}
         \end{subfigure}
            \begin{subfigure}[b]{0.241\textwidth}
                 \includegraphics[width=\textwidth]{SimDepOPT}
                 \caption{$\mathcal{X}''$ }
-        \label{RelOPTHigh}
+        \label{RevHighOverlap}
         \end{subfigure}
           \caption{Synthetic data. Out-of-sample reliability under high information overlap. }
 %   \caption{\textit{High Overlap.} Reliability diagrams of the competing aggregators under simulated data. 
@@ -603,10 +603,11 @@ Scenario & Forecast & $\mu_0$ & $\alpha$ & $w_1$ & $w_2$& $w_3$& $w_4$& $w_5$ \\
    \label{HighOverlap}
 \end{figure}
 
-
-According to Figures \ref{NOVerlap} and  \ref{HighOverlap}, the averaging aggregators, $\bar{\mathcal{X}}$ and $\mathcal{X}_w$ are unreliable and under-confident in both information scenarios. The level of under-confidence is particularly startling in Figures \ref{RelEWANo} and \ref{RelOWANo} but decreases somewhat as overlap is introduced in Figures \ref{RelEWAHigh} and \ref{RelOWAHigh}. Given that averaging-like techniques do not behave like information aggregators, that is, they are not expanding, it is not surprising to see them perform better under high information overlap when aggregating information is less important for good performance. Table \ref{NoParams} shows the parameter estimates for $\mathcal{X}_w$ and $\mathcal{X}^*$.  The weights in $\mathcal{X}_w$ increase in the forecaster's amount of information and differ noticeably from the equal weights employed by $\bar{\mathcal{X}}$. 
+Figures \ref{RevNoOverlap} and \ref{RevHighOverlap} show the reliability diagrams for $\mathcal{X}''$ under no information overlap and high information overlap, respectively. Comparing these plots to the reliability diagrams of $\bar{\mathcal{X}}$ and $\mathcal{X}_w$ given in the same figure, reveals that $\bar{\mathcal{X}}$ and $\mathcal{X}_w$ are not only unreliable but also have smaller variance than $\mathcal{X}''$. Furthermore, the manner in which the plotted points deviate from the diagonal suggests that $\bar{\mathcal{X}}$ and $\mathcal{X}_w$ are under-confident in both information scenarios. The level of under-confidence is particularly startling in Figures \ref{RelEWANo} and \ref{RelOWANo} but decreases somewhat as overlap is introduced in Figures \ref{RelEWAHigh} and \ref{RelOWAHigh}. Given that averaging-like techniques do not behave like information aggregators, that is, they are not expanding, it is not surprising to see them perform better under high information overlap when aggregating information is less important for good performance. Table \ref{NoParams} shows the parameter estimates for $\mathcal{X}_w$ and $\mathcal{X}^*$.  The weights in $\mathcal{X}_w$ increase in the forecaster's amount of information and differ noticeably from the equal weights employed by $\bar{\mathcal{X}}$. 
 %The weights in $\mathcal{X}_w$ increase in the forecaster's amount of information, namely $\delta_j$ and differ noticeably from the equal weights employed by $\bar{\mathcal{X}}$. 
-More importantly, however, in both information scenarios the extremizing parameter $\alpha > 1$. This reflects the need to correct the under-confidence of the traditional weighted average. The resulting $\mathcal{X}^*$ is both more reliable and confident.  In Figure \ref{RelEOWANo} its distribution appears to approximate the distribution of $Y$ very well, suggesting  almost complete information. Some of this information, however, is lost in Figure \ref{RelEOWAHigh} because in this scenario the group of forecasters knows $32\%$ of the total information, as opposed to the $80\%$ in the no overlap scenario.
+More importantly, however, in both information scenarios the extremizing parameter $\alpha > 1$. This reflects the need to correct the under-confidence of the traditional weighted average. According to Figures \ref{ELOPNoOverlap} and \ref{ELOPHighOverlap}, the resulting $\mathcal{X}^*$ is both more reliable and confident. More importantly, its reliability diagrams show that $\mathcal{X}^*$ behaves very similarly to the optimal $\mathcal{X}''$. 
+
+% In Figure \ref{RelEOWANo} its distribution appears to approximate the distribution of $Y$ very well, suggesting  almost complete information. Some of this information, however, is lost in Figure \ref{RelEOWAHigh} because in this scenario the group of forecasters knows $32\%$ of the total information, as opposed to the $80\%$ in the no overlap scenario.
 
 
 %Table \ref{NoParams} shows the parameter estimates for $\mathcal{X}_w$ and $\mathcal{X}^*$. T
@@ -655,7 +656,10 @@ Scenario & Forecast & $L(\Y,\boldsymbol{\mathcal{X}} )$ & REL & RES & UNC & $s^2
 \label{scenA}
 \end{table}
 
-Table \ref{scenA} presents the quadratic loss, its additive components, and the estimated variance $s^2$ for each of the different forecasts under both information scenarios. In addition to the aforementioned $\bar{\mathcal{X}}$, $\mathcal{X}_w$, and $\mathcal{X}^*$, the table also presents scores for the median forecast,  the individual forecaster with the lowest quadratic loss, and the revealed aggregator $\mathcal{X}''$. According to the results, the best individual forecaster is reliable but extremely non-resolute, leading to an overall poor average quadratic loss. Under no information overlap, the best individual is better than both the median and $\bar{\mathcal{X}}$ because these aggregators assign too much importance to the individual forecasters with very little information. The median has the overall worst performance.  As predicted by Theorem \ref{contraction},  the averaging aggregators $\bar{\mathcal{X}}$ and $\mathcal{X}_w$ are neither reliable nor expanding. The remaining two aggregators, namely $\mathcal{X}^*$ and $\mathcal{X}''$, on the other hand, are reliable, expanding, and resolute. Table \ref{NoParams} shows that $\mathcal{X}^*$ is in fact  almost equivalent to $\mathcal{X}''$ under no information overlap. Under high information overlap, however, $\mathcal{X}''$ gains slight advantage over $\mathcal{X}^*$. In this case $\mathcal{X}^*$ cannot take the same form as $\mathcal{X}''$. Consequently, it has an estimated variance of $0.228$ which is well below the  amount of information known to the group, namely $0.320$. It fails to use information optimally because it cannot subtract off the shared information $X_1$ and hence avoid double-counting of information. However, despite it using information less efficiently, it is as reliable as $\mathcal{X}''$. 
+Table \ref{scenA} presents the quadratic loss, its additive components, and the estimated variance $s^2$ for each of the different forecasts under both information scenarios. In addition to the aforementioned $\bar{\mathcal{X}}$, $\mathcal{X}_w$, $\mathcal{X}^*$, and $\mathcal{X}''$, the table also presents scores for the median forecast and the individual forecaster with the lowest quadratic loss. Even though the best individual is reliable by construction, it is highly unresolute and hence gains an overall poor quadratic loss. 
+%
+%According to the results, the best individual forecaster is reliable but extremely non-resolute, leading to an overall poor average quadratic loss.
+ Under no information overlap, however, this individual is better than both the median and $\bar{\mathcal{X}}$ because these aggregators assign too much importance to the individual forecasters with very little information. Among the aggregators the median shows the worst performance.  As predicted by Theorem \ref{contraction},  the averaging aggregators $\bar{\mathcal{X}}$ and $\mathcal{X}_w$ are neither reliable nor expanding. The remaining two aggregators, namely $\mathcal{X}^*$ and $\mathcal{X}''$, on the other hand, are reliable and expanding. Table \ref{NoParams} shows that $\mathcal{X}^*$ is in fact  almost equivalent to $\mathcal{X}''$ under no information overlap. Under high information overlap, however, $\mathcal{X}''$ gains slight advantage over $\mathcal{X}^*$. In this case $\mathcal{X}^*$ cannot take the same form as $\mathcal{X}''$. Consequently, it has an estimated variance of $0.228$ which is well below the  amount of information known to the group, namely $0.320$. It fails to use information optimally because it cannot subtract off the shared information $X_1$ and hence avoid double-counting of information. However, despite it using information less efficiently, it is as reliable as $\mathcal{X}''$. 
 
 Of course, under the Gaussian model it may be possible to compute $\mathcal{X}''$ directly. This, however, involves the non-trivial task of estimating the covariance matrix $\bSigma$ under a particular semidefinite constraint (see \citealt{satopaamodeling2} for more details). Solving the quadratic program (\ref{secondProblem}) is significantly easier in part because it involves many fewer parameters. On the other hand, problem (\ref{secondProblem}) requires a training set with known outcomes whereas $\bSigma$ can be learned from the forecasts alone. Therefore the two aggregators can be seen to serve somewhat different purposes. 
 
