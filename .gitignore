@@ -4,7 +4,8 @@
 *.blg
 *.log
 *.svg
-*.pdf
+Contraction.pdf
+*.png
 *~
 .Rapp.history
 .DS_Store
