@@ -5,7 +5,6 @@
 *.log
 *.svg
 Contraction.pdf
-*.png
 *~
 .Rapp.history
 .DS_Store
