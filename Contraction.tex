@@ -136,7 +136,7 @@
 \title{Combining and Extremizing Real-Valued Forecasts}
 %\title{A Novel Framework for Analyzing Subjective Response Data}
 \author{
-Ville A. Satop\"a\"a and Lyle H. Ungar \thanks{Ville A. Satop\"a\"a is a Doctoral Candidate, Department of Statistics, The Wharton School of the University of Pennsylvania, Philadelphia, PA 19104-6340 (e-mail: satopaa@wharton.upenn.edu); Lyle H. Ungar is a Computer Scientist, Department of Computer and Information Science, University of Pennsylvania, Philadelphia, PA 19104-6309 (e-mail: ungar@cis.upenn.edu). This research was supported by a research contract to the University
+Ville A. Satop\"a\"a and Lyle H. Ungar\thanks{Ville A. Satop\"a\"a is a Doctoral Candidate, Department of Statistics, The Wharton School of the University of Pennsylvania, Philadelphia, PA 19104-6340 (e-mail: satopaa@wharton.upenn.edu); Lyle H. Ungar is a Computer Scientist, Department of Computer and Information Science, University of Pennsylvania, Philadelphia, PA 19104-6309 (e-mail: ungar@cis.upenn.edu). This research was supported by a research contract to the University
 of Pennsylvania and the University of California from the Intelligence
 Advanced Research Projects Activity (IARPA) via the Department of
 Interior National Business Center contract number D11PC20061. The
@@ -184,9 +184,9 @@ forecasts into a single consensus forecast that represents all the experts' advi
 % is done both for
 %the sake of decision-making and
 %accuracy \citep{armstrong2}. 
-The policy-makers, however, can choose to aggregate the forecasts in many different ways. The final choice of the combination rule is crucial because it often
-significantly affects the predictive accuracy of the consensus
-forecast. 
+The policy-makers, however, can choose to aggregate the forecasts in many different ways. The final choice of the combination rule is crucial because it often decides how much of the experts' total information is incorporated and hence how well the consensus forecast performs in terms of predictive accuracy.
+%significantly affects the predictive accuracy of the consensus
+%forecast. 
 
 
 
@@ -233,25 +233,31 @@ principled way of addressing the shortcoming nor interpret potential causes of t
 %into a single forecast with optimal properties.
 
 The first step towards addressing these issues and improving the general practice of aggregation  is to understand what is meant by principled aggregation. This topic was discussed by \cite{satopaamodeling2, satopaamodeling} who propose the \textit{partial information 
-framework} as a general platform for combining forecasts. They assume forecast heterogeneity to stem from information available to the forecasters and how they decide to use it. For instance, forecasters studying the same (or different) articles about the state of the economy may use distinct parts of the information and hence report different predictions of the next quarter's GDP. Overall, the framework makes the same assumptions as \cite{Ranjan08} but provides concrete models with optimal aggregators. 
+framework} as a general platform for combining forecasts. Under this framework, the outcome and the forecasts share a probability space but without any restrictions on their dependence structure. Any forecast heterogeneity  is assumed to stem purely from information available to the forecasters and how they decide to use it. For instance, forecasters studying the same (or different) articles about the state of the economy may use distinct parts of the information and hence report different predictions of the next quarter's GDP. 
+%Overall, the framework makes the same assumptions as \cite{Ranjan08} but provides concrete models with optimal aggregators. 
 %combining information from multiple forecasts into a single forecast with optimal properties.
 %optimally combining forecasts. 
-For instance, the authors describe a Gaussian partial information model under which optimal aggregation is based on the covariance matrix of the individual forecasts. They apply this model to different types of synthetic and real-world data, and illustrate how it improves upon averaging and other types of measures of central tendency. Therefore the partial information framework is not only intuitively appealing but also captures the process of real-world forecasting reasonably well. 
+%For instance, the authors describe a Gaussian partial information model under which optimal aggregation is based on the covariance matrix of the individual forecasts. They apply this model to different types of synthetic and real-world data, and illustrate how it improves upon averaging and other types of measures of central tendency. Therefore the partial information framework is not only intuitively appealing but also captures the process of real-world forecasting reasonably well. 
 % both intuitively and empirically appealing.
 % but tends empirically explains real world forecasting reasonably well. 
 %
 % These issues can be handled by the partial information 
 %framework \citep{satopaamodeling2, satopaamodeling} that 
 % based on the covariance between the forecasters.
+Even though this framework is extremely general, the authors focus mostly on the specific task of aggregating probability forecasts. In particular, their work does not involve any theoretical analysis of weighted averaging. 
 
-In this paper weighted averaging is analyzed under the general partial information framework. This means that the outcome and the forecasts share a probability space but without any restrictions on their dependence structure. Our first contribution extends the result
+\marginpar{Must say that PIF is used}
+
+Such an analysis is one of the main contributions of the current paper. More specifically,
+%In this paper weighted averaging is analyzed under the general partial information framework. This means that the outcome and the forecasts share a probability space but without any restrictions on their dependence structure. 
+the analysis extends the result
 in \cite{Ranjan08} to the weighted average of any type of univariate
 forecasts, including real-valued forecasts.
 %, and provides an algorithm that optimally (under a reasonable model) combines real-valued forecasts. 
 This result shows, for instance, that any non-trivial
 weighted average of reliable predictions about the next quarter's GDP
 is both unreliable and under-confident. The discussion
-provides general, yet intuitive, descriptions of well-known properties
+provides an original point of view on forecast aggregation and introduces general, yet intuitive, descriptions of well-known properties
 such as reliability and resolution. Furthermore, the analysis reveals a new property
 that is satisfied by all optimal aggregators, namely, that the variance of
 the aggregator is
@@ -266,23 +272,52 @@ median.
 % Therefore developing an alternate class of aggregators is almost certainly called for.
 % and extends, in a different form, to real-valued estimates.
 
-Under-confidence of a simple aggregator can be naturally alleviated by systematically transforming the aggregator away from the naive baseline forecast, namely the marginal mean of the outcome. 
+In the probability forecasting literature the under-confidence of a simple aggregator, such as the average forecast, is typically alleviated by \textit{extremizing}, that is, by systematically transforming the aggregate towards its nearer extreme (at zero or one). 
+%away from the naive baseline forecast, namely the marginal mean of the outcome. 
 %non-informative prior probability of $1/2$
-This technique, known as \textit{extremizing}, is increasingly used in the probability forecasting literature as a means of
-improving the average forecast. For instance, \cite{Ranjan08} propose a beta transformation that extremizes the weighted average of
+%This technique has become known as \textit{extremizing}. 
+For instance, \cite{Ranjan08} propose a beta transformation that extremizes the weighted average of
   the probability forecasts; \cite{satopaa} use a logistic regression model to extremize the average log-odds of the
-  forecasts; many others, including \cite{baron2014two}, \cite{mellers2014psychological}, and \cite{shlomi2010subjective}, have also discussed extremization. 
-%   propose yet another extremizing  transformation.
+  forecasts; many others, including \cite{baron2014two}, \cite{mellers2014psychological}, and \cite{shlomi2010subjective}, have also discussed extremization of probability forecasts.
+%   Intuitively, this kind of extremization can be best understood with simple illustrative examples. For instance, suppose two forecasters independently report $0.65$ as the (reliable) probability of some event. Clearly, if their forecasts were based on the same set of information, the optimal aggregate is $0.65$. On the other hand, if the forecasts are based on different sets of information, the combined evidence should give an aggregate forecast greater than $0.65$. 
+%%  into a forecast that is more confident than   
+%   whether the event occurs or not. 
+ % can be therefore seen as a logical approach to combining evidence from different forecasters.  
+   %  Given that the forecasters' information sets are typically not identical, some amount of extremization is likely to be beneficial. 
+%  See \cite{satopaamodeling} for examples with detailed calculations.   
+%  Therefore extremization considers the forecasts jointly and aims to convert their overall evidence into a single aggregate forecast. 
+%  , often resulting in a forecast that is more confident than, say, the average forecast. 
+% As the number of forecasts increases, more information becomes available, the aggregator becomes more confident, and the optimal aggregate converges towards either boundary of the sample space, that is, zero or one. Many simple aggregators, such as the simple average, fail to account for differences in the forecasters' information sets and hence must be extremized to reflect any lost information. 
+%  Extremization therefore takes into account the total amount of evidence 
+%  \marginpar{We also define extremization in the general context}
+%  \marginpar{No literature on this before}
+%   Extremization then only makes the known under-confidence average more confident by pushing it more towards the most confident values of zero and one. 
+Extremization is particularly easy to understand in the binary outcome case where the most confident values, namely zero and one, are explicit boundary points of the sample space. Naturally, the same applies to probability forecasts of any categorical outcome. 
+%   It is this well-defined boundary of most confidence values that makes extermination easy to understand in the binary case.
+%    A similar story applied to any categorial outcome with forecasts in the corresponding simplex. 
+    However, if both the outcome and the forecasts are real-valued, it is not clear anymore what values represent the most confident forecasts. Therefore extremization does not have an explicit target, and, consequently, it is not at first  clear what it means or how it could be applied. This may be the main reason why, to the best of our knowledge, no previous literature has discussed extremizing real-valued forecasts. 
+    %     such a technique a) would work, and b) can even be applied to real-valued forecasts.
+      Our second contribution, however, shows that extremizing can improve an aggregator also when the individual forecasts are real-valued. First, the paper motivates and generalizes the aforementioned extremization of probability forecasts to any univariate forecasts. Second, extremization of real-valued forecasts is illustrated with a convex optimization procedure that linearly extremizes the optimally weighted average. This technique is applied to simple examples involving both synthetic and real-world data. In both examples extremizing leads to an aggregate that is not only more resolute and reliable but also exhibits many properties of optimal aggregation.
+
+
+%      , therefore perhaps somewhat surprisingly, suggests, however, that  
+  
+  
+ 
+  
+  
+%  Unfortunately, it is not at all clear whether a similar common-sense argument would hold for real-valued forecasts. Furthermore, it is not even clear what extremization means in the context of real-valued forecasts/outcomes.  
+  %   propose yet another extremizing  transformation.
 % {\cite{Ranjan08,satopaa,baron2014two}.\footnote{Unfortunately, many different
 %  ad hoc transformations have been used. 
 %  For instance, \cite{Ranjan08} propose a beta transformation that extremizes the weighted average of
 %  the probability forecasts; \cite{satopaa} use a logistic regression model to extremize the average log-odds of the
 %  forecasts; \cite{baron2014two} propose yet another extremizing  transformation.}
-Conceptually, extremizing is a very simple idea that can be applied to almost any type of forecasts.
+%Conceptually, extremizing is a very simple idea that can be applied to almost any type of forecasts. 
 % -- not just to probability forecasts. 
- This paper suggests that extremizing can improve an aggregator also when the individual forecasts are real-valued. 
-%is not a technique restricted to probability forecasting but should be also practiced even when the forecasts are real-valued.
-Our second contribution illustrates this with a convex optimization procedure that linearly extremizes the weighted average of real-valued forecasts. The technique is applied to simple examples involving both synthetic and real-world data. In both examples extremizing leads to an aggregate that is not only more resolute and reliable but also exhibits many properties of optimal aggregation.
+%It is therefore, perhaps somewhat surprisingly, that this paper suggests that extremizing can improve an aggregator also when the individual forecasts are real-valued. 
+%%is not a technique restricted to probability forecasting but should be also practiced even when the forecasts are real-valued.
+%Our second contribution illustrates this with a convex optimization procedure that linearly extremizes the weighted average of real-valued forecasts. The technique is applied to simple examples involving both synthetic and real-world data. In both examples extremizing leads to an aggregate that is not only more resolute and reliable but also exhibits many properties of optimal aggregation.
 
 %Our second contribution illustrates this both on synthetic and real-world data.
 %, extremizes the weighted average of real-valued forecasts, and shows how this
@@ -403,7 +438,9 @@ In general, many measures of central tendency reduce variance and hence are also
 %This stands in sharp contrast with what increased variance represents under partial information. 
 
 
-Given that averaging aggregators are under-confident, a simple adjustment is to  increase their variance by transforming them systematically away from the marginal mean $\mu_0$. This is precisely what extremizing does. Therefore it is not surprising that extremizing has been observed to improve the predictive accuracy of many simple aggregators of  probability forecasts. To the best of our knowledge, however,  no previous study has illustrated the benefits of extremizing real-valued forecasts. This is the main topic in the rest of the paper.
+Given that averaging aggregators are under-confident, a simple adjustment is to  increase their variance by transforming them systematically away from the marginal mean $\mu_0$. This is precisely what extremizing does. Therefore it is not surprising that extremizing has been observed to improve the predictive accuracy of many simple aggregators of  probability forecasts. 
+%To the best of our knowledge, however,  no previous study has illustrated the benefits of extremizing real-valued forecasts. 
+This is the main topic in the rest of the paper.
 
 %The next section introduces a simple optimization procedure that extremizes the weighted average of real-valued forecasts. 
 
@@ -442,20 +479,24 @@ To express this problem in a form that is more amenable to estimation, denote an
 \end{align}
 where the inequality is interpreted element-wise and $\Beta$ is a vector of $N+1$ optimization parameters. Given that $\X'\X$ is always positive semidefinite, problem (\ref{secondProblem}) is a convex quadratic program that can be solved efficiently with standard optimization techniques. 
 %For instance, our implementation uses a commercial optimization solver, called Gurobi \citep{gurobi}
- 
  If $\Beta^* = (\beta_0^*, \dots, \beta_{N}^*)'$ represents the solution to (\ref{secondProblem}), the optimal values of the original parameters can be recovered by
 \begin{align*}
 \alpha^* &= \sum_{j=1}^N \beta_j^*,\\
 w_j^* &=  \beta_j^*/\alpha^* \text{ for } j = 1, \dots, N, \text{ and}\\
 \mu_0^* &= -\beta_0^*/(1-\alpha^*).
 \end{align*}
-Observe that the solution to (\ref{secondProblem}) is nothing more than the ordinary least squares estimates under non-negativity constraints on the slope coefficients. Therefore a possible relaxation is to ignore these constraints and simply fit a multiple linear regression model with $\Y$ as response and $\X$ as the predictor. For the sake of correctness, however, this paper does not consider this relaxation but performs extremization via (\ref{secondProblem}). 
+%Observe that the solution to (\ref{secondProblem}) is nothing more than the ordinary least squares estimates under non-negativity constraints on the slope coefficients. Therefore a possible relaxation is to ignore these constraints and simply fit a multiple linear regression model with $\Y$ as response and $\X$ as the predictor. For the sake of correctness, however, this paper does not consider this relaxation but performs extremization via (\ref{secondProblem}). 
+The next two sections apply and evaluate this method both on simulated and real-world forecasts. 
 
 \section{Simulation Study} \label{simulation}
 
-This section illustrates Theorem \ref{contraction} on data generated from the Gaussian partial information model introduced in \cite{satopaamodeling2, satopaamodeling} as a practical specification of the general partial information framework. 
+This section illustrates Theorem \ref{contraction} on data generated from the Gaussian partial information model introduced in \cite{satopaamodeling2, satopaamodeling}. 
+%They  as a practical specification of the general partial information framework. 
+%For instance, the authors describe a Gaussian partial information model under which optimal aggregation is based on the covariance matrix of the individual forecasts.
+ They apply this specification of the partial information model to different types of synthetic and real-world data, and illustrate how it improves upon averaging and other types of measures of central tendency. Therefore it is not only intuitively appealing but also captures the process of real-world forecasting reasonably well. 
+
 %They apply the Gaussian model to different real-world applications and show that it leads to accurate aggregation of both real-valued and probability forecasts. This suggests that the model is, at least to some degree, a reasonable approximation of real-world forecasting.
- The simplest version of their model occurs when the outcome $Y$ and the forecasts $X_j$ are real-valued with mean zero. The observables are then generated jointly from the following multivariate Gaussian distribution:
+ The simplest version of the Gaussian model occurs when the outcome $Y$ and the forecasts $X_j$ are real-valued with mean zero. The observables are then generated jointly from the following multivariate Gaussian distribution:
 \begin{align}
 \left(\begin{matrix} Y \\ X_{1}\\ \vdots \\ X_{N} \end{matrix}\right) &\sim \mathcal{N}_{N+1}\left( 
  \boldsymbol{0}, \left(\begin{matrix} 
