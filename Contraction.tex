@@ -473,7 +473,7 @@ In general, many measures of central tendency reduce variance and hence are also
 
 %This stands in sharp contrast with what increased variance represents under partial information. 
 
-Theorem \ref{contraction}, however, is not only negative in nature; it is also  constructive in at least two different ways. First, 
+Theorem \ref{contraction}, however, is not only negative in nature; it is also  constructive in several different ways. First, 
 %given that averaging aggregators are under-confident, a simple adjustment is to  increase their variance by transforming them systematically away from the marginal mean $\mu_0$. 
 %This
 it motivates a general and precise definition of extremizing:
@@ -483,7 +483,8 @@ Consider two reliable forecasts $X_i$ and $X_j$. Denote their common marginal me
 \end{definition}
 
 \noindent
-It is interesting to contrast this definition with the popular extremization heuristic in the context of probability forecasting.  Definition \ref{extrem} suggests that simply moving, say, the average probability forecast closer to zero or one improves the aggregate if and only if the marginal probability of success is $0.5$. To illustrate, consider a geographical region where rain is known to occur on $20$\% of the days. If the average probability forecast of rain tomorrow is $0.30$, this aggregate should not be shifted towards zero and hence closer to the marginal mean of $0.20$ but rather towards one. Second, Theorem \ref{contraction} suggests that extremization, as defined formally above, is likely to improve the weighted average of any type of univariate forecasts. This justifies the construction of a broader class of extremizing techniques. To illustrate this result, the remainder of the paper introduces a simple optimization procedure that extremizes the weighted average of real-valued forecasts and applies it to two examples involving both synthetic and real-world data.
+It is interesting to contrast this definition with the popular extremization heuristic in the context of probability forecasting.  Definition \ref{extrem} suggests that simply moving, say, the average probability forecast closer to zero or one improves the aggregate if and only if the marginal probability of success is $0.5$. To illustrate, consider a geographical region where rain is known to occur on $20$\% of the days. If the average probability forecast of rain tomorrow is $0.30$, this aggregate should not be shifted towards zero and hence closer to the marginal mean of $0.20$ but rather towards one. Second, Theorem \ref{contraction} suggests that extremization, as defined formally above, is likely to improve the weighted average of any type of univariate forecasts. This justifies the construction of a broader class of extremizing techniques. According to the second part of item \ref{underconfB}), extremizing is not required when the weighted average is able to give full weight to a single forecaster who happens to know everything that the other forecasters know. In all other cases and in particular when the single most informed forecaster knows a lot less than the forecasters' as a group, extremizing is likely to improve the weighted average. To illustrate this result, the next section introduces a simple optimization procedure that extremizes the weighted average of real-valued forecasts.
+% and applies it to two examples involving both synthetic and real-world data.
 %
 % This is precisely what extremizing does. Therefore it is not surprising that extremizing has been observed to improve the predictive accuracy of many simple aggregators of  probability forecasts. 
 %%To the best of our knowledge, however,  no previous study has illustrated the benefits of extremizing real-valued forecasts. 
@@ -543,10 +544,10 @@ The next two sections apply and evaluate this method both on simulated and real-
 This section illustrates Theorem \ref{contraction} on data generated from the Gaussian partial information model introduced in \cite{satopaamodeling2, satopaamodeling}. 
 %They  as a practical specification of the general partial information framework. 
 %For instance, the authors describe a Gaussian partial information model under which optimal aggregation is based on the covariance matrix of the individual forecasts.
- They apply this specification of the partial information model to different types of synthetic and real-world data, and illustrate how it improves upon averaging and other types of measures of central tendency. Therefore it is not only intuitively appealing but also captures the process of real-world forecasting reasonably well. 
-
+% They apply this specification of the partial information model to different types of synthetic and real-world data, and illustrate how it improves upon averaging and other types of measures of central tendency. Therefore it is not only intuitively appealing but also captures the process of real-world forecasting reasonably well. 
+%
 %They apply the Gaussian model to different real-world applications and show that it leads to accurate aggregation of both real-valued and probability forecasts. This suggests that the model is, at least to some degree, a reasonable approximation of real-world forecasting.
- The simplest version of the Gaussian model occurs when the outcome $Y$ and the forecasts $X_j$ are real-valued with mean zero. The observables are then generated jointly from the following multivariate Gaussian distribution:
+ The simplest version of this model occurs when the outcome $Y$ and the forecasts $X_j$ are real-valued with mean zero. The observables are then generated jointly from the following multivariate Gaussian distribution:
 \begin{align}
 \left(\begin{matrix} Y \\ X_{1}\\ \vdots \\ X_{N} \end{matrix}\right) &\sim \mathcal{N}_{N+1}\left( 
  \boldsymbol{0}, \left(\begin{matrix} 
@@ -562,10 +563,13 @@ This section illustrates Theorem \ref{contraction} on data generated from the Ga
 \delta_N & \rho_{N,1} & \rho_{N,2} & \dots & \delta_N\\ 
  \end{array}\right)\right),  \label{NExperts}
 \end{align}
-where the covariance structure describes the information among the forecasters. In particular, the maximum amount of information is $1.0$. The diagonal entry $\delta_j \in [0,1]$ represents the amount of information known to forecaster $j$. A forecaster with $\delta_j = 1$ (or $\delta_j = 0$) always reports the correct answer $Y$ (or the marginal mean $\mu_0 = 0$, respectively). The off-diagonal $\rho_{i,j}$, on the other hand, can be regarded as the amount of information overlap between forecasters $i$ and $j$. Based on well-known properties of a multivariate Gaussian (see, e.g., \citealt{ravishanker2001first}), the distribution of $Y$ conditional on forecast $X_j$ is $Y|X_j \sim \mathcal{N}(X_j, 1-\delta_j)$. This directly shows that the forecasts are reliable, that is, $\E(Y | X_j) = X_j$. 
-%Therefore the forecasts $X_j$ are reliable.
-%shows that the forecast $X_j$ is reliable, that is, $\E(Y | X_j) = X_j$. 
-According to the same conditional results, the distribution of $Y_k$ given all the forecasts $\X_k = (X_1, \dots, X_n)'$ is $Y_k | \X_k \sim \mathcal{N}(\diag(\bSigma)'\bSigma^{-1}\X_k, 1- \diag(\bSigma)'\bSigma^{-1}\diag(\bSigma))$. Therefore the revealed aggregator for the $k$th problem is  $\mathcal{X}_k''  = \E(Y_k | \X_k) = \diag(\bSigma)'\bSigma^{-1}\X_k$. 
+where the covariance matrix describes the \textit{information structure} among the forecasters. In particular, the maximum amount of information is $1.0$. The diagonal entry $\delta_j \in [0,1]$ represents the amount of information known to forecaster $j$. A forecaster with $\delta_j = 1$ (or $\delta_j = 0$) always reports the correct answer $Y$ (or the marginal mean $\mu_0 = 0$, respectively). The off-diagonal $\rho_{i,j}$, on the other hand, can be regarded as the amount of information overlap between forecasters $i$ and $j$. Using the  well-known properties of a conditional multivariate Gaussian distribution, \cite{satopaamodeling2, satopaamodeling} show that under this model the forecasts are reliable
+%
+%Based on well-known properties of a multivariate Gaussian (see, e.g., \citealt{ravishanker2001first}), the distribution of $Y$ conditional on forecast $X_j$ is $Y|X_j \sim \mathcal{N}(X_j, 1-\delta_j)$. This directly shows that the forecasts are reliable, that is, $\E(Y | X_j) = X_j$. 
+%%Therefore the forecasts $X_j$ are reliable.
+%%shows that the forecast $X_j$ is reliable, that is, $\E(Y | X_j) = X_j$. 
+%According to the same conditional results, the distribution of $Y_k$ given all the forecasts $\X_k = (X_1, \dots, X_n)'$ is $Y_k | \X_k \sim \mathcal{N}(\diag(\bSigma)'\bSigma^{-1}\X_k, 1- \diag(\bSigma)'\bSigma^{-1}\diag(\bSigma))$. Therefore 
+and that the revealed aggregator for the $k$th problem takes the form  $\mathcal{X}_k''  = \E(Y_k | \X_k) = \diag(\bSigma)'\bSigma^{-1}\X_k$. 
 
 %This aggregator represents optimal use of the forecasters' revealed information. 
 
@@ -586,12 +590,11 @@ According to the same conditional results, the distribution of $Y_k$ given all t
                 \caption{High Information Overlap}
                 \label{DiagramsB}
         \end{subfigure}
-   \caption{Diagram illustration of the information distribution among $N = 5$ forecasters. The top bar next to \textit{Full Information} represents all possible information that can be known about $Y$. The bar leveled horizontally with \textit{Forecaster $j$} represents the information used by that forecaster.}    
+   \caption{Information Distribution Among $N = 5$ Forecasters. The top bar next to \textit{Full Information} represents all possible information that can be known about $Y$. The bar leveled horizontally with \textit{Forecaster $j$} represents the information used by that forecaster.}    
         \label{Diagrams}
 \end{figure}
 
-
-The simulation study considers $N = 5$ forecasters under two different information scenarios: 
+The distribution (\ref{NExperts}) is particularly useful because it provides a realistic model for testing aggregation under different information structures. This section considers $N = 5$ forecasters under two such variations, namely:
 \begin{enumerate}
 \item[] \textit{No Information Overlap.}  Fix $\delta_j = 0.1 + 0.02j$ for $j = 1, \dots, 5$ and let $\rho_{i,j} = 0$ for all $i,j$. Therefore the forecasters have independent information sources. This information structure is illustrated in Figure \ref{DiagramsA}. Summing up the individual variances shows that as a group the forecasters know $80\%$ of the total information. The revealed aggregator reduces to $\mathcal{X}_k'' = \sum_{j=1}^5 X_{jk}$, has variance $0.80$, and therefore efficiently uses all the forecasters' information.
 
@@ -600,9 +603,9 @@ The simulation study considers $N = 5$ forecasters under two different informati
 \end{enumerate}
 
 
-The competing aggregators are the equally weighted average $\bar{\mathcal{X}}$, the optimally weighted average $\mathcal{X}_w$, the extremized version of the optimally weighted average $\mathcal{X}^*$, and the revealed aggregator $\mathcal{X}''$. The parameters in $\mathcal{X}^*$ and  $\mathcal{X}_w$ are first estimated by minimizing the average quadratic loss over a training set of $10,000$ draws from (\ref{NExperts}).  After this, all the competing aggregators are evaluated on an independent test set of $10,000$ draws from (\ref{NExperts}). 
+The competing aggregators are the equally weighted average $\bar{\mathcal{X}}$, the optimally weighted average $\mathcal{X}_w$, the extremized version of the optimally weighted average $\mathcal{X}^*$, and the revealed aggregator $\mathcal{X}''$. The parameters in $\mathcal{X}^*$ and  $\mathcal{X}_w$ are first estimated by minimizing the average quadratic loss over a training set of $10,000$ draws from (\ref{NExperts}).  After this, all the competing aggregators are evaluated on an independent test set of another $10,000$ draws from (\ref{NExperts}). 
 %Finally,  the aggregators' performance is evaluated solely based on out-of-sample accuracy.
-Therefore the following results, apart from the parameter estimates, represent out-of-sample performance. 
+Therefore all the following results, apart from the parameter estimates, represent out-of-sample performance. 
 
 
 
@@ -612,7 +615,7 @@ In probability forecasting the quality of the predictions is typically assessed 
 % Wed May 20 21:31:51 2015
 \begin{table}[ht]
 \centering
-\caption{Synthetic data. Estimated parameter values.}
+\caption{Synthetic Data. Estimated parameter values.}
 %optimally weighted average, $\mathcal{X}_w$ and the extremized version of the optimally weighted average, $\mathcal{X}^*$
 % under simulated data. }
 \begin{tabular}{llrrrrrrr}
@@ -656,7 +659,7 @@ Scenario & Forecast & $\mu_0$ & $\alpha$ & $w_1$ & $w_2$& $w_3$& $w_4$& $w_5$ \\
         \label{RevNoOverlap}
         \end{subfigure}
 %   \caption{\textit{No Overlap.} Reliability diagrams of the competing aggregators  under simulated data. }
-          \caption{Synthetic data. Out-of-sample reliability under no information overlap. }
+          \caption{Synthetic Data. Out-of-sample reliability under no information overlap. }
         \label{NOVerlap}
 \end{figure}
 
@@ -687,15 +690,18 @@ Scenario & Forecast & $\mu_0$ & $\alpha$ & $w_1$ & $w_2$& $w_3$& $w_4$& $w_5$ \\
                 \caption{$\mathcal{X}''$ }
         \label{RevHighOverlap}
         \end{subfigure}
-          \caption{Synthetic data. Out-of-sample reliability under high information overlap. }
+          \caption{Synthetic Data. Out-of-sample reliability under high information overlap. }
 %   \caption{\textit{High Overlap.} Reliability diagrams of the competing aggregators under simulated data. 
 %    }        
    \label{HighOverlap}
 \end{figure}
 
-Figures \ref{RevNoOverlap} and \ref{RevHighOverlap} present the reliability diagrams for $\mathcal{X}''$ under no and high information overlap, respectively. Comparing these plots to the corresponding reliability diagrams of $\bar{\mathcal{X}}$ and $\mathcal{X}_w$ in the same figures, reveals that $\bar{\mathcal{X}}$ and $\mathcal{X}_w$ are not only unreliable but also have smaller variance than $\mathcal{X}''$. Furthermore, the manner in which the plotted points deviate from the diagonal suggests that $\bar{\mathcal{X}}$ and $\mathcal{X}_w$ are under-confident in both information scenarios. The level of under-confidence is particularly startling in Figures \ref{RelEWANo} and \ref{RelOWANo} but decreases somewhat as overlap is introduced in Figures \ref{RelEWAHigh} and \ref{RelOWAHigh}. Given that averaging-like techniques do not behave like information aggregators, that is, they are not expanding, it is not surprising to see them perform better under high information overlap when aggregating information is less important for good performance. Table \ref{NoParams} shows the parameter estimates for $\mathcal{X}_w$ and $\mathcal{X}^*$.  The weights in $\mathcal{X}_w$ increase in the forecaster's amount of information and differ noticeably from the equal weights employed by $\bar{\mathcal{X}}$. 
+Figures \ref{RevNoOverlap} and \ref{RevHighOverlap} present the reliability diagrams for $\mathcal{X}''$ under no and high information overlap, respectively. Comparing these plots to the corresponding reliability diagrams of $\bar{\mathcal{X}}$ and $\mathcal{X}_w$ in the same figures, reveals that $\bar{\mathcal{X}}$ and $\mathcal{X}_w$ are not only unreliable but also have smaller variance than $\mathcal{X}''$. Furthermore, the manner in which the plotted points deviate from the diagonal suggests that $\bar{\mathcal{X}}$ and $\mathcal{X}_w$ are under-confident in both information scenarios.  The level of under-confidence 
+is particularly startling in Figures \ref{RelEWANo} and \ref{RelOWANo} but 
+decreases largely as information overlap is introduced in Figures \ref{RelEWAHigh} and \ref{RelOWAHigh}.  In fact, as predicted by Theorem \ref{contraction}, the averaging aggregators behave similarly to $\mathcal{X}^*$ and $\mathcal{X}''$ under high information overlap when the forecasters know very similar information. 
+  Given that averaging-like techniques do not behave like information aggregators, that is, they are not expanding, it is not surprising to see them perform better under high information overlap when aggregating information is less important for good performance. Table \ref{NoParams} shows the parameter estimates for $\mathcal{X}_w$ and $\mathcal{X}^*$.  The weights in $\mathcal{X}_w$ increase in the forecaster's amount of information and differ noticeably from the equal weights employed by $\bar{\mathcal{X}}$. 
 %The weights in $\mathcal{X}_w$ increase in the forecaster's amount of information, namely $\delta_j$ and differ noticeably from the equal weights employed by $\bar{\mathcal{X}}$. 
-More importantly, however, in both information scenarios the extremizing parameter $\alpha > 1$. This reflects the need to correct the under-confidence of $\mathcal{X}_w$. The resulting $\mathcal{X}^*$ is more reliable and confident as can be seen in Figures \ref{ELOPNoOverlap} and \ref{ELOPHighOverlap}. Furthermore, it behaves very similarly to the optimal aggregator $\mathcal{X}''$. 
+More importantly, however, in both information scenarios the extremizing parameter $\alpha > 1$. This reflects the need to correct the under-confidence of $\mathcal{X}_w$. The resulting $\mathcal{X}^*$ is more reliable and confident as can be seen in Figures \ref{ELOPNoOverlap} and \ref{ELOPHighOverlap}. Furthermore, it behaves very similarly to the optimal aggregator $\mathcal{X}''$ under both information structures. 
 
 % In Figure \ref{RelEOWANo} its distribution appears to approximate the distribution of $Y$ very well, suggesting  almost complete information. Some of this information, however, is lost in Figure \ref{RelEOWAHigh} because in this scenario the group of forecasters knows $32\%$ of the total information, as opposed to the $80\%$ in the no overlap scenario.
 
@@ -708,11 +714,11 @@ In addition to performing visual assessment, the aggregators can be compared bas
 \begin{align*}
 L\left(\Y, \boldsymbol{\mathcal{X}}\right) &= \frac{1}{K} \sum_{k=1}^K \left(Y_k - \mathcal{X}_k\right)^2.
 \end{align*}
-If the forecasts are probability estimates of binary outcomes, the above loss is called the Brier score and is known to have a decomposition that permits a closer analysis of  reliability and resolution \citep{murphy1973new, Brier}. The decomposition, however, is not limited to probability forecasts. To see this, suppose that the real-valued aggregate $\mathcal{X}_k \in \{f_1, \dots, f_I\}$ for some finite number $I$. Let $K_i$ be the number of times $f_i$ occurs, $\bar{Y}_i$ be the empirical average of $\{Y_k : \mathcal{X}_k = f_i\}$, and $\bar{Y} = \frac{1}{K} \sum_{k=1}^K Y_k$. Then,
+If the forecasts are probability estimates of binary outcomes, the above loss is known to have a decomposition that permits a closer analysis of  reliability and resolution \citep{murphy1973new, Brier}. The decomposition, however, is not limited to probability forecasts. To see this, suppose that the real-valued aggregate $\mathcal{X}_k \in \{f_1, \dots, f_I\}$ for some finite number $I$. Let $K_i$ be the number of times $f_i$ occurs, $\bar{Y}_i$ be the empirical average of $\{Y_k : \mathcal{X}_k = f_i\}$, and $\bar{Y} = \frac{1}{K} \sum_{k=1}^K Y_k$. Then,
 \begin{align}
 L\left(\Y, \boldsymbol{\mathcal{X}} \right)  &= \underbrace{\frac{1}{K} \sum_{i=1}^I K_i(f_i - \bar{Y}_i)^2}_\text{REL} - \underbrace{\frac{1}{K} \sum_{i=1}^I K_i(\bar{Y}_i-\bar{Y})^2}_\text{RES} + \underbrace{\frac{1}{K} \sum_{k=1}^K (Y_k - \bar{Y})^2}_\text{UNC}. \label{decomposition}
 \end{align}
-See the Appendix for the derivation of this decomposition. Low REL suggests high reliability. If the aggregate is reliable, then RES is approximately equal to the sample variance of the aggregate and 
+See the Appendix for the derivation of this decomposition. The three components of the decomposition are highly interpretable. In particular, low REL suggests high reliability. If the aggregate is reliable, then RES is approximately equal to the sample variance of the aggregate and 
 is increasing in resolution.
 %positively associated with
 % high resolution. 
@@ -724,7 +730,7 @@ The final term, UNC does not depend on the forecasts. This is the sample varianc
 % Thu May  7 14:19:19 2015
 \begin{table}[h!]
 \centering
-\caption{Synthetic data. The average quadratic loss, $L(\Y,\boldsymbol{\mathcal{X}} )$ with its three additive components: reliability (REL), resolution (RES), and uncertainty (UNC). The final column, $s^2$ gives the estimated variance of the forecast.} 
+\caption{Synthetic Data. The average quadratic loss, $L(\Y,\boldsymbol{\mathcal{X}} )$ with its three additive components: reliability (REL), resolution (RES), and uncertainty (UNC). The final column, $s^2$ gives the estimated variance of the forecast.} 
 \begin{tabular}{llrrrrr}
   \hline \hline
 Scenario & Forecast & $L(\Y,\boldsymbol{\mathcal{X}} )$ & REL & RES & UNC & $s^2$ \\ 
@@ -749,9 +755,9 @@ Scenario & Forecast & $L(\Y,\boldsymbol{\mathcal{X}} )$ & REL & RES & UNC & $s^2
 Table \ref{scenA} presents the quadratic loss, its additive components, and the estimated variance $s^2$ for each of the different forecasts under both information scenarios. In addition to the aforementioned $\bar{\mathcal{X}}$, $\mathcal{X}_w$, $\mathcal{X}^*$, and $\mathcal{X}''$, the table also presents scores for the median forecast and the individual forecaster with the lowest quadratic loss. Even though the best individual is reliable by construction, it is highly unresolute and hence gains an overall poor quadratic loss. 
 %
 %According to the results, the best individual forecaster is reliable but extremely non-resolute, leading to an overall poor average quadratic loss.
- Under no information overlap, however, this individual is better than both the median and $\bar{\mathcal{X}}$ because these aggregators assign too much importance to the individual forecasters with very little information. Among the aggregators the median shows the worst performance.  As predicted by Theorem \ref{contraction},  the averaging aggregators $\bar{\mathcal{X}}$ and $\mathcal{X}_w$ are neither reliable nor expanding. The remaining two aggregators, namely $\mathcal{X}^*$ and $\mathcal{X}''$, on the other hand, are reliable and expanding. Table \ref{NoParams} shows that $\mathcal{X}^*$ is in fact  almost equivalent to $\mathcal{X}''$ under no information overlap. Under high information overlap, however, $\mathcal{X}''$ gains slight advantage over $\mathcal{X}^*$. In this case $\mathcal{X}^*$ cannot take the same form as $\mathcal{X}''$. Consequently, it has an estimated variance of $0.228$ which is well below the  amount of information known to the group, namely $0.320$. It fails to use information optimally because it cannot subtract off the shared information $X_1$ and hence avoid double-counting of information. However, despite it using information less efficiently, it is as reliable as $\mathcal{X}''$. 
+ Under no information overlap, however, this individual is better than both the median and $\bar{\mathcal{X}}$ because these aggregators assign too much importance to the individual forecasters with very little information.  As predicted by Theorem \ref{contraction},  the median and the averaging aggregators $\bar{\mathcal{X}}$ and $\mathcal{X}_w$ are neither highly reliable nor expanding. The remaining two aggregators, namely $\mathcal{X}^*$ and $\mathcal{X}''$, on the other hand, are reliable and expanding. Table \ref{NoParams} shows that $\mathcal{X}^*$ is in fact  almost equivalent to $\mathcal{X}''$ under no information overlap. Under high information overlap, however, $\mathcal{X}''$ gains slight advantage over $\mathcal{X}^*$. In this case $\mathcal{X}^*$ cannot take the same form as $\mathcal{X}''$. Consequently, it has an estimated variance of $0.228$ which is well below the  amount of information known to the group, namely $0.320$. It fails to use information optimally because it cannot subtract off the shared information $X_1$ and hence avoid double-counting of information. However, despite it using information less efficiently, it is as reliable as $\mathcal{X}''$. 
 
-Of course, under the Gaussian model it may be possible to compute $\mathcal{X}''$ directly. This, however, involves the non-trivial task of estimating the covariance matrix $\bSigma$ under a particular semidefinite constraint (see \citealt{satopaamodeling2} for more details). Given that this involves a total of $\binom{N}{2} + N$ parameters, the estimation task is challenging even for moderately large, say, $N$ greater than $100$. Furthermore, the number of prediction problems $K$ must be high for accurately estimating such a large number of parameters. Applying $\mathcal{X}^*$ instead is significantly easier because its parameters can be estimated via a standard quadratic program (\ref{secondProblem}) with only $1+N$ parameters. Therefore this aggregator scales better to larger sample sizes. On the other hand, problem (\ref{secondProblem}) requires a training set with known outcomes whereas $\bSigma$ can be learned from the forecasts alone. Therefore the two aggregators can be seen to serve somewhat different purposes. 
+Of course, under the Gaussian model, $\mathcal{X}^*$ may seem redundant because the optimal  $\mathcal{X}''$ can be computed directly. In practice, however, $\bSigma$ is not known and must be estimated under a non-trivial semidefinite constraint (see \citealt{satopaamodeling2} for more details). Given that this involves a total of $\binom{N}{2} + N$ parameters, the estimation task is challenging even for moderately large $N$, say, greater than $100$. Furthermore, accurately estimating such a large number of parameters requires the forecasters to attend a large number of prediction problems $K$. Applying $\mathcal{X}^*$ instead is significantly easier because it involves only $N+1$ parameters that can be estimated via a standard quadratic program (\ref{secondProblem}).  Therefore this aggregator scales better to large groups of forecasters. On the other hand, problem (\ref{secondProblem}) requires a training set with known outcomes whereas $\bSigma$ can be learned from the forecasts alone. Therefore the two aggregators serve somewhat different purposes and should be considered complementary rather than competitive.
 
 \section{Case Study: Concrete Compressive Strength} \label{application}
 
