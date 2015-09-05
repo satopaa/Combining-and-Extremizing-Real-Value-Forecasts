@@ -313,7 +313,7 @@ Naturally, the same intuition applies to probability forecasts of any categorica
     %     such a technique a) would work, and b) can even be applied to real-valued forecasts.
     
     
-      Surprisingly, however, the second contribution of this paper shows that extremizing can improve aggregation also when the individual forecasts are real-valued. The first step is to make the notion of extremizing precise. This involves introducing a general definition that differs slightly from the above heuristic description.    
+      Perhaps somewhat counterintuitively, however, the second contribution of this paper shows that extremizing can improve aggregation also when the individual forecasts are real-valued. The first step is to make the notion of extremizing precise. This involves introducing a general definition that differs slightly from the above heuristic description.    
 %       introduce a general and precise definition of extremization. This involves a minor change in the popular interpretation.
         In particular, extremizing is redefined as a shift away from the least confident forecast, namely the marginal mean of the outcome, instead of towards the most confident (potentially undefined) values.  
 %      
@@ -781,7 +781,7 @@ This particular dataset is appropriate for illustrating our results because it i
 
 The individual forecasters are emulated with three linear regression models, $\mathcal{M}_1$, $\mathcal{M}_2$, and $\mathcal{M}_3$, that predict $Y$ based on different sets of predictors. In particular, model $\mathcal{M}_1$ only uses predictors $v_1, v_2, v_3, v_4$, whereas model $\mathcal{M}_2$ uses the remaining predictors $v_5, v_6, v_7, v_8$. Therefore their predictor sets are non-overlapping. The third model $\mathcal{M}_3$ uses the middle four predictors $v_3, v_4, v_5, v_6$, and hence has significant overlap with the other two models. The results are compared against a linear regression model $\mathcal{M}_F$ that has access to all eight predictors. This is not an aggregator and only represents the extent to which the predictors can explain the outcome $Y$. Therefore it provides interpretation and scale. The predictor sets corresponding to the different models are summarized by the curly braces in (\ref{realData}). Overall, this setup can be viewed as a real-valued equivalent of the case study in \cite{Ranjan08} who aggregate probability forecasts from three different logistic regression models. 
 
-The evaluation is based on a $10$-fold cross validation. The models $\mathcal{M}_1$, $\mathcal{M}_2$, and $\mathcal{M}_3$ are first trained on one half of the training set and then used to make  predictions for the second half and the entire testing set. Next, the aggregators are  trained on the models' predictions over the second half of the training set. Finally, the trained aggregators are tested on the models' predictions over the testing set. Therefore, similarly to Section \ref{simulation}, all the following results, apart from the parameter estimates, represent out-of-sample performance. This evaluation is performed separately under two information scenarios: the \textit{No Information Overlap} scenario considers only predictions from models $\mathcal{M}_1$ and $\mathcal{M}_2$, whereas the \textit{High Information Overlap} scenario involves only predictions from models $\mathcal{M}_1$ and $\mathcal{M}_3$. 
+The evaluation is based on a $10$-fold cross validation. The models $\mathcal{M}_1$, $\mathcal{M}_2$, and $\mathcal{M}_3$ are first trained on one half of the training set and then used to make  predictions for the second half and the entire testing set. Next, the aggregators are  trained on the models' predictions over the second half of the training set. Finally, the trained aggregators are tested on the models' predictions over the testing set. Therefore all the following results, apart from the parameter estimates, represent out-of-sample performance. Similarly to Section \ref{simulation}, the evaluation is performed separately under two information scenarios: the \textit{No Information Overlap} scenario considers only predictions from models $\mathcal{M}_1$ and $\mathcal{M}_2$, whereas the \textit{High Information Overlap} scenario involves only predictions from models $\mathcal{M}_1$ and $\mathcal{M}_3$. 
 
 
 
@@ -811,7 +811,7 @@ The evaluation is based on a $10$-fold cross validation. The models $\mathcal{M}
         \end{subfigure}           
 %        \caption{Reliability diagrams of the models applied to the concrete compressive strength data.}
 %                          \caption{(Out-of-sample) reliability diagrams of the individual models.}
-          \caption{Real-world data. Out-of-sample reliability of the individual models.}
+          \caption{Real-World Data. Out-of-sample reliability of the individual models.}
 %                          The results are based on out-of-sample predictions of concrete compressive strength.}
                 \label{RelDiagramMo}
 \end{figure}
@@ -835,7 +835,7 @@ The evaluation is based on a $10$-fold cross validation. The models $\mathcal{M}
                 \caption{$\mathcal{X}^*$}
                 \label{RelDiagramNoE}
              \end{subfigure}
-          \caption{Real-world data. Out-of-sample reliability under no information overlap. }
+          \caption{Real-World Data. Out-of-sample reliability under no information overlap. }
 %          The results are based on out-of-sample predictions of concrete compressive strength.}                       
            \label{RelDiagramNo}
 \end{figure}
@@ -856,13 +856,13 @@ The evaluation is based on a $10$-fold cross validation. The models $\mathcal{M}
                 \caption{$\mathcal{X}^*$}
                 \label{DepEOLPConrete}
         \end{subfigure}
-          \caption{Real-world data. Out-of-sample reliability under high information overlap. }
+          \caption{Real-World Data. Out-of-sample reliability under high information overlap. }
 %          The results are based on out-of-sample predictions of concrete compressive strength.}
                \label{RelDiagramHigh}
 \end{figure}
 
 
-Figures \ref{RelDiagramMo}, \ref{RelDiagramNo}, and \ref{RelDiagramHigh} present the reliability diagrams of the individual models and the aggregators under no and high information overlap, respectively. Unlike in Section \ref{simulation}, the marginal distribution of $Y$ is not known. Therefore the red curve over the inlined histogram represents the empirical distribution of $Y$. Similarly, the dashed vertical line represents the sample average of the outcomes instead of the marginal mean $\mu_0$. According to these plots, the individual forecasts are fairly reliable. The averaging aggregators $\bar{\mathcal{X}}$ and $\mathcal{X}_w$, however, are both unreliable and under-confident particularly in the no overlap scenario. Table \ref{NoParamsReal} gives the parameter estimates for $\mathcal{X}_w$ and $\mathcal{X}^*$. These aggregators employ very similar weights. In both information scenarios $\alpha > 1$, suggesting that $\mathcal{X}_w$ is under-confident and should be extremized as it is. Based on Figures \ref{RelDiagramNoE} and  \ref{DepEOLPConrete}, the resulting aggregator $\mathcal{X}^*$ is noticeably more reliable and appears to approximate the empirical distribution of $Y$ quite closely. Simply based on visual assessment $\mathcal{X}^*$ performs as well as $\mathcal{M}_F$ under low information overlap but  loses some resolution once  overlap is introduced. This makes sense because the models considered in the high information overlap scenario, namely $\mathcal{M}_1$ and $\mathcal{M}_3$ have access only to the first six predictors while $\mathcal{M}_F$ uses all eight predictors. Therefore $\mathcal{M}_F$ should have a higher level of information. 
+Figures \ref{RelDiagramMo}, \ref{RelDiagramNo}, and \ref{RelDiagramHigh} present the reliability diagrams of the individual models and the aggregators under no and high information overlap, respectively. Unlike in Section \ref{simulation}, the marginal distribution of $Y$ is not known. Therefore the red curve over the inlined histogram represents the empirical distribution of $Y$. Similarly, the dashed vertical line represents the sample average of the outcomes instead of the marginal mean $\mu_0$. According to these plots, the individual forecasts are mostly reliable, except at extremely small or large forecasts. The averaging aggregators $\bar{\mathcal{X}}$ and $\mathcal{X}_w$, on the other hand, are both unreliable and under-confident. Similarly to Section \ref{simulation} and in accordance with Theorem \ref{contraction}, this under-confidence decreases as the forecasters' information overlap increases from Figure  \ref{RelDiagramNo} to Figure \ref{RelDiagramHigh}.  Table \ref{NoParamsReal} gives the parameter estimates for $\mathcal{X}_w$ and $\mathcal{X}^*$. These aggregators employ very similar weights. In both information scenarios $\alpha > 1$, suggesting that $\mathcal{X}_w$ is under-confident and should be extremized as it is. Based on Figures \ref{RelDiagramNoE} and  \ref{DepEOLPConrete}, the resulting aggregator $\mathcal{X}^*$ is noticeably more reliable and appears to approximate the empirical distribution of $Y$ quite closely. Simply based on visual assessment $\mathcal{X}^*$ performs as well as $\mathcal{M}_F$ under low information overlap but  loses some resolution once  overlap is introduced. This makes sense because the models considered in the high information overlap scenario, namely $\mathcal{M}_1$ and $\mathcal{M}_3$ have access only to the first six predictors while $\mathcal{M}_F$ uses all eight predictors and hence should have a higher level of information. 
 
 
 
@@ -870,7 +870,7 @@ Figures \ref{RelDiagramMo}, \ref{RelDiagramNo}, and \ref{RelDiagramHigh} present
 % Wed May 20 21:48:47 2015
 \begin{table}[ht]
 \centering
-\caption{Real-world data. Estimated parameter values.} 
+\caption{Real-World Data. Estimated parameter values.} 
 %of optimally weighted average, $\mathcal{X}_w$ and the extremized version of the optimally weighted average, $\mathcal{X}^*$ 
 %under the concrete compressive strength data. }
 \begin{tabular}{llrrrr}
@@ -891,7 +891,7 @@ Scenario & Forecast & $\mu_0$ & $\alpha$ & $w_1$ & $w_2$\\
 % Fri May 15 16:06:28 2015
 \begin{table}[h!]
 \centering
-\caption{Real-world data. The average quadratic loss, $L(\Y,\boldsymbol{\mathcal{X}} )$ with its three additive components: reliability (REL), resolution (RES), and uncertainty (UNC). The final column, $s^2$ gives the estimated variance of the forecast. } 
+\caption{Real-World Data. The average quadratic loss, $L(\Y,\boldsymbol{\mathcal{X}} )$ with its three additive components: reliability (REL), resolution (RES), and uncertainty (UNC). The final column, $s^2$ gives the estimated variance of the forecast. } 
 \begin{tabular}{llrrrrr}
   \hline \hline
 Scenario &  Forecast & $L(\Y,\boldsymbol{\mathcal{X}} )$ & REL & RES & UNC & $s^2$\\ 
@@ -915,7 +915,7 @@ Scenario &  Forecast & $L(\Y,\boldsymbol{\mathcal{X}} )$ & REL & RES & UNC & $s^
 
 %Table \ref{scenA} presents the quadratic loss, its additive components, and the estimated variance $s^2$ for each of the different forecasts under both information scenarios.
 %
-Table \ref{NoTbl} provides a numerical comparison by presenting the average quadratic loss, its additive components, and the estimated variance $s^2$ for the individual models and the competing aggregators.  Given that all aggregators perform better than the individual forecasters, aggregation is generally beneficial. However, there are large performance differences among the aggregators. In particular, the variances of $\bar{\mathcal{X}}$ and $\mathcal{X}_w$  do not exceed that of the individual forecasters', suggesting that neither of them is expanding. Furthermore, they are much less reliable than the individual forecasters. In contrast, $\mathcal{X}^*$ is able to maintain the forecasters' level of reliability. Even though this aggregator is expanding, it is less resolute and has a lower variance than $\mathcal{M}_F$ under high information overlap. This can be expected because $\mathcal{X}^*$ has access only to a subset of the information that $\mathcal{M}_F$ uses. In particular, under no information overlap, all the predictors are  used by the individual forecasters, but this does not mean that this information is actually revealed to $\mathcal{X}^*$ through the reported forecasts. 
+Table \ref{NoTbl} provides a numerical comparison by presenting the average quadratic loss, its additive components, and the estimated variance $s^2$ for the individual models and the competing aggregators.  Given that all aggregators perform better than the individual forecasters, aggregation is generally beneficial. However, there are large performance differences among the aggregators. In particular, the variances of $\bar{\mathcal{X}}$ and $\mathcal{X}_w$  do not exceed that of the individual forecasters', suggesting that neither of them is expanding. Furthermore, they are much less reliable than the individual forecasters. In contrast, $\mathcal{X}^*$ is able to maintain the forecasters' level of reliability. Even though this aggregator is expanding, it is less resolute and has a lower variance than $\mathcal{M}_F$ under high information overlap. This can be expected because in the high information overlap scenario $\mathcal{X}^*$ has access only to a subset of the information that $\mathcal{M}_F$ uses. On the other hand, under no information overlap, all the predictors are  used by the individual forecasters, but this does not mean that this information is actually revealed to $\mathcal{X}^*$ through the reported forecasts. 
 
 \section{Discussion} \label{conclusion}
 
