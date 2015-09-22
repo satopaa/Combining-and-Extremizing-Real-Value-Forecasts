@@ -1,6 +1,7 @@
 \let\mymarginpar\marginpar
 
-\documentclass[11pt]{article}
+\documentclass[12pt]{article}
+\usepackage[textwidth=6.25in]{geometry}
 
 
 \usepackage{enumerate}% http://ctan.org/pkg/enumerate
@@ -23,12 +24,16 @@
 \usepackage{geometry}
 \usepackage{fix-cm}
 %\usepackage{subfigure}
+ \usepackage{setspace}
 \usepackage{natbib}
 \usepackage{color}
 \usepackage{bbold}
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{sectsty}
+\usepackage{titlesec}
+\titleformat{\section}[hang]{\centering \bfseries\large}{\thesection.}{0.4em}{}
 
 
 
@@ -38,6 +43,7 @@
 \newcommand{\LIN}{\text{LIN}}
 \newcommand{\SD}{\text{SD}}
 
+\renewcommand{\refname}{REFERENCES}
 \newcommand{\myN}{\hbox{N\hspace*{-.9em}I\hspace*{.4em}}}
 \newcommand{\myZ}{\hbox{Z}^+}
 \newcommand{\myR}{\hbox{R}}
@@ -62,7 +68,7 @@
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 
-\renewcommand{\abstractname}{}
+%\renewcommand{\abstractname}{}
 \def\pb{\overline{p}}
 \def\pt{\tilde{p}}
 \def\one{{\bf 1}}
@@ -125,6 +131,10 @@
 \newcommand{\mysection}[1]
 {\noindent {\bf {#1}}}
 
+\setstretch{1.45}
+%\doublespacing
+%\onehalfspacing
+
 %\title{Combining and Extremizing Real-Valued Forecasts}
 %
 %\author{
@@ -135,8 +145,7 @@
 
 \title{Combining and Extremizing Real-Valued Forecasts}
 %\title{A Novel Framework for Analyzing Subjective Response Data}
-\author{
-Ville A. Satop\"a\"a and Lyle H. Ungar\thanks{Ville A. Satop\"a\"a is a Doctoral Candidate, Department of Statistics, The Wharton School of the University of Pennsylvania, Philadelphia, PA 19104-6340 (e-mail: satopaa@wharton.upenn.edu); Lyle H. Ungar is a Computer Scientist, Department of Computer and Information Science, University of Pennsylvania, Philadelphia, PA 19104-6309 (e-mail: ungar@cis.upenn.edu). This research was supported by a research contract to the University
+\author{\vspace{-1em}Ville A. Satop\"a\"a and Lyle H. Ungar\thanks{Ville A. Satop\"a\"a is a Doctoral Candidate, Department of Statistics, The Wharton School of the University of Pennsylvania, Philadelphia, PA 19104-6340 (e-mail: satopaa@wharton.upenn.edu); Lyle H. Ungar is a Computer Scientist, Department of Computer and Information Science, University of Pennsylvania, Philadelphia, PA 19104-6309 (e-mail: ungar@cis.upenn.edu). This research was supported by a research contract to the University
 of Pennsylvania and the University of California from the Intelligence
 Advanced Research Projects Activity (IARPA) via the Department of
 Interior National Business Center contract number D11PC20061. The
@@ -146,7 +155,7 @@ thereon. Disclaimer: The views and conclusions expressed herein are
 those of the authors and should not be interpreted as necessarily
 representing the official policies or endorsements, either expressed
 or implied, of IARPA, DoI/NBC, or the U.S. Government.}} 
-\date{\vspace{-8.5ex}}
+\date{\vspace{-6.5ex}}
 %%%%%% Begin document with header and title %%%%%%%%%
 
 
@@ -155,7 +164,7 @@ or implied, of IARPA, DoI/NBC, or the U.S. Government.}}
 \maketitle
 
 \begin{abstract}
-
+\singlespace
 The weighted average is by far the most popular approach to combining
 multiple forecasts of some future outcome. This paper shows that
 both for probability or real-valued forecasts, a non-trivial weighted average
@@ -174,8 +183,9 @@ synthetic and real-world data. \\
 \textit{Keywords:} Information aggregation, Linear opinion pool, Model averaging, Partial information, Reliability, Weighted average
 \end{abstract}
 
+\newpage
 
-\section{Introduction} \label{introduction}
+\section{INTRODUCTION} \label{introduction}
 
 Policy-makers often consult human or/and machine agents for forecasts
 of some future outcome. For instance, multiple economics experts may
@@ -384,7 +394,7 @@ concludes and discusses future research directions.
 
 
 
-\section{Forecast and Aggregation Properties} \label{propertiesS}
+\section{FORECAST AND AGGREGATION PROPERTIES} \label{propertiesS}
 \subsection{Optimal Aggregation}
 %\marginpar{I would call this section Information aggregation}
 
@@ -521,7 +531,7 @@ It is interesting to contrast this definition with the popular extremization heu
 
 
 
-\section{Extremizing Real-Valued Forecasts} \label{extremization}
+\section{EXTREMIZING REAL-VALUED FORECASTS} \label{extremization}
 
 %\marginpar{Here we should motivate Z = X + e, where each component comes from and how this will lead us to our algorithm.}
 
@@ -568,7 +578,7 @@ w_j^* &=  \beta_j^*/\alpha^* \text{ for } j = 1, \dots, N, \text{ and}\\
 %Observe that the solution to (\ref{secondProblem}) is nothing more than the ordinary least squares estimates under non-negativity constraints on the slope coefficients. Therefore a possible relaxation is to ignore these constraints and simply fit a multiple linear regression model with $\Y$ as response and $\X$ as the predictor. For the sake of correctness, however, this paper does not consider this relaxation but performs extremization via (\ref{secondProblem}). 
 The next two sections apply and evaluate this method both on simulated and real-world data. 
 
-\section{Simulation Study} \label{simulation}
+\section{SIMULATION STUDY} \label{simulation}
 
 This section illustrates Theorem \ref{contraction} on data generated from the Gaussian partial information model introduced in \cite{satopaamodeling2, satopaamodeling}  as a close yet practical specification of the general partial information framework.
 %They  as a practical specification of the general partial information framework. 
@@ -663,26 +673,26 @@ Scenario & Forecast & $\mu_0$ & $\alpha$ & $w_1$ & $w_2$& $w_3$& $w_4$& $w_5$ \\
 
 \begin{figure}[t!]
         \centering
-        \begin{subfigure}[b]{0.241\textwidth}
+        \begin{subfigure}[b]{0.240\textwidth}
                 \includegraphics[width=\textwidth]{SimIndepELP.pdf}
                 \caption{$\bar{\mathcal{X}}$}
         \label{RelEWANo}
         \end{subfigure}%
         ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
           %(or a blank line to force the subfigure onto a new line)
-        \begin{subfigure}[b]{0.241\textwidth}
+        \begin{subfigure}[b]{0.240\textwidth}
                 \includegraphics[width=\textwidth]{SimIndepOLP.pdf}
                 \caption{$\mathcal{X}_w$}
         \label{RelOWANo}
         \end{subfigure}
         ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
           %(or a blank line to force the subfigure onto a new line)
-        \begin{subfigure}[b]{0.241\textwidth}
+        \begin{subfigure}[b]{0.240\textwidth}
                 \includegraphics[width=\textwidth]{SimIndepELOP.pdf}
                 \caption{$\mathcal{X}^*$ }
         \label{ELOPNoOverlap}
         \end{subfigure}
-                \begin{subfigure}[b]{0.241\textwidth}
+                \begin{subfigure}[b]{0.240\textwidth}
                 \includegraphics[width=\textwidth]{SimIndepOPT.pdf}
                 \caption{$\mathcal{X}''$ }
         \label{RevNoOverlap}
@@ -695,26 +705,26 @@ Scenario & Forecast & $\mu_0$ & $\alpha$ & $w_1$ & $w_2$& $w_3$& $w_4$& $w_5$ \\
 
 \begin{figure}[t!]
         \centering
-        \begin{subfigure}[b]{0.241\textwidth}
+        \begin{subfigure}[b]{0.240\textwidth}
                 \includegraphics[width=\textwidth]{SimDepELP.pdf}
                 \caption{$\bar{\mathcal{X}}$}
         \label{RelEWAHigh}
         \end{subfigure}%
         ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
           %(or a blank line to force the subfigure onto a new line)
-        \begin{subfigure}[b]{0.241\textwidth}
+        \begin{subfigure}[b]{0.240\textwidth}
                 \includegraphics[width=\textwidth]{SimDepOLP.pdf}
                 \caption{$\mathcal{X}_w$}
         \label{RelOWAHigh}
         \end{subfigure}
         ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
           %(or a blank line to force the subfigure onto a new line)
-        \begin{subfigure}[b]{0.241\textwidth}
+        \begin{subfigure}[b]{0.240\textwidth}
                 \includegraphics[width=\textwidth]{SimDepELOP.pdf}
                 \caption{$\mathcal{X}^*$ }
         \label{ELOPHighOverlap}
         \end{subfigure}
-           \begin{subfigure}[b]{0.241\textwidth}
+           \begin{subfigure}[b]{0.240\textwidth}
                 \includegraphics[width=\textwidth]{SimDepOPT.pdf}
                 \caption{$\mathcal{X}''$ }
         \label{RevHighOverlap}
@@ -789,7 +799,7 @@ Table \ref{scenA} presents the quadratic loss, its additive components, and the 
 
 Of course, under the Gaussian model, $\mathcal{X}^*$ may seem redundant because the optimal  $\mathcal{X}''$ can be computed directly. In practice, however, $\bSigma$ is not known and must be estimated under a non-trivial semidefinite constraint (see \citealt{satopaamodeling2} for more details). Given that this involves a total of $\binom{N}{2} + N$ parameters, the estimation task is challenging even for moderately large $N$, say, greater than $100$. Furthermore, accurately estimating such a large number of parameters requires the forecasters to attend a large number of prediction problems. Applying $\mathcal{X}^*$ instead is significantly easier because it involves only $N+1$ parameters that can be estimated via a standard quadratic program (\ref{secondProblem}).  Therefore this aggregator scales better to large groups of forecasters. On the other hand, problem (\ref{secondProblem}) requires a training set with known outcomes whereas $\bSigma$ can be learned from the forecasts alone. Therefore the two aggregators serve somewhat different purposes and should be considered complementary rather than competitive.
 
-\section{Case Study: Concrete Compressive Strength} \label{application}
+\section{CASE STUDY: CONCRETE COMPRESSIVE STRENGTH} \label{application}
 
 Concrete is the most important material in civil engineering. One of its key properties is compressive strength that depends on the water-to-cement ratio but also on several other ingredients. \cite{yeh1998modeling} illustrated this by statistically predicting compressive strength based on age and seven mixture ingredients. The associated dataset is freely available at the UC Irvine Machine Learning Repository \citep{Lichman:2013} and consists of $1,030$ observations with the following information:
 
@@ -947,7 +957,7 @@ Scenario &  Forecast & $L(\Y,\boldsymbol{\mathcal{X}} )$ & REL & RES & UNC & $s^
 %
 Table \ref{NoTbl} provides a numerical comparison by presenting the average quadratic loss, its additive components, and the estimated variance $s^2$ for the individual models and the competing aggregators.  Given that all aggregators perform better than the individual forecasters, aggregation is generally beneficial. However, there are large performance differences among the aggregators. In particular, the variances of $\bar{\mathcal{X}}$ and $\mathcal{X}_w$  do not exceed that of the individual forecasters', suggesting that neither of them is expanding. Furthermore, they are much less reliable than the individual forecasters. In contrast, $\mathcal{X}^*$ is able to maintain the forecasters' level of reliability. Even though this aggregator is expanding, it is less resolute and has a lower variance than $\mathcal{M}_F$ under high information overlap. This can be expected because in the high information overlap scenario $\mathcal{X}^*$ has access only to a subset of the information that $\mathcal{M}_F$ uses. Under no information overlap, all the predictors are  used by the individual forecasters, but this does not mean that this information is actually revealed to $\mathcal{X}^*$ through the reported forecasts. 
 
-\section{Discussion} \label{conclusion}
+\section{SUMMARY AND DISCUSSION} \label{conclusion}
 
 This paper discussed forecast aggregation under a general probability model, called the partial information framework. The forecasts and outcomes were assumed to have a joint distribution but no restrictions were placed on their dependence structure. The analysis led to an enumeration (Theorem \ref{optimal}) of several properties of optimal aggregation. Even though the optimal aggregator is typically intractable in practice, its properties provide guidance for developing and understanding other aggregators that are more feasible in practice. In this paper these properties shed light on the class of weighted averages of any type of univariate forecasts. Even though these averages are marginally consistent, they fail to satisfy two of the optimality properties, namely reliability and variance expansion (Theorem \ref{contraction}). As a result, they are under-confident in a sense that they are overly close to the marginal mean. This shortcoming can be naturally alleviated by extremizing, that is, by shifting the weighted average further away from the marginal mean.  Section \ref{extremization} introduced a simple linear procedure (Equation \ref{firstProblem}) that extremizes the weighted average of real-valued forecasts and maintains marginal consistency. This procedure and the theoretical results were illustrated on synthetic (Section \ref{simulation}) and real-world data (Section \ref{application}). In both cases the optimally weighted average was shown to be both unreliable and under-confident, especially when the forecasters used very different sets of information. Fortunately, extremization was able to largely correct these drawbacks and provide transformed aggregates that were both reliable and more resolute. 
 
@@ -998,7 +1008,7 @@ Unfortunately, the amount and direction of extremization depends on a training s
 %average them. I
 
 \appendix
-\section{Appendix}
+\section{APPENDIX}
 \subsection{Proof of Theorem \ref{optimal}}
 %\begin{proof}
 \begin{enumerate}[i)]
