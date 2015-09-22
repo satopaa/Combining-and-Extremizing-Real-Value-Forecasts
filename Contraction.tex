@@ -195,8 +195,10 @@ popular approach to combining forecasts is the weighted average, sometimes also 
 This technique has a long tradition, with many empirical studies attesting to its benefits (see, e.g., \citealt{bates1969combination, clemen1989combining, armstrong2}). 
 %For instance, 
 %and has benefited a diverse range of fields such as meteorology \citep{sanders1963subjective, baars2005performance}, economics \citep{}
-Even though the average forecast does not always outperform the best single forecaster \citep{hibon2005combine},
-forecast averaging is still considered state-of-the-art \citep{elliott2013handbook}. Theoretically,  approximating the optimally weighted average under different forecasting setups and loss functions has been well-studied (see, e.g., \citealt{degroot1991optimal, juditsky2008learning}). Empirically, weighted averaging has become a well-established practice in economics \citep{blix2001good},  weather forecasting \citep{raftery2005using}, political science \citep{graefea2014combining}, and many other disciplines.
+Even though the average forecast does not always outperform the best single forecaster \citep{hibon2005combine}, it is still considered state-of-the-art \citep{elliott2013handbook}
+%. Over the years forecast averaging has been analyzed theoretically (see, e.g., \citealt{degroot1991optimal, juditsky2008learning}) and applied empirically
+ in many fields, including economics \citep{blix2001good},  weather forecasting \citep{raftery2005using}, political science \citep{graefea2014combining}, and many others. In this paper, however, we show that non-trivial weighted averaging is suboptimal, and propose a simple transformation to improve it. A more detailed description of the contributions is given below.
+%In probability forecasting this shortcoming is often alleviated by simple post-transformation of the average forecast. 
 %
 % organizations, including central banks, government institutions, and private companies.
 
@@ -237,44 +239,56 @@ principled way of addressing the shortcoming nor interpret potential causes of t
 
 The first step towards addressing these issues and improving the general practice of aggregation  is to understand what is meant by principled aggregation. This topic was discussed by \cite{satopaamodeling2, satopaamodeling} who propose the \textit{partial information 
 framework} as a general platform for modeling and combining forecasts. Under this framework, the outcome and the forecasts share a probability space but without any restrictions on their dependence structure. Any forecast heterogeneity  is assumed to stem purely from information available to the forecasters and how they decide to use it. For instance, forecasters studying the same (or different) articles about the state of the economy may use distinct parts of the information and hence report different predictions of the next quarter's GDP. 
-%Overall, the framework makes the same assumptions as \cite{Ranjan08} but provides concrete models with optimal aggregators. 
-%combining information from multiple forecasts into a single forecast with optimal properties.
-%optimally combining forecasts. 
-%For instance, the authors describe a Gaussian partial information model under which optimal aggregation is based on the covariance matrix of the individual forecasts. They apply this model to different types of synthetic and real-world data, and illustrate how it improves upon averaging and other types of measures of central tendency. Therefore the partial information framework is not only intuitively appealing but also captures the process of real-world forecasting reasonably well. 
-% both intuitively and empirically appealing.
-% but tends empirically explains real world forecasting reasonably well. 
+%This framework is intuitively appealing and extremely general, but also offers an ideal context for analyzing common aggregation techniques. No previous work, however, has used it to analyze the weighted average of univariate forecasts nor proposed a general approach to handling the induced under-confidence. 
+Even though, to date, this framework has been mainly used for constructing new aggregators, it also offers an ideal environment for analyzing other, already existing, aggregation techniques. No previous work, however, has used it to study weighted averaging of probability or real-valued forecasts.
+%nor proposed a general 
+%, such as forecast averaging. 
+%or to propose a general approach to handling the induced under-confidence. 
+
+
 %
-% These issues can be handled by the partial information 
-%framework \citep{satopaamodeling2, satopaamodeling} that 
-% based on the covariance between the forecasters.
-Unfortunately, the discussion in \cite{satopaamodeling2, satopaamodeling} focuses on forecast aggregation using a specification of the framework, known as the \textit{Gaussian partial information framework}, and hence does not involve  
-%. In particular, their work does not involve
- any theoretical analysis of weighted averaging. 
+%Even though  \cite{satopaamodeling2, satopaamodeling} can be viewed as 
+%
+%No discussion on 
+
+
+%Unfortunately, the discussion in \cite{satopaamodeling2, satopaamodeling} focuses on forecast aggregation using a specification of the framework, known as the \textit{Gaussian partial information framework}, and hence does not involve  
+%%. In particular, their work does not involve
+% any theoretical analysis of weighted averaging. 
 
 %\marginpar{Must say that PIF is used}
-Instead, the first contribution of the current paper is to perform such an analysis. This  begins with an enumeration of some general properties of optimal aggregation and leads to
+
+The first contribution of this paper
+%, however, studies averaging of probability and real-valued forecasts simultaneously by 
+leaves the type of forecasts unspecified and analyzes the weighted average of any univariate forecasts under the partial information framework. The results are general and encompass both probability and real-valued forecasts. First,  the aforementioned result
+in \cite{Ranjan08} is generalized to any type of univariate
+forecasts.
+%, and provides an algorithm that optimally (under a reasonable model) combines real-valued forecasts. 
+This result shows, for instance, that any non-trivial
+weighted average of reliable predictions about the next quarter's GDP
+is both unreliable and under-confident. 
+%Therefore the sub-optimality does not only apply to probability forecasts but in fact
+%%there is nothing special about probability forecasts that makes the weighted average suboptimal. Instead, this sub-optimality 
+%persists across all classes of univariate forecasts. 
+%Specifically, the theoretical section of this paper begins by enumerating
+%Such an analysis is the first contribution of this paper. 
+%Instead, the first contribution of the current paper is to perform such an analysis.
+Second, some general properties of optimal aggregation are enumerated. This  leads to
 %The first contribution of this paper uses the partial information model to perform a close analysis of weighted averaging. 
 %Such an analysis is one of the main contributions of the current paper. 
 %More specifically,
 %In this paper weighted averaging is analyzed under the general partial information framework. This means that the outcome and the forecasts share a probability space but without any restrictions on their dependence structure. 
 %This 
 %leads to
- a) an original point of view on forecast aggregation, b) general, yet intuitive, descriptions of well-known properties
-such as reliability and resolution, and c) an introduction of a new property, called \textit{variance expansion}, that is associated with aggregators whose variance is
+an original point of view on forecast aggregation, general, yet intuitive, descriptions of well-known properties
+such as reliability and resolution, and an introduction of a new property, called \textit{variance expansion}, that is associated with aggregators whose variance is
 never less than the maximum variance among the individual
-forecasts. Such aggregators are called \textit{expanding} and can be considered to collect information from the individual forecasters. Showing that a non-trivial weighted average cannot satisfy
-variance expansion leads to a mathematically precise yet
+forecasts. Such aggregators are called \textit{expanding} and can be considered to collect information from the individual forecasters. Showing that a non-trivial weighted average is never expanding leads to a mathematically precise yet
 easy-to-understand explanation of why weighted averages tend to be
-under-confident.  Furthermore, this reasoning suggests that
+under-confident. This reasoning suggests that
 under-confidence is not unique to the class of weighted averages but
 extends to many other measures of central tendency, such as the
-median. The theoretical analysis ends by generalizing the aforementioned result
-in \cite{Ranjan08} to the weighted average of any type of univariate
-forecasts, including real-valued forecasts.
-%, and provides an algorithm that optimally (under a reasonable model) combines real-valued forecasts. 
-This result shows, for instance, that any non-trivial
-weighted average of reliable predictions about the next quarter's GDP
-is both unreliable and under-confident. Therefore there is nothing special about probability forecasts that makes the weighted average suboptimal. Instead, this sub-optimality persists across all classes of univariate forecasts. 
+median, that also tend to reduce variance.
 
 % Therefore developing an alternate class of aggregators is almost certainly called for.
 % and extends, in a different form, to real-valued estimates.
@@ -300,7 +314,7 @@ For instance, \cite{Ranjan08} propose a beta transformation that extremizes the 
 %  \marginpar{We also define extremization in the general context}
 %  \marginpar{No literature on this before}
 %   Extremization then only makes the known under-confidence average more confident by pushing it more towards the most confident values of zero and one. 
-Intuitively, extremization increases confidence by explicitly moving the probability aggregate closer to  the most confident values of zero and one. 
+Intuitively, extremization increases confidence by explicitly moving the aggregate closer to  the most confident values of zero and one. 
 %Extremization is particularly easy to understand in the binary outcome case where the most confident values, namely zero and one, are explicit boundary points of the sample space. 
 Naturally, the same intuition applies to probability forecasts of any categorical outcome. 
 %   It is this well-defined boundary of most confidence values that makes extermination easy to understand in the binary case.
@@ -309,18 +323,18 @@ Naturally, the same intuition applies to probability forecasts of any categorica
 %     of extremization is not well-defined. 
 %    
 %     and, consequently, it is not at first  clear what it means or how it could be applied. 
-     This may be the main reason why, to the best of our knowledge, no previous literature has discussed extremizing real-valued forecasts. 
+Furthermore, the idea of extremizing may seem counter-intuitive given the large amount of literature attesting to the benefits of shrinkage \citep{james1961estimation}.  These may be the main reasons why, to the best of our knowledge, no previous literature has discussed extremization of real-valued forecasts. 
     %     such a technique a) would work, and b) can even be applied to real-valued forecasts.
     
     
-      Perhaps somewhat counterintuitively, however, our second contribution shows that extremizing can improve aggregation also when the individual forecasts are real-valued. The first step is to make the notion of extremizing precise. This involves introducing a general definition that differs slightly from the above heuristic.    
+   Therefore it is perhaps somewhat surprising that our second contribution shows that extremizing can improve aggregation also when the individual forecasts are real-valued. First, the notion of extremizing is made precise. This involves introducing a general definition that differs slightly from the above heuristic.    
 %       introduce a general and precise definition of extremization. This involves a minor change in the popular interpretation.
         In particular, extremizing is redefined as a shift away from the least confident forecast, namely the marginal mean of the outcome, instead of towards the most confident (potentially undefined) values.  
 %      
 %      
 %       paper motivates and generalizes the aforementioned extremization of probability forecasts to any univariate forecasts. 
 %Extremization of real-valued forecasts is then illustrated with 
-This combined with our theoretical analysis of weighted averaging motivates a convex optimization procedure that linearly extremizes the optimally weighted average of real-valued forecasts.
+Second, our definition and theoretical analysis motivate a convex optimization procedure that linearly extremizes the optimally weighted average of real-valued forecasts.
   The technique is illustrated on simple examples involving both synthetic and real-world data. In each example extremizing leads to improved aggregation with many of the optimal properties enumerated in the beginning of the analysis.
 %   exhibits many properties of optimal aggregation.
 
@@ -364,9 +378,10 @@ the optimal aggregation within that framework. The class of weighted
 averages is then analyzed in the light of these
 properties. Section \ref{extremization} describes the optimization technique for extremizing the weighted average of
 real-valued forecasts. Section \ref{simulation} illustrates this
-technique and our theoretical results over
-data generated from the Gaussian partial information model. Section \ref{application} repeats the analysis over real-world data. The final section
+technique and our theoretical results over synthetic
+data. Section \ref{application} repeats the analysis over real-world data. The final section
 concludes and discusses future research directions.
+
 
 
 \section{Forecast and Aggregation Properties} \label{propertiesS}
@@ -397,14 +412,12 @@ $\F_j \subseteq \F$, then
 \begin{align*}
 \E(Y | X_j) &= \E[\E(Y|X_j,\F_j)|X_j] = \E[\E(Y|\F_j)|X_j] = \E(X_j|X_j) = X_j.
 \end{align*}
-Therefore a forecast is reliable if and only if it represents the optimal use of some information set, that is, it is consistent with some partial information $\F_j \subseteq \F$.
+Therefore a forecast is reliable if and only if it represents the optimal use of some information set, that is, it is consistent with some partial information $\F_j \subseteq \F$. Given that at this level of specificity the framework is highly general and hence likely to be a good approximation of real-world prediction polling, it offers an ideal platform for analyzing different aggregators. 
 % it is consistent with some set of information about $Y$. In other words, $X_j$ represents the optimal use of some information set $\F_j \subseteq \F$.
 %if there exists an information set $\F_j$ that, after being utilized optimally, leads to the forecast $X_j$, then $X_j$ is reliable (and \textit{vice versa}). 
- An aggregator is defined to be any forecast that is measurable with respect to $\F'' := \sigma(X_1, \dots, X_N)$, namely the $\sigma$-field generated by the individual forecasts. For the sake of notational clarity, in this paper aggregators are denoted with different versions of the script symbol $\mathcal{X}$.
 
 
-
-If $\E\left(Y^2\right) < \infty$, the conditional expectation
+In this paper an aggregator is defined to be any forecast that is measurable with respect to $\F'' := \sigma(X_1, \dots, X_N)$, namely the $\sigma$-field generated by the individual forecasts. For the sake of notational clarity, aggregators are denoted with different versions of the script symbol $\mathcal{X}$. If $\E\left(Y^2\right) < \infty$, the conditional expectation
 $\mathcal{X}'' := \E(Y | \F'')$ minimizes the expected quadratic loss
 among all aggregators (see, e.g., \citealt{durrett2010probability}). This forecast is called the \textit{revealed
 aggregator} because it optimally utilizes all the information that the
@@ -434,11 +447,15 @@ Marginal consistency states that the forecast and the outcome agree in expectati
 
 Given that each reliable forecast can be associated with a sub-$\sigma$-field and  that conditional expectation is a contraction in $L^2$ \citep[Theorem 5.1.4.]{durrett2010probability}, the variance of any reliable forecast (individual or aggregate) is always upper-bounded by $\Var(Y)$. 
 %This follows directly from the fact that each reliable forecast can be associated with a sub-$\sigma$-field and the fact that conditional expectation is a contraction in $L^2$ \citep[Theorem 5.1.4.]{durrett2010probability}. 
-Theorem \ref{optimal} further shows that the corresponding lower bound for $\Var(\mathcal{X}'')$ is the maximum variance among the forecasters. To interpret this lower bound, consider the least informative sub-$\sigma$-field, namely the trivial $\sigma$-field $\F_0 := \{\emptyset, \Omega\}$. A forecast based on $\F_0$ is always equal to the marginal mean $\mu_0$ and hence has zero variance. On the other hand, a forecast based on all the information, namely the principal $\sigma$-field $\F$, is equal to $Y$ and hence has variance $\Var(Y)$. 
-The intermediate cases can be understood by considering an increasing sequence of $\sigma$-fields $\F_0 \subseteq \F_1 \subseteq \dots \subseteq \F_R \subseteq \F$ and the corresponding forecasts $X_r = \E(Y|\F_r)$ for $r = 1, \dots, R$. According to \citet[Proposition 2.1]{satopaamodeling2}, the variances of these forecasts respect the same order as their information sets; that is, $\Var(X_1) \leq \Var(X_2) \leq \dots \leq \Var(X_R) \leq \Var(Y)$. This suggests that the amount of information used in a reliable forecast is quantified by variance. Naturally, if an aggregator collects information from a group of forecasters, it should use at least as much information as the most informed individual forecaster. In other words, its variance should exceed that of the individual forecasters'. Any aggregator that satisfies this condition is called \textit{expanding} because it is expected to deviate more from the marginal mean than any of the individual forecasts. This is a necessary condition for an aggregator to be considered a collector of information. 
+Theorem \ref{optimal} further shows that the corresponding lower bound for $\Var(\mathcal{X}'')$ is the maximum variance among the forecasters. To interpret this lower bound, consider 
+%the least informative sub-$\sigma$-field, namely the trivial $\sigma$-field $\F_0 := \{\emptyset, \Omega\}$. A forecast based on $\F_0$ is always equal to the marginal mean $\mu_0$ and hence has zero variance. On the other hand, a forecast based on all the information, namely the principal $\sigma$-field $\F$, is equal to $Y$ and hence has variance $\Var(Y)$. 
+%The intermediate cases can be understood by considering 
+an increasing sequence of $\sigma$-fields $\F_0 = \{\emptyset, \Omega\} \subseteq \F_1 \subseteq \dots \subseteq \F_R \subseteq \F$ and the corresponding forecasts $X_r = \E(Y|\F_r)$ for $r = 0,1, \dots, R$. According to \citet[Proposition 2.1]{satopaamodeling2}, the variances of these forecasts respect the same order as their information sets: $\Var(X_0) \leq \Var(X_1) \leq \dots \leq \Var(X_R) \leq \Var(Y)$. This suggests that the amount of information used in a reliable forecast is reflected in its variance. Naturally, if an aggregator collects information from a group of forecasters, it should use at least as much information as the most informed individual forecaster; that is, its variance should exceed that of the individual forecasters'. Therefore any aggregator that \textit{expands} variance and satisfies this condition is
+%because it is expected to deviate more from the marginal mean than any of the individual forecasts. This is a necessary condition for an aggregator to be 
+considered a collector of information. 
 
 
-Recall that in probability forecasting a well-established goal is to maximize resolution subject to reliability. This goal can be easily interpreted in a more general context with the help of partial information. First, conditioning on reliability requires the forecast to be consistent with some set of information about $Y$. Maximizing the resolution of this forecast takes it as far from $\mu_0$ as possible. This is equivalent to increasing the variance of the forecast as close to the theoretical upper bound $\Var(Y)$ as possible. Therefore the goal is equivalent to maximizing the amount of information that the forecast is consistent with. Intuitively, this is very reasonable and should be considered as the general goal in forecasting.
+Recall that in probability forecasting a well-established goal is to maximize resolution subject to reliability. This goal can be easily interpreted intuitively with the help of partial information. First, conditioning on reliability requires the forecast to be consistent with some set of information about $Y$. Maximizing the resolution of this forecast takes it as far from $\mu_0$ as possible. This is equivalent to increasing the variance of the forecast as close to the theoretical upper bound $\Var(Y)$ as possible. Therefore the goal is equivalent to maximizing the amount of information that the forecast is consistent with. Intuitively, this is very reasonable and should be considered as the general goal in forecasting.
 
 
 
@@ -463,13 +480,20 @@ Suppose that $X_j = \E(Y | X_j)$ for $j = 1, \dots, N$. Denote the weighted aver
 \end{theorem}
 
 %Given that under-confidence is a relative concept, it requires a baseline
-This theorem discusses under-confidence under two different baselines. Item \ref{underconfA}) is a generalization of \citet[Theorem 2.1.]{Ranjan08}. Intuitively, it states that if $\mathcal{X}_w$ is trained to use its information accurately, the resulting aggregator is more confident. Therefore under-confidence is defined relative to the improved version of  $\mathcal{X}_w$. Under this kind of comparison, however, a reliable aggregator is never under-confident. For instance, an aggregator that ignores the individual forecasts and always returns the marginal mean $\mu_0$ is reliable and hence would not be considered under-confident. Intuitively, however, it is clear that no aggregate forecast is more under-confident than the marginal mean $\mu_0$. To address this drawback, item \ref{underconfB}) defines under-confidence in relation to the optimal aggregator, namely the revealed aggregator instead. Such a comparison estimates whether the weighted average is as confident as it should be given the information it received through the forecasts. Item \ref{underconfB}) shows that this happens only if all the weight is assigned to a forecaster whose information set contains all the other forecasters' information. However, even if $\mathcal{X}_w$ could pick out the most informed forecaster ex-ante, the chances of a single forecaster knowing everything that the rest of the forecasters know is extremely small in practice. In essentially all other cases, $\mathcal{X}_w$ is under-confident, unreliable,  
+This theorem discusses under-confidence under two different baselines. Item \ref{underconfA}) is a generalization of \citet[Theorem 2.1.]{Ranjan08}. Intuitively, it states that if $\mathcal{X}_w$ is trained to use its information accurately, the resulting aggregator is more confident. Therefore under-confidence is defined relative to the reliable version of  $\mathcal{X}_w$. Under this kind of comparison, however, a reliable aggregator is never under-confident. For instance, an aggregator that ignores the individual forecasts and always returns the marginal mean $\mu_0$ is reliable and hence would not be considered under-confident. Intuitively, however, it is clear that no aggregate forecast is more under-confident than the marginal mean $\mu_0$. To address this drawback, item \ref{underconfB}) defines under-confidence relative to  the revealed aggregator instead. Such a comparison estimates whether the weighted average is as confident as it should be given the information it received through the forecasts. Item \ref{underconfB}) shows that this happens only if all the weight is assigned to a forecaster whose information set contains every other forecasters' information. However, even if $\mathcal{X}_w$ could pick out the most informed forecaster ex-ante, the chances of a single forecaster knowing everything that the rest of the forecasters know is extremely small in practice. In essentially all other cases, $\mathcal{X}_w$ is under-confident, unreliable,  
 and hence not consistent with some set of information about $Y$. 
 %Consequently, its variance cannot be interpreted as the amount of used information. 
 
-In general, many measures of central tendency reduce variance and hence are also separated from the revealed aggregator by the maximum variance among the individual forecasts. For instance, \cite{papadatos1995maximum} discuss the maximum variance of different order statistics and show that the variance of the median is upper bounded by the global variance of the individual forecasts. Given that such aggregators are not expanding, they cannot be considered to collect information. 
+Unfortunately, this shortcoming spans across all measures of central tendency. These aggregators reduce variance and hence are separated from the revealed aggregator by the maximum variance among the individual forecasts. For instance, \cite{papadatos1995maximum} discuss the maximum variance of different order statistics and show that the variance of the median is upper bounded by the global variance of the individual forecasts. Given that such aggregators are not expanding, they cannot be considered to collect information. To illustrate, consider a group of forecasters, each independently making a probability forecast of $0.9$ for the occurrence of some future event. If these forecasters are using different evidence, then clearly the combined evidence should give an aggregate forecast somewhat greater than $0.9$. In this simple scenario, however, measures of central tendency will always aggregate to $0.9$. Therefore they fail to account for the information heterogeneity among the forecasters. 
 %In fact, \cite{satopaamodeling} explain that averaging-like techniques work well when the individual forecasters have very similar sets of information, that is, when there really is no information aggregation problem to begin with.
- Instead, these aggregators reduce ``measurement error,'' which is philosophically very different to the idea of information aggregation discussed in this paper. For instance, under measurement error an aggregator with a relatively high variance is  considered to be less precise, whereas under partial information increased variance represents more information and hence better forecasting accuracy.
+Instead, they reduce ``measurement error,'' which is philosophically very different to the idea of information aggregation discussed in this paper. 
+
+%For instance, under measurement error an aggregator with a relatively high variance is  considered to be less precise, whereas under partial information increased variance represents more information and hence better forecasting accuracy. 
+
+%\marginpar{Another interesting idea is this: if all forecasters report, say, 0.9 the average is always equal to 0.9 -- not matter what the information overlap is. it is however reasonable to think that if more and more people give the estimate 0.9, the the combined evidence should give something much closer to 1. This is why they are not information collectors; this is probably best in the introduction. Also, this is bvery clear because it is prob forecasts. We however make it specific for all univariate forecasts and show that no matter what they are, averaging is not collection info.}
+%
+%\marginpar{information diversity pushes outwards while measurement error pulls inwards. Opposing forces.}
+%\marginpar{make sure mention averaging not info collecting in the intro}
 
 %This stands in sharp contrast with what increased variance represents under partial information. 
 
@@ -483,7 +507,9 @@ Consider two reliable forecasts $X_i$ and $X_j$. Denote their common marginal me
 \end{definition}
 
 \noindent
-It is interesting to contrast this definition with the popular extremization heuristic in the context of probability forecasting.  Definition \ref{extrem} suggests that simply moving, say, the average probability forecast closer to zero or one improves the aggregate if and only if the marginal probability of success is $0.5$. To illustrate, consider a geographical region where rain is known to occur on $20$\% of the days. If the average probability forecast of rain tomorrow is $0.30$, this aggregate should not be shifted towards zero and hence closer to the marginal mean of $0.20$ but rather towards one. Second, Theorem \ref{contraction} suggests that extremization, as defined formally above, is likely to improve the weighted average of any type of univariate forecasts. This justifies the construction of a broader class of extremizing techniques. According to the second part of item \ref{underconfB}), extremizing is not required when the weighted average is able to give full weight to a single forecaster who happens to know everything that the other forecasters know. In all other cases and in particular when the single most informed forecaster knows a lot less than all the forecasters know as a group, extremizing is likely to improve the weighted average. To illustrate this result, the next section introduces a simple optimization procedure that extremizes the weighted average of real-valued forecasts.
+It is interesting to contrast this definition with the popular extremization heuristic in the context of probability forecasting.  Definition \ref{extrem} suggests that simply moving, say, the average probability forecast closer to zero or one improves the aggregate if and only if the marginal probability of success is $0.5$. In other cases naively following the heuristic may end up degrading the aggregate. For instance, consider a geographical region where rain is known to occur on $20$\% of the days. If the average probability forecast of rain tomorrow is $0.30$, instead of following the heuristic and shifting this aggregate towards zero and hence closer to the marginal mean of $0.20$, the aggregate should be actually shifted in the opposite direction, namely closer to one. Second, Theorem \ref{contraction} suggests that extremization, as defined formally above, is likely to improve the weighted average of any type of univariate forecasts. This justifies the construction of a broader class of extremizing techniques. In particular, the second part of item \ref{underconfB}) states that extremizing is likely to improve the weighted average when 
+%not required when the weighted average is able to give full weight to a single forecaster who happens to know everything that the other forecasters know. In all other cases and in particular when
+ the single most informed forecaster knows a lot less than all the forecasters know as a group. To illustrate this, the next section introduces a simple optimization procedure that extremizes the weighted average of real-valued forecasts.
 % and applies it to two examples involving both synthetic and real-world data.
 %
 % This is precisely what extremizing does. Therefore it is not surprising that extremizing has been observed to improve the predictive accuracy of many simple aggregators of  probability forecasts. 
@@ -491,6 +517,8 @@ It is interesting to contrast this definition with the popular extremization heu
 %This is the main topic in the rest of the paper.
 %
 %The next section introduces a simple optimization procedure that extremizes the weighted average of real-valued forecasts. 
+
+
 
 
 \section{Extremizing Real-Valued Forecasts} \label{extremization}
@@ -506,9 +534,10 @@ Extremization requires at least two parameters: the marginal mean, which acts as
 \begin{align*}
 \mathcal{X}_k^* = \alpha  \left(  \w'\X_{k} - \mu_0\right) + \mu_0,
 \end{align*}
- where $\X_k = (X_{1k}, \dots, X_{Nk})'$ collects the forecasts for the $k$th outcome, $\w = (w_1, \dots, w_N)'$ is the weight vector, and $\alpha \in (1, \infty)$ (or $\alpha \in [0, 1)$) leads to extremization (or contraction towards $\mu_0$, respectively). If $\alpha = 1$, then $\mathcal{X}^*$ is equal to the weighted average $\mathcal{X}_w$.  This linear form is particularly convenient because it leads to efficient parameter estimation but also because it maintains marginal consistency of $\mathcal{X}_w$; that is, $\E(\mathcal{X}^*) = \mu_0$ for all values of $\alpha$.  However, $\Var(\mathcal{X}^*)$ increases in $\alpha$ such that $\Var(\mathcal{X}^*) = \alpha^2 \Var(\mathcal{X}_w) > \Var(\mathcal{X}_w)$ for all $\alpha > 1$. Therefore, for a large enough $\alpha$, $\mathcal{X}^*$ is both marginally consistent and expanding. These properties hold even if the weighted average is replaced by some other marginally consistent aggregator. However, given that the main purpose of this procedure is to illustrate Theorem \ref{contraction}, in this paper only the weighted average is considered for extremization.
-
-Recall that the forecasts are assumed calibrated and hence marginally consistent with the outcomes. Therefore an unbiased estimator of the prior mean $\mu_0$ is given by the average of the forecasts $\frac{1}{NK} \sum_{k=1}^K\sum_{j=1}^N X_{jk}$ or, alternatively, by the average of the outcomes $\frac{1}{K} \sum_{k=1}^K Y_k$. Estimating $\mu_0$ in this manner, however, leads to a two-step estimation procedure. A more direct approach is to estimate all the aggregator parameters, namely $\alpha$, $\mu_0$, and $\w$, jointly over some criterion. If $Y_k$ has an explicit likelihood in terms of $\mathcal{X}^*$, then the parameter values can be estimated by maximizing this likelihood. Assuming an explicit parametric form, however, can be avoided by recalling from Section \ref{contraction} that the revealed aggregator $\mathcal{X}''$ utilizes the forecasters' information optimally and minimizes the expected quadratic loss among all functions measurable with respect to $\F''$. Ideally, $\mathcal{X}^*$ would behave similarly to $\mathcal{X}''$. Therefore it makes sense to estimate its parameters by minimizing the average quadratic loss over some training set. Section \ref{simulation} shows that this is likely to improve both the resolution and reliability of the weighted average. 
+ where $\X_k = (X_{1k}, \dots, X_{Nk})'$ collects the forecasts for the $k$th outcome, $\w = (w_1, \dots, w_N)'$ is the weight vector, and $\alpha \in (1, \infty)$ (or $\alpha \in [0, 1)$) leads to extremization (or contraction towards $\mu_0$, respectively). If $\alpha = 1$, then $\mathcal{X}^*$ is equal to the weighted average $\mathcal{X}_w$.  This linear form is particularly convenient because it leads to efficient parameter estimation and also maintains marginal consistency of $\mathcal{X}_w$; that is, $\E(\mathcal{X}^*) = \mu_0$ for all values of $\alpha$.  However, $\Var(\mathcal{X}^*)$ increases in $\alpha$ such that $\Var(\mathcal{X}^*) = \alpha^2 \Var(\mathcal{X}_w) > \Var(\mathcal{X}_w)$ for all $\alpha > 1$. Therefore, for a large enough $\alpha$, $\mathcal{X}^*$ is both marginally consistent and expanding. These properties hold even if the weighted average is replaced by some other marginally consistent aggregator. However, given that the main purpose of this procedure is to illustrate Theorem \ref{contraction}, this paper only considers the weighted average. 
+ 
+ 
+Recall that the forecasts are assumed calibrated and hence marginally consistent with the outcomes. Therefore an unbiased estimator of the prior mean $\mu_0$ is given by the average of the forecasts $\frac{1}{NK} \sum_{k=1}^K\sum_{j=1}^N X_{jk}$ or, alternatively, by the average of the outcomes $\frac{1}{K} \sum_{k=1}^K Y_k$. Estimating $\mu_0$ in this manner, however, leads to a two-step estimation procedure. A more direct approach is to estimate all the parameters, namely $\alpha$, $\mu_0$, and $\w$, jointly over some criterion. If $Y_k$ has an explicit likelihood in terms of $\mathcal{X}^*$, then the parameters can be estimated by maximizing this likelihood. Assuming an explicit parametric form, however, can be avoided by recalling from Section \ref{contraction} that the revealed aggregator $\mathcal{X}''$ utilizes the forecasters' information optimally and minimizes the expected quadratic loss among all functions measurable with respect to $\F''$. Ideally, $\mathcal{X}^*$ would behave similarly to $\mathcal{X}''$. Therefore it makes sense to estimate its parameters by minimizing the average quadratic loss over some training set. Section \ref{simulation} shows that this is likely to improve both the resolution and reliability of the weighted average. 
 
 These considerations lead to the following estimation problem:
 \begin{align}
@@ -541,7 +570,7 @@ The next two sections apply and evaluate this method both on simulated and real-
 
 \section{Simulation Study} \label{simulation}
 
-This section illustrates Theorem \ref{contraction} on data generated from the Gaussian partial information model introduced in \cite{satopaamodeling2, satopaamodeling}. 
+This section illustrates Theorem \ref{contraction} on data generated from the Gaussian partial information model introduced in \cite{satopaamodeling2, satopaamodeling}  as a close yet practical specification of the general partial information framework.
 %They  as a practical specification of the general partial information framework. 
 %For instance, the authors describe a Gaussian partial information model under which optimal aggregation is based on the covariance matrix of the individual forecasts.
 % They apply this specification of the partial information model to different types of synthetic and real-world data, and illustrate how it improves upon averaging and other types of measures of central tendency. Therefore it is not only intuitively appealing but also captures the process of real-world forecasting reasonably well. 
@@ -563,13 +592,13 @@ This section illustrates Theorem \ref{contraction} on data generated from the Ga
 \delta_N & \rho_{N,1} & \rho_{N,2} & \dots & \delta_N\\ 
  \end{array}\right)\right),  \label{NExperts}
 \end{align}
-where the covariance matrix describes the \textit{information structure} among the forecasters. In particular, the maximum amount of information is $1.0$. The diagonal entry $\delta_j \in [0,1]$ represents the amount of information known to forecaster $j$. A forecaster with $\delta_j = 1$ (or $\delta_j = 0$) always reports the correct answer $Y_k$ (or the marginal mean $\mu_0 = 0$, respectively). The off-diagonal $\rho_{i,j}$, on the other hand, can be regarded as the amount of information overlap between forecasters $i$ and $j$. Using the  well-known properties of a conditional multivariate Gaussian distribution, \cite{satopaamodeling2, satopaamodeling} show that under this model the forecasts are reliable
+where the covariance matrix describes the \textit{information structure} among the forecasters. In particular, the maximum amount of information is $1.0$. The diagonal entry $\delta_j \in [0,1]$ represents the amount of information used by forecaster $j$ such that if $\delta_j = 1$ (or $\delta_j = 0$), the forecaster always reports the correct answer $Y_k$ (or the marginal mean $\mu_0 = 0$, respectively). The off-diagonal $\rho_{i,j}$, on the other hand, can be regarded as the amount of information overlap between forecasters $i$ and $j$. Using the  well-known properties of a conditional multivariate Gaussian distribution, \cite{satopaamodeling2, satopaamodeling} show that under this model the forecasts are reliable
 %
 %Based on well-known properties of a multivariate Gaussian (see, e.g., \citealt{ravishanker2001first}), the distribution of $Y$ conditional on forecast $X_j$ is $Y|X_j \sim \mathcal{N}(X_j, 1-\delta_j)$. This directly shows that the forecasts are reliable, that is, $\E(Y | X_j) = X_j$. 
 %%Therefore the forecasts $X_j$ are reliable.
 %%shows that the forecast $X_j$ is reliable, that is, $\E(Y | X_j) = X_j$. 
 %According to the same conditional results, the distribution of $Y_k$ given all the forecasts $\X_k = (X_1, \dots, X_n)'$ is $Y_k | \X_k \sim \mathcal{N}(\diag(\bSigma)'\bSigma^{-1}\X_k, 1- \diag(\bSigma)'\bSigma^{-1}\diag(\bSigma))$. Therefore 
-and that the revealed aggregator for the $k$th problem takes the form  $\mathcal{X}_k''  = \E(Y_k | \X_k) = \diag(\bSigma)'\bSigma^{-1}\X_k$. 
+and that the revealed aggregator for the $k$th problem is  $\mathcal{X}_k''  = \E(Y_k | \X_k) = \diag(\bSigma)'\bSigma^{-1}\X_k$. 
 
 %This aggregator represents optimal use of the forecasters' revealed information. 
 
@@ -594,7 +623,7 @@ and that the revealed aggregator for the $k$th problem takes the form  $\mathcal
         \label{Diagrams}
 \end{figure}
 
-The distribution (\ref{NExperts}) is particularly useful because it provides a realistic model for testing aggregation under different information structures. This section considers $N = 5$ forecasters under two such variations, namely:
+The distribution (\ref{NExperts}) is particularly useful because it provides a realistic model for testing aggregation under different information structures. This section considers $N = 5$ forecasters under two different structures:
 \begin{enumerate}
 \item[] \textit{No Information Overlap.}  Fix $\delta_j = 0.1 + 0.02j$ for $j = 1, \dots, 5$ and let $\rho_{i,j} = 0$ for all $i,j$. Therefore the forecasters have independent information sources. This information structure is illustrated in Figure \ref{DiagramsA}. Summing up the individual variances shows that as a group the forecasters know $80\%$ of the total information. The revealed aggregator reduces to $\mathcal{X}_k'' = \sum_{j=1}^5 X_{jk}$, has variance $0.80$, and therefore efficiently uses all the forecasters' information.
 
@@ -613,7 +642,7 @@ In probability forecasting the quality of the predictions is typically assessed 
 
 % latex table generated in R 3.2.0 by xtable 1.7-4 package
 % Wed May 20 21:31:51 2015
-\begin{table}[ht]
+\begin{table}[t]
 \centering
 \caption{Synthetic Data. Estimated parameter values.}
 %optimally weighted average, $\mathcal{X}_w$ and the extremized version of the optimally weighted average, $\mathcal{X}^*$
@@ -698,11 +727,11 @@ Scenario & Forecast & $\mu_0$ & $\alpha$ & $w_1$ & $w_2$& $w_3$& $w_4$& $w_5$ \\
 
 Figures \ref{RevNoOverlap} and \ref{RevHighOverlap} present the reliability diagrams for $\mathcal{X}''$ under no and high information overlap, respectively. Comparing these plots to the corresponding reliability diagrams of $\bar{\mathcal{X}}$ and $\mathcal{X}_w$ in the same figures, reveals that $\bar{\mathcal{X}}$ and $\mathcal{X}_w$ are not only unreliable but also have smaller variance than $\mathcal{X}''$. Furthermore, the manner in which the plotted points deviate from the diagonal suggests that $\bar{\mathcal{X}}$ and $\mathcal{X}_w$ are under-confident in both information scenarios.  The level of under-confidence 
 is particularly startling in Figures \ref{RelEWANo} and \ref{RelOWANo} but 
-decreases largely as information overlap is introduced in Figures \ref{RelEWAHigh} and \ref{RelOWAHigh}.  
+decreases as information overlap is introduced in Figures \ref{RelEWAHigh} and \ref{RelOWAHigh}.  
 %In fact, as predicted by Theorem \ref{contraction}, the averaging aggregators behave similarly to $\mathcal{X}^*$ and $\mathcal{X}''$ under high information overlap when the forecasters know very similar information. 
   Given that averaging-like techniques do not behave like information aggregators, that is, they are not expanding, it is not surprising to see them perform better under high information overlap when aggregating information is less important for good performance. Table \ref{NoParams} shows the parameter estimates for $\mathcal{X}_w$ and $\mathcal{X}^*$.  The weights in $\mathcal{X}_w$ increase in the forecaster's amount of information and differ noticeably from the equal weights employed by $\bar{\mathcal{X}}$. 
 %The weights in $\mathcal{X}_w$ increase in the forecaster's amount of information, namely $\delta_j$ and differ noticeably from the equal weights employed by $\bar{\mathcal{X}}$. 
-More importantly, however, in both information scenarios the extremizing parameter $\alpha > 1$. This reflects the need to correct the under-confidence of $\mathcal{X}_w$. The resulting $\mathcal{X}^*$ is more reliable and confident as can be seen in Figures \ref{ELOPNoOverlap} and \ref{ELOPHighOverlap}. Furthermore, it behaves very similarly to the optimal aggregator $\mathcal{X}''$ under both information structures. 
+More importantly, however, in both information scenarios $\alpha > 1$. This reflects the need to correct the under-confidence of $\mathcal{X}_w$. The resulting $\mathcal{X}^*$ is more reliable and confident as can be seen in Figures \ref{ELOPNoOverlap} and \ref{ELOPHighOverlap}. Furthermore, it behaves very similarly to the optimal aggregator $\mathcal{X}''$ under both information structures. 
 
 % In Figure \ref{RelEOWANo} its distribution appears to approximate the distribution of $Y$ very well, suggesting  almost complete information. Some of this information, however, is lost in Figure \ref{RelEOWAHigh} because in this scenario the group of forecasters knows $32\%$ of the total information, as opposed to the $80\%$ in the no overlap scenario.
 
@@ -729,7 +758,7 @@ The final term, UNC does not depend on the forecasts. This is the sample varianc
 
 % latex table generated in R 3.1.2 by xtable 1.7-4 package
 % Thu May  7 14:19:19 2015
-\begin{table}[h!]
+\begin{table}[t!]
 \centering
 \caption{Synthetic Data. The average quadratic loss, $L(\Y,\boldsymbol{\mathcal{X}} )$ with its three additive components: reliability (REL), resolution (RES), and uncertainty (UNC). The final column, $s^2$ gives the estimated variance of the forecast.} 
 \begin{tabular}{llrrrrr}
@@ -782,11 +811,11 @@ This particular dataset is appropriate for illustrating our results because it i
 
 The individual forecasters are emulated with three linear regression models, $\mathcal{M}_1$, $\mathcal{M}_2$, and $\mathcal{M}_3$, that predict $Y$ based on different sets of predictors. In particular, model $\mathcal{M}_1$ only uses predictors $v_1, v_2, v_3, v_4$, whereas model $\mathcal{M}_2$ uses the remaining predictors $v_5, v_6, v_7, v_8$. Therefore their predictor sets are non-overlapping. The third model $\mathcal{M}_3$ uses the middle four predictors $v_3, v_4, v_5, v_6$, and hence has significant overlap with the other two models. The results are compared against a linear regression model $\mathcal{M}_F$ that has access to all eight predictors. This is not an aggregator and only represents the extent to which the predictors can explain the outcome $Y$. Therefore it provides interpretation and scale. The predictor sets corresponding to the different models are summarized by the curly braces in (\ref{realData}). Overall, this setup can be viewed as a real-valued equivalent of the case study in \cite{Ranjan08} who aggregate probability forecasts from three different logistic regression models. 
 
-The evaluation is based on a $10$-fold cross validation. The models $\mathcal{M}_1$, $\mathcal{M}_2$, and $\mathcal{M}_3$ are first trained on one half of the training set and then used to make  predictions for the second half and the entire testing set. Next, the aggregators are  trained on the models' predictions over the second half of the training set. Finally, the trained aggregators are tested on the models' predictions over the testing set. Therefore all the following results, apart from the parameter estimates, represent out-of-sample performance. Similarly to Section \ref{simulation}, the evaluation is performed separately under two information scenarios: the \textit{No Information Overlap} scenario considers only predictions from models $\mathcal{M}_1$ and $\mathcal{M}_2$, whereas the \textit{High Information Overlap} scenario involves only predictions from models $\mathcal{M}_1$ and $\mathcal{M}_3$. 
+The evaluation is based on a $10$-fold cross validation. The models $\mathcal{M}_1$, $\mathcal{M}_2$, and $\mathcal{M}_3$ are first trained on one half of the training set and then used to make  predictions for the second half and the entire testing set. Next, the aggregators are  trained on the models' predictions over the second half of the training set. Finally, the trained aggregators are tested on the models' predictions over the testing set. Therefore all the following results, apart from the parameter estimates, represent out-of-sample performance. Similarly to Section \ref{simulation}, the evaluation is performed separately under two different information structures: the \textit{No Information Overlap} scenario considers only predictions from models $\mathcal{M}_1$ and $\mathcal{M}_2$, whereas the \textit{High Information Overlap} scenario involves only predictions from models $\mathcal{M}_1$ and $\mathcal{M}_3$. 
 
 
 
-\begin{figure}[H]
+\begin{figure}[t]
         \centering
         \begin{subfigure}[b]{0.241\textwidth}
                 \includegraphics[width=\textwidth]{IndependentModel1.pdf}
@@ -816,7 +845,7 @@ The evaluation is based on a $10$-fold cross validation. The models $\mathcal{M}
 %                          The results are based on out-of-sample predictions of concrete compressive strength.}
                 \label{RelDiagramMo}
 \end{figure}
-\begin{figure}[H]
+\begin{figure}[t]
         \centering
  
          %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
@@ -836,11 +865,11 @@ The evaluation is based on a $10$-fold cross validation. The models $\mathcal{M}
                 \caption{$\mathcal{X}^*$}
                 \label{RelDiagramNoE}
              \end{subfigure}
-          \caption{Real-World Data. Out-of-sample reliability under no information overlap. }
+          \caption{Real-World Data. Out-of-sample reliability of aggregators under no information overlap. }
 %          The results are based on out-of-sample predictions of concrete compressive strength.}                       
            \label{RelDiagramNo}
 \end{figure}
-\begin{figure}[H]
+\begin{figure}[t]
         \centering
         \begin{subfigure}[b]{0.323\textwidth}
                 \includegraphics[width=\textwidth]{DependentELP.pdf}
@@ -857,7 +886,7 @@ The evaluation is based on a $10$-fold cross validation. The models $\mathcal{M}
                 \caption{$\mathcal{X}^*$}
                 \label{DepEOLPConrete}
         \end{subfigure}
-          \caption{Real-World Data. Out-of-sample reliability under high information overlap. }
+          \caption{Real-World Data. Out-of-sample reliability of aggregators under high information overlap. }
 %          The results are based on out-of-sample predictions of concrete compressive strength.}
                \label{RelDiagramHigh}
 \end{figure}
@@ -869,7 +898,7 @@ Figures \ref{RelDiagramMo}, \ref{RelDiagramNo}, and \ref{RelDiagramHigh} present
 
 % latex table generated in R 3.2.0 by xtable 1.7-4 package
 % Wed May 20 21:48:47 2015
-\begin{table}[ht]
+\begin{table}[t!]
 \centering
 \caption{Real-World Data. Estimated parameter values.} 
 %of optimally weighted average, $\mathcal{X}_w$ and the extremized version of the optimally weighted average, $\mathcal{X}^*$ 
@@ -890,7 +919,7 @@ Scenario & Forecast & $\mu_0$ & $\alpha$ & $w_1$ & $w_2$\\
 %\subsection{Concrete Compressive Strength}
 % latex table generated in R 3.2.0 by xtable 1.7-4 package
 % Fri May 15 16:06:28 2015
-\begin{table}[h!]
+\begin{table}[t!]
 \centering
 \caption{Real-World Data. The average quadratic loss, $L(\Y,\boldsymbol{\mathcal{X}} )$ with its three additive components: reliability (REL), resolution (RES), and uncertainty (UNC). The final column, $s^2$ gives the estimated variance of the forecast. } 
 \begin{tabular}{llrrrrr}
@@ -924,11 +953,11 @@ This paper discussed forecast aggregation under a general probability model, cal
 
 %\marginpar{when what works and Budescu paper comparison}
 
-Forecast aggregation literature by and large agrees that the goal is to collect and combine  information from different forecasters (see, e.g., \citealt{dawid1995coherent, armstrong2, forlines2012heuristics}). At the same time aggregation continues to be performed via weighted averaging or perhaps some other measure of central tendency, such as the median \citep{levins1966strategy, armstrong2, lobo2010human}. Section \ref{contraction} explained that these popular techniques do not behave like aggregators of information. Instead, they are designed to reduce measurement error which is philosophically very different from information diversity \citep{satopaamodeling2}. Therefore some details of their workings seem to have been misunderstood.
+Forecast aggregation literature by and large agrees that the goal is to collect and combine  information from different forecasters (see, e.g., \citealt{dawid1995coherent, armstrong2, forlines2012heuristics}). At the same time aggregation continues to be performed via weighted averaging or perhaps some other measure of central tendency, such as the median \citep{levins1966strategy, armstrong2, lobo2010human}. Section \ref{contraction} explained that these popular techniques do not behave like aggregators of information. Instead, they are designed to reduce measurement error which is philosophically very different from information diversity \citep{satopaamodeling2}. Therefore some details of their workings seem to have been misunderstood. Unfortunately, it is unlikely that this paper will prevent aggregation with measures of central tendency all together. However, it is hoped that our contributions will at least prompt interest and provide direction in discovering alternative aggregation techniques. 
 % do not operate in the manner that they are believed to operate. 
 % some of the workings of these techniques have been misunderstood or the role of the techniques is . Therefore, 
 
-This paper illustrated that good information aggregation can arise from a simple linear transformation that extremizes the weighted average. Of course, under a large number of prediction problems, a non-linear extremizing function can lead to further improvements in aggregation. The linear function, however, is a simple and natural starting point that suffices for illustrating the benefits of extremizing. Is such extremizing guaranteed to be beneficial in every prediction task? Probably, not. 
+This paper illustrated that good information aggregation can arise from a simple linear transformation that extremizes the weighted average. Of course, under a large number of prediction problems, a non-linear extremizing function can lead to further improvements in aggregation. The linear function, however, is a simple and natural starting point that suffices for illustrating the benefits of extremizing. Is extremizing then guaranteed to be beneficial in every prediction task? Probably, not. 
 %However, no single aggregation technique is guaranteed to outperform the others in all forecasting setups. 
 Therefore, for the sake of applications, it is important to discuss conditions under which extremizing is likely to improve the commonly used aggregators. Item \ref{underconfB}) of Theorem \ref{contraction} and the empirical results in Sections \ref{simulation} and \ref{application} suggest that extremizing is likely to be more beneficial under no or low information overlap. This aligns with  \cite{satopaamodeling} who use the Gaussian partial information model to show empirically that extremizing probability forecasts becomes more important a) as the amount of the forecasters' combined information increases, and b) as the forecasters' information sets become more diverse. This means that, for instance, the average forecast of team members working in close collaboration require little extremizing whereas forecasts coming from widely different sources must be heavily extremized.  
 
@@ -939,7 +968,7 @@ Unfortunately, the amount and direction of extremization depends on a training s
 %Intuitively, this aggregator assumes that the forecasters sample information sources from a common distribution. 
 %requires an assumption on the structure of the covariance matrix of the forecasts. 
 % In general, it is not clear what aggregator should be used.
- Developing more general aggregators that place less constraints on the joint dependence structure while satisfying at least two of the optimality properties of Theorem \ref{optimal} is certainly an interesting future research direction. The first step is to develop an aggregator that is both marginally consistent and expanding. Finding an aggregator that maintains forecasters' reliability seems more difficult. 
+ Developing more general aggregators that place less constraints on the joint dependence structure while satisfying at least two of the optimality properties of Theorem \ref{optimal} is certainly an interesting future research direction. The first step is to develop a simple aggregator that is both marginally consistent and expanding. Finding an aggregator that maintains forecasters' reliability seems more difficult. 
 % Meanwhile, the analysis of the general revealed aggregator should continue to explore other optimality properties.
 
 %\marginpar{Time to find new class of inflation aggregators; the averages just do not do this.}
