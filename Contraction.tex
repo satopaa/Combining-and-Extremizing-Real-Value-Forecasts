@@ -155,7 +155,7 @@
 
 \title{Collecting Information from Multiple Forecasts: Inefficiency of Measures of Central Tendency}
 %\title{A Novel Framework for Analyzing Subjective Response Data}
-\author{Ville A. Satop\"a\"a\thanks{Ville A. Satop\"a\"a is a Statistician, Department of Technology and Operations Management, INSEAD, Boulevard de Constance, 77305 Fontainebleau CEDEX, France (e-mail: ville.satopaa@insead.edu)}
+\author{Ville A. Satop\"a\"a\thanks{Ville A. Satop\"a\"a is a Statistician, Department of Technology and Operations Management, INSEAD, Boulevard de Constance, 77305 Fontainebleau CEDEX, France (e-mail: ville.satopaa@insead.edu). The author wishes to acknowledge and thank the support of the MacArthur Foundation's Opening Governance Network.}
 }
 %\date{\vspace{-6.5ex}}
 \date{\today}
@@ -206,9 +206,9 @@ would ignore a potentially large amount of relevant information that is being co
 
 %The agents' disagreement, however, should not be seen as a hindrance but rather as an opportunity to capture the \textit{wisdom of the crowds} \citep{surowiecki2005wisdom}. To do this, Leon Penetta would only need to combine the predictions. For instance, the most common approach would simply average the forecasts. This has 
 
-There are, of course, many different ways one can combine predictions into a single representative value. In practice, most people would probably consider averaging first. 
+There are, of course, many different ways one can go about combining predictions. In practice, most people would probably first consider taking the average. 
 % Panette could combine the predictions in many different ways. Most people would probably first consider the simple average. 
- Fortunately, simple averaging has been shown to perform remarkably well in a variety of settings (see, e.g., \citealt{clemen1986combining, clemen1989combining, makridakis1983averages})
+ Fortunately, this has been shown to perform remarkably well in a variety of settings (see, e.g., \citealt{clemen1986combining, clemen1989combining, makridakis1983averages})
 % As long as the forecasts bracket the true outcome, that is, the outcome falls within their convex hull, averaging
 and is often more accurate than the average individual \citep{larrick2006intuitions}. Other popular aggregators can be found in the general class of measures of central tendency. This class contains well known measures such as the median, geometric mean, and weighted average. While it is generally unclear which approach should be preferred, the forecasting literature by and large agrees that  aggregation of forecasts is beneficial. 
 %Ever since a large number of simulation and empirical studies have been performed. 
@@ -233,7 +233,9 @@ Two decades after writing this paper, the Nobel laureate C. W. J. Granger publis
 %\marginpar{Perhaps we want a picture here to illustrate the complexity of information collection. Similarly to what Palley had but high light the outer rim, }
 This observation led to several stylized models of forecasters' information. For instance, \cite{granger1989invited} and \cite{kim2001inefficiency} consider models in which a forecaster's information consists in equal parts of public information (known to everyone) and private information (known only to one forecaster). Interestingly, they observe that the average (or the mean) forecast is not efficient, that is, it does not use all of the forecasters'  information. This result became known as the \textit{inefficiency of the means}. 
 %The main limitation of this work stems from its restrictive assumptions on the forecasters' information structure: all information is known either by everyone or by only one forecaster. Due to its tractability, this \textit{symmetric} information model has become the popular choice in the literature (see, e.g., \citealt{ottaviani2006strategy, lichtendahl2013wisdom, palley2015eliciting}).
- Of course, in reality the forecasters can have different amounts of information, and not all information is either entirely public or private. For instance, the first two forecasts may share some information that the third forecaster does not know and so on. Therefore different parts of information can be shared by different subgroups of the forecasters, and the forecasters information can be seen as a complex network of partially overlapping sets. 
+ Of course, in reality the forecasters can have different amounts of information, and not all information is either entirely public or private. For instance, the first two forecasters may share some information that the third forecaster does not know and so on. 
+% Therefore different parts of information can be shared by different subgroups of the forecasters, and 
+ This way the forecasters' information can form a very complex network of partially overlapping sets. 
  
  
 %\marginpar{Simply allowing groups to converse and find a consensus does not do this; Many studies, however, suggest the contrary. Because shared information is held by everyone it is mentioned more often and bearers of shared information are held more credible. See Palley page 5 for this. Therefore, how can the information be teased out. Many statistical approaches have been suggested.}
@@ -245,16 +247,18 @@ This observation led to several stylized models of forecasters' information. For
 %\marginpar{These are simple single examples. A general theory was lacking, which prohibited the way for improvement. Explain here that ours is also more general in terms of probability distributions.}
 
 
-Analyzing aggregation across all possible information structures may at first appear intractable. Previous work, however, has shown this to not be the case.
+Analyzing aggregation across all possible information structures may at first appear combinatorially intractable. This, however, is not so. In fact,
+%Previous work, however, has shown this to not be the case.
 %Some authors, however, have succeeded in this.
 % shown that this is not the case. 
 %In fact, some authors have analyzed the average forecast without restricting the forecasters' information structure. 
-For instance, \cite{dawid1995coherent} show that the weighted average of two probability forecasts of a future event is inefficient.
+ \cite{dawid1995coherent} analyze probability forecasts of a future event and show that the weighted average of two forecasts is inefficient under any information structure. 
 %This result, however, is not directly useful for many real-world forecasting applications because these often involve a large number of forecasters.
- \cite{Ranjan08} then generalize this result to $N \in \mathbb{N}$ probability forecasts of a future event. 
+\cite{Ranjan08} generalize this result to $N \in \mathbb{N}$ probability forecasts of a future event. 
 %These authors also make no assumptions about the underlying probability model. 
 %Therefore the results are very general. 
-Even though these authors do not focus on the role of information, their forecasters can be shown to be operating on different information sets. The structure of these information sets, however, is in no way restricted.  Instead the results are derived jointly under all possible information structures. In addition to this, the authors assume nothing about the underlying probability model except its existence. Therefore their results hold  jointly across all probability models and all information structures.
+%Even though these authors do not focus on the role of information, their forecasters can be shown to be operating on different information sets. The structure of these information sets, however, is in no way restricted.  Instead the results are derived jointly under all possible information structures. 
+In addition to not restricting the information structure, these authors assume nothing about the underlying probability model except its existence. Therefore their results are extremely general and hold jointly across all probability models and information structures.
 %This makes their results very general. In particular, the inefficiency of the means is more general than initially suggested by \cite{granger1989invited}.
 %Their results are very general because they do not restrict the forecasters' information structure or 
 
@@ -272,24 +276,23 @@ Even though these authors do not focus on the role of information, their forecas
 
 %BRAIN ANALOGY
 
-This paper generalizes the inefficiency result even further. 
+This paper continues the analysis and generalizes the inefficiency results in two different dimensions. First, 
 % that the inefficiency does not just apply to weighted averaging but to all measures of central tendency.
 % more wide-spread than this.
 %seems to persist among a larger class of aggregators and not just weighted averages.
 % but also applies to many other popular aggregators. 
- To illustrate, suppose that all the analysts independently predict a probability of $0.9$ that Bin Laden is in the compound. If these forecasts are based on somewhat different information, then their combined information should lead to an aggregate greater than $0.9$. In this simple scenario, however, all measures of central tendency (mean, median, mode, geometric mean, harmonic mean, trimmed mean, and so on) aggregate to $0.9$. Therefore they cannot be using all the forecasters' information. Even though this is admittedly a very contrived example, it does suggest an interesting question: are measures of central tendency inherently inefficient in aggregating forecasts?
+% To illustrate, 
 %The current paper contributes to the theory of forecast aggregation by continuing the analysis of information collection under the partial information framework. 
-
-
-
-Our main research objective is to answer this question. Unlike these previous studies that have largely focused on probability forecasts of binary outcomes, our analysis leaves the type of the outcome unspecified. Therefore the results apply to predictions of continuous (Gross Domestic Product, stock prices, product demand), binary (rain or no rain, candidate wins or loses), discrete (number of accidents, goals per season), and many other univariate types. The analysis is carried out under the general framework, known as the \textit{partial information framework}, introduced by \cite{satopaamodeling2, satopaamodeling} as a platform for analyzing information-driven forecasts. 
+%Our main research objective is to answer this question. 
+unlike previous studies, our results do not specify the type of the outcome and therefore apply to predictions of continuous (Gross Domestic Product, stock prices, product demand), binary (rain or no rain, candidate wins or loses), discrete (number of accidents, goals per season), and many other univariate types. Second, the class of aggregators is extended from weighted averages to all measures of central tendency such as median, mode, geometric mean, trimmed mean, and so on. The results are derived under the general framework, known as the \textit{partial information framework}, introduced by \cite{satopaamodeling2, satopaamodeling} as a platform for analyzing information-driven forecasts. 
 %This framework
 %%
 % explicitly notates and describes the forecasters' information without constraining its structure. Furthermore, it assumes nothing about the underlying probability model except its existence. Therefore it is particularly well-suited for deriving highly general results about forecasting.
-  Similarly to  \cite{dawid1995coherent} and \cite{Ranjan08}, this framework makes no assumptions about the forecasters information structure or about the underlying probability model. 
+  Similarly to  \cite{dawid1995coherent} and \cite{Ranjan08}, this framework makes no assumptions about the forecasters information structure or the underlying probability model. 
 %  In fact, both of these previous analyses fall under the partial information framework.
-%   Unlike these previous studies, however, the type of the outcome is not specified. 
- Therefore our results are more general that previous studies in more than one dimension. The following list gives a more detailed explanation of our contributions.
+%   Unlike these previous studies, however, the type of the outcome is not specified.  
+%Therefore our results are more general that previous studies in more than one dimension. 
+ The following list gives a more detailed explanation of our contributions.
 
 
 %More specifically, our contributions are as follows.
@@ -317,13 +320,13 @@ Our main research objective is to answer this question. Unlike these previous st
 
 \item Section \ref{TranscontractionSection} considers transformed weighted averages that apply a strictly monotone transformation to the forecasts, takes a weighted average of the transformed forecasts, and then transforms the average back to the original space. The results show that if the forecasts are non-negative, then this aggregator is not efficient.  
 % aggregator assigns positive weight to at least two different forecasts, some inefficiency results hold. First, transforming a non-negative forecast to a non-negative value never allows the aggregator to collect information. Second, if the transformation is convex or concave, the aggregator does not collect information.
-Therefore well-known aggregators, such as the harmonic, geometric, quadratic, and cubic (weighted) means, are never efficient. In addition, it is not efficient to average the log-odds or the probit scores of probability forecasts. Interestingly, \cite{dawid1995coherent} conjecture that the general class of transformed weighted averages of two probability forecasts is inefficient. The main theorem in this section now shows this conjecture to be correct. 
+Therefore well-known aggregators, such as the harmonic, geometric, quadratic, and cubic (weighted) means, are never efficient. In addition, it is not efficient to average the log-odds or the probit scores of probability forecasts. Interestingly, \cite{dawid1995coherent} conjecture that the general class of transformed weighted averages of two probability forecasts is inefficient. The main theorem in this section now shows his conjecture to be correct. 
 
 
 
 \item Even though the above two classes of aggregators are rather general, they fail to capture common measures of central tendency such as the median, midrange, and various truncated averages. Motivated by this,
 % Section \ref{RandomSection} begins by analyzing all aggregators that remain within the convex hull of the forecasts. It is shown that aggregators in this class can utilize all the forecasters' information if they are allowed to be on the boarder of the convex hull when some of the forecasts disagree. Following this result, the class of aggregators is then tightened to include only
-Section \ref{RandomSection} analyzes aggregators that equal the unanimous forecast if all forecasts agree but stay strictly within the convex hull if some forecasts disagree. This class contains essentially all measures of central tendency, including the ones mentioned above. The results show that this class holds efficient aggregators only if the forecasters' information sets are allowed to be uncountably large. Given that in our finite physical universe forecasters use finite information sets, these aggregators and hence all measures of central tendency are not efficient for all practical purposes. At first it may seem that these results subsume the results in Sections \ref{contractionSection} and \ref{TranscontractionSection}. This, however, is not the case. Instead there is a trade-off between the generality of the class of aggregators and the specificity of the associated results. Consequently, the results become less specific from Section \ref{contractionSection} to Section \ref{RandomSection}. For instance, Section \ref{contractionSection}  characterizes the inefficiency in terms of well-known properties such as calibration and under-confidence, whereas Section \ref{RandomSection} only shows general inefficiency. 
+Section \ref{RandomSection} analyzes aggregators that equal the unanimous forecast if all forecasts agree but stay strictly within the convex hull if some forecasts disagree. This class contains essentially all measures of central tendency, including the ones mentioned above. The results show that this class holds efficient aggregators only if the forecasters' information sets are allowed to be uncountably large. Given that in our finite physical universe forecasters use finite information sets, these aggregators and hence all measures of central tendency are not efficient for all practical purposes. It may seem that these results subsume the results in Sections \ref{contractionSection} and \ref{TranscontractionSection}. This, however, is not the case. Instead there is a trade-off between the generality of the class of aggregators and the specificity of the associated results. Consequently, the results become less specific from Section \ref{contractionSection} to Section \ref{RandomSection}. For instance, Section \ref{contractionSection}  characterizes the inefficiency in terms of well-known properties such as calibration and under-confidence, whereas Section \ref{RandomSection} only shows general inefficiency. 
 %Therefore in practice measures of central tendency are inefficient aggregators of information-driven forecasts. 
 
 
@@ -343,7 +346,12 @@ Section \ref{RandomSection} analyzes aggregators that equal the unanimous foreca
 
 %how general the class of aggregators is and how detailed results can be proven about this class. 
 %That is precisely the case here. The class of weighted averages is less general than the class of convex combinations considered in Section \ref{RandomSection}, and hence it is possible to give some more precise results about them.
-After these contributions, the paper ends in Section \ref{conclusion} with a summary of the main results, a discussion of future studies, and some recommendations for the general practice of forecast aggregation. In particular, this section advocates a top-down approach that first describes the relationships between the outcomes and forecasts with a model, and then derives the efficient aggregator under that model. 
+
+To illustrate the real-world implications of these results, consider the 2016 presidential elections in the United States. Many polling companies were not able to predict the Republicans' victory with good confidence. For instance, only a few days before the election day, the highly-celebrated polling analysis site FiveThirtyEight predicted a 30\% chance of Donald Trump winning. Why is this so low? The user's guide to Nate Silver's prediction algorithm \citep{silver} reveals that the state-specific polls are aggregated in two steps: a) correct biases (convention bounce bias, likely voter bias, etc.) by adjusting the polls' predictions, and b) take the weighted average of the adjusted predictions. Silver does not fully disclose how the weights are computed. This, however, does not matter because all weighted averages are inefficient. In other words, some relevant information provided by the polls was left on the table in each state. Efficient aggregation would have likely assigned Trump a higher chance of winning. Would this have changed the way the candidates or the voters behaved and hence led to a different result? Unfortunately, we will never know. 
+
+The last section of this paper, namely Section \ref{conclusion} summarizes our main results, proposes some future studies, and gives recommendations for the general practice of forecast aggregation. In particular, this section explains that today's aggregation practice uses \textit{ad hoc} aggregation rules without much care for the foundations from which they derive. For one, our results show that measures of central tendency do not derive from any statistical model of information driven forecasts. They have been simply taken too far away from their original context and purpose. Therefore this paper suggests revisiting the foundations. The field needs empirical studies showing evidence for and against different statistical models of the forecasts and outcomes. The efficient aggregator can be then derived under the models with the best fit. Deriving an aggregator in this manner is not only likely to improve the aggregate predictions but also provides a detailed understanding of the workings of the aggregator. This shows clear direction for improved aggregation and hence also for better decision-making. 
+
+%Unfortunately, most forecast aggregation today is done via combination rules, such as measures of central tendency, that have been taken far away from their original context and purpose. As our results will show, these aggregators do not derive from any statistical model of information driven forecasts. Therefore it is unclear how they can be improved. 
 
 %\marginpar{Our work is more general than any other to date: considers all forecast types, any number of forecasters, and any information structure.}
 
@@ -765,15 +773,14 @@ After these contributions, the paper ends in Section \ref{conclusion} with a sum
 
 %EXPLAIN A BIT MORE WHAT THE PROBABILTY SPACE MEANS INTITIVELY. GIVEN THAT THE FORECASTS ARE DEFINED BASED ON THE OUTCOME, P CAN BE VIEWED ONLY AS AN ASSUMPTION ABOUT Y. IT IS THE PROBABLISTIC WAY THE OUTCOME IS ASSUMED TO CHANGE IN THE WORLD. 
 %Denote the outcome of interest with a random variable $Y$. 
-Denote the outcome of interest with $Y$. Suppose this outcome has a finite mean $\E(Y) := \mu_0 < \infty$ and a finite variance $\Var(Y) := \delta_0 < \infty$. The partial information
-framework assumes that $Y$ is random variable under some
+Denote the future outcome of interest with $Y$. Suppose $Y$ is a random variable with a finite mean $\E(Y) := \mu_0 < \infty$ and a finite variance $\Var(Y) := \delta_0 < \infty$ under some
  probability space
-$(\Omega, \F , \P)$. Intuitively, this space is a probabilistic model for the way $Y$ behaves in practice. The main results in this paper do not rely on a specific instance of $(\Omega, \F , \P)$ but instead apply to all probability models jointly. The only assumption is the existence of a probability space. This, however, cannot be avoided in any probabilistic treatment of forecast aggregation. In fact, according to \cite{lindley} this is essential and ``any other approach has an element of adhockery about it [...].''  
+$(\Omega, \F , \P)$. Intuitively, this space is a probabilistic model for the way $Y$ behaves in practice. The main results in this paper do not rely on a specific instance of $(\Omega, \F , \P)$ but instead apply to all probability models jointly. The only assumption is the existence of such a space. This, however, cannot be avoided in any probabilistic treatment of forecast aggregation. In fact, according to \cite{lindley} this is essential and ``any other approach has an element of adhockery about it [...].''  
 %The set $\Omega \neq \emptyset$ represents all possible states of nature and $\F = \mathcal{P}(\Omega) = \{A : A \subset \Omega\}$ is the set of all subset of $\Omega$. 
 
 Suppose there are $N$ forecasters predicting the value of $Y$. Denote the $j$th forecaster's prediction with the random variable $X_j \in \F$, $j = 1, \dots, N$. Relevant previous studies, including the aforementioned \citet{granger1989invited}, \citet{dawid1995coherent}, \citet{kim2001inefficiency}, and \citet{Ranjan08}, assume that 
 %this paper assumes that 
-the forecasters' predictions are based on correct but different information about $Y$.  This is typically achieved by introducing a hidden random variable $Z_j$ whose value is observed by the $j$th forecaster. In any Bayesian setup, with a proper loss function, it is then essentially tautological that the $j$th forecaster predicts $X_j = \E(Y | Z)$. In some sense this is the ``easy'' case as it excludes external factors and makes the environment as amenable to information collection as possible. \citet{Ranjan08} in particular adopt the viewpoint that if an aggregator cannot collect information in such an ideal setting, it is unlikely do so after these forecasts have been biased or distorted with some false information or noise. 
+the forecasters' predictions are based on correct but different information about $Y$.  Such forecasts are typically constructed by introducing a hidden random variable $Z_j$ whose value is observed by the $j$th forecaster. In any Bayesian setup, with a proper loss function, it is then essentially tautological that the $j$th forecaster predicts $X_j = \E(Y | Z)$. In some sense this is the ``easy'' case as it excludes external factors and makes the environment as amenable to information collection as possible. \citet{Ranjan08} in particular adopt the viewpoint that if an aggregator cannot collect information in such an ideal setting, it is unlikely do so after these forecasts have been biased or distorted with some false information or noise. 
 
 %\marginpar{Also, Kim et al. Explain that typically this is not done directly in terms of info ration sets. Instead, it is often done such that a forecaster observes some random variable and then conditions on that to make the prediction; a conditional expectation, hence calibrated etc. }
 
@@ -810,13 +817,13 @@ the forecasters' predictions are based on correct but different information abou
 
 %Given that our main goal is to understand information collection, 
 % the main goal here is to combine the forecasts into a consensus that uses all of the forecasters' combined information \citep{sanders2001judgmental}, 
-Our analysis adopts this viewpoint but,
+The partial information framework adopts this viewpoint but,
 %To make this mathematically precise, it is necessary to introduce a general construction of information-driven forecasts. 
 akin to many previous studies in statistics, finance, and economics, describes information directly in terms of $\sigma$-fields (see \citealt{herves2013information} for why $\sigma$-fields are a reasonable description of information) instead of a hidden random variable.  
 %In the past many fields, including statistics, finance, and economics, have used $\sigma$-fields as a reasonable description of information
-In this way the principal $\sigma$-field $\F$ holds all possible information that can be known about $Y$, and the $j$th forecaster predicts $X_j = \E(Y | \F_j)$ based on some partial information set $\F_j \subseteq \F$. 
+This way the principal $\sigma$-field $\F$ holds all possible information that can be known about $Y$, and the $j$th forecaster predicts $X_j = \E(Y | \F_j)$ based on some partial information set $\F_j \subseteq \F$. 
 %At first this may seem different from the aforementioned previous studies that assume forecaster $j$ to first observe some random variable $Z_j$ and then condition on that to make a prediction $\E(Y | Z_j)$. However, 
-Given that $\E(Y|Z_j) = \E(Y | \F_j)$ for $\F_j = \sigma(Z_j)$, this formulation is essentially equivalent to the one used by the previous studies. The only difference is that our formulation excludes the extra random variable $Z_j$ and hence makes it more clear that nothing is assumed about the sources of the information. For instance, the forecaster's information could stem from books, news articles, personal recollections, and so on. All these details are not relevant for aggregation and hence have been abstracted away.
+Given that $\E(Y|Z_j) = \E(Y | \F_j)$ for $\F_j = \sigma(Z_j)$, this formulation is essentially equivalent to the one used by the previous studies and described above. The only difference is that our formulation excludes the extra random variable $Z_j$ and hence makes it more clear that nothing is assumed about the sources of the information. For instance, the forecaster's information could stem from books, news articles, personal recollections, and so on. These details are not relevant for aggregation and hence have been abstracted away.
 
 
 
@@ -877,9 +884,9 @@ This form of calibration has been widely discussed in the  statistical and meteo
 (\citealt{dawid1982well, foster1998asymptotic}; and many others). Empirical calibration considers a sequence of realized outcome-forecast pairs $(y_k, x_k)$, for $k \in \mathbb{N}$. The forecaster is then calibrated in an empirical sense if the average outcome equals $x$ among all pairs for which $x_k = x$; and this is true for all possible values of $x$. However, as was pointed out by \citet{dawid1995coherent}, these two definitions of calibration can be expressed in formally identical terms by letting $\P$ represent the limiting joint distribution of the outcome-forecast pairs. For the rest of the paper, calibration refers to $\P$-calibration. 
 
 
-In practice the forecasters may not use all the information they know about $Y$. For instance, they may not be able to  reconcile all the available information or simply may decide to conceal some. In the end of the day, the aggregator only gets to operate on the reported forecasts and the
+In practice the forecasters may not use all the information they know about $Y$. For instance, they may not be able to  reconcile all the available information or simply may decide to conceal some of it. In the end of the day, the aggregator only gets to operate on the reported forecasts and the
 % The aggregator only operates on the reported forecasts and hence can access only
-  information these forecasts reveal. Therefore, for the sake of aggregation, any unused information may as well not exist, and it is in no way restrictive to set $\F_j = \sigma(X_j)$, namely the $\sigma$-field generated by the forecast. Given that $\F_j$ is generated by a random variable, it is countably generated (see, e.g., \citealt{durrett2010probability}). This well-known observation will become important in Section \ref{RandomSection} that splits the analysis in terms of the cardinality of the information sets. 
+  information these forecasts reveal. Therefore, for the sake of aggregation, any unused information may as well not exist, and it is in no way restrictive to set $\F_j = \sigma(X_j)$, namely the $\sigma$-field generated by the forecast. 
   
 %   analyzes aggregation under different cardinalities of information sets. 
 %Therefore it is sufficient to consider  $\sigma$-fields to be fully general. 
@@ -889,7 +896,7 @@ In practice the forecasters may not use all the information they know about $Y$.
 
 
 \subsection{Efficient Aggregators}\label{InfoCollection}
-For the sake of notational clarity, aggregators are denoted with different versions of the script symbol $\mathcal{X}$.
+For the sake of notational clarity, aggregators in this paper are denoted with different versions of the script symbol $\mathcal{X}$.
 They are defined as any forecasts that are measurable with respect to $\F'' := \sigma(X_1, \dots, X_N)$, namely the $\sigma$-field revealed by the forecasts or, equivalently, information generated by the forecasters' information sets $\F_j$, $j = 1, \dots, N$.  Figure \ref{CollectInfo} gives a simple illustration of the relationship between $\F''$ and $\F_j$ for $N = 3$ forecasters. An aggregator is then efficient if it uses all of $\F''$ to construct a consensus forecast. This is  made precise in the following definition.
 % collection precise by
 
@@ -903,7 +910,7 @@ They are defined as any forecasts that are measurable with respect to $\F'' := \
 \end{figure}
 
 \begin{class}[Efficient Aggregators]\label{infoAgg}
-Consider $N$ forecasts $X_j$ of the outcome $Y$. An aggregator $\mathcal{X}''$ is called efficient if there exists a probability space $(\Omega, \F, \P)$ under which $\mathcal{X}'' = \E(Y | X_1, \dots, X_N)$ or, equivalently, $\mathcal{X}'' = \E(Y | \F'')$ with $\F'' = \sigma(X_1, \dots, X_N)$. 
+An aggregator $\mathcal{X}''$ is called efficient if there exists a probability space $(\Omega, \F, \P)$ under which $\mathcal{X}'' = \E(Y | X_1, \dots, X_N)$ or, equivalently, $\mathcal{X}'' = \E(Y | \F'')$ with $\F'' = \sigma(X_1, \dots, X_N)$. 
 %Sometimes $\mathcal{X}''$ is called the revealed aggregator because it uses all the information that the forecasters' reveal through their predictions. 
 %Suppose the outcome $Y$ and its forecasts $X_j$, for $j = 1, \dots, N$, are defined on some probability space $(\Omega, \F, \P)$. Under this space, the \textit{revealed aggregator} is defined as the conditional expectation $\mathcal{X}'' := \E(Y | \F'') = \E(Y | X_1, \dots, X_N)$. This aggregator represents the forecasters' combined information   and hence is said to collect information. 
 \end{class}
@@ -918,11 +925,13 @@ Consider $N$ forecasts $X_j$ of the outcome $Y$. An aggregator $\mathcal{X}''$ i
 %Therefore it provides an ideal benchmark for
 %understanding aggregators currently used in practice. 
 Observe that each $\mathcal{X}''$ is paired with a probability space under which it is efficient. 
-\cite{dawid1995coherent} call such pairs \textit{compatible} and give some results on how to construct one from the other. At this point, however, our focus is not on any specific pair. Instead, our analysis investigates whether there exists any probability space under which measures of central tendency are efficient. If there is not, then these aggregators do not satisfy the condition in Definition \ref{infoAgg} and hence are deemed \textit{inefficient}.
+\cite{dawid1995coherent} call such pairs \textit{compatible} and give some results on how to construct one from the other. Our focus, however, is not on any specific pair. Instead, we aim to investigate whether there exists a probability space under which some measure of central tendency is efficient. If there is not, then these aggregators do not satisfy the condition in Definition \ref{infoAgg} and can be deemed \textit{inefficient}.
 % because it does not use the forecasters' combined information under any probability space.
 % under which it would use all the forecasters' information. 
 %In this paper an aggregator is said to collect information if and only if it is a member of class described by Definition \ref{infoAgg}. 
-In order to better understand efficient aggregators, the next theorem enumerates some of their properties. 
+Our path to such results begins with the following theorem that 
+%In order to better understand efficient aggregators, the next theorem
+ enumerates some of properties of efficient aggregators.
 % At this level $\mathcal{X}''$ is very abstract and clearly cannot be applied in practice. Fortunately, however, its properties can be studied. 
 %  These are summarized in the following theorem. 
   The proofs of this and all other theorems are deferred to the Appendix.
@@ -985,10 +994,11 @@ an increasing sequence of $\sigma$-fields $\F_0 = \{\emptyset, \Omega\} \subsete
 %Overall, this discussion poses an interesting hypothesis: 
 %does Definition \ref{infoAgg} contain any measure of central tendency? 
 In practice, the most common way of aggregating forecasts is with some measure of central tendency. These by definition aim to summarize the forecasts with a single central value. Therefore, at least intuitively, they can be expected to be closer to $\mu_0$ than the most variable forecast. They may then end up having a too low variance and hence be inefficient. 
+To illustrate, suppose that all the intelligent analysts independently predict a probability of $0.9$ that Bin Laden is in the compound. If these forecasts are based on somewhat different information, then their combined information should lead to an aggregate greater than $0.9$. In this simple scenario, however, all measures of central tendency aggregate to $0.9$. Therefore they cannot be using all the forecasters' information. Even though this is admittedly a very contrived example, it does suggest an interesting question: are measures of central tendency inherently inefficient in aggregating forecasts?
 %They do not account for the information heterogeneity among the forecasters and hence cannot collect their information. 
 %%In fact, \cite{satopaamodeling} explain that averaging-like techniques work well when the individual forecasters have very similar sets of information, that is, when there really is no information aggregation problem to begin with.
 %Instead, they reduce ``measurement error,'' which is philosophically very different to the idea of information aggregation discussed in this paper. 
-This is the intuition motivates the more rigorous analysis in the following sections. 
+This question is explored more rigorous analysis in the following sections. 
 
 % Past literature has acknowledged this but has typically worded it as maximizing sharpness subject to calibration. Here sharpness measures how far the forecasts are from the naive baseline forecast $\mu_0$. 
 %
@@ -1043,12 +1053,14 @@ This is the intuition motivates the more rigorous analysis in the following sect
 %
 %WRITE AS BOLD AGGREGATOR CLASS 1: EXPLAIN WHAT WEIGHTED AVERAGE IS. 
 
-This section continues and generalizes the analysis by \cite{dawid1995coherent} and \cite{Ranjan08} of the most commonly used aggregator, namely the weighted average. More precisely, the focus is on the following class of aggregators.
+This section generalizes the analysis by \cite{dawid1995coherent} and \cite{Ranjan08} of the weighted average. In practice most aggregators rely the weighted average of the individual predictions. Therefore it is the core component in today's aggregation practice and hence the only natural starting point for our analysis. The weighted average is defined and notated as follows.
+% More precisely, the focus is on the following class of aggregators.
 \begin{class}[Weighted Averages] \label{Xw}
 The weighted average is $\mathcal{X}_w := \sum_{j=1}^N w_jX_j$, where each weight $w_j \geq 0$ is fixed and $\sum_{j=1}^N w_j = 1$. 
 \end{class} 
 %The following theorem shows that a non-trivial weighted average is neither expanding nor calibrated. Therefore it is ne can be considered suboptimal.
-The most famous member of this class is the equally weighted average $\frac{1}{N}\sum_{j=1}^N X_j$ that sets all $w_j = 1/N$. Overall, the class of weighted averages is large yet specific enough for us to prove some detailed and useful results. These are given in the following theorem that analyzes $\mathcal{X}_w$ in the light of the efficiency properties listed in Theorem \ref{optimal}. 
+%The most famous member of this class is the equally weighted average $\frac{1}{N}\sum_{j=1}^N X_j$ that sets all $w_j = 1/N$. 
+Overall, this class is large yet specific enough for us to prove some detailed and useful results. These are given in the following theorem that analyzes $\mathcal{X}_w$ in the light of the efficiency properties listed in Theorem \ref{optimal}. Note that any deviation from these properties indicates inefficiency. 
 % The proof is again deferred to the Appendix. 
 
 
@@ -1082,7 +1094,7 @@ Items i) to iii) generalize \citet[Theorem 2.1.]{Ranjan08} from binary outcomes 
 % Intuitively, it states that if $\mathcal{X}_w$ is trained to use its information accurately, the resulting aggregator is more confident. 
 More specifically, item iii) defines and considers under-confidence relative to the calibrated version of  $\mathcal{X}_w$. Given that $\mathcal{X}_w$ is closer to $\mu_0$ than its calibrated version, the bias in $\mathcal{X}_w$ contracts towards $\mu_0$. 
 %Under this kind of comparison, however, a calibrated aggregator is never under-confident. For instance, an aggregator that ignores the individual forecasts and always returns the marginal mean $\mu_0$ is calibrated and hence would not be considered under-confident. Intuitively, however, it is clear that no forecast is more under-confident than $\mu_0$. To avoid this problem, 
-Item \ref{underconfB}), on the other hand, defines under-confidence relative to $\mathcal{X}''$. This checks whether $\mathcal{X}_w$ is as confident as it should be, given the information it received through the forecasts. Unfortunately, $\mathcal{X}_w$ is under-confident unless it assigns all the weight  to a forecaster whose information set contains every other forecasters' information. Even if $\mathcal{X}_w$ could pick out the most informed forecaster ex-ante, the chances of a single forecaster knowing everything that the rest of the forecasters know is extremely small in practice. In essentially all other cases, $\mathcal{X}_w$ is not expanding or calibrated, cannot equal $\mathcal{X}''$ under any probability model, and hence always leaves information on the table. This is emphasized in the following corollary.
+Item \ref{underconfB}), on the other hand, defines under-confidence relative to $\mathcal{X}''$. This checks whether $\mathcal{X}_w$ is as confident as it should be, given the information it received through the forecasts. Unfortunately, $\mathcal{X}_w$ is under-confident unless it assigns all the weight  to a forecaster whose information set contains every other forecasters' information. Even if $\mathcal{X}_w$ could pick out the most informed forecaster ex-ante, the chances of a single forecaster knowing everything that the rest of the forecasters know is extremely small in practice. In essentially all other cases, $\mathcal{X}_w$ is not expanding, calibrated, and hence equal to $\mathcal{X}''$ under any probability model. Therefore it always leaves information on the table. This is emphasized in the following corollary.
 
 %. Comparing this to $\mathcal{X}''$ then gives the following corollary.  
 %Consequently, its variance cannot be interpreted as the amount of used information. 
@@ -1145,22 +1157,23 @@ This section analyzed direct averaging of the forecasts. Sometimes in practice, 
 %\url{https://books.google.co.uk/books?id=2KC9uigO_04C&pg=PA370&lpg=PA370&dq=monotone+transformation+variance&source=bl&ots=oomq3d87xT&sig=dR3ZwqOe-zebI4VgZkOHbFWE1ig&hl=en&sa=X&ved=0ahUKEwi57sDjhf3PAhVmD8AKHeN9CK4Q6AEISzAH#v=onepage&q=monotone%20transformation%20variance&f=false}
 %Ordinarily transform non-negative data. Monotonicity maintains information and does not transform two different values to the same value. 
 
-This section expands Definition \ref{Xw} to allow transformations of the forecasts before they are averaged. Typically the goal is to transform the forecasts $X_j$ to some other space where they are more symmetric, possibly around their mean \citep{baron2014two}. The following definition makes this class of aggregators precise.
+This section expands Definition \ref{Xw} to allow transformations of the forecasts before they are averaged. Typically the goal is to transform the forecasts $X_j$ to some other space where they are more symmetric around their mean \citep{baron2014two}. The following definition makes this class of aggregators precise.
 \begin{class}[Transformed Weighted Averages] \label{Xphi}
 Consider some strictly monotone function $\Phi$. The transformed weighted average associated with $\Phi$ is $\mathcal{X}_{\Phi} := \Phi^{-1} \left( \sum_{j=1}^N w_j \Phi(X_j) \right)$, where each weight $w_j \geq 0$ is fixed and $\sum_{j=1}^N w_j = 1$. 
 \end{class} 
-The function $\Phi$ is strictly monotone and hence invertible so that its inverse exists and two different forecasts are not mapped to the same value. From an information perspective, an invertible function preserves information; that is, $\sigma(X_j) = \sigma(\Phi(X_j))$. Clearly, if $\mathcal{X}_\Phi$ is to be efficient, the transformation $\Phi$ cannot lose any of the original information content. Thus, invertibility is essential.  Despite this requirement, however, the following theorem shows that many transformed weighted averages are inefficient. 
+The function $\Phi$ is strictly monotone so that its inverse exists and two different forecasts are not mapped to the same value. From an information perspective, an invertible function preserves information; that is, $\sigma(X_j) = \sigma(\Phi(X_j))$. Clearly, if $\mathcal{X}_\Phi$ is to be efficient, the transformation $\Phi$ cannot lose any of the original information content. Thus, invertibility is essential.  Despite this requirement, however, the following theorem shows that many transformed weighted averages are inefficient. 
 %This is made more precise in the following theorem.
 %Some well-known members of this class are discussed shortly. First, however, the next theorem describes subsets of the class that never collect information. 
 %In a forecasting application, the function $\Phi$ is typically strictly increasing and hence maintains the order among the forecasts. In contrast, a strictly decreasing function would reverse the order of the forecasts. Intuitively this hardly makes sense; it is as if the forecasters had been predicting $-Y$ instead of $Y$. Nonetheless, 
 
+\marginpar{Must discuss here more why monotone increasing makes sense. Why not just use invertible; it has an inverse and also does not map to the same value. Somehow it makes sense to keep order. }
+
 \begin{theorem}\label{contractionXphi}
 %Suppose that 
 %The following considers two subsets of the transformed weighted averages, characterized by the type of $\Phi$ and $\supp(X_j)$, namely the support of the forecasts: 
-If $\mathcal{X}_\Phi$ assigns positive weight to at least two different forecasts, then it has the following properties. 
-\begin{enumerate}[i)]
-\item If $\Phi$ is convex or concave, then $\mathcal{X}_\Phi$ is not calibrated and hence not efficient. Furthermore, if $\Phi$ is strictly convex or concave, then  $\mathcal{X}_\Phi$ is not even marginally consistent.\label{convex} 
-\item If  $X_j \geq 0$ and $\Phi: \R^+ \to S \subseteq \R$ is  continuous, then $\mathcal{X}_\Phi$ is inefficient. \label{mono}
+Suppose $\mathcal{X}_\Phi$ assigns positive weight to at least two different forecasts. Then the following holds.\begin{enumerate}[i)]
+\item If $\Phi$ is convex or concave, then $\mathcal{X}_\Phi$ is neither calibrated nor efficient. Furthermore, if $\Phi$ is strictly convex or concave, then  $\mathcal{X}_\Phi$ is not even marginally consistent.\label{convex} 
+\item If  $X_j \geq 0$ and $\Phi$ is continuous, then $\mathcal{X}_\Phi$ is inefficient. \label{mono}
 \end{enumerate}
 \end{theorem}
 The items of this theorem complement each other
@@ -1171,7 +1184,9 @@ many well-known aggregators. For instance, the results apply to the entire class
 \begin{align*}
 \mathcal{X}_a := \left( \sum_{j=1}^N w_j X_j^a \right)^{1/a},
 \end{align*}
-where $X_j \geq 0$ and $a \in \R$ is a given constant. Here the function $\Phi(x) = x^{a}$ is concave if $a \in [0,1]$ but convex otherwise. Notable members of this class include the harmonic, geometric, arithmetic, quadratic, and cubic means, corresponding respectively to $a = -1, 0, 1, 2, 3$. Thus, by item \ref{convex}) of Theorem  \ref{contractionXphi}, none of these aggregators is efficient as long as they assign positive weight to at least two different forecasts. In fact, they are not even calibrated and hence based on any information set about $Y$.
+where each $X_j \geq 0$ and $a \in \R$ is a given constant. Here the function $\Phi(x) = x^{a}$ is concave if $a \in [0,1]$ but convex otherwise. Notable members of this class include the harmonic, geometric, arithmetic, quadratic, and cubic means, corresponding respectively to $a = -1, 0, 1, 2, 3$. Thus, by item \ref{convex}) of Theorem  \ref{contractionXphi}, none of these aggregators is efficient as long as they assign positive weight to at least two different forecasts. In fact, they are not even calibrated and hence based on any information set about $Y$.
+
+\marginpar{Maybe show here why it is convex etc.}
 
 %The inefficiency of the generalized means follows from either item of Theorem  \ref{contractionXphi}. While the first item does not restrict $\supp(X_j)$ in any way, the second item restricts $X_j$ and $\Phi(X_j)$ to either half of the real-line such that $\sign(X_j \Phi(X_j))$ is fixed. In practice the forecasts are typically non-negative. If these forecasts are not calibrated, a common approach is to transform them by a monotonic function within their own space before aggregation. This and its connection to Theorem \ref{contractionXphi} is discussed in more detail in Section \ref{nonExperts}. 
 
@@ -1179,14 +1194,14 @@ where $X_j \geq 0$ and $a \in \R$ is a given constant. Here the function $\Phi(x
 
 Transformed weighted averages are also popular in probability forecasting. 
 %Practitioners, however, do use $\mathcal{X}_\Phi$ with a non-convex (or non-concave) $\Phi$. 
-In particular, if the forecasts $X_j \in [0,1]$ are probabilities of a binary outcome $Y \in \{0,1\}$, then it is common to average their log-odds $\log[X_j / (1-X_j)]$ or probits $F^{-1}(X_j)$, where $F$ is the CDF of a standard Gaussian distribution, instead of directly averaging the probabilities $X_j$ (see, e.g., \citealt{baron2014two, satopaamodeling}). Neither of these transformations is convex or concave. However, they are continuous and strictly monotone. Therefore, by item \ref{mono}) of Theorem  \ref{contractionXphi}, they are inefficient as long as they assign positive weight to at least two different forecasts.
+In particular, if the forecasts $X_j \in [0,1]$ are probabilities of a binary outcome $Y \in \{0,1\}$, then it is common to average their log-odds $\log[X_j / (1-X_j)]$ or probits $F^{-1}(X_j)$, where $F$ is the CDF of a standard Gaussian distribution, instead of directly averaging the probabilities $X_j$. This is particularly useful when the outcome is very unlikely or likely. In such cases the distribution of the forecasts is likely to be skewed towards the middle. Consequently, the direct average of the forecasts is going to be too close to $0.5$. This problem can be somewhat mitigated by transforming the probabilities to the logit- or probit-space before averaging \citep{baron2014two}. Neither of these transformations is convex or concave. However, they are continuous and strictly monotone. Therefore, by item \ref{mono}) of Theorem  \ref{contractionXphi}, they are inefficient as long as they assign positive weight to at least two different forecasts.
 
 
 %Even though Theorem \ref{contractionXphi} is more general than Theorem \ref{contraction}, the
 Even though the results discussed so far appear to capture most of the commonly used aggregators, they do not apply to many well-known measures of central tendency, such as the median, midrange, or trimmed (or Winsorized) averages.  In short, this is because such aggregators do not treat the forecasts symmetrically ex-ante but instead depend on the realized values of the forecasts. 
 %the weights would have to change as function of the forecasts. 
 %Aggregation Class \ref{Xw}, however, considers the weights as fixed. 
-The key towards a fully general analysis is to observe that all measures of central tendency are constrained to the convex hull of the forecasts. This property defines a new aggregator class that is analyzed in the next section.
+The key towards a fully general analysis is to observe that all such measures are constrained to the convex hull of the forecasts. This property defines a new aggregator class that is analyzed in the next section.
 %contains all measures of central tendency. The next section analyzes this class.
 
 %\marginpar{Median may be robust to symmetric noise but not to shrinkage affect. This is explained in Baron et al. Often performs better than the average.}
@@ -1215,7 +1230,8 @@ The random convex combination $\mathcal{X}_{[\cdot]}$ remains within the convex 
 %Write the random average as $\sum_{j=1}^N w_j X_j$, where $w_j$ is considered random. Thus $w_j$ is a function of $\omega \in \Omega$. However, for each $\omega$, they must satisfy $\sum_{j=1}^N w_j(\omega) = 1$. Hence the vector of weights can be viewed as a random point on the $N$-simplex. To begin our analysis, 
 %This section shows that an aggregate satisfying (\ref{convexity}) can collect information. Thus criterion (\ref{convexity}) is too loose. 
 %\marginpar{Somwhere we must be more specific about what is actually contained in this class. Should we write a separate class. }
-Observe that this definition does not specify the functional form of the aggregator. The only requirement is that it remains within the convex hull under any realization of the forecasts. Therefore this is clearly the most general class of aggregators considered so far in this paper. In particular, it contains all measures of central tendency and the other classes defined in Definitions \ref{Xw} and \ref{Xphi}. Unfortunately, this class is slightly too large for a general inefficiency result. This is illustrated in the following example. 
+Observe that this definition does not specify the functional form of the aggregator. The only requirement is that it remains within the convex hull under any realization of the forecasts. Therefore this is clearly the most general class of aggregators considered so far in this paper. In particular, it contains all measures of central tendency and the other classes defined in Definitions \ref{Xw} and \ref{Xphi}. Unfortunately, the following example shows that this class is slightly too large for a general inefficiency result.
+% This is illustrated in the following example. 
 %Fortunately, the class can be modified slightly without excluding any measures of central tendency. 
 \begin{example}\label{Example1}
 Consider rolling a fair die and predicting whether the result is even or not. This can be described with the following probability model. Suppose $\Omega = \{\omega_1, \dots, \omega_6\}$ and let $\F = 2^\Omega$ be all subsets of $\Omega$. The outcome is $Y(\omega) = \one_A(\omega)$, where $A = \{\omega_2, \omega_4, \omega_6\}$, and $\P$ is uniform over $\Omega$; that is, $\P(A) = |A|/6$ for all $A \in \F$.  Consider two forecasters with the following information sets: $\F_1 = \sigma(\{\omega_1\})$ and $\F_2 = \sigma(\{\omega_6\})$. In other words, the first forecaster knows whether the result is $1$ or not. The second forecaster, on the other hand, knows  whether the result is $6$ or not. Their combined information is   $\F'' = \sigma(\F_1, \F_2) =  \sigma(\{\omega_1\}, \{\omega_6\})$. These information sets are illustrated in Figure \ref{ExamplePartitionFinite}. The relevant forecasts are
@@ -1384,7 +1400,13 @@ Given that a measure of central tendency aims to summarize the forecasts with a 
 %This class is a very large family of aggregators. Most importantly and to the best of our knowledge, it includes all measures of central tendency.
 %Before the results are discussed,
 %The following analysis is split into two parts in terms of the size of the forecasters' information sets. 
-Now, recall from Section \ref{outcomes} that each $\F_j$ is countably generated. Therefore each $\F_j$ is either finite or uncountably large (for this well-known result, see, e.g., \citealt{proschan2016essentials}). It turns out to be useful to analyze these cases separately. 
+
+%Given that $\F_j$ is generated by a random variable, it is countably generated (see, e.g., \citealt{durrett2010probability}). This well-known observation will become important in Section \ref{RandomSection} that splits the analysis in terms of the cardinality of the information sets. 
+
+Now, recall from Section \ref{outcomes} that each $\F_j = \sigma(X_j)$ is generated by a random variable. This means that each $\F_j$  is countably generated (see, e.g., \citealt{durrett2010probability}) and that 
+%This well-known observation will become important in Section \ref{RandomSection} that splits the analysis in terms of the cardinality of the information sets. 
+% is countably generated. 
+ each $\F_j$ is either finite or uncountably large (for this well-known result, see, e.g., \citealt{proschan2016essentials}). It turns out to be useful to analyze these cases separately. 
 %The following discussion performs the analysis under each case separately.
  %
 %All $\sigma$-algebras generated by a random variables are countable generated? 
@@ -1430,6 +1452,8 @@ $\mathcal{X}_{(\cdot)}$ is inefficient.
 \end{theorem}
 
 Given that Definition \ref{Xsc} describes a highly general class of aggregators, detailed results akin to Theorems \ref{contraction} and \ref{contractionXphi}, can be hardly expected. Therefore it is important to emphasize that Theorem \ref{centralTendency} does not state that $\mathcal{X}_{(\cdot)}$ is under confident or uncalibrated. Instead, it shows that $\mathcal{X}_{(\cdot)}$ never uses all the forecasters' information. Some information is always left on the table. Theorem \ref{centralTendency} can be actually made somewhat more general. This is because its proof only requires $\mathcal{X}_{(\cdot)}$ to remain within either (pre-specified) half-open convex hull of the forecasts. Given that Definition \ref{Xsc} includes essentially all measures of central tendency despite whether the convex hull is open or half-open, this minor generalization is only mentioned but excluded from the final theorem for the sake of clarity. 
+
+\marginpar{Make this remark in the theorem; similarly to the way Ed did in his paper}
 
 %\marginpar{discuss the fact that forecasts are all different. This is where aggregation is important. If they are all the same, there really is only once reasonable aggregate. This is also less likely as $N$ grows larger. In practice, it is hard to imagine a situation where all the forecasts agree. }
 
@@ -2041,7 +2065,10 @@ This result concludes the theoretical development of this paper. The next sectio
 %
 %It is important to state that our results does not exclude the possibility that the average performs better than any individual on average. Hence it does not contradict with the general results of wisdom of the crowd. It is saying that averaging like techniques are not optimal. We can do better than this! 
 
-This paper discussed forecast aggregation under a general probability model, called the partial information framework. The forecasts were assumed to be information-driven but no restrictions were placed on the structure of the forecasters' information. The discussion began by defining efficient aggregators (Definition \ref{infoAgg}) and then enumerating  several of their properties (Theorem \ref{optimal}). These properties provide guidance for developing and understanding aggregators that are often used in practice. In this paper they shed light on different  measures of central tendency. The analysis progressed in steps of increasing generality. First, the focus was on the class of weighted averages.  
+The literature on collective problem solving is very broad, ranging across topics such as the legitimacy of the democratic procedure \citep{mercier}, theories on institutional change \citep{stodden, farrell},  and causal inference of group decision-making \citep{sphitser}. The current paper contributed to this literature by focusing and carrying out a theoretical analysis of forecast aggregation. 
+%This combine multiple predictions of some future outcome. 
+% considered predicting the  on prediction 
+The analysis relied on a general probability model, called the partial information framework that assumes the forecasts to be information-driven but without placing any restrictions on the structure of the forecasters' information. The discussion began by defining efficient aggregators (Definition \ref{infoAgg}) and then enumerating  several of their properties (Theorem \ref{optimal}). These properties provide guidance for developing and understanding aggregators that are often used in practice. In this paper they shed light on different  measures of central tendency. The analysis progressed in steps of increasing generality. First, the focus was on the class of weighted averages.  
 % class of weighted averages of any type of univariate forecasts. 
  Even though these averages are marginally consistent, they fail to satisfy two of the optimality properties, namely calibration and variance expansion (Theorem \ref{contraction}). As a result, they are under-confident and inefficient. Second, the class of weighted averages was extended to allow a strictly monotone transformation before and after (weighted) averaging. The results (Theorem \ref{contractionXphi}) showed that harmonic, geometric, quadratic, and cubic weighted means among many other aggregators lack calibration and hence are never efficient.  Third, the most general analysis considered a class of aggregators that remain strictly within the convex hull of the forecasts when at least two forecasts disagree but equals the unanimous forecast when all forecasts are the same. This contains essentially all measures of central tendency. The analysis showed that these aggregators are inefficient if the forecasters' information sets are finite (Theorem \ref{centralTendency}). Given that real-world forecasters (human or machine agents) use finite information sets, it can be reasonably concluded that, for all practical purposes, measures of central tendency are inefficient aggregators of information-driven forecasts (Corollary \ref{MCTCor}).
  
@@ -2317,24 +2344,104 @@ Taking expectations of both sides gives $\E(\mathcal{X}_\Phi) < \E(\mathcal{X}_w
 %&= \Phi^{-1} \left(  \sum_{j=1}^N w_j \Phi(X_j)  \right)\\
 %&= \mathcal{X}_\Phi
 %\end{align*}
-If $\E(\mathcal{X}_\Phi) \neq \mu_0$, then $\mathcal{X}_\Phi$ does not collect information. Thus, suppose that $\E(\mathcal{X}_\Phi) = \mu_0$ and proceed by analyzing how large $\Var(\mathcal{X}_\Phi)$ can be under marginal consistency. This is equivalent to maximizing $\E(\mathcal{X}_\Phi^2)$ as a function of $\w = \{w_1, \dots, w_N\}$ over the $N$-simplex. First, consider some $\epsilon > 0$ and write
+If $\E(\mathcal{X}_\Phi) \neq \mu_0$, then $\mathcal{X}_\Phi$ does not collect information. Thus, suppose that $\E(\mathcal{X}_\Phi) = \mu_0$ and proceed by analyzing how large $\Var(\mathcal{X}_\Phi)$ can be under marginal consistency. This is equivalent to maximizing $\E(\mathcal{X}_\Phi^2)$ as a function of $\w = \{w_1, \dots, w_N\}$ over the $N$-simplex. First, define $M_{\epsilon} = \min(\Phi(X_1), \dots, \Phi(X_N)) - \epsilon$, and write
 \begin{align*}
-\mathcal{X}_\Phi &= \Phi^{-1} \left(  \sum_{j=1}^N w_j \Phi(X_j)  \right)\\
+\mathcal{X}_\Phi 
+%&= \Phi^{-1} \left(  \sum_{j=1}^N w_j \Phi(X_j)  \right)\\
 %&= \Phi^{-1} \left(  \sum_{j=1}^N w_j \Phi(X_j)  + (\epsilon - \min \{\Phi(X_j)\} ) - (\epsilon - \min \{\Phi(X_j)\} ) \right)\\
-&= \Phi^{-1} \left(  \sum_{j=1}^N w_j ( \Phi(X_j)  - \min \{\Phi(X_j)\} + \epsilon) - (\epsilon - \min \{\Phi(X_j)\} ) \right)
+&= \Phi^{-1} \left(  \sum_{j=1}^N w_j ( \Phi(X_j)  - M_{\epsilon}) + M_{\epsilon} \right)
+%&= \mathcal{X}_{\Phi_+},
 \end{align*}
-Next, consider the following partial derivative with respect to $w_j$.
-\begin{align}
-& \frac{\partial }{\partial w_j} \E\left(\mathcal{X}_\Phi^2\right) \nonumber\\
+where, by construction, $\Phi(X_j) - M_{\epsilon}  > 0$ for all $j = 1, \dots, N$. This shows that the weighted average can be taken anywhere on the real line as long as one remembers to shift it back to the original center. This is important because it makes the term associated with $w_j$ positive. 
+% Therefore one can always shift the transformed forecasts $\Phi(X_j)$ and make them positive. Without loss of generality, then, it can be assumed that $\Phi(X_j) > 0$. 
+
+\marginpar{A continuous function f is invertible on its range (image) if and only if it is either strictly increasing or decreasing (with no local maxima or minima). SHOULD WE CHANGE INCREASING TO INVERTIBLE AS THIS MAKES MORE SENSE; DIFFERENTIABILITY ALSO IMPLIES CONTINUITY. }
+
+Overall, our goal is to compute $\frac{\partial }{\partial w_j} \E\left(\mathcal{X}_\Phi^2\right)$ for all $j = 1, \dots, N$ and then find the weights $\w \in \Delta_N$ that maximize $\E\left(\mathcal{X}_\Phi^2\right)$. This requires us to justify switching the order of integration (expectation) and differentiation within $\Delta_N$. Given that
+% This is justified by the three conditions stated in the Leibniz Integral Rule: 
+%\begin{enumerate}
+%\item \textbf{Condition 1:} $\mathcal{X}_\Phi^2$ is Lebesgue-integrable under each $\w$.\\
+%\textbf{Proof.} This follows from direct computation:
+\begin{align*}
+\E[|\mathcal{X}_\Phi^2|]  = \E[\mathcal{X}_\Phi^2]  &\leq  \E[\max\{X_j\}^2]\\
+&<  \sum_{j=1}^N \E[X_j^2]\\
+&=  \sum_{j=1}^N \Var[X_j] + \E[X_j]^2\\
+&=  \sum_{j=1}^N \delta_j + \mu_0^2 \leq  N (\delta_0 + \mu_0^2) < \infty,
+\end{align*}
+$\mathcal{X}_\Phi^2$ is Lebesgue-integrable under each $\w$. Furthermore, for almost all $\omega \in \Omega$, the partial derivative  $\frac{\partial }{\partial w_j} \mathcal{X}_\Phi^2$ must exist for all $w_j$. This derivative is
+\begin{align*}
+ \frac{\partial }{\partial w_j}  \mathcal{X}_\Phi^2
 %&= \E\left[ \frac{\partial }{\partial w_j}  \Phi^{-1} \left( \sum_{j=1}^N w_j \Phi(X_j ) \right)^2 \right] \\
-&= \E\left[ 2 \Phi^{-1} \left( \sum_{j=1}^N w_j \Phi(X_j) \right) (\Phi(X_j)- \min \{\Phi(X_j)\} + \epsilon)  \frac{\partial }{\partial x}\Phi^{-1} \left( x \right) \bigg|_{\sum_{j=1}^N w_j \Phi(X_j )}   \right]\nonumber\\ 
-&= \E\left[ 2 \mathcal{X}_\Phi (\Phi(X_j)- \min \{\Phi(X_j)\} + \epsilon)  \frac{\partial }{\partial x}\Phi^{-1} \left( x \right) \bigg|_{\sum_{j=1}^N w_j \Phi(X_j )}   \right] \label{partDer}
+%&= 2 \Phi^{-1} \left( \sum_{j=1}^N w_j \Phi(X_j) \right) (\Phi(X_j)- \min \{\Phi(X_j)\} + \epsilon)  \frac{\partial }{\partial x}\Phi^{-1} \left( x \right) \bigg|_{\sum_{j=1}^N w_j \Phi(X_j )}  \\ 
+&= 2 \mathcal{X}_\Phi (\Phi(X_j) - M_\epsilon)  \frac{\partial }{\partial x}\Phi^{-1} \left( x \right) \bigg|_{\sum_{j=1}^N w_j \Phi(X_j )} 
+%&> 0
+\end{align*}
+First, given that $\frac{\partial }{\partial x}\Phi^{-1} \left( x \right) > 0$ (from strict monotonicity), $\mathcal{X}_\Phi \geq 0$ (from theorem hypothesis), and $\Phi(X_j) - M_\epsilon > 0$ (from beginning of the proof), this partial derivative is always non-negative. Second, given that $X_j$ is integrable, $X_j$ is almost everywhere finite. The aggregate $\mathcal{X}_\Phi$ is constrained within the convex hull of the forecasts and therefore also almost everywhere finite. Given that $\Phi$ is differentiable and  $\frac{\partial}{\partial x}\Phi(x) > 0$,  the inverse function $\Phi^{-1}$ is also differentiable \citep{lay2015analysis}. Putting this all togethers shows that the partial derivative  $\frac{\partial }{\partial w_j} \mathcal{X}_\Phi^2$ exists. 
+
+Given that $\Phi$ is continuously differentiable and strictly monotone, the Inverse Function Theorem tells us that the inverse function $\Phi^{-1}$ is also continuously differentiable. Thus $\Phi^{-1}$ is locally Lipschitz. 
+
+%The final step is to justify bring the partial derivative inside the expectation. To do this, let \marginpar{This justification needs a bit more work; transforming a finite Xj cannot blow up.}
+%\begin{align*}
+%u(t) &= \Phi^{-1} \left(  t(\Phi(X_j)-M_\epsilon)+ \sum_{k \neq j} w_k (\Phi(X_k)-M_\epsilon)   + M_\epsilon \right)^2 
+%\end{align*}
+%By the Fundamental Theorem of Calculus, the derivative is 
+%\begin{align*}
+%\frac{\partial }{\partial w_j} \E[\mathcal{X}_\Phi^2] &= \lim_{t \uparrow w_j} \frac{\E[u(w_j)] - \E[u(t)]}{w_j - t} =  \lim_{t \uparrow w_j} \E \left[ \frac{u(w_j) - u(t)}{w_j - t}\right]
+%%&= \lim_{t \uparrow w_j}   \E \left[ \frac{\mathcal{X}_\Phi^2 - \Phi^{-1} \left(  t\Phi(X_j) + \sum_{k \neq j} w_k \Phi(X_k)  \right)^2 }{w_j - t}\right]
+%\end{align*}
+%Plug $t = w_j - 1/n$ into the integrand and let 
+%\begin{align*}
+%f_n := \frac{u(w_j) - u(w_j - 1/n)}{1/n}
+%\end{align*}
+%Given that $\Phi^{-1}$ is monotonically increasing and $\Phi(X_j)-M_\epsilon > 0$, $u(t)$ is monotonically increasing in $t$. This means that $u(w_j) \geq u(w_j - 1/n)$ for all $n \in \mathbb{N}$. Then, $0 \leq f_n \uparrow f = \frac{\partial }{\partial w_j} \mathcal{X}_\Phi^2$. Therefore by the Monotone Convergence Theorem
+%\begin{align*}
+%\frac{\partial }{\partial w_j} \E[\mathcal{X}_\Phi^2] = \lim_{n \to \infty} \E[f_n] =  \E[f] =  \E \left[ \frac{\partial }{\partial w_j} \mathcal{X}_\Phi^2\right]
+%\end{align*}
+
+
+\marginpar{Not sure if this works: how we do know fn is increasing in n}
+
+%\begin{enumerate}
+%\item \textbf{Condition 2:}  For almost all $\omega \in \Omega$, $\frac{\partial}{\partial w_j}\mathcal{X}_\Phi^2$ exists for all $w_j$ within the $N$-simplex.\\
+%\textbf{Proof.} Given that $\Phi$ is strictly monotonic, its inverse $\Phi^{-1}$ is also monotonic. Recall that the composition of monotonic functions is monotonic. Therefore $\mathcal{X}_\Phi^2$ is a monotonic function of $w_j$. 
+%
+%
+%The derivative is 
+%\begin{align*}
+% \frac{\partial }{\partial w_j}  \mathcal{X}_\Phi^2
+%%&= \E\left[ \frac{\partial }{\partial w_j}  \Phi^{-1} \left( \sum_{j=1}^N w_j \Phi(X_j ) \right)^2 \right] \\
+%%&= 2 \Phi^{-1} \left( \sum_{j=1}^N w_j \Phi(X_j) \right) (\Phi(X_j)- \min \{\Phi(X_j)\} + \epsilon)  \frac{\partial }{\partial x}\Phi^{-1} \left( x \right) \bigg|_{\sum_{j=1}^N w_j \Phi(X_j )}  \\ 
+%&= 2 \mathcal{X}_\Phi (\Phi(X_j)- \min \{\Phi(X_j)\} + \epsilon)  \frac{\partial }{\partial x}\Phi^{-1} \left( x \right) \bigg|_{\sum_{j=1}^N w_j \Phi(X_j )} 
+%%&> 0
+%\end{align*}
+%Each $X_j$ is integrable and hence almost surely finite. Given that $\mathcal{X}_\Phi$ is within the convex hull of $X_j$, it is also almost surely finite. We must assume that $\Phi$ is differentiable on the appropriate interval. Given that $\Phi' >\neq 0$, by the inverse function theorem, $\Phi^{-1}$ is also differentiable. 
+%
+% 
+%\item \textbf{Condition 3:}  There is an integrable function $\theta: \Omega \to \R$ such that $|\frac{\partial}{\partial w_j}\mathcal{X}_\Phi^2| \leq \theta(\omega)$ for all $w_j$ and almost all $\omega \in \Omega$. \\
+%\textbf{Proof.} 
+%\begin{align*}
+%\frac{\partial }{\partial w_j}  \mathcal{X}_\Phi^2
+%%&= \E\left[ \frac{\partial }{\partial w_j}  \Phi^{-1} \left( \sum_{j=1}^N w_j \Phi(X_j ) \right)^2 \right] \\
+%%&= 2 \Phi^{-1} \left( \sum_{j=1}^N w_j \Phi(X_j) \right) (\Phi(X_j)- \min \{\Phi(X_j)\} + \epsilon)  \frac{\partial }{\partial x}\Phi^{-1} \left( x \right) \bigg|_{\sum_{j=1}^N w_j \Phi(X_j )}  \\ 
+%&= 2 \mathcal{X}_\Phi (\Phi(X_j)- \min \{\Phi(X_j)\} + \epsilon)  \frac{\partial }{\partial x}\Phi^{-1} \left( x \right) \bigg|_{\sum_{j=1}^N w_j \Phi(X_j )} 
+%%&> 0
+%\end{align*}
+%\end{enumerate}
+Now, changing the other of differentiation and integration is justified. This gives us
+\begin{align}
+\frac{\partial }{\partial w_j} \E\left(\mathcal{X}_\Phi^2\right) 
+%&= \E\left[ \frac{\partial }{\partial w_j}  \Phi^{-1} \left( \sum_{j=1}^N w_j \Phi(X_j ) \right)^2 \right] \\
+%&= \E\left[ 2 \Phi^{-1} \left( \sum_{j=1}^N w_j \Phi(X_j) \right) (\Phi(X_j)- \min \{\Phi(X_j)\} + \epsilon)  \frac{\partial }{\partial x}\Phi^{-1} \left( x \right) \bigg|_{\sum_{j=1}^N w_j \Phi(X_j )}   \right]\nonumber\\ 
+&= \E\left[ 2 \mathcal{X}_\Phi (\Phi(X_j) - M_\epsilon)   \frac{\partial }{\partial x}\Phi^{-1} \left( x \right) \bigg|_{\sum_{j=1}^N w_j \Phi(X_j )}   \right] \label{partDer}
 %&> 0
 \end{align}
-Given that $\Phi(X_j)- \min \{\Phi(X_j)\} + \epsilon > 0$, $\frac{\partial }{\partial x}\Phi^{-1} \left( x \right) > 0$, and $\mathcal{X}_\Phi \geq 0$, this partial derivative is positive except in the degenerate case where $\mathcal{X}_\Phi = 0$ almost surely. This, however, implies that $\E(\mathcal{X}_\Phi) = \mu_0 = 0$. Given that each $X_j \geq 0$ is marginally consistent, $\E(X_j) = 0$. This is only possible if $X_j = 0$ almost surely and for all $j = 1, \dots, N$. This contradicts the theorem hypothesis that states that $\mathcal{X}_\Phi$ assigns weights to at least two different forecasts. Thus it must be the case that $\P(\mathcal{X}_\Phi > 0) > 0$, forcing the partial derivative (\ref{partDer}) to be positive.  
+Given that $\Phi(X_j) - M_\epsilon > 0$, $\frac{\partial }{\partial x}\Phi^{-1} \left( x \right) > 0$, and $\mathcal{X}_\Phi \geq 0$, this partial derivative is positive except in the degenerate case where $\mathcal{X}_\Phi = 0$ almost surely. This, however, implies that $\E(\mathcal{X}_\Phi) = \mu_0 = 0$ and hence that $\E(X_j) = 0$. Given that $X_j \geq 0$, $\E(X_j) = 0$ is only possible if $X_j = 0$ almost surely.  This contradicts the theorem hypothesis that states that $\mathcal{X}_\Phi$ assigns positive weight to \textit{at least two different} forecasts. Thus it must be the case that $\P(\mathcal{X}_\Phi > 0) > 0$, making the partial derivative (\ref{partDer}) positive.  
 %where $$\Phi^{-1} \left( \sum_{j=1}^N w_j \Phi(X_j) \right) \Phi(X_j) = 0$$ almost surely. 
 
-Given that the same is true for all $w_j$, no optimum value is within the $N$-simplex. In particular, the constrained maximum must be on the boarder of the $N$-simplex. Thus at least one $w_j$ is zero at the maximizing value. Remove the corresponding $X_j$ from the analysis and repeat the argument to find that again at least one $w_j$ is zero. Proceeding in this way shows that the maximum value occurs at a vertex of the $N$-simplex; that is, when $w_j = 1$ for some $j$. If $w_k = 1$, then $\E(\mathcal{X}_\Phi^2) = \E(X_k^2) \leq \max \{\E(X_j^2)\}$. In fact, given that $\mathcal{X}_\Phi$ assigns positive weight to at least two different forecasts, $\E(\mathcal{X}_\Phi^2) < \max \{\E(X_j^2)\}$. Consequently, $\Var(\mathcal{X}_\Phi) < \max\{\Var(X_j)\}$, which shows that $\mathcal{X}_\Phi$ cannot be an efficient even if it is marginally consistent. 
+%We will only consider the partial derivatives within the $N$-simplex. A stationary point (saddle point, minimum or maximum) will occur if all partials are equal to zero. This, however, never happens. Therefore the maximum must be on the boarder. 
+
+
+Given that the same is true for all $w_j$, no optimum value is within the $N$-simplex. In particular, the constrained maximum must be on the boarder of the $N$-simplex. Thus at least one $w_j$ is zero at the maximizing value. Remove the corresponding $X_j$ from the analysis and repeat the argument to find that again at least one $w_j$ is zero. Proceeding in this way shows that the maximum value occurs at a vertex of the $N$-simplex; that is, when $w_j = 1$ for some $j$. Call this index $k$. Then, $\E(\mathcal{X}_\Phi^2) = \E(X_k^2) \leq \max \{\E(X_j^2)\}$. In fact, given that $\mathcal{X}_\Phi$ assigns positive weight to at least two different forecasts, $\E(\mathcal{X}_\Phi^2) < \max \{\E(X_j^2)\}$. Consequently, $\Var(\mathcal{X}_\Phi) < \max\{\Var(X_j)\}$, which shows that $\mathcal{X}_\Phi$ cannot be an efficient even if it is marginally consistent. 
 
 %Furthermore, given that $\mathcal{X}_\Phi$ assigns positive weight to at least two different forecasts, $\Var(\mathcal{X}_\Phi) < \max\{\Var(X_j)\}$. 
  \end{enumerate}
