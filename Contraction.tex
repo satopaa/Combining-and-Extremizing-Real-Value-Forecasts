@@ -1320,14 +1320,14 @@ An aggregator $\mathcal{X}''$ is called efficient if there exists a probability 
 Observe that each $\mathcal{X}''$ is paired with a probability space under which it is efficient. 
 \cite{dawid1995coherent} call such pairs \textit{compatible} and give some results on how to construct one from the other. Our focus, however, is not on any specific pair. Instead our goal is to investigate whether there exists a probability space under which a given aggregator is efficient. If there is not, then this aggregator does not align with Definition \ref{infoAgg} and hence is always \textit{inefficient}. 
 
-To show these kinds of inefficiency results directly with Definition \ref{infoAgg} can be challenging. An easier approach is to first understand the common behavior of all efficient aggregators and then check whether a given aggregator, such as the weighted average or median, agrees with it.  
+To show these kinds of inefficiency results directly with Definition \ref{infoAgg} can be challenging. An easier approach is to first understand the common properties of all efficient aggregators. This then gives a ``toolbox'' for checking whether a given aggregator, such as the weighted average or median, behaves like an efficient aggregator.  
 % because it does not use the forecasters' combined information under any probability space.
 % under which it would use all the forecasters' information. 
 %In this paper an aggregator is said to collect information if and only if it is a member of class described by Definition \ref{infoAgg}. 
 %First, however, it is necessary to understand the common behavior of the efficient aggregators. This is given in the 
 %following theorem that
 %In order to better understand efficient aggregators, the next theorem
-The next theorem describes this behavior by enumerating several common properties of all efficient aggregators.
+The next theorem enumerates several common properties of all efficient aggregators.
 % At this level $\mathcal{X}''$ is very abstract and clearly cannot be applied in practice. Fortunately, however, its properties can be studied. 
 %  These are summarized in the following theorem. 
   The proofs of this and all other theorems are deferred to the Appendix.
@@ -1531,7 +1531,7 @@ For intuition it suffices to consider only $N = 2$ predictions.  To understand h
 % $j$th forecaster's prediction be $X_j = \E(Y|\F_j) = \E(Y | Z_{(j)}, Z_{(1,2)})$.
 % and $X_2 = \E(Y|\F_2) =\E(Y | \sigma(\F_{(2)}, \F_{(1,2)}))$. 
 If $\delta_j := \Var(X_j)$ and $\rho := \Cov(X_1, X_2)$,  the coefficients can be written as  %By minimizing the expected quadratic loss and using the fact that $\Cov(X_j, Y) = \delta$ (see \citealt{satopaamodeling} for more details), it is possible to show that
- $\beta_j = (\delta_1\delta_2 - \rho \delta_i)/(\delta_1\delta_2 - \rho^2)$, where $j,i \in \{1,2\}$ and $j \neq i$. This shows that if the experts' information sets $\F_1$ and $\F_2$ are independent,  $\mathcal{X}'' = X_1 + X_2$. In other words, independent information combines via simple addition. To give intuition for this, consider two real-estate agents $A$ and $B$ who are valuing an apartment. Agent $A$ only sees one room and based on it values the apartment at $\$ x_A$. Agent $B$, on the other hand, sees a different room and  gives a valuation of $\$x_B$. If the agents know nothing else about the apartment except the rooms they visited, their information sets are disjoint and their combined information gives a valuation of $\$(x_A + x_B)$. 
+ $\beta_j = (\delta_1\delta_2 - \rho \delta_i)/(\delta_1\delta_2 - \rho^2)$, where $j,i \in \{1,2\}$ and $j \neq i$. This shows that if the experts' information sets $\F_1$ and $\F_2$ are independent,  $\mathcal{X}'' = X_1 + X_2$. In other words, independent information combines via direct summing. To give intuition for this, consider two real-estate agents $A$ and $B$ who are valuing an apartment. Agent $A$ only sees one room and based on it values the apartment at $\$ x_A$. Agent $B$, on the other hand, sees a different room and  gives a valuation of $\$x_B$. If the agents know nothing else about the apartment except the rooms they visited, their information sets are disjoint and their combined information gives a valuation of $\$(x_A + x_B)$. 
 %  combined 
  
  
@@ -3196,15 +3196,15 @@ Putting this all together gives that $\w'\X = \mathcal{X}''$ if and only if $\si
 %\end{align*}
 
 \subsection{Technical Details of Example \ref{intuition}}
-Let $\X = (X_1, \dots, X_N)'$. If $\Cov(\X,\X) := \bSigma$,  then it is well-known that $\argmin_{\bBeta} \E(Y- \bBeta\X)^2 =  \Cov(\X, Y) \bSigma^{-1} =: \bBeta^*$ , where $\Cov(\X, Y) = (\Cov(X_1,Y), \dots, \Cov(X_N,Y))$. Now, \cite{satopaamodeling2} show that if $X_j$ is calibrated, then $\Cov(X_j, Y) = \Var(X_j)$. Therefore $\bBeta^* = \diag(\bSigma)\bSigma^{-1}$. If $\Cov(X_j,X_i) = 0$ for all $i \neq j$, then $\bSigma = \diag(\bSigma)$, $\bBeta^* = \one_N'$, and $\bBeta^* \X = \sum_{j=1}^N X_j$. Therefore independent information combines via simple summing. 
+Let $\X = (X_1, \dots, X_N)'$. If $\Cov(\X,\X) := \bSigma$,  then it is well-known that $\argmin_{\bBeta} \E(Y- \bBeta\X)^2 =  \Cov(\X, Y) \bSigma^{-1} =: \bBeta^*$ , where $\Cov(\X, Y) = (\Cov(X_1,Y), \dots, \Cov(X_N,Y))$. Now, \cite{satopaamodeling2} show that if $X_j$ is calibrated, then $\Cov(X_j, Y) = \Var(X_j)$. Therefore $\bBeta^* = \diag(\bSigma)\bSigma^{-1}$. If $\Cov(X_j,X_i) = 0$ for all $i \neq j$, then $\bSigma = \diag(\bSigma)$, $\bBeta^* = \one_N'$, and $\bBeta^* \X = \sum_{j=1}^N X_j$. Therefore independent information combines via direct summing. 
 
-Consider now the case of $N=2$ forecasters. Then, $\bBeta^* = \diag(\bSigma)\bSigma^{-1} = (\delta_1\delta_2 -\rho\delta_2, \delta_2\delta_2 -\rho\delta_1) / (\delta_1\delta_2 - \rho^2)$. The sum $\beta_1 + \beta_2 = (2\delta_1\delta_2 - \rho\delta_1 - \rho\delta_2) / (\delta_1\delta_2 - \rho^2)$. Given that
+Consider now the case of $N=2$ forecasters. Then, $\bBeta^* = \diag(\bSigma)\bSigma^{-1} = (\delta_1\delta_2 -\rho\delta_2, \delta_2\delta_2 -\rho\delta_1) / (\delta_1\delta_2 - \rho^2)$ and $\beta_1 + \beta_2 = (2\delta_1\delta_2 - \rho\delta_1 - \rho\delta_2) / (\delta_1\delta_2 - \rho^2)$. Given that
 \begin{align*}
 \frac{\partial}{\partial \rho} (\beta_1 + \beta_2) &= - \frac{\delta_2(\delta_1-\rho)^2 + \delta_1(\delta_2-\rho)^2}{(\rho^2 - \delta_1\delta_2)^2} \leq 0,
 \end{align*}
 the sum $\beta_1 + \beta_2$ is a monotonically decreasing function of $\rho$. Note that $\delta_ j = \Var(X_{(j)}) + \Var(X_{(1,2)}) \geq \Var(X_{(1,2)}) = \rho$. Thus $\rho \leq \min(\delta_1,\delta_2)$. Suppose without loss of generality that $\delta_1 \leq \delta_2$. Then, the minimum of $\beta_1 + \beta_2$ occurs when $\rho = \delta_1$. This minimum is
 \begin{align*}
-\min (\beta_1 + \beta_2) &= (\beta_1 + \beta_2) |_{\rho = \beta_1} = \frac{2\delta_1\delta_2 - \delta_1^2 - \delta_1\delta_2}{\delta_1\delta_2 - \delta_1^2} = 1.
+\min (\beta_1 + \beta_2) &= (\beta_1 + \beta_2) |_{\rho = \delta_1} = \frac{2\delta_1\delta_2 - \delta_1^2 - \delta_1\delta_2}{\delta_1\delta_2 - \delta_1^2} = 1.
 \end{align*}
 Finally, to show that $\mathcal{X}''$ is the orthogonal projection of $\mathcal{X}'$ onto the space of all aggregators of the form $\beta_1 X_1 + \beta_2 X_2$, refer to the well-known result mentioned in the beginning of this section and get $\argmin_{\bBeta} \E(\mathcal{X}'- \bBeta\X)^2 =  \Cov(\X, \mathcal{X}') \bSigma^{-1}$. Now, $\Cov(X_j, \mathcal{X}') = \Cov(X_{(j)} + X_{(1,2)}, X_{(j)} + X_{(i)} + X_{(1,2)}) = \Cov(X_{(j)}, X_{(j)}) + \Cov(X_{(1,2)},X_{(1,2)}) = \Var(X_j)$. Thus $ \Cov(\X, \mathcal{X}') \bSigma^{-1} = \diag(\bSigma)\bSigma^{-1}$ as desired.
 
@@ -3255,7 +3255,7 @@ and analyze how large $\Var(\mathcal{X}_\Phi)$ can be. Given that $\mathcal{X}_\
 \end{align*}
 where, by construction, $\Phi(X_j) - M_{\epsilon}  > 0$ for all $j = 1, \dots, N$. This shows that the weighted average can be taken anywhere on the real line as long as one remembers to shift it back to the original center before transforming back to the original space.
 %This is important because it forces $\Phi(X_j)  - M_{\epsilon} > 0$. 
-Furthermore, given that each $\Phi(X_j) \in \mathcal{L}^2 \subseteq \mathcal{L}^1$, where $ \mathcal{L}^p := \{X : \E[|X|^p] < \infty\}$, we have that
+Furthermore, given that each $\Phi(X_j) \in \mathcal{L}^2 \subseteq \mathcal{L}^1$, we have that
 \begin{align*}
 \E \left[M_{\epsilon}^2 \right] &= \E \left[ (\min(\Phi(X_1), \dots, \Phi(X_N)) - \epsilon)^2 \right]\\
 %&= \E \left[\min(\Phi(X_1), \dots, \Phi(X_N))^2 \right] - 2\epsilon \E \left[\min(\Phi(X_1), \dots, \Phi(X_N)) \right] + \epsilon^2\\
@@ -3289,7 +3289,7 @@ To find the weights $\w \in \Delta_N$ that maximize $\E\left(\mathcal{X}_\Phi^2\
 %&=  \sum_{j=1}^N \Var[X_j] + \E[X_j]^2\\
 %&=  \sum_{j=1}^N \delta_j + \mu_0^2 \leq  N (\delta_0 + \mu_0^2) < \infty,
 \end{align*}
-Thus $\mathcal{X}_\Phi^2$ is integrable under each $\w \in \Delta_N$. 
+Thus $\mathcal{X}_\Phi^2$ is integrable and $\mathcal{X}_\Phi \in \mathcal{L}^2$ under each $\w \in \Delta_N$. 
 %Furthermore, for almost all $\omega \in \Omega$, the partial derivative  $\frac{\partial }{\partial w_j} \mathcal{X}_\Phi^2$ must exist for all $w_j$. 
 Next, the derivative $\frac{\partial }{\partial w_j} \mathcal{X}_\Phi^2$ is 
 \begin{align}
@@ -3300,7 +3300,7 @@ Next, the derivative $\frac{\partial }{\partial w_j} \mathcal{X}_\Phi^2$ is
 %&\leq  2 \mathcal{X}_\Phi (\Phi(X_j) - M_\epsilon) B_\partial \in \mathcal{L^1}
 %&> 0
 \end{align}
-Given that $\mathcal{X}_\Phi \in [\min(X_1, \dots, X_N), \max(X_1, \dots, X_N)] \subseteq [0, \infty)$, the aggregate is a.s. non-negative, $\mathcal{X}_\Phi \geq 0$. Suppose now that $\Phi$ is strictly increasing (the strictly decreasing case follows similarly). Then, $\frac{\partial }{\partial x}\Phi^{-1} \left( x \right) > 0$. Given that $\Phi(X_j) - M_\epsilon > 0$, the partial derivative (\ref{Partial}) is always non-negative. Furthermore, the derivative $ \frac{\partial }{\partial x}\Phi^{-1} \left( x \right) \leq B_\partial < \infty$. Thus,
+Given that $\mathcal{X}_\Phi \in [\min(X_1, \dots, X_N), \max(X_1, \dots, X_N)] \subseteq [0, \infty)$, the aggregate is a.s. non-negative $\mathcal{X}_\Phi \geq 0$. Suppose now that $\Phi$ is strictly increasing (the strictly decreasing case follows similarly). Then, $\frac{\partial }{\partial x}\Phi^{-1} \left( x \right) > 0$. Given that $\Phi(X_j) - M_\epsilon > 0$, the partial derivative (\ref{Partial}) is always non-negative. Furthermore, given that $\Phi^{-1}$ has a bounded first derivative, there exists some non-negative constant $B_\partial < \infty$ such that $ \frac{\partial }{\partial x}\Phi^{-1} \left( x \right) \leq B_\partial$. Thus,
 \begin{align*}
 0 \leq \frac{\partial }{\partial w_j}  \mathcal{X}_\Phi^2 (\omega)
 %&= \E\left[ \frac{\partial }{\partial w_j}  \Phi^{-1} \left( \sum_{j=1}^N w_j \Phi(X_j ) \right)^2 \right] \\
@@ -3309,7 +3309,7 @@ Given that $\mathcal{X}_\Phi \in [\min(X_1, \dots, X_N), \max(X_1, \dots, X_N)] 
 \leq  2 \mathcal{X}_\Phi (\Phi(X_j) - M_\epsilon) B_\partial \in \mathcal{L}^1
 %&> 0
 \end{align*}
-The derivative $ \frac{\partial }{\partial x}\Phi^{-1} \left( x \right)$ is then integrable and hence exists almost everywhere. Furthermore, by the Dominant Convergence Theorem and the Leibniz Integral Theorem, the order of differentiation and integration can be interchanged in $\frac{\partial }{\partial w_j} \E\left(\mathcal{X}_\Phi^2\right)$. Thus,
+The derivative $\frac{\partial }{\partial w_j}  \mathcal{X}_\Phi^2 (\omega)$ is then integrable and hence exists almost everywhere. Furthermore, by the Dominant Convergence Theorem and the Leibniz Integral Theorem, the order of differentiation and integration can be interchanged in $\frac{\partial }{\partial w_j} \E\left(\mathcal{X}_\Phi^2\right)$. Thus,
 \begin{align}
 \frac{\partial }{\partial w_j} \E\left(\mathcal{X}_\Phi^2\right) 
 %&= \E\left[ \frac{\partial }{\partial w_j}  \Phi^{-1} \left( \sum_{j=1}^N w_j \Phi(X_j ) \right)^2 \right] \\
@@ -3323,7 +3323,9 @@ This partial derivative is positive except in the degenerate case where $\mathca
 %We will only consider the partial derivatives within the $N$-simplex. A stationary point (saddle point, minimum or maximum) will occur if all partials are equal to zero. This, however, never happens. Therefore the maximum must be on the boarder. 
 
 
-Given that the same is true for all $w_j$, no optimum value is within the $N$-simplex. In particular, the constrained maximum must be on the boarder of the $N$-simplex. Thus at least one $w_j$ is zero at the maximizing value. Remove the corresponding $X_j$ from the analysis and repeat the argument to find that again at least one $w_j$ is zero. Proceeding in this way shows that the maximum value occurs at a vertex of the $N$-simplex; that is, when $w_j = 1$ for some $j$. Call this index $k$. At this maximizing value of $\w \in \Delta_N$, $\E(\mathcal{X}_\Phi^2) = \E(X_k^2) \leq \max \{\E(X_j^2)\}$. In fact, given that $\mathcal{X}_\Phi$ assigns positive weight to at least two different forecasts, $\E(\mathcal{X}_\Phi^2) < \max \{\E(X_j^2)\}$. Consequently, $\Var(\mathcal{X}_\Phi) <   \E(X_k^2) \leq \max\{\Var(X_j)\}$, which shows that $\mathcal{X}_\Phi$ cannot be an efficient even if it is marginally consistent. 
+Given that the same is true for all $w_j$, no optimum value is within the $N$-simplex. In particular, the constrained maximum must be on the boarder of the $N$-simplex. Thus at least one $w_j$ is zero at the maximizing value. Remove the corresponding $X_j$ from the analysis and repeat the argument to find that again at least one $w_j$ is zero. Proceeding in this way shows that the maximum value occurs at a vertex of the $N$-simplex; that is, when $w_j = 1$ for some $j$. Call this index $k$. At this maximizing value of $\w \in \Delta_N$, $\E(\mathcal{X}_\Phi^2) = \E(X_k^2) \leq \max \{\E(X_j^2)\}$. In fact, given that $\mathcal{X}_\Phi$ assigns positive weight to at least two different forecasts, $\E(\mathcal{X}_\Phi^2) < \max \{\E(X_j^2)\}$. Consequently, $\Var(\mathcal{X}_\Phi) <   \E(X_k^2) \leq \max\{\Var(X_j)\}$, giving us a contradiction.
+
+%which shows that $\mathcal{X}_\Phi$ cannot be an efficient even if it is marginally consistent. 
 
 %Furthermore, given that $\mathcal{X}_\Phi$ assigns positive weight to at least two different forecasts, $\Var(\mathcal{X}_\Phi) < \max\{\Var(X_j)\}$. 
  \end{enumerate}
@@ -3340,7 +3342,7 @@ Proof by contradiction:  Suppose the efficient aggregator $\mathcal{X}''$ is a r
 %We can merge each $w \in C_{ij}$ into a single $w$ with the combined measured because none of the observables change if one moves from one $w$ to another within the same $C_{ij}$. Therefore we can assume that each $C_{ij}$ holds only one $w$. 
 %Observe that $X_j$ remains constant over any set $A_{ij}$. 
 %Without loss of generality, assume that $\P(C_k) > 0$ for all $k = 1, \dots, n$. The analysis 
-Given that $\tau''$ is a finer partition than any $\tau_j$, the forecasts and $\mathcal{X}''$  are constant within any atom $C  \in \tau''$. Similarly to before, denote these forecasts with $\mathcal{X}''(C)$ and $X_j(C)$ for $j = 1, \dots, N$. By construction, each atom $A_{ij} \in \tau_j$ can be written as a unique union of some atoms in $\tau''$.  Given that $X_j = \E(Y|\F_j)$, for any atom $A_{ij}$ such that $\P(A_{ij}) > 0$,
+Given that $\tau''$ is a finer partition than any $\tau_j$, the forecasts and $\mathcal{X}''$  are constant within any atom $C  \in \tau''$. Similarly to before, denote these forecasts with $\mathcal{X}''(C)$ and $X_j(C)$ for $j = 1, \dots, N$. By construction, each atom $A_{ij} \in \tau_j$ can be written as a unique union of some atoms in $\tau''$.  Given that $X_j = \E(Y|\F_j)$, for any atom $A_{ij} \in \tau_j$ such that $\P(A_{ij}) > 0$,
 \begin{align}
  \int_{A_{ij}} Y d\P = \int_{A_{ij}} X_j d\P &= X_j(A_{ij}) \int_{A_{ij}}  d\P  = X_j(A_{ij}) \P(A_{ij}) \nonumber\\ 
 \Leftrightarrow X_j(A_{ij}) = \frac{\int_{A_{ij}} Y d\P}{\P(A_{ij})} &= \frac{\sum_{k : C_k \cap A_{ij} \neq \emptyset}\int_{C_k} Y d\P}{\P(A_{ij})} \nonumber \\
@@ -3381,7 +3383,7 @@ The second step uses (\ref{decomposition}) and bounds $\mathcal{X}''(C)$ strictl
 % U_k &:= \max\{\mathcal{X}''(C_{k'}) : k' \neq k, C_k \cap A_{ik^{**}} \neq \emptyset, C_{k'} \cap A_{ik^{**}} \neq \emptyset\} 
 %\end{align*}
 %are well-defined. This shows that each $\mathcal{X}''(C_k)$ is upper and lower bounded by $\mathcal{X}''(C_{k'})$ and $\mathcal{X}''(C_{k''})$
- where $\P(C_{k'}) > 0$, $\P(C_{k''}) > 0$, $C_{k'} \neq C$, and $C_{k''} \neq C$. Thus, if the forecasts do not all agree on some $C$, then $\mathcal{X}''(C)$ is strictly upper and lower bounded by some of its other values.  Furthermore, these values are linked to $C$ via some $A_{ij} \in \tau_j$, that is, there are some $A_{ij}'$ and $A_{ij}''$ such that $C \cup C_{k'} \subseteq A_{ij}'$ and $C \cup C_{k''} \subseteq A_{ij}''$. 
+ where $\P(C_{k'}) > 0$, $\P(C_{k''}) > 0$, $C_{k'} \neq C$, and $C_{k''} \neq C$. Thus, if the forecasts do not all agree on some $C$, then $\mathcal{X}''(C)$ is strictly upper and lower bounded by some of its other values.  Furthermore, these values are linked to $C$ via some $A_{ij} \in \tau_j$, that is, there are some $A_{ik^*}$ and $A_{ik^{**}}$ such that $C \cup C_{k'} \subseteq A_{ik^*}$ and $C \cup C_{k''} \subseteq A_{ik^{**}}$. 
  
  
  
