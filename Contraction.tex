@@ -181,7 +181,7 @@
 \author{Ville A. Satop\"a\"a\thanks{Ville A. Satop\"a\"a is a Statistician, Department of Technology and Operations Management, INSEAD, Boulevard de Constance, 77305 Fontainebleau CEDEX, France (e-mail: ville.satopaa@insead.edu). The author wishes to acknowledge and thank the support of the MacArthur Foundation's Opening Governance Network.}
 }
 %\date{\vspace{-6.5ex}}
-\date{\today}
+\date{}
 %%%%%% Begin document with header and title %%%%%%%%%
 
 
@@ -195,7 +195,7 @@
 
 Even though the forecasting literature agrees that aggregating multiple predictions of some future outcome typically outperforms the individual predictions, there is no general consensus about the right way to do this. Most common aggregators are means, defined loosely as aggregators that always remain between the smallest and largest predictions. Examples include the arithmetic mean, trimmed means, median, mid-range, and many other measures of central tendency. If the forecasters use different information, the aggregator ideally combines their  information into a consensus without losing or distorting any of it. An aggregator that achieves this is considered efficient. Unfortunately, our results show that if the forecasters use their information accurately, 
 %all non-trivial weighted arithmetic means distort  information and are not consistent with any information about the future outcome. More generally, in practice 
-an aggregator that always remains strictly between the smallest and largest predictions is never efficient in practice. A similar result holds even if these ideal predictions are distorted with random error that is centered at zero. 
+an aggregator that always remains strictly between the smallest and largest predictions is never efficient in practice. A similar result holds even if the ideal predictions are distorted with random error that is centered at zero. 
 %the forecasters do not use their information accurately. A prediction is then a draw from a distribution that is centered at the best prediction given the forecaster's information.
  If these noisy predictions are aggregated with a similar notion of centrality, then, under some mild conditions, the aggregator is asymptotically inefficient.
 %
@@ -204,7 +204,7 @@ an aggregator that always remains strictly between the smallest and largest pred
 %analysis reveals that means can improve the accuracy of the predictions when the forecasters attend to identical information. If, however, the forecasters use different information, means do not aim to combine their information and hence are (asymptotically) inefficient.
 %discuss this result in the context of an arguably common model misspecification setup: The decision-maker assumes the forecasters to report noisy estimates of some ``ideal'' prediction and uses an aggregator that is strongly consistent for this ideal. If, however, the forecasters operate under different information and hence perceive the ideal prediction differently, then, under some mild conditions, the decision-maker's aggregator is not (asymptotically) efficient. The paper concludes with an intuitive yet general explanation of the reasons behind the inefficiency of the means. 
 \\
-\textit{Keywords:} Average, Calibration, Convex combination,  Judgmental forecasts, Information aggregation, Means, Meta-analysis, Partial information framework
+\textit{Keywords:} Judgmental forecasts, Information aggregation, Means, Meta-analysis, Model averaging
 \end{abstract}
 
 %\newpage
@@ -279,7 +279,7 @@ In the economics and statistics literature such ideal predictions are called rat
 
 
 
-The predictions are then combined with a statistical aggregator that is nothing but a function from the predictions to the consensus. This is typically done for the sake of decision making and improved accuracy. In fact, after summarizing a wide range of empirical and simulated evidence in the forecasting literature, \cite{clemen} states that ``the results have been virtually unanimous: combining multiple predictions leads to increased prediction accuracy."  In general, the best that an aggregator can do is to use all information that the forecasters provide through their predictions. If it does this without losing or distorting any of the information, it is considered \textit{efficient}.
+The predictions are then combined with a statistical aggregator that is nothing but a function from the predictions to the consensus. This is typically done for the sake of decision making and improved accuracy. In fact, after summarizing a wide range of empirical and simulated evidence in the forecasting literature, \cite{clemen} states that ``the results have been virtually unanimous: combining multiple predictions leads to increased prediction accuracy."  In general, the best that an aggregator can do is to use all information that the forecasters provide through their predictions. If the aggregator does this without losing or distorting any of the forecasters' information, it is considered \textit{efficient}.
 %manages to combine the forecasters' information into a consensus without losing or distorting any of their information, 
 
 %Next, . This aggregator is called  \textit{efficient}  if it uses all the information that the forecasters provide through their predictions.
@@ -392,7 +392,7 @@ Today the practice of combining predictions with a mean appears almost ubiquitou
 %\marginpar{Why not use empirical techniques. In cases like Panetta's there is not training set.}
 
 %Perhaps these sources are simply aiming to summarize the predictions. 
-Unfortunately, if the goal is to find or provide the public with the most informed consensus prediction, the common practice is falling short. This is because means are not necessarily efficient. To illustrate, 
+Unfortunately, if the goal is to find or provide the public with the most informed consensus prediction, the common practice is falling short. This is because means are not necessarily efficient. To illustrate with a very simple example, 
 %suppose two of Panetta's agents relied on different pieces of evidence but both predicted $0.9$. 
 suppose a patient has a magnetic resonance imaging (MRI) and blood test taken. Two well-calibrated doctors then independently analyze the results that fortunately show no indication of poor health. The first doctor only looks at the MRI results and predicts that the patient has a probability $0.9$ of being healthy. The second doctor, on the other hand, only looks at the blood test results but also predicts a probability $0.9$ of the patient being healthy. Now the patient has two predictions of $0.9$, each based on very different information. 
 How should these be combined? Surely, if one looked at both the MRI and blood test results, one would be even more confident of the patient's good health and hence predict a probability somewhat greater than $0.9$.  In this simple scenario, however, all means aggregate to $0.9$. They fail to account for the doctors' differing information sets and hence are inefficient. 
@@ -409,7 +409,7 @@ Even though this example may appear somewhat contrived, it does suggest an inter
 %if each prediction is an expectation of the target outcome conditional on that forecaster's information, then means are almost always inefficient. 
 %Each prediction is treated merely as an expectation of the target outcome conditional on the forecaster's information. 
 %Each prediction is then an expected outcome conditional on the forecaster's personal information. 
-The paper develops this result with the following structure. First, Section \ref{propertiesS} introduces the framework of analysis, gives a brief literature review, and derives the necessary and sufficient conditions for efficiency (Theorem \ref{optimal}). The discussion considers a \textit{weak form of efficiency} in a sense that an aggregator is efficient if and only if there exists some probability space under which it uses all the information in the predictions. Failing to meet this criterion then shows a \textit{strong form of inefficiency}; that is, an aggregator is inefficient if there is no probability space under which it uses all the information in the predictions. 
+The current paper develops this result with the following structure. First, Section \ref{propertiesS} introduces the framework of analysis, gives a brief literature review, and derives the necessary and sufficient conditions for efficiency (Theorem \ref{optimal}). The discussion considers a \textit{weak form of efficiency} in a sense that an aggregator is efficient if and only if there exists some probability space under which it uses all the information in the predictions. Failing to meet this criterion then shows a \textit{strong form of inefficiency}; that is, an aggregator is inefficient if there is no probability space under which it uses all the information in the predictions. 
 %Our main results refer to this type of strong inefficiency. 
 % The section ends with a literature review. 
 % All our main results refer to this type of strong inefficiency. 
@@ -466,7 +466,7 @@ Section \ref{MeasuresOfCentralTendency}  shows that this type of inefficiency ap
 % with weights fixed \textit{ex-ante} observing the predictions. 
 %The weighted average is analyzed in the light of the common properties of efficient aggregators.
 %Akin to \cite{dawid1995coherent} and  \cite{Ranjan08}, the weights are fixed and sum to one. 
-An arithmetic mean is non-trivial and attempts to aggregate information if it assigns positive weight to at least two different predictions.
+An arithmetic mean is non-trivial and attempts to aggregate information if it assigns positive (fixed) weight to at least two different predictions.
 Theorem \ref{contraction} shows that a non-trivial arithmetic mean violates all the efficiency properties  in Theorem \ref{optimal} and is therefore inefficient. 
 %By non-trivial we mean that the average assigns positive weight to at least two different predictions.
  More specifically, it distorts the forecasters' information and is under-confident.
@@ -475,12 +475,13 @@ Theorem \ref{contraction} shows that a non-trivial arithmetic mean violates all 
 
 % to suboptimal performance. 
 %The section concludes by developing intuition for why weighted averaging is inefficient.  
-Sometimes the arithmetic mean is believed to be inefficient because it represents the forecasters' shared information too many times \citep{kim2001inefficiency,palley2015eliciting}. This, however,  is not an accurate explanation. 
+Sometimes the arithmetic mean is believed to be inefficient because it represents the forecasters' shared information too many times \citep{kim2001inefficiency,palley2015eliciting}. This, however,  is not an entirely accurate explanation. 
 %First, because the weights must sum to one, the weighted average cannot treat information consistently across different aggregation scenarios. Second,
 %In short, because private and shared information cannot be separated from the predictions, 
 We show that a linear aggregator faces a trade-off between \textit{under}-representing private information (known only to one forecaster) and \textit{over}-representing the shared information (known to all forecasters). The efficient strategy balances the trade-off by intentionally over-representing the shared information in order to under-represent each forecasters' private information less. 
 %We call this the \textit{shared information tradeoff}.
-The arithmetic mean always represents shared information optimally but unfortunately under-represents any private information. This suggests that the arithmetic mean can work well  when the forecasters rely on very similar information; otherwise much information is under-represented, and the arithmetic mean is under-confident. 
+The arithmetic mean always represents shared information optimally but unfortunately under-represents any private information. This suggests that the arithmetic mean can work well  when the forecasters rely on very similar information; otherwise a relatively large share of information is under-represented, leading to an under-confident aggregate.
+% information is under-represented, and the arithmetic mean is under-confident. 
 %This section, however, shows that over-representing the common information is inevitable. Even the efficient aggregator does it. In fact, the efficient aggregator assigns even heavier weight to the common information but does this in way that allows it to represent the forecasters' private information more appropriately. 
 % Unfortunately, no linear aggregator can avoid it in practice.  
 
@@ -563,7 +564,7 @@ More specifically, Theorem \ref{centralTendency} shows that these aggregators, t
 %The natural question then to ask is whether efficient aggregators even exist in practice. Fortunately, the answer is ``yes.'' Even though such construction are not our main focus, Section \ref{MeasuresOfCentralTendency} briefly describes two general recipes for deriving efficient aggregators. 
 
 
-Section \ref{noisy} applies these results in an asymptotic analysis with forecasters who make mistakes in interpreting their information and hence report noisy versions of their calibrated predictions. Each prediction can then be described as a distribution with the center at the calibrated prediction. If the predictions are aggregated with a similar notion of centrality, Corollary \ref{asympEff} shows, under some mild conditions, that the aggregator is asymptotically inefficient.
+Section \ref{noisy} applies these results in an asymptotic analysis with forecasters who make mistakes in interpreting their information and hence report noisy versions of their calibrated predictions. In other words, each prediction is a draw from a distribution with the center at that forecaster's calibrated prediction. If the predictions are aggregated with a similar notion of centrality, Corollary \ref{asympEff} shows, under some mild conditions, that the aggregator is asymptotically inefficient.
 % as the number of forecasters grows large. 
 
 
@@ -602,7 +603,7 @@ Section \ref{noisy} applies these results in an asymptotic analysis with forecas
 
 
 %Section \ref{conclusion} concludes the paper with a general discussion of our results and their implications on real-world forecasting. 
-Section \ref{conclusion} concludes the paper, discusses our results in the broaded context of forecast modeling, and intuitively explains the reason behind the inefficiency of central tendency. 
+Section \ref{conclusion} concludes by discussing our results in the broader context of forecast modeling, intuitively explaining the reason behind the inefficiency of central tendency, and describing some of our future work in forecast aggregation. 
 %In short, 
 %%Intuitively, means arise perceive forecast variability as noise. Their task is to reduce noise and capture some central value that is less noisy and hence less variable than the individual predictions. In contrast, calibrated predictions become more variable in information \citep{satopaamodeling}. 
 %efficient aggregators of calibrated predictions perceive more variability as more information. Their task is to capture all of this information into a consensus that is more informed and hence more variable than the individual predictions. The MCTs, however, do the opposite: they look for a central location and aim to reduce variability. 
@@ -1284,11 +1285,11 @@ Section \ref{conclusion} concludes the paper, discusses our results in the broad
 
 
 \subsection{Predictions and Outcome} \label{outcomes}
-This section describes a micro-level model of forecasting, called the partial information framework \citep{satopaamodeling2}. More specifically, there are $N \in \mathbb{N}$ forecasters making point predictions $X_1, \dots, X_N$ about some future outcome $Y$. The predictions and outcome are treated as random variables defined under a common probability space $(\Omega, \F , \P)$. In general, assuming the existence of a probability space cannot be avoided in any probabilistic treatment of forecast aggregation. In fact, according to \cite{lindley} this is essential and ``any other approach has an element of adhockery about it [...].'' 
+The partial information framework is a micro-level model of different predictions \citep{satopaamodeling2}. More specifically, suppose there are $N \in \mathbb{N}$ forecasters making point predictions $X_1, \dots, X_N$ about some future outcome $Y$. The predictions and outcome are treated as random variables defined under a common probability space $(\Omega, \F , \P)$. In general, assuming the existence of a probability space cannot be avoided in any probabilistic treatment of forecast aggregation. In fact, according to \cite{lindley} this is essential and ``any other approach has an element of adhockery about it [...].'' 
 %Consider then $N \in \mathbb{N}$ forecasters making point predictions $X_1, \dots, X_N$ about some future outcome $Y$ 
 %The outcome is random and defined on a probability space $(\Omega, \F , \P)$. 
 %For technical reasons, we also  assume the outcome to be well-behaved in a sense that it has finite first two moments.
-Let $\E(Y) := \mu_0 < \infty$ and $\Var(Y) := \delta_0 < \infty$. This leads to the following assumption:
+Under the given probability space, define $\E(Y) := \mu_0 < \infty$ and $\Var(Y) := \delta_0 < \infty$. This leads to the following assumption about the outcome:
 %\cite{satopaamodeling2, satopaamodeling} propose the \textit{partial information framework} as a general platform for analyzing and interpreting such setups. This framework assumes the outcome to behave as follows:
 %\begin{customthm}{1}
 %\begin{align*}
@@ -1362,14 +1363,14 @@ The outcome $Y$ is defined under $(\Omega, \F , \P)$ and $Y \in \mathcal{L}^2$, 
 %describes
 %More specifically, 
 
-Each forecaster is then assumed to predict $Y$ based on some partial information. In mathematics information is often formalized with $\sigma$-fields  \citep{herves2013information}. This way the trivial $\sigma$-field $\F_0 := \{\emptyset, \Omega\}$ represents no information and the principal $\sigma$-field $\F$ represents all possible information that can be known about $Y$. The $j$th forecaster, however, knows some partial information set  $\F_j \subseteq \F$. No assumption as to how the forecaster acquired this information is needed. For instance, it could  have stemmed from books, news articles, personal recollections, and so on. These details are not relevant for aggregation and hence can be abstracted away. 
+Each forecaster predicts $Y$ based on some partial information. In mathematics information is often formalized with $\sigma$-fields  \citep{herves2013information}. This way the trivial $\sigma$-field $\F_0 := \{\emptyset, \Omega\}$ represents no information and the principal $\sigma$-field $\F$ represents all possible information that can be known about $Y$. The $j$th forecaster, however, knows some partial information set  $\F_j \subseteq \F$. No assumption as to how the forecaster acquired this information is needed. For instance, it could  have stemmed from books, news articles, personal recollections, and so on (see \citealt{satopaamodeling} for futher discussion). These details are not relevant for aggregation and hence can be abstracted away. 
 
 
 %\marginpar{conditioning on a sigma field is atually more general because it does not constrain them to be countable but we will make this anyways soon.}
 % predicts $X_j = \E(Y | \F_j)$ based on some 
 %In the past many fields, including statistics, finance, and economics, have used $\sigma$-fields as a reasonable description of information
 
-Based on $\F_j$, the $j$th forecaster then forms a conditional distribution $\P(Y|\F_j)$.  How the forecaster converts this distribution into a point prediction $X_j$ depends on the
+The $j$th forecaster first forms a conditional distribution $\P(Y|\F_j)$.  How the forecaster then converts this distribution into a point prediction $X_j$ depends on the
 %To turn this information into a prediction, the $j$th forecaster summarizes the conditional distribution $\P(Y|\F_j)$ with a single value. 
 %The forecaster then chooses an overt prediction $X_j$ among all $\F_j$-measurable random variables.
 %This is done as follows. First, the $j$th forecaster forms a predictive conditional distribution $Y | \F_j$ about the outcome. The distribution $Y | \F_j$ is then summarised with a single prediction value. 
@@ -1397,7 +1398,7 @@ Based on $\F_j$, the $j$th forecaster then forms a conditional distribution $\P(
 % This was encountered by the Good Judgment Project () 
 %\subsection{Partial Information Framework}
 %Predictions of this form are called \textit{information-driven}.   
-This leads to our second assumption:
+This leads to the following assumption about the predictions:
 %\begin{customthm}{2}
 %The $j$th forecaster predicts $X_j = \E(Y | \F_j)$ based on some partial information set $\F_j \subseteq \F$. \label{assumption2}
 %\end{customthm}
@@ -1420,9 +1421,9 @@ The prediction $X_j = \E(Y | \F_j)$ a.s. for some $\F_j \subseteq \F$. \label{as
 %Thus a omniscient forecaster predicts $\E(Y|\F) = Y$ and an entirely ignorant forecaster predicts $\E(Y|\F_0) = \mu_0$, where $\F_0 = \{\emptyset, \Omega\}$ is the trivial $\sigma$-field.
 
 
-In practice the forecasters may not use all the information they know about $Y$. For instance, they may not be able to  reconcile all the available information or may conceal some of it for various reasons. Either way, the aggregator can access and operate only on the information that the predictions reveal to it. Therefore, for the sake of aggregation, any unused information may as well not exist, and it is in no way restrictive to set $\F_j = \sigma(X_j)$ and write $X_j = \E(Y | X_j)$ a.s. 
+In practice the forecasters may not use all the information they know about $Y$. For instance, they may not be able to  reconcile all the available information or they may conceal some of it for various reasons. Either way, the aggregator can access and operate only on the information that the predictions reveal to it. Therefore, for the sake of aggregation, any unused information may as well not exist, and it is in no way restrictive to set $\F_j = \sigma(X_j)$ and let $X_j = \E(Y | X_j)$ a.s. 
 
-This condition, typically known as calibration, is a common assumption in theoretical analysis of forecasting (see, e.g., \citealt{keane1990testing, dawid1995coherent, ottaviani2006strategy, Ranjan08, jolliffe2012forecast, satopaamodeling}). Calibration is equivalent to Assumption \ref{assumption2}; that is,  a prediction $X_j$ is calibrated if and only if there exists some information set $\F_j \subseteq \F$ such that $X = \E(Y|\F_j)$ a.s. \citep{satopaamodeling}. Given that $X_j = \E(Y | X_j)$ a.s.  depends on the probability measure $\P$, it may seem  different from the widely studied notion of empirical calibration (\citealt{dawid1982well, foster1998asymptotic}; and many others). 
+This condition, typically known as calibration, is a common assumption in theoretical analysis of forecasting (see, e.g., \citealt{keane1990testing, dawid1995coherent, Ranjan08, jolliffe2012forecast, satopaamodeling}). Calibration is equivalent to Assumption \ref{assumption2}; that is,  a prediction $X_j$ is calibrated if and only if there exists some information set $\F_j \subseteq \F$ such that $X = \E(Y|\F_j)$ a.s. \citep{satopaamodeling}. Given that our definition of calibration depends on the probability measure $\P$, it may seem  different from the widely studied notion of empirical calibration (\citealt{dawid1982well, foster1998asymptotic}; and many others). 
 However, as was pointed out by \citet{dawid1995coherent}, these two definitions of calibration can be expressed in formally identical terms by letting $\P$ represent the limiting joint distribution of the outcome-prediction pairs. 
 
 %\marginpar{Common assumption (see Yael's paper). This is important because then the predictions are meaninful. Their meaning is understood and can be interpreted correctly.}
@@ -1526,7 +1527,9 @@ Throughout this paper aggregators are denoted with different variants of the scr
 % or, equivalently, information generated by the forecasters' information sets $\F_j$, $j = 1, \dots, N$.  
 %Figure \ref{CollectInfo} gives a simple illustration of the relationship between $\F$, $\F''$, and $\F_j$ for $N = 3$ forecasters. 
 %Intuitively, $\F''$ holds all information that can be inferred from the reported predictions. 
-An aggregator is then called efficient if  it makes optimal use of $\F''$ under some probability space. This is made precise in the following definition.
+%An aggregator is then called efficient if  it makes optimal use of $\F''$ under some probability space. This is made precise in the following definition.
+If the aggregator uses all of this information, it is called efficient. The following definition makes this precise. 
+
 % uses all of $\F''$ under some probability space.
 % there exists some probability model under which it  construct the consensus based on all of $\F''$. 
 %This is  made precise in the following definition.
@@ -1650,7 +1653,7 @@ To interpret this property, suppose the forecasters' information sets form an in
 %the least informative sub-$\sigma$-field, namely the trivial $\sigma$-field $\F_0 := \{\emptyset, \Omega\}$. A prediction based on $\F_0$ is always equal to the marginal mean $\mu_0$ and hence has zero variance. On the other hand, a prediction based on all the information, namely the principal $\sigma$-field $\F$, is equal to $Y$ and hence has variance $\Var(Y)$. 
 %The intermediate cases can be understood by considering 
 %an increasing sequence of $\sigma$-fields 
-$\{\emptyset, \Omega\} = \F_0  \subseteq \F_1 \subseteq \dots \subseteq \F_N \subseteq \F$.  Note that $\E(Y|\F_0) = \mu_0$ and $\E(Y|\F) = Y$. \citet{satopaamodeling2} show that the variances of these predictions would follow the same order as their nested information sets, that is, $0 = \Var(X_0) \leq \Var(X_1) \leq \dots \leq \Var(X_N) \leq \Var(Y) = \delta_0$. Thus the informativeness of a calibrated prediction is proportional to its variance. Naturally, if an aggregator is efficient, it uses all of the forecasters' information and hence at least as much information as any subgroup of these individuals. Therefore $\mathcal{X}''$ is necessarily at least as variable as every individual prediction or, more generally, the efficient aggregate of any subset of them. 
+$\{\emptyset, \Omega\} = \F_0  \subseteq \F_1 \subseteq \dots \subseteq \F_N \subseteq \F$.  Note that $\E(Y|\F_0) = \mu_0$ and $\E(Y|\F) = Y$. \citet{satopaamodeling2} show that the variances of these predictions follow the same order as their nested information sets, that is, $0 = \Var(X_0) \leq \Var(X_1) \leq \dots \leq \Var(X_N) \leq \Var(Y) = \delta_0$. Thus the informativeness of a calibrated prediction increases in its variance. Naturally, if an aggregator is efficient, it uses all of the forecasters' information and hence at least as much information as any subgroup of these individuals. Therefore $\mathcal{X}''$ is necessarily at least as variable as every individual prediction or, more generally, the efficient aggregate of any subset of them. 
 %This outward tendency is our first hint that that means may not be efficient. 
 This is precisely what item  (\ref{expandEfficient}) describes. 
 %The final item iv) shows that $\mathcal{X}''$ is the optimal aggregator under a large class of different loss functions and hence justifies efficiency as a goal in forecast aggregation. 
@@ -1790,7 +1793,7 @@ This way the forecasters' information can be seen to form a complex structure of
 %%This, however, is not the case.
 %some progress has been made. 
 %Some authors have analyzed aggregation without constraining the information structure.
-By operating under the partial information framework, it is possible to analyze aggregation without constraining the information structure. Some previous authors have done exactly this. In particular, \cite{dawid1995coherent} show that the weighted arithmetic mean of two calibrated predictions of a binary outcome is always inefficient as long as one forecaster does not know everything that the other forecaster knows.
+By operating under the partial information framework, it is possible to analyze aggregation without constraining the information structure. Some previous authors have taken this approach to examine calibrated forecasting of binary outcomes. In particular, \cite{dawid1995coherent} show that the weighted arithmetic mean of two calibrated predictions of a binary outcome is always inefficient as long as one forecaster does not know everything that the other forecaster knows.
 %This result, however, is not directly useful for many real-world forecasting applications because these often involve a large number of forecasters.
 This result was later on extended to $N \geq 2$
 %\cite{hora2004probability} first extended the result to two 
@@ -1800,7 +1803,7 @@ calibrated predictions of a binary outcome \citep{hora2004probability, Ranjan08,
 %To the best of our knowledge, their result is currently the most general one in this area. 
 
 %Possibly because of the heavy focus on probabilistic predictions, the inefficiency of (arithmetic) means is sometimes believed to be limited to calibrated probability predictions \citep{jose2013trimmed}. 
-Some attempts have been made for an even more general result. For instance,  \cite{parunak2013characterizing} suppose that all forecasters know equally much and that not all information about a binary outcome can be known. They then consider an omniscient prediction that optimally uses all information that could possibly be known. They illustrate that this prediction can be outside the the convex hull of the individual calibrated predictions. The omniscient prediction, however, is not an aggregator as it is not a function of the predictions (or measurable with respect to $\F''$). Furthermore, it is always based on at least as much (and often more) information than the individual predictions combined. 
+  \cite{parunak2013characterizing} attempt to generalize beyond the arithmetic mean. They suppose that all forecasters know equally much and that not all information about a binary outcome can be known. They then consider an omniscient prediction that optimally uses all information that could possibly be known. They illustrate that this prediction can be outside the the convex hull of the individual calibrated predictions. The omniscient prediction, however, is not an aggregator as it is not a function of the predictions (or measurable with respect to $\F''$). Furthermore, it is always based on at least as much (and often more) information than the individual predictions combined. 
 % In fact, if it is based on $\G \subseteq \F$, then $\F'' \subseteq \G$.  
 %it uses an information set $\G 
 % it is not measurable with respect to $\F''$. 
@@ -1843,7 +1846,10 @@ Therefore it is not clear how directly these results relate to forecast aggregat
  
 % \marginpar{No work considers noisy predictions}
  
-In summary, existing general inefficiency results concern the weighted arithmetic mean of calibrated predictions of a binary outcome. The weights are considered fixed ex-ante before the predictions are observed, and therefore the results do not apply to many common means such as the median or trimmed means. The discussion has also remained rather technical with no attempt to explain the reason or phenomenon behind the inefficiency. This may be because information has not been recognized as the driver of differences in calibrated predictions. Instead, the authors have mostly worked directly with the definition of calibration. Even though this is equivalent to Assumption \ref{assumption2}, it is less intuitive  and hence does not point as directly towards the core reasons behind the inefficiency.
+In summary, existing general inefficiency results are limited to binary outcomes and the arithmetic mean of their calibrated predictions. 
+% concern the weighted arithmetic mean of calibrated predictions of a binary outcome. 
+Importantly, in each case the weights in the arithmetic mean are fixed ex-ante before the predictions are observed. Therefore the results do not apply to many common means such as the median or trimmed means. The discussion has also remained rather technical with no attempt to intuitively explain the reason or phenomenon behind the inefficiency. 
+%This may be because information has not been recognized as the driver of differences in calibrated predictions. Instead, the authors have mostly worked directly with the definition of calibration. Even though this is equivalent to Assumption \ref{assumption2}, it is less intuitive  and hence does not point as directly towards the core reasons behind the inefficiency.
  
 % \marginpar{Move this up; explain up that the others use calibration to analyze all info structures. Then can be shortened here.}
 %  incompatibility of the means and calibrated predictions. 
@@ -1925,10 +1931,11 @@ Part of our goal now is to settle this general conversation around inefficiency.
 
 %This section generalizes the analysis by \cite{dawid1995coherent} and \cite{Ranjan08} of the weighted average.
 
-The (weighted) arithmetic mean is the most common way to combine predictions in practice \citep{hora2004probability, Ranjan08, jose2013trimmed}. In fact, this practice is so common that sometimes ``combining predictions'' is taken to mean ``averaging predictions'' \citep{armstrong2001combining}. 
+The (weighted) arithmetic mean is the most common way to combine predictions in practice \citep{hora2004probability, Ranjan08, jose2013trimmed}. 
+%In fact, this practice is so common that sometimes ``combining predictions'' is taken to mean ``averaging predictions'' \citep{armstrong2001combining}. 
 %In fact, even some more complex aggregators often incorporate is as a sub-component (see Section \ref{TranscontractionSection}).
 % In practice most aggregators rely the weighted average of the individual predictions.
-  Therefore it is a natural starting point for our analysis of the means. 
+  Therefore it is a natural starting point in our analysis of the means. 
   The arithmetic mean is defined and notated as follows.
 % More precisely, the focus is on the following class of aggregators.
 \begin{class}[Arithmetic Mean] \label{Xw}
@@ -1936,10 +1943,9 @@ An arithmetic mean is $\mathcal{X}_w := \sum_{j=1}^N w_jX_j$, where each weight 
 \end{class}
 %The following theorem shows that a non-trivial weighted average is neither expanding nor calibrated. Therefore it is ne can be considered suboptimal.
 %The most famous member of this class is the equally weighted average $\frac{1}{N}\sum_{j=1}^N X_j$ that sets all $w_j = 1/N$. 
-Similarly to the previous studies mentioned in Section \ref{Lit Review}, the weights here cannot depend on the realized values of the predictions. Instead, they must be fixed before the predictions are observed. Unequal weights can be justified based on additional information such as the forecasters' self-reported expertise in the given prediction task or past prediction accuracy of the forecasters. 
-
-
-The non-triviality condition, on the other hand, ensures that $\mathcal{X}_w$ does not assign all weight to a single prediction (or a group of a.s. identical predictions) but instead attempts to combine information from multiple different sources. Therefore, given that our goal is to analyze and understand aggregation of information from different sources, the discussion can safely focus only on the non-trivial cases.
+Similarly to the previous studies mentioned in Section \ref{Lit Review}, the weights here cannot depend on the realized values of the predictions. Instead, they must be fixed before the predictions are observed. 
+%Unequal weights can be justified based on additional information such as the forecasters' self-reported expertise in the given prediction task or past prediction accuracy of the forecasters. 
+The non-triviality condition ensures that $\mathcal{X}_w$ does not assign all weight to a single prediction (or a group of a.s. identical predictions) but instead attempts to combine information from multiple different sources. Given that our goal is to analyze and understand aggregation of information from different sources, the discussion can safely focus only on the non-trivial cases.
 % $\mathcal{X}_w$ to be non-trivial without losing any generality. 
 That being said, the next theorem describes a non-trivial $\mathcal{X}_w$ in the light of the efficiency properties of Theorem \ref{optimal}. 
 %Note that any deviation from those properties indicates inefficiency. 
@@ -1953,11 +1959,11 @@ That being said, the next theorem describes a non-trivial $\mathcal{X}_w$ in the
 %Suppose that $X_j = \E(Y | X_j)$ for $j = 1, \dots, N$.  
 %Let $m = \argmax_j  \Var(X_j) $ identify the prediction with the maximal variance; that is, $\Var(X_j) \leq \Var(X_m)$ for all $j = 1, \dots, N$. 
 % $\delta_{max} = Var(X_m)$.  
- If $\mathcal{X}_w$ is non-trivial, then the following holds.
+ If $\mathcal{X}_w$ is non-trivial, then the following holds. 
 %  under all probability spaces $(\Omega, \F, \P)$.
 %Then the following holds.
 \begin{enumerate}[(i)]
-\item  $\mathcal{X}_w$ is marginally consistent: $\E(\mathcal{X}_w) = \E(Y) = \mu_0$. 
+\item  $\mathcal{X}_w$ is marginally consistent: $\E(\mathcal{X}_w) = \E(Y) = \mu_0$. \label{marginal calib Xw}
 
 \item $\mathcal{X}_w$ is not calibrated: $\P\left[\E(Y | \mathcal{X}_w) \neq \mathcal{X}_w\right] > 0$.
 % if there exists a prediction pair $i \neq j$ such that $\P(X_i \neq X_j) > 0$ and $w_i, w_j > 0$. In words, $\mathcal{X}_w$ is necessarily uncalibrated if it assigns positive weight to at least two different predictions.  
@@ -1994,10 +2000,11 @@ That being said, the next theorem describes a non-trivial $\mathcal{X}_w$ in the
 %More specifically, the final two items 
 %This theorem discusses under-confidence with respect to two different baselines. First, item \ref{underconfA}) generalizes 
 % Intuitively, it states that if $\mathcal{X}_w$ is trained to use its information accurately, the resulting aggregator is more confident. 
-Recall from Section \ref{outcomes} that calibration is equivalent to Assumption \ref{assumption2}. Thus item (\ref{XwCalib}) shows that a non-trivial $\mathcal{X}_w$ is never an accurate assessment of any information set about $Y$ even though the individual predictions are. 
+Item (\ref{marginal calib Xw}) holds as long as each of the individual predictions is marginally consistent. The other items require calibrated predictions. To discuss these items, recall from Section \ref{outcomes} that calibration is equivalent to Assumption \ref{assumption2}. Item (\ref{XwCalib}) then shows that a non-trivial $\mathcal{X}_w$ is never an accurate assessment of any information set about $Y$ even though the individual predictions are. 
 %based on true information about $Y$ even though the forecasters only give it true information. 
 Instead it distorts the forecasters' information. 
 %Items (\ref{underconfA}) and (\ref{underconfB}) show that 
+
 This makes $\mathcal{X}_w$ under-confident in two different ways. 
 %show that the distortion contracts $\mathcal{X}_w$ towards $\mu_0$, making it under-confident. The two items do this comparison under different benchmarks.
 First, item (\ref{underconfA}) defines under-confidence relative to its calibrated version $\mathcal{X}_w''$. Intuitively, $\mathcal{X}_w''$ represents an accurate assessment of all information left in $\mathcal{X}_w$. Given that $\mathcal{X}_w$ is closer to the non-informative prediction $\mu_0 = \E(Y|\F_0)$ than $\mathcal{X}_w''$ is, $\mathcal{X}_w$ is not as confident as it could be given all the information it has.
@@ -2053,7 +2060,7 @@ The arithmetic mean $\mathcal{X}_w$ can be efficient only under some probability
 %The $j$th forecaster's private information and $\F_{(1,2)}$ is their public information. 
 % $j$th forecaster's prediction be $X_j = \E(Y|\F_j) = \E(Y | Z_{(j)}, Z_{(1,2)})$.
 % and $X_2 = \E(Y|\F_2) =\E(Y | \sigma(\F_{(2)}, \F_{(1,2)}))$. 
-If $\delta_j := \Var(X_j)$ and $\rho := \Cov(X_1, X_2)$, then minimizing the expected Bregman loss (such as the quadratic loss) gives
+If $\delta_j := \Var(X_j)$ and $\rho := \Cov(X_1, X_2)$, then minimizing the expected Bregman loss (such as the squared error loss) gives
   %By minimizing the expected quadratic loss and using the fact that $\Cov(X_j, Y) = \delta$ (see \citealt{satopaamodeling} for more details), it is possible to show that
  $\beta_j = (\delta_1\delta_2 - \rho \delta_i)/(\delta_1\delta_2 - \rho^2) \geq 0$, where $j,i \in \{1,2\}$ and $j \neq i$. This shows that if the experts' predictions are independent, then $\rho = 0$ and $\mathcal{X}'' = X_1 + X_2$. In other words, simple summing is the efficient way to combine information in independent predictions.  
  
@@ -2069,7 +2076,7 @@ Given that the interns' predictions are independent, the $j$th expert's predicti
 \end{align}
 %This shows 
 %Both aggregators assign the same proportion of total weight to private and shared information. 
-where $\beta_1 + \beta_2 > 1$ and $\P(\mathcal{X}_w \neq \mathcal{X}'') > 0$. 
+where $\beta_1 + \beta_2 > 1$ (see the Appendix for this result) such that $\P(\mathcal{X}_w \neq \mathcal{X}'') > 0$. 
 % decreases monotonically as $\rho$ grows. 
 %%, reaching $1$ when $\rho = \min(\delta_1,\delta_2)$.  
 %Therefore $\beta_1 + \beta_2 = 1$ and $\mathcal{X}''$ is a weighted average only when $\rho$ is at its maximum value $\max \rho = \min\{\delta_1, \delta_2\}$. 
@@ -2084,7 +2091,7 @@ where $\beta_1 + \beta_2 > 1$ and $\P(\mathcal{X}_w \neq \mathcal{X}'') > 0$.
 % is cutting a pie that is $2c$ times larger than that of $\bar{\mathcal{X}}$.
 %To understand why $\mathcal{X}_w$ can be improved by relaxing its sum-constraint, 
 % the total weight leads to general inefficiency, 
-Therefore $\mathcal{X}_w$ could be improved by relaxing its sum-constraint.
+This shows that $\mathcal{X}_w$ could be improved by relaxing its sum-constraint.
 
 To understand why, observe that the optimal way to combine the three pieces of information, that is, the interns' predictions is via simple summing:
  \begin{align}
@@ -2107,9 +2114,9 @@ This aggregator uses all information that exists in the example and therefore ca
 This shrinks the private information towards the non-informative prediction $\E(Y|\F_0) = \mu_0 = 0$ and makes $\mathcal{X}_w$ under-confident in comparison to $\mathcal{X}'$. If $\mathcal{X}_w$ was not sum-constrained, it could counter this under-confidence  by assigning more weight to each piece of information. This is precisely what $\mathcal{X}''$ does. 
  
  
-  Comparing  (\ref{X_pDecom}) to (\ref{X_ppDecom})  shows that $\mathcal{X}''$ cannot equal $\mathcal{X}'$ under any fixed $\beta_1$ and $\beta_2$. Therefore a linear aggregator cannot avoid over- or under-weighting of information entirely. 
+  Comparing  (\ref{X_pDecom}) to (\ref{X_ppDecom})  shows that $\mathcal{X}''$ cannot equal $\mathcal{X}'$ under any fixed $\beta_1$ and $\beta_2$. Therefore a linear aggregator cannot avoid over- or under-weighting some information. 
 %  Intuitively, $\mathcal{X}''$ loses due to over-weighting of the shared information but gains due to less under-weighting of the private information. This way t
-This forms a  trade-off between over-weighting shared and under-weighting private information.  The efficient aggregator balances the tradeoff
+This forms a  trade-off between over-weighting shared and under-weighting private information.  The efficient aggregator balances this
 % , that we call the \textit{public-private information tradeoff},
 % cannot be avoided by any linear aggregator of the predictions. 
 %This is because in practice the prediction $X_j$ cannot be separated into its additive components $X_{B_j / B_i}$ and $X_{B_j \cap B_i}$. Therefore increasing $a$ (or $b$) by $\epsilon > 0$ increases the weight on both $X_{B_1 \cap B_2}$ and $ X_{B_1 / B_2}$ (or $X_{B_1 \cap B_2}$ and $ X_{B_2 / B_1}$, respectively) by $\epsilon$. Consequently, if the aggregator represents all private information appropriately ($a = b = 1$), it ends up over-representing the public information ($a+b = 2$). On the other hand, if it represents all public information appropriately ($a + b = 1$), it ends up under-representing the private information ($a = b = 1/2$).
@@ -2356,12 +2363,14 @@ Therefore, perhaps somewhat counter-intuitively, intentionally over-weighting sh
 This example illustrates a general challenge in forecast aggregation: private and shared information  in the predictions cannot be separated. Any weight given to $X_j$ is automatically assigned to both its private and shared components, leading to the shared-to-private information  tradeoff. 
 %This way the shared information receives at least as much weight as any private information. 
 %Unlike $\mathcal{X}_w$, the efficient $\mathcal{X}''$ can adjust this tradeoff and move closer to the theoretical optimum $\mathcal{X}'$. 
-Figure \ref{Intuition} illustrates this for $N = 3$ forecasters indexed by different colors. Each column represents a different piece of information. The height of a colored rectangle is the weight given to the corresponding forecaster, and the height of the entire column is the weight that is ultimately assigned to that piece of information. Observe how $\mathcal{X}_w$ assigns optimal weight only to information that is known by everyone (second column from the left); everything else is under-weighted. Of course, if the forecasters do not share any information, then $\mathcal{X}_w$ underweights all information. This is unfortunate because in many contexts the amount of information known to everyone is likely to shrink as the group of forecasters grows. Consequently, $\mathcal{X}_w$ underweights a larger and larger share of the forecasters' combined information. 
+Figure \ref{Intuition} illustrates this for $N = 3$ forecasters indexed by different colors. Each column represents a different piece of information. The height of a colored rectangle is the weight given to the corresponding forecaster, and the height of the entire column is the weight that is ultimately assigned to that piece of information. Observe how $\mathcal{X}_w$ assigns optimal weight only to information that is known by everyone (second column from the left); everything else is under-weighted. 
+%Of course, if the forecasters do not share any information, then $\mathcal{X}_w$ underweights all information. 
+This is unfortunate because in many contexts the amount of information known precisely to everyone is likely to shrink as the group of forecasters grows. Consequently, $\mathcal{X}_w$ can end up underweighting a larger and larger share of the forecasters' information. 
 
 %Put differently, the amount of information that $\mathcal{X}_w$ underweights is likely to grow as more forecasters enter the aggregation. 
 
  
-On the flip side, this all suggests that $\mathcal{X}_w$ can work well when most of the forecasters' information is shared. A classic example comes from the 1906 country fair in Plymouth where 787 people guessed the weight of an ox \citep{galton1907vox}. By looking at the ox everyone assessed roughly the same information. Thus $\mathcal{X}_w$ should perform well. It in fact did! The equally weighted arithmetic mean was 1197 lbs., which is only one pound away from the true weight of 1198 lbs. Similar results have been made about estimating the number of jelly beans in a jar (average = 871, truth = 850), the temperature in a class room (average = 72.4 $^{\circ}$F, truth = 72.0 $^{\circ}$F), and others \citep{surowiecki2005wisdom}. In all these cases the forecasters use very similar information. 
+On the flip side, this all suggests that $\mathcal{X}_w$ can work well when most of the forecasters' information is shared. A classic example comes from the 1906 country fair in Plymouth where 787 people guessed the weight of an ox \citep{galton1907vox}. By looking at the ox everyone assessed roughly the same information. Thus $\mathcal{X}_w$ should perform well. It in fact did! The equally weighted arithmetic mean was 1197 lbs., which is only one pound away from the true weight of 1198 lbs. There are similar results about estimating the number of jelly beans in a jar (average = 871, truth = 850), the temperature in a class room (average = 72.4 $^{\circ}$F, truth = 72.0 $^{\circ}$F), and others \citep{surowiecki2005wisdom}. In all these cases the forecasters are likely to use very similar information. 
 
 
 
@@ -2563,7 +2572,7 @@ Aside from the arithmetic mean, other common aggregators are the median, midrang
 %  In short, this is because such aggregators do not treat the predictions symmetrically ex-ante but instead decide how the predictions are treated after observing their realized values. 
 %the weights would have to change as function of the predictions. 
 %Aggregation Class \ref{Xw}, however, considers the weights as fixed. 
-These can be expressed as arithmetic means but the weights would need to depend on the realized values of the predictions. Given that results in Section \ref{contractionSection} do not permit such random weights, a different more general analysis is required. First, we give a formal definition of the mean.
+These can be expressed as arithmetic means but the weights would need to depend on the realized values of the predictions. Given that results in Section \ref{contractionSection} do not permit such random weights, a different more general analysis is required. We begin such an analysis with a formal definition of the mean.
 
 %The way forwards is to notice that 
 %%These cannot be formulated as arithmetic means because the weights would need to depend on the realized values of the predictions. 
@@ -2619,7 +2628,7 @@ X_2(\omega) &= \begin{cases}
 \end{example}
 This example shows that 
 %constructs an outcome and a probability space under which the efficient aggregator $\mathcal{X}''$ classifies as a mean. Thus $\mathcal{X}_{[\cdot]}$ can be efficient. The example specifically illustrates that 
-$\mathcal{X}_{[\cdot]}$ can be efficient if it is allowed to equal  the minimum or maximum predictions when the forecasters disagree. If, however, Definition \ref{Xc} is tightened slightly such that this is not allowed, the class still contains essentially all common aggregators but inefficiency becomes a class property.
+$\mathcal{X}_{[\cdot]}$ can be efficient if it is allowed to equal  the smallest or largest prediction when the forecasters disagree. If, however, Definition \ref{Xc} is tightened slightly such that this is not allowed, the class still contains essentially all common aggregators but inefficiency becomes a class property.
 %This is the topic in the next subsection.
 % The next subsection analyzes these aggregators under two different levels of forecaster information. 
 
@@ -2886,9 +2895,9 @@ Given how general Definition \ref{Xsc} is, detailed results akin to Theorem \ref
 %\marginpar{One pushes inwards while the other pushes outwards. This needs to be made somewhat more clear}
 
 	
-Unfortunately, inefficiency does not hold generally under uncountably large information sets. 
+Unfortunately, as the next example illustrates, inefficiency does not need to hold under uncountably large information sets. 
 %This is because then it is possible to find generating partitions for the $\F_j$s such that any one atom in a partition is never a proper subset of an atom in a different partition. 
-This is illustrated in the next example.
+%This is illustrated in the next example.
 % that constructs an efficient strict mean under uncountably large information sets. 
 
 %and hence shows that Theorem \ref{centralTendency} cannot be relaxed to information sets $\F_j$ of any size.  
@@ -2939,8 +2948,8 @@ This is illustrated in the next example.
 %\hspace{0.7em}
 %\begin{minipage}[t]{.48\textwidth}
    \centering
-   \includegraphics[width = 0.5\linewidth, height = 0.45\linewidth]{plots/Countable.pdf} % requires the graphicx package
-   \caption{The partitions $\tau_1$ and $\tau_2$ generate the forecasters' information. Together they form the partition $\tau''$ that generates the forecasters' combined information $\tau''$. Under Lebesgue measure the predictions are the middle points of each interval. For instance, if $\omega = 0.6$ (the dashed line), then predictions are the points on the graph. Observe how $\mathcal{X}''$ is strictly between $X_1$ and $X_2$ under each $\omega \in [0,1]$.}
+   \includegraphics[width = 0.6\linewidth]{plots/Countable.eps} % requires the graphicx package
+   \caption{The partitions $\tau_1$ and $\tau_2$ generate the forecasters' information $\F_1$ and $\F_2$. Together they form the partition $\tau''$ that generates the forecasters' combined information $\F''$. Under Lebesgue measure the predictions are the middle points of each interval. For instance, if $\omega = 0.6$ (the dashed line), then predictions are the points on the graph. Observe how $\mathcal{X}''$ is strictly between $X_1$ and $X_2$ under each $\omega \in [0,1]$.}
    \label{ExamplePartition}
 %\end{minipage}
 \end{figure}
@@ -2973,11 +2982,11 @@ This is illustrated in the next example.
 %
 
 \begin{example} \label{uncountable}
-Consider $N = 2$ forecasters predicting a proportion based on some private and shared information. Suppose the proportion is uniformly distributed over the unit interval and that the forecasters are better at predicting proportions near zero and one. This can be described with the standard probability space $(\Omega, \F, \P)$, where $\Omega = [0,1]$, $\F$ holds all the Borel subsets $\mathcal{B}([0,1])$, and $\P$ is the Lebesgue measure on $[0,1]$. The target proportion is defined as $Y(\omega) = \omega$ for all $\omega \in \Omega$. 
+Consider $N = 2$ forecasters predicting an unknown proportion that is uniformly distributed over the unit interval. This can be described with the standard probability space $(\Omega, \F, \P)$, where $\Omega = [0,1]$, $\F$ holds all the Borel subsets $\mathcal{B}([0,1])$, and $\P$ is the Lebesgue measure on $[0,1]$. The target proportion is defined as $Y(\omega) = \omega$ for all $\omega \in \Omega$. 
 %In other words, $Y$ is uniform over the unit interval. 
 %Consider $N = 2$ forecasters. 
 
-To form the forecasters' information, pick two strictly increasing sequences $\tau_1 = \{a_k : k \in \mathbb{Z}\}$ and $\tau_2 = \{b_k : k \in \mathbb{Z}\}$
+Suppose the forecasters are better at predicting proportions near zero and one.  To form their information sets, pick two strictly increasing sequences $\tau_1 = \{a_k : k \in \mathbb{Z}\}$ and $\tau_2 = \{b_k : k \in \mathbb{Z}\}$
 %\begin{align*}
 %%\tau_1 &= \{\dots, a_{-3}}\} \\
 %\tau_1= \{\dots, a_{-2}, a_{-1}, a_0, a_1, a_2, \dots\} && \text{and} &&
@@ -3014,9 +3023,9 @@ where $\gamma_k = \sum_{j=0}^{k} \left( \frac{1}{2}\right)^j \to 2$ as $k \to \i
 
 Any such sequences $\tau_1$ and $\tau_2$ define two countably infinite partitions of $\Omega$. The atoms of these partitions accumulate only at the extremes, and no atom in one partition is contained within an atom in the other partition.
 %Given that $\gamma_k \to 2$ as $k \to \infty$, each collection forms a countably infinite partition of $\Omega$. 
-The $j$th forecaster's information set $\F_j$ is then generated from the partition defined by $\tau_j$. This computes all possible disjoint unions of the atoms. The result is an uncountably infinite information set because it has the same cardinality as the power set of a countably infinite set. 
+The $j$th forecaster's information set $\F_j$ is then generated from the partition defined by $\tau_j$. This computes all possible unions of the atoms. The result is an uncountably infinite information set because it has the same cardinality as the power set of a countably infinite set. 
 %The information set then has the same cardinality as the power set, which is uncountably infinite. 
- Their combined information $\F''$ is generated by the partition
+ Similarly, the forecasters' combined information $\F''$ is generated by the partition
 %\begin{align*}
 $\tau'' = \tau_1 \cup \tau_2 = \{\dots, a_{-1}, b_{-1}, a_0, b_0, a_1, b_1, \dots\}$. 
 %\end{align*}
@@ -3089,7 +3098,7 @@ This is an arithmetic mean but the weights depend on the realized values of the 
 
 %Of course, it is possible to imagine many different examples where the information collector is a random strict convex combination. been constructed specifically such that it is clearly a reasonable measure of central tendency. Can we think of a real world example where we would give more weight to a maximum forecast?
 %The results, however, deserve some discussion. In particular, 
-Given that the inefficiency of the means (Theorem \ref{centralTendency}) does not hold under uncountably large information sets, it is natural to ask whether such sets even exist in the real world. 
+Given that the inefficiency of the means (Theorem \ref{centralTendency}) does not need to hold under uncountably large information sets, it is natural to ask whether such sets even exist in the real world. 
 %Suppose, for instance, that the forecaster first observes a random variable $Z$ and then makes a prediction based on this information. If $Z$ only takes upon a finite number of different values, then the forecasters information set will be finite; that is, $|\sigma(Z)| < \infty$. If, on the other hand, $Z$ takes upon an infinite number of different values, then the information set will be uncountable. 
 The answer is ``no'' because information content is finite in the physical world \citep{hibbard2014self}. In fact, according to \cite{lloyd2002computational}, the observable universe has a finite information capacity of at most $10^{120}$ bits. Even if the universe did contain infinite information, forecasters could not process it. Computers have finite memory and represent the world in a discrete form. 
 %For instance, consider an algorithm that makes predictions based on a dataset. There are only finitely many values this dataset can realize on the computer's finite and discrete memory. Thus the dataset generates a finite $\sigma$-field. 
@@ -3661,7 +3670,7 @@ So far our results have depended on the predictions being calibrated.
 %As was explained in Section \ref{outcomes}, this can be reasonable in some context. 
 This section, however, shows that the results can shed light even upon contexts where predictions are not calibrated. The lack of calibration here is achieved by adding noise to the calibrated predictions. This way each prediction can be described as a distribution with the center at the calibrated prediction. If these noisy predictions are aggregated with a similar notion of centrality, then intuitively the aggregator should converge to a central point of the calibrated predictions and hence not be (asymptotically) efficient.
 
-To make this intuition specific, denote the $j$th noisy prediction with
+To verify this intuition, denote the $j$th noisy prediction with
 % predictions $X_j = \E(Y|\F_j)$:
 %Forecasters, however, may not always estimate the same target because they can have different information about the outcome and hence may perceive the ideal prediction differently. After all, the forecasters know what they know and can use only what they know. They may make errors in capturing their ideal predictions but such errors represents lack of skill -- a concept that is very different from information (see, e.g., \citealt{chamorro2015wiley}). 
 %For instance, some may be well-informed while some may
@@ -3680,7 +3689,7 @@ where $Q(\cdot, \cdot)$ is a deterministic function that adds i.i.d. error $\eps
 
 %Adding noise without structure can yield almost any relationship between the predictions and the efficient aggregator. Therefore, to give general results,  we revert to asymptotic analysis as $N \to \infty$. 
 %Given that our goal is to conduct asymptotic analysis with $N \to \infty$, 
-Asymptotic analysis requires us to describe how the group of forecasters grows.
+To conduct asymptotic analysis, we must describe how the group of forecasters grows.
 % Unlike before, efficiency is expected asymptotically. 
 % This requires a sampling distribution for the forecasters' information sets. 
 % consider a product space $(\Omega, \F, \P) \times (\Omega_\epsilon, \F_\epsilon, \P_\epsilon) \times (\Omega_\F, \F_\F, \P_\F)$. The first two spaces are as before. To explain the third one, 
@@ -3703,18 +3712,15 @@ Let the $\F_j$s be i.i.d. draws from $H$ with $p_i := \P(\F_j = \H_i)$.
 %We then say that a
 An aggregator $\mathcal{X}$ is then asymptotically efficient if and only if $\mathcal{X} \stackrel{a.s.}{\to} \E[Y | \sigma( \H_i : p_i > 0)]$.
 
-Now, denote the cumulative distribution function (CDF) of $\tilde{X}_j | \F_j = \H_i$ with $\tilde{F}_i$ and describe the notion of centrality with a statistical functional $T(\cdot)$ that $T(\tilde{F}_i) = \E(Y|\H_i)$.
+Now, denote the cumulative distribution function (CDF) of $\tilde{X}_j | (\F_j = \H_i)$ with $\tilde{F}_i$. The noisy predictions are then i.i.d. draws from the mixture distribution $\tilde{F} = \sum_{i=1}^I p_i \tilde{F}_i$. Describe the notion of centrality with a statistical functional $T(\cdot)$ that $T(\tilde{F}_i) = \E(Y|\H_i)$.
 % if $(\tilde{X}_j | \F_j = \H_i) \sim \tilde{F}_i$. 
  In words, $T$ recovers the calibrated prediction from the distribution of its noisy version. 
 % For instance, if $\tilde{X}_j = \E(Y|\F_j) + \epsilon_j$ and $\epsilon_j \sim F_\epsilon$, then $T$
-Note that, with this notation, the noisy predictions are i.i.d. draws from the mixture distribution $\tilde{F} = \sum_{i=1}^I p_i \tilde{F}_i$. 
 %% with probability $p_i \geq 0$.  
 %%Conditional on $\tilde{X}_j$
 %%If all $\E(Y|\F_j)(\omega) = \theta$ for some $\theta$, then 
 %define a functional $T(\cdot)$ such that $T(F(\omega)) = \theta$. 
-
-
-Next, assume the following:
+Lastly, denote the support of a random variable $X$ with $\supp(X) = \{ t: \P(X = t) > 0\}$. With this notation, assume the following:
 % let $\theta$ be some functional $T(F_\theta) = \theta$ and assume the following:
 \begin{assumption}
 $p_i, p_{i'} > 0$ and $\P[ \E(Y|\H_i) \neq \E(Y|\H_{i'})] > 0$ for some $i \neq i'$. \label{Assump5}
@@ -3739,7 +3745,9 @@ If $x < y$,  then  $Q(x,\epsilon) < Q(y,\epsilon)$ for all values of $\epsilon$.
 These conditions are  intuitive and rather mild. Assumption \ref{Assump5} ensures that the aggregation problem is non-trivial. Assumption \ref{Assump3} states that moving density of a distribution uniformly to one direction (left or right) strictly changes the functional value in the same direction. 
 %Many common functionals, including all $\alpha$-quantiles and $\alpha$-expectiles with $\alpha \in (0,1)$ of a continuous random variable, satisfy this \citep{maume2017multivariate}. 
 %If $F$ is the CDF of this random variable, then the $\alpha$-quantile is $F^{-1}(\alpha)$ and the $\alpha$-expectile is the unique solution $t$ to the equation $(1-\alpha)\int_{-\infty}^t (t-x)dF(x) = \alpha\int_{t}^\infty (x-t)dF(x)$. The mean and median correspond to $\alpha = 0.5$. 
-Assumption \ref{Assump4}, on the other hand, says that the prediction increases if the forecaster ``aims'' higher but keeps the same level of error. This all leads to the following corollary. 
+Assumption \ref{Assump4}, on the other hand, says that the prediction increases if the forecaster ``aims'' higher but keeps the same level of error. 
+
+This all leads to the following corollary. 
 \begin{corollary} \label{asympEff}
 Consider an aggregator that $\mathcal{X} \stackrel{a.s.}{\to} T(\tilde{F})$. If assumptions (\ref{Assump5}) to (\ref{Assump4}) hold, then $\mathcal{X}$ 
 converges a.s. to a strict mean of the $\E(Y|\H_i)$s and hence is not asymptotically efficient. 
@@ -3794,9 +3802,11 @@ To conclude, we illustrate Corollary \ref{asympEff} under the arithmetic mean $\
 Let $w_j = b_j / B_N$, where $b_1, b_2, \dots$ is a sequence of positive values and $B_N := \sum_{j=1}^N b_j \to \infty$ as $N \to \infty$. This way each $w_j$ is positive but decreases in $N$. Now, consider the counting function 
 $\gamma(t) = \#\{N \geq 1 : B_N / b_N \leq t\}$.
 %$\gamma(t) = \#\{N \geq 1 :1 / t \leq t\}$.
-  Then $\mathcal{X}_w \stackrel{a.s.}{\to} T(\tilde{F})$  if and only if  $\limsup_{t \to \infty} \gamma(t) / t < \infty$ \citep{jamison1965convergence}. For instance, if $w_j = 1/N$ for all $j =1, \dots, N$, then $\gamma(t)  = \lfloor t \rfloor$ and $\limsup_{t \to \infty} \gamma(t) / t  = 1$, returning the strong law of large numbers \citep[Theorem 2.4.1., p. 73]{durrett2010probability}. If these conditions hold, then $\mathcal{X}_w \stackrel{a.s.}{\to} T(\tilde{F}) = \sum_{i=1}^I p_i \E(Y|\H_i)$. Then, by assumption (\ref{Assump5}), $\mathcal{X}_w$ converges a.s. to a non-trivial arithmetic mean of the $\E(Y|\H_j)$s and hence, by Theorem \ref{contraction}, is not asymptotically efficient. In particular, $\mathcal{X}_w$ converges to a typical (defined here in terms of the expected value) calibrated prediction. 
+  Then $\mathcal{X}_w \stackrel{a.s.}{\to} T(\tilde{F})$  if and only if  $\limsup_{t \to \infty} \gamma(t) / t < \infty$ \citep{jamison1965convergence}. For instance, if $w_j = 1/N$ for all $j =1, \dots, N$, then $\gamma(t)  = \lfloor t \rfloor$ and $\limsup_{t \to \infty} \gamma(t) / t  = 1$, returning the strong law of large numbers \citep[Theorem 2.4.1., p. 73]{durrett2010probability}. If this condition holds in our example, then $\mathcal{X}_w \stackrel{a.s.}{\to} T(\tilde{F}) = \sum_{i=1}^I p_i \E(Y|\H_i)$. This means that, by assumption (\ref{Assump5}), $\mathcal{X}_w$ converges a.s. to a non-trivial arithmetic mean of the $\E(Y|\H_j)$s and hence, by Theorem \ref{contraction}, is not asymptotically efficient (or even calibrated or extremizing).
+  
+  
  
-This example suggests a crucial conflict between means and information aggregation. Statisticians often use means as references for the typical \citep{weisberg1992central}. Information aggregation, however, is not about estimating a typical prediction; it is about estimating the calibrated prediction that a forecaster with all of the group's information would make. This prediction, of course, does not have to be typical. In fact, the individual predictions may not ever come close to it. This way information aggregation and summarizing the distribution of a sample with a typical value can be seen to very different exercises. 
+This example suggests a crucial conflict between means and information aggregation. The arithmetic mean $\mathcal{X}_w$ converges to a typical (defined here in terms of the expected value) calibrated prediction. Statisticians often use means as references for the typical \citep{weisberg1992central}. Information aggregation, however, is not about estimating a typical prediction; it is about estimating the calibrated prediction that a forecaster with all of the group's information would make. This prediction, of course, does not have to be typical. In fact, the individual predictions may not ever come close to it. This way information aggregation and summarizing the distribution of a sample with a typical value can be seen to be very different exercises. 
 %As a result, means may not exploit the full wisdom of the crowd. 
   
 %  estimating the typical and aggregating information can be seen to be two very different exercises. 
@@ -4293,9 +4303,9 @@ This example suggests a crucial conflict between means and information aggregati
 
 %\marginpar{Similarly, it is possible that averaging hihgy non-calibrated predictions performs better than applying an efficient aggregator... The point however is to explain that we can improve upon this by first finding better ways to make forecasters calirbated and then combining them in an efficient manner}
 
-Since its beginning statistics has been about studying variability \citep{weisberg1992central}. Of particular interest is to understand how individual observations vary around some unknown quantity of interest. The statistician can then model this variability and derive an aggregator that can combine the observations into an accurate estimate of the target quantity. 
+Since its beginning statistics has been about studying variability \citep{weisberg1992central}. Of particular interest is to understand how individual observations vary around some unknown quantity of interest. The statistician then models this variability and derives an aggregator that can combine the observations into an accurate estimate of the target quantity. 
 
-Historically the most common model of variability can be illustrated with a sensitive instrument that repeatedly estimates some target quantity. Here lower variability is associated with lower accuracy. Deviations represent idiosyncratic error, and the estimates are treated as draws from a distribution with the center at the target quantity. Depending on how this center is defined, the target quantity is often estimated with some mean of the observations. The idea is that  through aggregation the errors in the ``too high'' estimates will cancel out the errors in the ``too low'' estimates, leaving a low error estimate of the target quantity. This way means can be seen as mechanisms for error reduction \citep{plackett1958studies}. 
+Historically the most common model of variability can be illustrated with a sensitive instrument that repeatedly estimates some target quantity. Here low variability is associated with better accuracy. Deviations represent idiosyncratic error, and the estimates are treated as draws from a distribution with the center at the target quantity. Depending how this center is defined, the target quantity is often estimated with some mean of the observations. The idea is that  through aggregation the errors in the ``too high'' estimates will cancel out the errors in the ``too low'' estimates, leaving a low error estimate of the target quantity. This way means can be seen as mechanisms for error reduction \citep{plackett1958studies}. 
 %   the individual estimates are aggregated with some MCT in order to capture the  quantity with low error. 
 %Thus variation is caused by error and MCTs are designed to reduce it \citep{plackett1958studies}. 
 
@@ -4304,7 +4314,7 @@ Historically the most common model of variability can be illustrated with a sens
 As the world faces increasingly complex forms of data, existing models of variability must be occasionally revisited and any shortcomings addressed. For instance, estimates do not always come from a single instrument anymore. The current crowdsourcing technology allows decision-makers to easily and cheaply ask a large number of people for their predictions about some future event. These forecasters may 
 %not estimate the same target because they can
  have different information, making their predictions very different. Of course, they may make errors in estimating their ideal predictions but such errors represent lack of skill -- a concept that is very different from information (see, e.g., \citealt{chamorro2015wiley}).
- In such contexts it is not enough to just reduce error. Instead the aggregator must be able to make sense of the information among the forecasters and combine it into a consensus prediction. 
+Here it is not enough to just reduce error. Instead the aggregator must be able to make sense of the information among the forecasters and combine it into a consensus prediction. 
  % Given that different information can lead to a different prediction, each forecaster's information yields a different ideal prediction that represents the accurate assessment of that forecaster's information. 
 %  the forecasters are not estimating the same target. 
 %hence may perceive the ideal prediction differently. 
@@ -4340,8 +4350,9 @@ That is, depending on what portion of the variability is due to error, the aggre
  The preliminary results look promising but much more development and testing is needed. 
 
 The purpose of this paper was not to criticize the existing literature on the aggregation properties of the means (see, e.g., \citealt{lichtendahl2013wisdom}).
-Instead our goal is to direct the researchers' attention towards the type of variability that is present among predictions and hence inspire new research in forecast aggregation.
+Instead our goal is to direct researchers' attention towards the type of variability that is present among predictions and hence inspire new research in forecast aggregation.
 % of new methodology. 
+
  In terms of practice, we hope that care is taken in matching the aggregator with the forecasting context. Our work explains that error and information motivate very different forms of aggregation. Applying one type of aggregation to a wrong type of forecast variability yields sub-optimal performance. As an analogy, this is like making conclusions based on a linear regression model when the true underlying relationship is not linear. One must always consider how the assumptions behind the statistical techniques align with the data. This is no different when it comes to aggregating predictions. 
 
 
@@ -4588,7 +4599,7 @@ $\E(Y | \mathcal{X}'')
 
 \item[(ii)] Let $\mathcal{X}_\v = \E(Y | X_j, j \in \v)$ for some subset $\v \subseteq \{1, \dots, N\}$.  Then $\sigma(\mathcal{X}_\v) = \F_\v \subseteq \F'' = \sigma(X_1, \dots, X_N)$. 
 %Let $m = \argmax_j  \Var(X_j) $ identify the prediction with the maximal variance; that is, $\Var(X_j) \leq \Var(X_m)$ for all $j = 1, \dots, N$.  Then $\sigma(X_m) = \F_m \subseteq \F'' = \sigma(X_1, \dots, X_N)$. 
-By \citet[Proposition 2.1.]{satopaamodeling2} and item (i), $\Var(\mathcal{X}_\v) = \Cov(\mathcal{X}_\v, \mathcal{X}'')\leq \sqrt{\Var(\mathcal{X}'') \Var(\mathcal{X}_\v)  }$. The inequality follows from the Cauchy-Schwarz inequality.
+By \citet[Proposition 2.1.]{satopaamodeling2}, item (i), and the Cauchy-Schwarz inequality, we have that $\Var(\mathcal{X}_\v) = \Cov(\mathcal{X}_\v, \mathcal{X}'')\leq \sqrt{\Var(\mathcal{X}'') \Var(\mathcal{X}_\v)  }$.
 %Now,
 %\begin{align*}
 %%\delta_{max} &:=
@@ -4612,7 +4623,7 @@ $\Leftarrow$ Assume that an aggregator $\mathcal{X}$ satisfies properties (i) an
 % &= \E[\E(Y|\F'')|\G] & \text{(smallest $\sigma$-field wins)}\\
 % &= \E(\mathcal{X}''|\mathcal{X})
 %\end{align*}
-Thus $\mathcal{X}$ is also calibrated for $\mathcal{X}''$. Now, by property (ii), $\Var(\mathcal{X}'') \leq \Var(\mathcal{X})$. But given that $\G \subseteq \F''$, $\Var(\mathcal{X}) \leq \Var(\mathcal{X}'')$ \citep[Proposition 2.1.]{satopaamodeling2}. Thus $\Var(\mathcal{X}'') = \Var(\mathcal{X}) \Leftrightarrow \E\left[\left(\mathcal{X}''\right)^2\right] = \E\left[\left(\mathcal{X}\right)^2\right]$. From \citealt[Exercise 5.1.11]{durrett2010probability}, it follows that $\mathcal{X} = \mathcal{X}''$ a.s.
+Thus $\mathcal{X}$ is also calibrated for $\mathcal{X}''$. Now, by property (ii), $\Var(\mathcal{X}'') \leq \Var(\mathcal{X})$. But given that $\G \subseteq \F''$, $\Var(\mathcal{X}) \leq \Var(\mathcal{X}'')$ \citep[Proposition 2.1.]{satopaamodeling2}. Thus $\Var(\mathcal{X}'') = \Var(\mathcal{X}) \Leftrightarrow \E\left[\mathcal{X}''^2\right] = \E\left[\mathcal{X}^2\right]$. From \citealt[Exercise 5.1.11]{durrett2010probability}, it follows that $\mathcal{X} = \mathcal{X}''$ a.s.
 
 
 \qed
@@ -4637,7 +4648,9 @@ $\E(\mathcal{X}_w) = \E(\w' \X) = \w' \E(\X) = \mu_0 \w' \one_N = \mu_0$.
 %\begin{align*}
 %\E[X''] &= \E[\E[Y|X'']] = \mu_0\\
 %\end{align*}
-\item Proof by contradiction: The next two items are generalizations of the proof in \cite{Ranjan08} who consider calibrated probability predictions of a binary outcome. First, suppose that a non-trivial $\mathcal{X}_w$ is calibrated. Then, observe that for any calibrated prediction (aggregate or individual) $X$,  we have that $ \E[(Y-X)^2] =  \E(Y^2)-\E(X^2)$. 
+\item This and the next item are are generalizations of the proof in \cite{Ranjan08} who consider calibrated predictions of a binary outcome. 
+
+Proof by contradiction: Suppose that a non-trivial $\mathcal{X}_w$ is calibrated. For any calibrated prediction (aggregate or individual) $X$,  we have that $ \E[(Y-X)^2] =  \E(Y^2)-\E(X^2)$. 
 %Then,
 %\begin{align*}
 % \E[(Y-\mathcal{X})^2] &= \E\left\{\E\left[(Y-\mathcal{X})^2|\mathcal{X}\right]\right\}\\
@@ -4664,11 +4677,13 @@ For $\mathcal{X}_w$ this is
 %&=  \E\left(Y^2\right) -  \E\left(\w'\X \X'\w\right)-\sum_{i=1}^N\sum_{j=1}^Nw_iw_j\E\left[\left(X_i-X_j\right)^2\right] \\
 &= \left[\E\left(Y^2\right) -  \E\left(\mathcal{X}_w^2\right) \right]-\sum_{i=1}^N\sum_{j=1}^Nw_iw_j\E\left[\left(X_i-X_j\right)^2\right].
 \end{align*}
-The double sum on the final line is strictly positive because $\mathcal{X}_w$ is non-trivial, leading to a contradiction. Thus there is some set with positive measure on which $\mathcal{X}_w \neq \E(Y|\mathcal{X}_w)$. This gives that $\P[\mathcal{X}_w \neq \E(Y|\mathcal{X}_w)] > 0$. 
+The double sum on the final line is strictly positive because $\mathcal{X}_w$ is non-trivial. This means that $\mathcal{X}_w$ cannot be calibrated, giving us a contradiction.
+% Thus there is some set with positive measure on which $\mathcal{X}_w \neq \E(Y|\mathcal{X}_w)$. This gives that 
+Thus $\P[\mathcal{X}_w \neq \E(Y|\mathcal{X}_w)] > 0$. 
 % a non-trivial $\mathcal{X}_w$ is not calibrated.
 %there exists a prediction pair $i \neq j$ such that $\P(X_i \neq X_j) > 0$ and $w_i, w_j > 0$. 
 
-\item Given that $\mathcal{X}_w''$ is calibrated, $\E(\mathcal{X}_w'') = \mu_0$. Based on item (ii), $\mathcal{X}_w$ is not calibrated: $\P(\mathcal{X}_w'' \neq \mathcal{X}_w) > 0$. Then,
+\item Given that $\mathcal{X}_w''$ is calibrated, $\E(\mathcal{X}_w'') = \mu_0$ and $\E[(Y-\mathcal{X}_w'')^2]  = \E(Y^2)-\E(\mathcal{X}_w''^2)$. Item (ii) shows that $\mathcal{X}_w$ is not calibrated. Thus $\P(\mathcal{X}_w'' \neq \mathcal{X}_w) > 0$ such that $\E[(\mathcal{X}_w'' - \mathcal{X}_w)^2] > 0$. This all gives us
 \begin{align*}
 &\hspace{1.3em}   \E \left[ \left( Y - \mathcal{X}_w\right)^2\right]
 % &= \E \left( Y^2 - 2Y\mathcal{X}_w + \mathcal{X}_w^2\right)\\
@@ -4679,7 +4694,7 @@ The double sum on the final line is strictly positive because $\mathcal{X}_w$ is
 %&= \E(Y^2)-\E(\mathcal{X}_w''^2) + \E\left[\left(\mathcal{X}_w-\mathcal{X}_w''\right)^2\right] & \text{(because $\mathcal{X}_w''$ is calibrated)}\\
 &> \E(Y^2)-\E(\mathcal{X}_w''^2).
 \end{align*}
-Furthermore, from item (ii), $\E \left[ \left( Y - \mathcal{X}_w\right)^2\right] < \E(Y^2)-\E(\mathcal{X}_w^2)$. Combining this with the above results gives
+Furthermore, from the proof of item (ii), $\E \left[ \left( Y - \mathcal{X}_w\right)^2\right] < \E(Y^2)-\E(\mathcal{X}_w^2)$. Combining this with the above inequality gives the final result:
 \begin{align*}
 &&\E(Y^2)-\E(\mathcal{X}_w''^2)  &< \E(Y^2)-\E(\mathcal{X}_w^2)\\
 %\E(\mathcal{X}_w''^2)  &> \E(\mathcal{X}_w^2)\\
@@ -4690,7 +4705,9 @@ Furthermore, from item (ii), $\E \left[ \left( Y - \mathcal{X}_w\right)^2\right]
 
 %Given that $\mathcal{X}_w'$ is reliable, the previous item gives $\E\left[\left(Y-\mathcal{X}_w'\right)^2\right] =\E(Y^2)-\E(\mathcal{X}_w'^2)$. 
 
-\item Let $m = \argmax_j  \Var(X_j) $ identify the prediction with the maximal variance; that is, $\Var(X_j) \leq \Var(X_m)$ for all $j = 1, \dots, N$.  Given that $\mathcal{X}_w$ is non-trivial, there is some pair $i \neq j$ such that $\P(X_i \neq X_j) > 0$ and $w_i,w_j > 0$. For these forecasters, $\Corr(X_i \neq X_j) < 1$ such that $\Cov(X_i, X_j) < \sqrt{\Var(X_i)\Var(X_j)} \leq \Var(X_m)$. Now, given that the maximum element in $\Cov(\X)$ is $\Var(X_m)$ and $\sum_{i,j} w_i w_j = 1$, we have that  
+%% DOOB DYNKIN LEMMA GIVES THE EQUALITY IN SIGMA FIELDS IF NEEDED. I THINK THIS IS OBIOUS ENOUGH TO NOT NEED IT.
+
+\item First, consider two calibrated predictions $X_i$ and $X_j$. If $\Corr(X_i, X_j) = 1$, then $X_i$ and $X_j$ are linearly dependent and $\F_i = \sigma(X_i) = \sigma(X_j) = \F_j$. Thus, it must be the case that $X_i = X_j$ a.s.  On the other hand, if $X_i = X_j$ a.s., then clearly $\Corr(X_i, X_j) = 1$. Thus $\Corr(X_i, X_j) = 1$ if and only if $X_i = X_j$ a.s. Now, let $m = \argmax_j  \Var(X_j) $ identify the prediction with the maximal variance.  Given that $\mathcal{X}_w$ is non-trivial, there is some pair $i \neq j$ such that $\P(X_i \neq X_j) > 0$ and $w_i,w_j > 0$. For these forecasters, $\Corr(X_i \neq X_j) < 1$ such that $\Cov(X_i, X_j) < \sqrt{\Var(X_i)\Var(X_j)} \leq \Var(X_m)$. Now, given that the maximum element in $\Cov(\X)$ is $\Var(X_m)$ and $\sum_{i,j} w_i w_j = 1$, we have that  
 %\begin{align*}
 $\Var(\mathcal{X}_w) 
 %&= \E[(\mu_0 - \mathcal{X}_w)^2]\\
@@ -4732,13 +4749,11 @@ $\Var(\mathcal{X}_w)
 %\end{align*}
 
 \subsection{Technical Details of Example \ref{intuition}}
-Let $\X = (X_1, \dots, X_N)'$. If $\E(X_j) = \E(Y) = 0$ and $\Cov(\X) := \bSigma$,  it is well-known that $\argmin_{\bBeta} \E(Y- \bBeta\X)^2 =  \Cov(\X, Y) \bSigma^{-1} =: \bBeta^*$ , where 
-$$\Cov(\X, Y) = (\Cov(X_1,Y), \dots, \Cov(X_N,Y)).$$ \cite{satopaamodeling2} show that if $X_j$ is calibrated, then $\Cov(X_j, Y) = \Var(X_j)$ and hence $\bBeta^* = \diag(\bSigma)\bSigma^{-1}$. If $\Cov(X_j,X_i) = 0$ for all $i \neq j$, then $\bSigma = \diag(\bSigma)$, $\bBeta^* = \one_N'$, and $\bBeta^* \X = \sum_{j=1}^N X_j$. Thus information from independent sources combines via simple summing. 
+Let $\X = (X_1, \dots, X_N)'$. If $\E(X_j) = \E(Y) = 0$ and $\Cov(\X) := \bSigma$,  it is well-known that $\argmin_{\boldsymbol{b} \in \R^N} \E(Y- \boldsymbol{b}'\X)^2 =  \Cov(\X, Y) \bSigma^{-1} =: \bBeta$ , where 
+$\Cov(\X, Y) = (\Cov(X_1,Y), \dots, \allowbreak \Cov(X_N,Y)).$ \cite{satopaamodeling2} show that if $X_j$ is calibrated, then $\Cov(X_j, Y) = \Var(X_j)$ and hence $\bBeta = \diag(\bSigma)\bSigma^{-1}$. If $\Cov(X_j,X_i) = 0$ for all $i \neq j$, then $\bSigma = \diag(\bSigma)$, $\bBeta = \one_N'$, and $\bBeta \X = \sum_{j=1}^N X_j$. Thus information from independent sources combines via simple summing. 
 
-If $N=2$, $\delta_j = \Var(X_j)$, and $\rho = \Cov(X_1, X_2)$, then $\bBeta^* = \diag(\bSigma)\bSigma^{-1} = (\delta_1\delta_2 -\rho\delta_2, \delta_2\delta_2 -\rho\delta_1) / (\delta_1\delta_2 - \rho^2)$.
-Given that $\delta_ j = \Var(X_{(j)}) + \Var(X_{(1,2)}) > \Var(X_{(1,2)}) = \rho$, it follows that $\rho < \min(\delta_1,\delta_2)$ and hence that $\beta_j > 0$. 
-
-Now, $\beta_1 + \beta_2 = (2\delta_1\delta_2 - \rho\delta_1 - \rho\delta_2) / (\delta_1\delta_2 - \rho^2)$
+If $N=2$, $\delta_j = \Var(X_j)$, and $\rho = \Cov(X_1, X_2)$, then $\bBeta = (\beta_1, \beta_2) =  \diag(\bSigma)\bSigma^{-1} = (\delta_1\delta_2 -\rho\delta_2, \delta_2\delta_2 -\rho\delta_1) / (\delta_1\delta_2 - \rho^2)$.
+Given that $\delta_ j = \Var(X_{(j)}) + \Var(X_{(1,2)}) > \Var(X_{(1,2)}) = \rho$, it follows that $\rho < \min(\delta_1,\delta_2)$ and hence that $\beta_j > 0$. Now, $\beta_1 + \beta_2 = (2\delta_1\delta_2 - \rho\delta_1 - \rho\delta_2) / (\delta_1\delta_2 - \rho^2)$
 and
 %This shows that $\beta_j > 0$ and that 
 \begin{align*}
@@ -4748,14 +4763,14 @@ Thus the sum $\beta_1 + \beta_2$ is a strictly decreasing function of $\rho$.  S
 \begin{align*}
 \beta_1 + \beta_2 &> (\beta_1 + \beta_2) |_{\rho = \delta_1} = \frac{2\delta_1\delta_2 - \delta_1^2 - \delta_1\delta_2}{\delta_1\delta_2 - \delta_1^2} = 1.
 \end{align*}
+
+
 Observe that $\Var(\mathcal{X}_w - \mathcal{X}'' ) = (w_1-\beta_1)^2 \Var(X_{(1)}) + (w_2-\beta_2)^2 \Var(X_{(2)}) + (1-\beta_1-\beta_2)^2 \Var(X_{(1,2)})$. As $\beta_1 + \beta_2 > 1$, we have that $w_1 \neq \beta_1$ or $w_2 \neq \beta_2$. Given that $ \Var(X_{(1)}) > 0$ and $\Var(X_{(2)}) > 0$, we have that $\Var(\mathcal{X}_w - \mathcal{X}'' )  > 0$ and hence $\P(\mathcal{X}_w \neq \mathcal{X}'' ) > 0$. 
 
-Finally, to show that $\mathcal{X}''$ is the orthogonal projection of $\mathcal{X}'$ onto the space of all aggregators of the form $\beta_1 X_1 + \beta_2 X_2$, recall that $\argmin_{\bBeta} \E(\mathcal{X}'- \bBeta\X)^2 =  \Cov(\X, \mathcal{X}') \bSigma^{-1}$. Now, 
-\begin{align*}
-\Cov(X_j, \mathcal{X}') &= \Cov(X_{(j)} + X_{(1,2)}, X_{(j)} + X_{(i)} + X_{(1,2)})\\
- &= \Cov(X_{(j)}, X_{(j)}) + \Cov(X_{(1,2)},X_{(1,2)})\\
- &= \Var(X_j).
-\end{align*}
+Finally, to show that $\mathcal{X}''$ is the orthogonal projection of $\mathcal{X}'$ onto the space of all aggregators of the form $\beta_1 X_1 + \beta_2 X_2$, recall that $\argmin_{\boldsymbol{b} \in \R^N} \E(Y- \boldsymbol{b}'\X)^2 =   \Cov(\X, \mathcal{X}') \bSigma^{-1}$. Now, 
+%\begin{align*}
+$\Cov(X_j, \mathcal{X}') = \Cov(X_{(j)} + X_{(1,2)}, X_{(j)} + X_{(i)} + X_{(1,2)}) = \Cov(X_{(j)}, X_{(j)}) + \Cov(X_{(1,2)},X_{(1,2)}) \allowbreak= \Var(X_j).$
+%\end{align*}
 Thus $ \Cov(\X, \mathcal{X}') \bSigma^{-1} = \diag(\bSigma)\bSigma^{-1}$ as desired.
 
 
@@ -4891,7 +4906,7 @@ Thus $ \Cov(\X, \mathcal{X}') \bSigma^{-1} = \diag(\bSigma)\bSigma^{-1}$ as desi
 \subsection{Proof of Theorem \ref{centralTendency}}
 Proof by contradiction: 
 %Assume that $\mathcal{X}_{(\cdot)}$ is efficient such that $\mathcal{X}_{(\cdot)} = \mathcal{X}''$ a.s.  
-Suppose the efficient aggregator $\mathcal{X}''$ is a.s. a strict mean. Recall from Section \ref{outcomes} that $\F_j = \sigma(X_j) = \{\{\omega \in \Omega : X_j(\omega) \in B\} : B \in \mathcal{R}\}$. Given that the Borel $\sigma$-field $\mathcal{R}$ is countably generated \citep[Exercise 1.1.4., p. 9]{durrett2010probability}, $\F_j$  is also countably generated \citep[Exercise 1.3.1., p. 16]{durrett2010probability} Furthermore, as $|\F_j| < \infty$, there is a finite partition $\mathcal{A}_j = \{A_{1j}, A_{2j}, \dots, A_{n_jj}\}$ of $\Omega$ such that $\F_j = \sigma(\mathcal{A}_j)$ for all $j = 1, \dots, N$.
+Suppose the efficient aggregator $\mathcal{X}''$ is a.s. a strict mean. Recall from Section \ref{outcomes} that $\F_j = \sigma(X_j) = \{\{\omega \in \Omega : X_j(\omega) \in B\} : B \in \mathcal{R}\}$. Given that the Borel $\sigma$-field $\mathcal{R}$ is countably generated \citep[Exercise 1.1.4., p. 9]{durrett2010probability}, $\F_j$  is also countably generated \citep[Exercise 1.3.1., p. 16]{durrett2010probability}. Furthermore, as $|\F_j| < \infty$, there is a finite partition $\mathcal{A}_j = \{A_{1j}, A_{2j}, \dots, A_{n_jj}\}$ of $\Omega$ such that $\F_j = \sigma(\mathcal{A}_j)$ for all $j = 1, \dots, N$.
 %% If F is empty, then ?(F)={X, ?}. Otherwise ?(F) consists of all the subsets of X that can be made from elements of F by a countable number of complement, union and intersection operations.
 % http://www.math.ubc.ca/~marcus/math601D/Lectures20-25.pdf
 % https://books.google.fr/books?id=yYpgAQAAQBAJ&pg=PA43&lpg=PA43&dq=%22conditional+expectation%22+%22finite+sigma-algebra%22&source=bl&ots=ZqdKjC5rXf&sig=OLeJhhc3Ffp10qouWXCUyEd_3EU&hl=en&sa=X&ved=0ahUKEwjU2smp3ZzUAhWIPRoKHWY1AQAQ6AEILjAC#v=onepage&q=%22conditional%20expectation%22%20%22finite%20sigma-algebra%22&f=false
@@ -4907,7 +4922,9 @@ Suppose the efficient aggregator $\mathcal{X}''$ is a.s. a strict mean. Recall f
 %Without loss of generality, assume that $\P(C_k) > 0$ for all $k = 1, \dots, n$. The analysis 
 Given that each $B \in \mathcal{B}''$ is contained in only one atom per $\mathcal{A}_j$, the $X_j$s and $\mathcal{X}''$ remain constant within each atom of $\mathcal{B}''$. 
 % https://math.stackexchange.com/questions/534335/random-variable-iff-constant-on-each-element-of-a-partition
-Denote the predictions at atom $B \in \mathcal{B}''$ with $\mathcal{X}''(B)$ and $X_j(B)$. Lastly, define $\mathcal{B}_+'' := \{B \in \mathcal{B}'' : \P(B) > 0\}$. 
+If $X_j$ or $\mathcal{X}''$ is constant over some atom $C$, then denote the prediction with  $X_j(C)$ or $\mathcal{X}''(C)$, respectively.
+%Denote the predictions at atom $B \in \mathcal{B}''$ with $\mathcal{X}''(B)$ and $X_j(B)$. 
+Lastly, define $\mathcal{B}_+'' := \{B \in \mathcal{B}'' : \P(B) > 0\}$. 
 
 
 
@@ -4931,10 +4948,10 @@ where $p_{ijk} = \P(B_k) / \P(A_{ij})$ and $\sum_{k : B_k \cap A_{ij} \neq \empt
 %Note that all predictions remain constant over any set $C_k$. 
 %Hence it is sufficient to consider the sets $C_k$ instead of the individual $\omega$'s.
 
-Given that the $X_j$s and $\mathcal{X}''$ are integrable, they must be finite over all atoms $B \in \mathcal{B}_+''$. Now, suppose that there exists a pair $i \neq j$ such that $X_i(B) \neq X_j(B)$ for some $B \in \mathcal{B}_+''$.  We can then define two indices $k^* \neq k^{**}$ for this atom $B$: ${k}^* := \argmin_j\{X_j(B)\}$ and $k^{**} := \argmax_j\{X_j(B)\}$.
+Given that the $X_j$s and $\mathcal{X}''$ are integrable, they must be finite over all atoms $B \in \mathcal{B}_+''$. Suppose for now that there is a pair $i \neq j$ such that $X_i(B) \neq X_j(B)$ for some $B \in \mathcal{B}_+''$.  We can then define two different indices ${k}^* := \argmin_j\{X_j(B)\}$ and $k^{**} := \argmax_j\{X_j(B)\}$.
 %\end{align*}
 % the index for the minimum prediction over a set $C_k$ with ${k}^* := \argmin_j\{X_j(C_k)\}$ and, correspondingly, the index for the maximum prediction with $k^{**} := \argmax_j\{X_j(C_k)\}$. 
-Given that the predictions do not all agree, the strict mean $\mathcal{X}''$ is in the interior of their convex hull:
+Given that, over this atom, the predictions do not all agree, the strict mean $\mathcal{X}''$ is in the interior of their convex hull:
 % for a $C_k$ such that $\P(C_k) > 0$, 
 % Similarly define $q_{jk} = \sum_{w \in C_k} \P(w)  / \sum_{w \in B_j} \P(w)$. 
 % and hence would contradict our assumption.
@@ -4952,9 +4969,9 @@ where the second step follows from (\ref{decomposition}).
  Both sums on the last line include $\mathcal{X}''(B)$. 
 % The weights $p_{ik^*k}, p_{ik^*k} \in (0,1)$, where $B_k = B$, because otherwise the strict inequalities do not hold.
 %  Therefore $\mathcal{X}''(B)$ and at least one other term $\mathcal{X}''(B_k)$ in each sum have a positive weight. 
-In order for the inequalities to hold, 
+Furthermore, in order for the inequalities to hold, 
 %$\mathcal{X}''(B)$ cannot be the smallest on the left or the largest on the right. More specifically, t
-there must be sets $B_l, B_r \in \mathcal{B}_+''$ such that 
+there must be a set $B_l \in \mathcal{B}_+''$ in the left sum and a set $B_r \in \mathcal{B}_+''$ in the right sum such that 
 % term $\mathcal{X}''(B_{l})$ on the left and $\mathcal{X}''(B_{r})$ on the right such that
 \begin{align}
 \mathcal{X}''(B_{l}) &< \mathcal{X}''(B)  < \mathcal{X}''(B_{r}). \label{strictIE}
@@ -4969,7 +4986,7 @@ there must be sets $B_l, B_r \in \mathcal{B}_+''$ such that
 %are well-defined. This shows that each $\mathcal{X}''(C_k)$ is upper and lower bounded by $\mathcal{X}''(C_{k'})$ and $\mathcal{X}''(C_{k''})$
 % where $\P(C_{k'}) > 0$, $\P(C_{k''}) > 0$, $C_{k'} \neq C$, and $C_{k''} \neq C$. 
 % Thus, if the predictions do not all agree on some $B \in \mathcal{B}''$, then $\mathcal{X}''(B)$ is strictly upper and lower bounded by some of its other values.  
- Furthermore, these sets are connected to $B$ via some atoms in $\mathcal{A}_{k^{*}}$ and $\mathcal{A}_{k^{**}}$, that is, $B \cup B_{l} \subseteq A_{ik^*}$ and $B \cup B_{r} \subseteq A_{ik^{**}}$ for some  $A_{ik^*} \in \mathcal{A}_{k^*}$ and $A_{ik^{**}}  \in \mathcal{A}_{k^{**}}$. 
+These sets $B_l$ and $B_r$ are connected to $B$ via some atoms in $\mathcal{A}_{k^{*}}$ and $\mathcal{A}_{k^{**}}$, that is, $B \cup B_{l} \subseteq A_{ik^*}$ and $B \cup B_{r} \subseteq A_{ik^{**}}$ for some  $A_{ik^*} \in \mathcal{A}_{k^*}$ and $A_{ik^{**}}  \in \mathcal{A}_{k^{**}}$. 
  
  
  
@@ -5014,7 +5031,9 @@ $\tilde{F}(t) = \sum_{i=1}^I \tilde{F}_{\E(Y|\H_i)}(t) p_i <  \sum_{i=1}^I \tild
 % \begin{align*}
 $\tilde{F}^*_{M_X}(t) =  \sum_{i=1}^I \tilde{F}^*_{M_X}(t) p_i > \sum_{i=1}^I \tilde{F}^*_{\E(Y|\H_i)}(t) p_i = \tilde{F}^*(t)$ 
 % \end{align*}
-  for all $t \in \supp(\tilde{F}_{M_X})$. In short, $\tilde{F}(x) < \tilde{F}_{L_X}(x)$ and $\tilde{F}^*_{M_X}(x) > \tilde{F}^*(x)$. Now, by Assumption \ref{Assump3}, $L_X = T(\tilde{F}_{L_X}) < T(\tilde{F}) < T(\tilde{F}_{M_X}) = M_X$. Consequently, $\mathcal{X} \to T(\tilde{F})  \in (L_X, M_X)$ under $A_0$. Putting this together shows that $\mathcal{X}$ is asymptotically a strict mean of the calibrated predictions $\E(Y|\H_i)$. Given that all $|\F_j| < \infty$, by Theorem \ref{centralTendency}, $\mathcal{X}$ is not asymptotically efficient. 
+  for all $t \in \supp(\tilde{F}_{M_X})$.
+%   In short, $\tilde{F}(t) < \tilde{F}_{L_X}(t)$ for  and $\tilde{F}^*_{M_X}(x) > \tilde{F}^*(x)$. 
+  Now, by Assumption \ref{Assump3}, $L_X = T(\tilde{F}_{L_X}) < T(\tilde{F}) < T(\tilde{F}_{M_X}) = M_X$. Consequently, $\mathcal{X} \to T(\tilde{F})  \in (L_X, M_X)$ under $A_0^c$. Putting this together shows that $\mathcal{X}$ is asymptotically a strict mean of the calibrated predictions $\E(Y|\H_i)$. Given that all $|\F_j| < \infty$, by Theorem \ref{centralTendency}, $\mathcal{X}$ is not asymptotically efficient. 
 \qed
 
 
